@@ -1,0 +1,7 @@
+<div class="header"><a href="/index.html">{{ config.title }}</a>
+  <hr>
+  {% set menu = list.getNearDirs("/index.html") %}
+  {% for menuitem in menu %}
+  <a href="{{ menuitem.file.path }}"><b>{{ menuitem.meta.title}}</b></a>
+  {% endfor %}
+</div>

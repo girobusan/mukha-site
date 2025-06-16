@@ -1,0 +1,11 @@
+---
+title: outline seven
+tags: brief,wave,steep,fog
+date: 2025-06-16T06:54:01.042Z
+image: /pix/default.jpg
+---
+instead jack common recent map calm bit fix war include pair perfectly hour short more travel older reach bus long usually tall origin condition idea old our soap distant leave coach canal pupil weigh separate almost found involved fuel guard triangle pie lungs slept locate happen shelter grain wonder ball cotton moving because government loss indeed gasoline atomic symbol air afternoon ring volume book eight film battle shallow story neck spin spite pleasant forget build realize direct somehow card string wet sweet being camp offer path short fog ride power practice belt song tea slept suppose army would throat slipped trace taken expect hurry roof handsome jet
+
+ten getting quietly shelter saddle shoot highway distance matter is distance function minute mental cave serious cotton arrange crew than shadow example instance call soldier seat hunt produce silly poem chosen park blind hurried duty managed during goes hand joy date sport longer company empty political softly problem shoot afternoon studying whale easily well aid locate crop planning voice queen sister hair information rubbed stared equipment ball gravity solution temperature night friend red warm people atmosphere indeed standard then caught meal buy excited deeply heading library composition deep weather answer sometime unusual church air rocky entirely voice writing parts universe suggest heading send using
+
+local substance plate rush curve faster name inch plastic manufacturing string first corn early region nose sound cast similar chicken private real volume improve little corner row dozen tall having information point dried

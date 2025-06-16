@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ meta.title}}</title>
+  <link href="/_themes/simple/style.css" rel="stylesheet">
+</head>
+
+
+<body>
+  {% include "header.njk" %}
+  <!--//-->
+  {% if path.endsWith("index.html") %}
+  {% set mylist = list.getNearFiles(path) %}
+  {% elseif file.list %}
+  {% set mylist = file.list %}
+  {% endif %}
+
+  <h1>{{meta.title}}</h1>
+  {% if meta.tags %}
+  <h3>tags</h3>
+  {% for t in meta.tags %}
+  <div>{{ t.meta.title }}</div>
+  {% endfor %}
+  {% endif %}
+  {{ html}}
+
+  {% if mylist %}
+  {% set t = makePagination(mylist , 5) %}
+  {% endif %}
+
+
+  {% if file.list_page %}
+  <ul>
+    {% for item in file.list_page %}
+    <li><a href="{{ item.file.path }}">{{ item.meta.title}}</a><!----></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  no mylist
+  {% endif %}
+
+  {% if file.page_links %}
+  {% set count=1 %}
+  {% for pl in file.page_links %}
+  <a href="{{ pl }}">{{ count }}</a>
+  {% set count = count+1 %}
+  {% endfor %}
+  {% endif %}
+</body>
+
+</html>

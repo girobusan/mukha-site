@@ -1,0 +1,37 @@
+{
+  "name": "amzng.css",
+  "version": "1.0.0",
+  "description": "Mukha SSG demo site",
+  "browserslist": [
+    ">0.1%",
+    "maintained node versions"
+  ],
+  "cssnano": {
+    "preset": [
+      "default",
+      {
+        "discardComments": {
+          "removeAll": true
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "gulp": "^5.0.0",
+    "gulp-postcss": "^10.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^6.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss-minify": "^1.1.0",
+    "sass": "^1.83.4"
+  },
+  "scripts": {
+    "watch": "gulp watch",
+    "build": "gulp sass"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "random-words": "^2.0.1"
+  }
+}
