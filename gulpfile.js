@@ -17,9 +17,9 @@ async function buildCSS() {
   return src("src/scss/style.scss")
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
-    .pipe(dest("src/site/config/theme/basic/style.css"))
+    .pipe(dest("src/site/config/themes/basic/assets/"))
     .pipe(sourcemaps.write("."))
-    .pipe(dest("css/"));
+    //.pipe(dest("css/"));
 }
 
 async function watchCSS() {
