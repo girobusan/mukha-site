@@ -1,33 +1,33 @@
 // Set your brand colors
 $purple: #8a4d76;
 $pink: #fa7c91;
-$brown: #757763;
+$brown: #444;
 $beige-light: #d0d1cd;
 $beige-lighter: #eff0eb;
 
 // Override global Sass variables from the /utilities folder
-@use "bulma/sass/utilities" with (
-  $family-primary: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
+@use "bulma/sass/utilities" with ($family-primary: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   $grey-dark: $brown,
   $grey-light: $beige-light,
   $primary: $purple,
   $link: $pink,
-  $control-border-width: 2px
-);
+  $control-border-width: 2px);
 
 // Import the components you need
 @forward "bulma/sass/base";
+/* @forward "bulma/sass/" */
 @forward "bulma/sass/components/card";
-@forward "bulma/sass/components/modal";
+/* @forward "bulma/sass/components/modal"; */
 @forward "bulma/sass/components/navbar";
 @forward "bulma/sass/elements/button";
 @forward "bulma/sass/elements/icon";
 @forward "bulma/sass/elements/content";
-@forward "bulma/sass/elements/notification";
-@forward "bulma/sass/elements/progress";
+@forward "bulma/sass/elements/title";
+/* @forward "bulma/sass/elements/notification"; */
+/* @forward "bulma/sass/elements/progress"; */
 @forward "bulma/sass/elements/tag";
+@forward "bulma/sass/layout/container";
 @forward "bulma/sass/layout/footer";
-
+@forward "bulma/sass/helpers/";
 // Import the themes so that all CSS variables have a value
 @forward "bulma/sass/themes";
-

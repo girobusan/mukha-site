@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>manner::Example site</title>
-  <link href="../_themes/basic/style.css" rel="stylesheet">
-</head>
-
-<body>
+{% set menu = list.getNearDirs("/index.html") %}
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item" href="../index.html">
+    <a class="navbar-item" href="/index.html">
       LOGO
     </a>
 
@@ -25,12 +15,11 @@
 
   <div id="navbarBasic" class="navbar-menu">
     <div class="navbar-start">
-      <a class="navbar-item" href="../articles/index.html">
-        Articles
+      {% for item in menu %}
+      <a class="navbar-item" href="{{ item.file.path }}">
+        {{ item.meta.title}}
       </a>
-      <a class="navbar-item" href="index.html">
-        Tags
-      </a>
+      {% endfor %}
 
       <!--<div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
@@ -70,37 +59,3 @@
     </div>
   </div>
 </nav>
-<div class="container my-6 px-3 is-max-desktop">
-  <h1 class=" title is-1">manner</h1>
-
-  <div class="content mb-6">
-    
-
-  </div>
-
-  <ul>
-    <li><a href="../docs/then_eventually.html">thy longer</a></li>
-    <li><a href="../docs/young_happened.html">weak</a></li>
-    <li><a href="../docs/underline_combination.html">rubber children accurate</a></li>
-    <li><a href="../docs/to_needs.html">sport spite</a></li>
-  </ul>
-
-
-
-</div>
-<footer class="footer">
-  <div class="content">
-    <div class="container is-max-desktop px-3">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
-        The source code is licensed
-        <a href="https://opensource.org/license/mit">MIT</a>. The
-        website content is licensed
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">CC BY NC SA 4.0</a>.
-      </p>
-    </div>
-  </div>
-</footer>
-</body>
-
-</html>

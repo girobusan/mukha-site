@@ -18,12 +18,12 @@ async function buildCSS() {
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
     .pipe(dest("src/site/config/themes/basic/assets/"))
-    .pipe(sourcemaps.write("."))
-    //.pipe(dest("css/"));
+    .pipe(sourcemaps.write("."));
+  //.pipe(dest("css/"));
 }
 
 async function watchCSS() {
-  return watch(["src/scss/*.scss", "src/site/config"], buildCSS);
+  return watch(["src/scss/*.scss"], buildCSS);
 }
 
 exports.watchCSS = watchCSS;
