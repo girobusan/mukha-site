@@ -1,4 +1,4 @@
-const { src, dest, watch, series } = require("gulp");
+const { src, dest, watch, series, parallel } = require("gulp");
 const rename = require("gulp-rename");
 const postcss = require("gulp-postcss");
 const sass = require("gulp-sass")(require("sass"));
@@ -22,6 +22,13 @@ async function buildCSS() {
   //.pipe(dest("css/"));
 }
 
+async function productionCSS() {
+  return src("src/scss/style.scss")
+    .pipe(sourcemaps.init())
+    .pipe(sass({ style: "compressed" }).on("error", sass.logError))
+    .pipe(dest("src/site/config/themes/basic/assets/"));
+}
+
 async function watchCSS() {
   return watch(["src/scss/*.scss"], buildCSS);
 }
@@ -31,7 +38,7 @@ async function watchSite() {
 }
 
 async function watchAll() {
-  return watch(["src/scss/*.scss", "src/site"], series(buildCSS, buildSite));
+  return parallel(watchCSS, watchSite);
 }
 
 exports.watchCSS = watchCSS;
@@ -39,3 +46,4 @@ exports.watchSite = watchSite;
 exports.css = buildCSS;
 exports.buildSite = buildSite;
 exports.watchAll = watchAll;
+exports.prodCSS = productionCSS;

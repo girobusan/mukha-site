@@ -1,14 +1,48 @@
+{% macro pagelnk(href , num , cp) %}
+<li>
+  <a href="{% if num!= cp %}{{ href }}{% endif %}" class="pagination-link {% if cp==num %}is-current{% endif %}">{{
+    num}}</a>
+</li>
+{% endmacro %}
+
 {% macro pagination(currentPage , links) %}
+{% set from_end = links.length - currentPage %}
 <nav class="pagination" role="navigation" aria-label="pagination">
-  <ul class="pagination-list">
-    {# just list all pages #}
-    {% set idx = 1 %}
-    {% for link in links %}
-    <li>
-      < a href="{{ link }}" class="pagination-link {% if idx==currentPage %}is-current{% endif %}">{{ idx }}</a>
-    </li>
-    {% set idx=idx+1 %}
-    {% endfor %}
+  <ul class="pagination-list is-justify-content-center">
+    <!-- From end {{from_end}} {{links.length}} {{currentPage}}-->
+    {% if links.length <= 10 %} {# just list all pages #} {% for link in links %} {{ pagelnk( link , loop.index ,
+      currentPage )}} {% endfor %} {# too many #} {% elseif currentPage<=3 %} <!--{{currentPage}}-->
+      {% for p1 in range( 1 , currentPage+2) %}
+
+      {{ pagelnk( links[p1-1] , loop.index , currentPage )}}
+      {% endfor %}
+      <li><span class="pagination-ellipsis">&hellip;</span></li>
+
+      {{ pagelnk( links[links.length-1] , links.length , currentPage)}}
+
+      {% elseif from_end<=2 %} {# first page #} {{ pagelnk( links[0] , 1 , currentPage )}} <li><span
+          class="pagination-ellipsis">&hellip;</span></li>
+        {% for p2 in range( currentPage-1 , links.length+1) %}
+        {{ pagelnk( links[p2-1] , p2 , currentPage)}}
+        {% endfor %}
+        {% else %}
+
+        <li>
+          <a href="{{ links[0] }}" class="pagination-link ">{{1}}</a>
+        </li>
+
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+
+        {% for p3 in range( currentPage-1 , currentPage+2) %}
+        {{ pagelnk( links[p3-1] , p3 , currentPage)}}
+        {% endfor %}
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+
+        <li>
+          <a href="{{ links[links.length-1] }}" class="pagination-link ">{{ links.length }}</a>
+        </li>
+
+        {% endif %}
   </ul>
 </nav>
 {% endmacro %}

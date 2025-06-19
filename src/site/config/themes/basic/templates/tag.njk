@@ -1,0 +1,11 @@
+{% extends "empty.njk" %}
+{% from "parts/macro.njk" import bigArticleHeader, pagesList %}
+
+{% block content %}
+{{ bigArticleHeader("Tag: " + meta.title , [] , 0)}}
+
+{% set p = makePagination(page.list) %}
+{% if page.list_page %}
+{{ pagesList( page.list_page , page) }}
+{% endif %}
+{% endblock %}

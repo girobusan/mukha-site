@@ -11,6 +11,7 @@ also experimental theme
 with some css" />
   <link href="../_theme/style.css" rel="stylesheet">
   <script src="../_theme/navbar.js"></script>
+  <script src="../_theme/masonry.js"></script>
 </head>
 
 <body>
@@ -41,28 +42,66 @@ with some css" />
 </div>
   </div>
 </nav>
-<div class="container my-6 px-3 is-max-desktop">
-  
-<h1 class="title is-1">out</h1>
+<div class="container my-6 px-3 ">
+<h1 class="title is-1">Tag: out</h1>
+<div class="tags">
+</div>
 
-  <div class="content mb-6">
-    
+
+<script defer>
+  window.masonry.init({
+    container: "#pagesList",
+    bySize: true,
+    countFn: (e) => {
+      return Math.floor(e.getBoundingClientRect().width / 300) || 1;
+    }
+  })
+</script>
+<div class="m-page-list columns" id="pagesList">
+  <div class="card cell">
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../docs/young_happened.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <a class="title is-5" href="../docs/young_happened.html">weak</a>
+      <div class="tags">
+        <!--driver | out | -->
+        <a class="tag" href="driver.html">driver</a>
+        <!--out | out | -->
+        <span class="tag" style="border:1px solid gray">out</span>
+        <!--manner | out | -->
+        <a class="tag" href="manner.html">manner</a>
+      </div>
+      <div class="is-size-7"><p>pull different front be every lonely height effect purple shore us division several beat repeat donkey card quite sink these regular outer myself cast over pale onto double best count growth eventually process planned east minerals continent principal be choice vowel muscle means cover outside unknown slightly sink bite active love whispered opportunity wet telephone belt folks recent try beauty it below stretch warm brass cell refer southern native action chapter nose sum large afternoon suddenly baby spring missing stretch body invented love obtain valley bridge whale talk courage combination mile person advice trace ship ever gun merely unknown wave year stock mostly tune vapor strength struggle</p>
+</div>
+    </div>
+
   </div>
-
-
+</div>
 
 </div>
-pagination
-<footer class="footer">
+<footer class="footer has-background-dark mt-auto" style="color: silver">
   <div class="content">
-    <div class="container is-max-desktop px-3">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
-        The source code is licensed
-        <a href="https://opensource.org/license/mit">MIT</a>. The
-        website content is licensed
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">CC BY NC SA 4.0</a>.
-      </p>
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="is-flex-tablet is-flex-direction-row is-justify-content-space-between">
+        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem"><p>
+Example site.
+</p>
+<ul>
+<li><a href="../rss.xml">RSS</a></li>
+<li><a href="../atom.xml">Atom</a></li>
+</ul></div>
+        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem"><p>
+All rights are copyrighted,<br>
+from the long time ago<br>
+to thhe distant future
+</p></div>
+        <div class="col"><p>
+That's all, folks
+</p></div>
+      </div>
     </div>
   </div>
 </footer>

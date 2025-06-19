@@ -1,20 +1,17 @@
 {% from "parts/pagination.njk" import pagination %}
-pagination
 {% if page.page_count %}
 {% if page.page_count>1 %}
-{{ pagination( page.page , page.page_links)}}
+{{ pagination( page.page_number , page.page_links)}}
 {% endif %}
 {% endif %}
-<footer class="footer">
+<footer class="footer has-background-dark mt-auto" style="color: silver">
   <div class="content">
-    <div class="container is-max-desktop px-3">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
-        The source code is licensed
-        <a href="https://opensource.org/license/mit">MIT</a>. The
-        website content is licensed
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">CC BY NC SA 4.0</a>.
-      </p>
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="is-flex-tablet is-flex-direction-row is-justify-content-space-between">
+        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem">{{data.datasets.footer.column1}}</div>
+        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem">{{data.datasets.footer.column2}}</div>
+        <div class="col">{{data.datasets.footer.column3}}</div>
+      </div>
     </div>
   </div>
 </footer>

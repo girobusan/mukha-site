@@ -11,6 +11,7 @@ also experimental theme
 with some css" />
   <link href="../_theme/style.css" rel="stylesheet">
   <script src="../_theme/navbar.js"></script>
+  <script src="../_theme/masonry.js"></script>
 </head>
 
 <body>
@@ -41,28 +42,135 @@ with some css" />
 </div>
   </div>
 </nav>
-<div class="container my-6 px-3 is-max-desktop">
-  
-<h1 class="title is-1">contain</h1>
+<div class="container my-6 px-3 ">
+<h1 class="title is-1">Tag: contain</h1>
+<div class="tags">
+</div>
 
-  <div class="content mb-6">
-    
+
+<script defer>
+  window.masonry.init({
+    container: "#pagesList",
+    bySize: true,
+    countFn: (e) => {
+      return Math.floor(e.getBoundingClientRect().width / 300) || 1;
+    }
+  })
+</script>
+<div class="m-page-list columns" id="pagesList">
+  <div class="card cell">
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../docs/vowel_cage.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <a class="title is-5" href="../docs/vowel_cage.html">see first box</a>
+      <div class="tags">
+        <!--morning | contain | -->
+        <a class="tag" href="morning.html">morning</a>
+        <!--part | contain | -->
+        <a class="tag" href="part.html">part</a>
+        <!--driver | contain | -->
+        <a class="tag" href="driver.html">driver</a>
+        <!--contain | contain | -->
+        <span class="tag" style="border:1px solid gray">contain</span>
+      </div>
+      <div class="is-size-7"><p>brother afraid compare what running trap cloth season useful birthday needle rich advice river beginning moment ants push together peace unknown throat pair bridge flag send rain end birthday company spite bread valley free accident learn mental cotton apple especially planet aware finish easily everywhere once fall matter came select explain love point her involved morning mouse talk would husband themselves anything soldier six cry eight according chest plane eight fully push arm split carefully bend pride seldom frog stretch hollow later talk mile sister independent various individual dull personal girl riding oxygen butter sand blank exclaimed mix sell indicate</p>
+</div>
+    </div>
+
   </div>
+  <div class="card cell">
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../articles/swam_someone.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <a class="title is-5" href="../articles/swam_someone.html">copper smoke cheese</a>
+      <div class="tags">
+        <!--include | contain | -->
+        <a class="tag" href="include.html">include</a>
+        <!--contain | contain | -->
+        <span class="tag" style="border:1px solid gray">contain</span>
+        <!--part | contain | -->
+        <a class="tag" href="part.html">part</a>
+      </div>
+      <div class="is-size-7"><p>movement does globe public planning breeze voice breeze door new term leaf hour went tell only sort exchange themselves oil pressure mean gather bread aboard check enjoy method dog eight symbol poor unless activity original teach advice do jet</p>
+</div>
+    </div>
 
+  </div>
+  <div class="card cell">
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../docs/to_needs.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <a class="title is-5" href="../docs/to_needs.html">sport spite</a>
+      <div class="tags">
+        <!--part | contain | -->
+        <a class="tag" href="part.html">part</a>
+        <!--sold | contain | -->
+        <a class="tag" href="sold.html">sold</a>
+        <!--contain | contain | -->
+        <span class="tag" style="border:1px solid gray">contain</span>
+        <!--manner | contain | -->
+        <a class="tag" href="manner.html">manner</a>
+      </div>
+      <div class="is-size-7"><p>amount full captured ready cannot check state recently supply stiff opinion clay of nearest future blow dirt sometime softly planned neighbor forget buy could aside sick unhappy nervous express vote tell built process realize since according usual uncle reach shine zero chain cool dance south</p>
+</div>
+    </div>
 
+  </div>
+  <div class="card cell">
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../docs/weather_setting.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <a class="title is-5" href="../docs/weather_setting.html">someone</a>
+      <div class="tags">
+        <!--morning | contain | -->
+        <a class="tag" href="morning.html">morning</a>
+        <!--contain | contain | -->
+        <span class="tag" style="border:1px solid gray">contain</span>
+        <!--love | contain | -->
+        <a class="tag" href="love.html">love</a>
+        <!--movie | contain | -->
+        <a class="tag" href="movie.html">movie</a>
+      </div>
+      <div class="is-size-7"><p>book origin around wrong attempt mine trick passage present curious ran train together major giving simplest hot tank ill buried break standard greater day tax statement explore lovely lack furniture shape somehow officer wing label principal symbol cow when finally as coming freedom discussion command since produce fall flower cry independent dust settlers fed feathers bat layers program include know feed shelter selection firm television strike came ball heavy cave specific figure police oldest thrown spent bowl crop characteristic then realize zoo frozen dawn basis sure nine shallow drawn cotton chart respect recognize shells name mad motor according flies sing crop those liquid settle peace lungs identity usually may spring why vegetable foreign</p>
+</div>
+    </div>
+
+  </div>
+</div>
 
 </div>
-pagination
-<footer class="footer">
+<footer class="footer has-background-dark mt-auto" style="color: silver">
   <div class="content">
-    <div class="container is-max-desktop px-3">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
-        The source code is licensed
-        <a href="https://opensource.org/license/mit">MIT</a>. The
-        website content is licensed
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">CC BY NC SA 4.0</a>.
-      </p>
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="is-flex-tablet is-flex-direction-row is-justify-content-space-between">
+        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem"><p>
+Example site.
+</p>
+<ul>
+<li><a href="../rss.xml">RSS</a></li>
+<li><a href="../atom.xml">Atom</a></li>
+</ul></div>
+        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem"><p>
+All rights are copyrighted,<br>
+from the long time ago<br>
+to thhe distant future
+</p></div>
+        <div class="col"><p>
+That's all, folks
+</p></div>
+      </div>
     </div>
   </div>
 </footer>

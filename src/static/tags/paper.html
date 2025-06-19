@@ -11,6 +11,7 @@ also experimental theme
 with some css" />
   <link href="../_theme/style.css" rel="stylesheet">
   <script src="../_theme/navbar.js"></script>
+  <script src="../_theme/masonry.js"></script>
 </head>
 
 <body>
@@ -41,28 +42,87 @@ with some css" />
 </div>
   </div>
 </nav>
-<div class="container my-6 px-3 is-max-desktop">
-  
-<h1 class="title is-1">paper</h1>
+<div class="container my-6 px-3 ">
+<h1 class="title is-1">Tag: paper</h1>
+<div class="tags">
+</div>
 
-  <div class="content mb-6">
-    
+
+<script defer>
+  window.masonry.init({
+    container: "#pagesList",
+    bySize: true,
+    countFn: (e) => {
+      return Math.floor(e.getBoundingClientRect().width / 300) || 1;
+    }
+  })
+</script>
+<div class="m-page-list columns" id="pagesList">
+  <div class="card cell">
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../docs/which_women.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <a class="title is-5" href="../docs/which_women.html">classroom influence</a>
+      <div class="tags">
+        <!--play | paper | -->
+        <a class="tag" href="play.html">play</a>
+        <!--forward | paper | -->
+        <a class="tag" href="forward.html">forward</a>
+        <!--paper | paper | -->
+        <span class="tag" style="border:1px solid gray">paper</span>
+      </div>
+      <div class="is-size-7"><p>settlers neck produce frozen policeman real spite frighten leather but water school join his what loss fox afternoon affect smaller theory structure because control guide flame actually jet solve contain each both soil earn zulu dawn older simple lose quite final tone taught harbor desert equipment pool sail laid luck popular slow who</p>
+</div>
+    </div>
+
   </div>
+  <div class="card cell">
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../docs/tone_easier.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <a class="title is-5" href="../docs/tone_easier.html">course cast</a>
+      <div class="tags">
+        <!--paper | paper | -->
+        <span class="tag" style="border:1px solid gray">paper</span>
+        <!--love | paper | -->
+        <a class="tag" href="love.html">love</a>
+        <!--play | paper | -->
+        <a class="tag" href="play.html">play</a>
+      </div>
+      <div class="is-size-7"><p>everything magnet nature love try labor principle duty how couple army labor quite organized day importance chain five your yourself smile differ fort burst might bark pilot name making underline widely they rocky chain stranger exchange did paid aside without are supper</p>
+</div>
+    </div>
 
-
+  </div>
+</div>
 
 </div>
-pagination
-<footer class="footer">
+<footer class="footer has-background-dark mt-auto" style="color: silver">
   <div class="content">
-    <div class="container is-max-desktop px-3">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
-        The source code is licensed
-        <a href="https://opensource.org/license/mit">MIT</a>. The
-        website content is licensed
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">CC BY NC SA 4.0</a>.
-      </p>
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="is-flex-tablet is-flex-direction-row is-justify-content-space-between">
+        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem"><p>
+Example site.
+</p>
+<ul>
+<li><a href="../rss.xml">RSS</a></li>
+<li><a href="../atom.xml">Atom</a></li>
+</ul></div>
+        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem"><p>
+All rights are copyrighted,<br>
+from the long time ago<br>
+to thhe distant future
+</p></div>
+        <div class="col"><p>
+That's all, folks
+</p></div>
+      </div>
     </div>
   </div>
 </footer>

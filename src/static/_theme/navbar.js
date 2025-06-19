@@ -3,5 +3,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const tgt = btn ? btn.dataset.target : null;
   if (!tgt) return;
   const tgtEl = document.getElementById(tgt);
-  btn.addEventListener("click", () => tgtEl.classList.toggle("is-active"));
+  btn.addEventListener("click", () => {
+    btn.classList.toggle("is-active");
+    tgtEl.classList.toggle("is-active");
+  });
 });

@@ -1,5 +1,7 @@
-{% if page.file.path == "/index.html" %}
+{% if page.file.path.startsWith("/index") %}
 {% extends "cover.njk" %}
+{% elseif page.tag %}
+{% extends "tag.njk" %}
 {% else %}
 {% extends "basic.njk" %}
 {% endif %}

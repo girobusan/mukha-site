@@ -1,10 +1,19 @@
 {% extends "empty.njk" %}
+{% from "parts/macro.njk" import pagesList %}
 
 {% block top %}
 <section class="hero is-primary is-medium">
   <div class="hero-body">
-    <p class="title">{{ config.title }}</p>
+    <p class="title is-1">{{ config.title }}</p>
     <p class="subtitle">{{ config.description}}</p>
   </div>
 </section>
+{% endblock %}
+{% set allPages = list.getAllFiles() %}
+{% set p = makePagination(allPages) %}
+{% block content %}
+{# content {{ allPages.length }} #}
+{% if page.list_page %}
+{{ pagesList( page.list_page) }}
+{% endif %}
 {% endblock %}

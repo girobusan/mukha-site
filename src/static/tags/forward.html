@@ -11,6 +11,7 @@ also experimental theme
 with some css" />
   <link href="../_theme/style.css" rel="stylesheet">
   <script src="../_theme/navbar.js"></script>
+  <script src="../_theme/masonry.js"></script>
 </head>
 
 <body>
@@ -41,28 +42,112 @@ with some css" />
 </div>
   </div>
 </nav>
-<div class="container my-6 px-3 is-max-desktop">
-  
-<h1 class="title is-1">forward</h1>
+<div class="container my-6 px-3 ">
+<h1 class="title is-1">Tag: forward</h1>
+<div class="tags">
+</div>
 
-  <div class="content mb-6">
-    
+
+<script defer>
+  window.masonry.init({
+    container: "#pagesList",
+    bySize: true,
+    countFn: (e) => {
+      return Math.floor(e.getBoundingClientRect().width / 300) || 1;
+    }
+  })
+</script>
+<div class="m-page-list columns" id="pagesList">
+  <div class="card cell">
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../docs/which_women.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <a class="title is-5" href="../docs/which_women.html">classroom influence</a>
+      <div class="tags">
+        <!--play | forward | -->
+        <a class="tag" href="play.html">play</a>
+        <!--forward | forward | -->
+        <span class="tag" style="border:1px solid gray">forward</span>
+        <!--paper | forward | -->
+        <a class="tag" href="paper.html">paper</a>
+      </div>
+      <div class="is-size-7"><p>settlers neck produce frozen policeman real spite frighten leather but water school join his what loss fox afternoon affect smaller theory structure because control guide flame actually jet solve contain each both soil earn zulu dawn older simple lose quite final tone taught harbor desert equipment pool sail laid luck popular slow who</p>
+</div>
+    </div>
+
   </div>
+  <div class="card cell">
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../docs/transportation_organized.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <a class="title is-5" href="../docs/transportation_organized.html">soon</a>
+      <div class="tags">
+        <!--forward | forward | -->
+        <span class="tag" style="border:1px solid gray">forward</span>
+        <!--play | forward | -->
+        <a class="tag" href="play.html">play</a>
+        <!--love | forward | -->
+        <a class="tag" href="love.html">love</a>
+        <!--part | forward | -->
+        <a class="tag" href="part.html">part</a>
+      </div>
+      <div class="is-size-7"><p>tune stand dollar back broke job pale driven lonely four daily salt something fought memory fire through spirit choose herd compass each discover clothing exclaimed pocket shop grass flies various remove aloud wide his herd guide pen difference eager worried bar flies born tomorrow lack roll complete stared fight ready as bush boy remain load thread piece label her early weight stove upward material earn practice island behind game round daughter worse indicate cat money apartment yard activity community did rays count heat use card thin such principle railroad fair which</p>
+</div>
+    </div>
 
+  </div>
+  <div class="card cell">
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../docs/underline_combination.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
+    <div class="card-content">
+      <a class="title is-5" href="../docs/underline_combination.html">rubber children accurate</a>
+      <div class="tags">
+        <!--swept | forward | -->
+        <a class="tag" href="swept.html">swept</a>
+        <!--include | forward | -->
+        <a class="tag" href="include.html">include</a>
+        <!--manner | forward | -->
+        <a class="tag" href="manner.html">manner</a>
+        <!--forward | forward | -->
+        <span class="tag" style="border:1px solid gray">forward</span>
+      </div>
+      <div class="is-size-7"><p>arrow compass company met possible bear blew settle forty bad article independent plastic press scientific pride die about letter hide soil troops prevent difficulty characteristic problem deeply nest cowboy bicycle shelter rate produce boat dull touch couple base paper special hard tears his handle till soap buried map asleep environment suppose origin fly rocket swam expect rocky unhappy note because gold constantly am half given depth recall nor hill term discussion blue health brother wherever greatly deep lie straw hearing cap just sun zero clothing interior accident lady food material deer applied coast route better tales air new art age pictured grow continued by mistake struck condition production tune happened rose standard clothing twelve slow divide own struggle activity thrown hung behind believed jungle call changing green reader</p>
+</div>
+    </div>
 
+  </div>
+</div>
 
 </div>
-pagination
-<footer class="footer">
+<footer class="footer has-background-dark mt-auto" style="color: silver">
   <div class="content">
-    <div class="container is-max-desktop px-3">
-      <p>
-        <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>.
-        The source code is licensed
-        <a href="https://opensource.org/license/mit">MIT</a>. The
-        website content is licensed
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0//">CC BY NC SA 4.0</a>.
-      </p>
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="is-flex-tablet is-flex-direction-row is-justify-content-space-between">
+        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem"><p>
+Example site.
+</p>
+<ul>
+<li><a href="../rss.xml">RSS</a></li>
+<li><a href="../atom.xml">Atom</a></li>
+</ul></div>
+        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem"><p>
+All rights are copyrighted,<br>
+from the long time ago<br>
+to thhe distant future
+</p></div>
+        <div class="col"><p>
+That's all, folks
+</p></div>
+      </div>
     </div>
   </div>
 </footer>

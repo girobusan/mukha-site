@@ -1,9 +1,11 @@
 {% set menu = list.getNearDirs("/index.html") %}
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
+    {% if not page.file.path.startsWith("/index") %}
     <a class="navbar-item has-text-weight-bold" href="/index.html">
       {{ config.title }}
     </a>
+    {% endif %}
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
       <span aria-hidden="true"></span>
