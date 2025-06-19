@@ -1,3 +1,3 @@
 # Mukha site
 
-Put `mukha.js` to `src` directory before use.
+Install or `link` mukha-ssg before use.
