@@ -38,7 +38,8 @@ async function watchSite() {
 }
 
 async function watchAll() {
-  return parallel(watchCSS, watchSite);
+  watchCSS();
+  watchSite();
 }
 
 exports.watchCSS = watchCSS;
