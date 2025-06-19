@@ -2,7 +2,7 @@
 {% from "parts/macro.njk" import pagesList %}
 
 {% block top %}
-<section class="hero is-primary is-medium">
+<section class="hero is-primary {% if page.page_number < 2 %}is-medium{% endif %}">
   <div class="hero-body">
     <p class="title is-1">{{ config.title }}</p>
     <p class="subtitle">{{ config.description}}</p>
