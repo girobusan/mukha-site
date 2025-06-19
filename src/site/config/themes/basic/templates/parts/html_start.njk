@@ -5,7 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ meta.title }}::{{ config.title }}</title>
-  <link href="/_themes/basic/style.css" rel="stylesheet">
+  <meta property="og:title" content="{{ meta.title}}" />
+  <meta property="og:description" content="{%- if meta.excerpt -%}
+      {{ meta.excerpt | striptags -}}
+      {% else %}{{ config.description}}{% endif %}" />
+  <link href="/_theme/style.css" rel="stylesheet">
+  <script src="/_theme/navbar.js"></script>
 </head>
 
 <body>

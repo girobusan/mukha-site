@@ -1,25 +1,10 @@
 {% include "parts/html_start.njk" %}
 {% include "parts/navbar.njk" %}
+{% from "parts/macro.njk" import bigArticleHeader , fileListEntry %}
 <div class="container my-6 px-3 is-max-desktop">
-  {% set bcr = list.getBreadcrumbs(page.file.path) %}
-  {% if bcr.length>1 %}
-  crumbs
-  {% for bc in bcr %}
-  bc
-  {% endfor %}
-  {% endif %}
-  <h1 class=" title is-1">{{ meta.title}}</h1>
-
-  {% if meta.tags %}
-  <div class="tags">
-    {% for tag in meta.tags %}
-    <a class="tag is-primary" href="{{ tag.file.path }}">{{ tag.meta.title }}</a>
-    {% endfor %}
-  </div>
-  {% endif %}
+  {{ bigArticleHeader(meta.title , meta.tags , meta.date) }}
   <div class="content mb-6">
     {{ html }}
-
     {% if meta.date %}
     {% if meta.date.getFullYear() > 1980 %}
     <small class="">&mdash; {{ util.niceDate(meta.date)}}</small>
@@ -27,23 +12,14 @@
     {% endif %}
   </div>
 
-  {% if page.list %}
-  <ul>
-    {% for pl in page.list %}
-    <li><a href="{{ pl.file.path }}">{{ pl.meta.title}}</a>{{ p.meta.excerpt}}</li>
-    {% endfor %}
-  </ul>
-
-  {% endif %}
 
   {% if page.file.path.endsWith("index.html") and not page.list %}
   {% set pls = list.getNearFiles(page.file.path) %}
-
-  <ul>
+  <div>
     {% for pl in pls %}
-    <li><a href="{{ pl.file.path }}">{{ pl.meta.title}}</a>{{ p.meta.excerpt}}</li>
+    {{ fileListEntry(pl) }}
     {% endfor %}
-  </ul>
+  </div>
 
   {% endif %}
 

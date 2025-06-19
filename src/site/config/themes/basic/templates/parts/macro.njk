@@ -1,0 +1,25 @@
+{% macro bigArticleHeader(title , tags , date) %}
+
+<h1 class="title is-1">{{ title}}</h1>
+{% if tags %}
+<div class="tags">
+  {% for tag in tags %}
+  <a class="tag is-primary is-medium" href="{{ tag.file.path }}">{{ tag.meta.title }}</a>
+  {% endfor %}
+</div>
+{% endif %}
+{% endmacro%}
+
+{% macro fileListEntry(page) %}
+<div class="file_list_entry">
+  <h2 class="is-size-3"><a href="{{ page.file.path }}">{{ page.meta.title }}</a></h2>
+  {% if page.meta.tags %}
+  <div class="tags">
+    {% for tag in page.meta.tags %}
+    <a class="tag is-primary is-small" href="{{ tag.file.path }}">{{ tag.meta.title }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <div>{{page.meta.excerpt}}</div>
+</div>
+{% endmacro %}

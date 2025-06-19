@@ -1,3 +1,10 @@
+{% from "parts/pagination.njk" import pagination %}
+pagination
+{% if page.page_count %}
+{% if page.page_count>1 %}
+{{ pagination( page.page , page.page_links)}}
+{% endif %}
+{% endif %}
 <footer class="footer">
   <div class="content">
     <div class="container is-max-desktop px-3">

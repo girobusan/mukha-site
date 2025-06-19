@@ -148,6 +148,7 @@ path,op
 /tags/sold.html,processing
 /pix/bear1.jpg,site_assets
 /pix/default.jpg,site_assets
-/_themes/basic/bulma.min.css,theme_assets
-/_themes/basic/style.css,theme_assets
-/_themes/basic/txt/readme.txt,theme_assets
+/_theme/bulma.min.css,theme_assets
+/_theme/navbar.js,theme_assets
+/_theme/style.css,theme_assets
+/_theme/txt/readme.txt,theme_assets

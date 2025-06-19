@@ -6,7 +6,7 @@ const sourcemaps = require("gulp-sourcemaps");
 var exec = require("child_process").exec;
 
 async function buildSite(cb) {
-  exec("node mukha.js", { cwd: "src" }, (err, out, stderr) => {
+  exec("mukha-ssg", { cwd: "src" }, (err, out, stderr) => {
     // console.log(out);
     stderr && console.log(stderr);
     err && console.error(err);
@@ -26,6 +26,16 @@ async function watchCSS() {
   return watch(["src/scss/*.scss"], buildCSS);
 }
 
+async function watchSite() {
+  return watch(["src/site/"], { delay: 500 }, buildSite);
+}
+
+async function watchAll() {
+  return watch(["src/scss/*.scss", "src/site"], series(buildCSS, buildSite));
+}
+
 exports.watchCSS = watchCSS;
+exports.watchSite = watchSite;
 exports.css = buildCSS;
 exports.buildSite = buildSite;
+exports.watchAll = watchAll;

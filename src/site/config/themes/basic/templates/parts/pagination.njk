@@ -1,0 +1,14 @@
+{% macro pagination(currentPage , links) %}
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <ul class="pagination-list">
+    {# just list all pages #}
+    {% set idx = 1 %}
+    {% for link in links %}
+    <li>
+      < a href="{{ link }}" class="pagination-link {% if idx==currentPage %}is-current{% endif %}">{{ idx }}</a>
+    </li>
+    {% set idx=idx+1 %}
+    {% endfor %}
+  </ul>
+</nav>
+{% endmacro %}
