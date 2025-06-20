@@ -11,7 +11,7 @@
 </script>
 <div class="m-page-list columns" id="pagesList">
   {% for P in plist %}
-  <div class="card cell">
+  <div class="card cell {% if not P.meta.image %}is-outlined m-no-img-card{% endif %}">
     <div class="card-content">
       <a class="title is-5" href="{{ P.file.path }}">{{P.meta.title}}</a>
       {% if P.meta.tags %}
@@ -29,11 +29,13 @@
       <div class="is-size-7">{{P.meta.excerpt}}</div>
     </div>
 
+    {% if P.meta.image %}
     <div class="card-image">
-      <figure class="image is-16by9 is-fullwidth">
-        <a href="{{ P.file.path }}"><img src="/pix/bear1.jpg"></a>
+      <figure class="image is-fullwidth">
+        <a href="{{ P.file.path }}"><img src="{{P.meta.image}}"></a>
       </figure>
     </div>
+    {% endif %}
   </div>
   {% endfor %}
 </div>

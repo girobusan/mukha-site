@@ -5,11 +5,13 @@ $brown: #444;
 $beige-light: #d0d1cd;
 $beige-lighter: #eff0eb;
 
+$my-primary: #13af61;
+
 // Override global Sass variables from the /utilities folder
 @use "bulma/sass/utilities" with ($family-primary: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
   /* $grey-dark: $brown, */
   /* $grey-light: $beige-light, */
-  $primary: #13af61,
+  $primary: $my-primary,
   $link: #5bff2a,
   $control-border-width: 2px);
 //
@@ -99,4 +101,8 @@ body {
   a:visited {
     color: white;
   }
+}
+
+.card.is-outlined {
+  border: 1px solid $my-primary;
 }

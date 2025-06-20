@@ -18,7 +18,7 @@
   </div>
 
 
-  {% if page.file.path.endsWith("index.html") and not page.list %}
+  {% if page.index and not page.list %}
   {% set pls = list.getNearFiles(page.file.path) %}
   {% endif %}
 

@@ -1,4 +1,4 @@
-{% if page.file.path.startsWith("/index") %}
+{% if page.file.path.startsWith("/index") and page.index %}
 {% extends "cover.njk" %}
 {% elseif page.tag %}
 {% extends "tag.njk" %}

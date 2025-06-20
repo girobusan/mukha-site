@@ -18706,3 +18706,7 @@ body {
 .m-footer-column a:visited {
   color: white;
 }
+
+.card.is-outlined {
+  border: 1px solid #13af61;
+}
