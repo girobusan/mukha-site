@@ -17,7 +17,7 @@ with some css" />
 <body>
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <a class="navbar-item has-text-weight-bold" href="../index.html">
+    <a class="navbar-item has-text-weight-bold has-text-white" href="../index.html">
       Example site
     </a>
 
@@ -29,25 +29,26 @@ with some css" />
     </a>
   </div>
 
-  <div id="navbarMenu" class="navbar-menu">
+  <div id="navbarMenu" class="navbar-menu has-text-white">
     <div class="navbar-start"></div>
 
     <div class="navbar-end">
-      <a class="navbar-item" href="../articles/index.html">
+      <a class="navbar-item has-text-white" href="../articles/index.html">
         Articles
       </a>
-      <a class="navbar-item" href="index.html">
+      <a class="navbar-item has-text-white" href="index.html">
         Tags
       </a>
 </div>
   </div>
 </nav>
 <div class="container my-6 px-3 ">
-<h1 class="title is-1">Tag: part</h1>
+<div class="container is-max-tablet my-6 px3">
+  <h1 class="title is-1">Tag: part</h1>
 <div class="tags">
 </div>
 
-
+</div>
 <script defer>
   window.masonry.init({
     container: "#pagesList",
@@ -59,11 +60,6 @@ with some css" />
 </script>
 <div class="m-page-list columns" id="pagesList">
   <div class="card cell">
-    <div class="card-image">
-      <figure class="image is-16by9 is-fullwidth">
-        <a href="../docs/vowel_cage.html"><img src="../pix/bear1.jpg"></a>
-      </figure>
-    </div>
     <div class="card-content">
       <a class="title is-5" href="../docs/vowel_cage.html">see first box</a>
       <div class="tags">
@@ -80,13 +76,13 @@ with some css" />
 </div>
     </div>
 
-  </div>
-  <div class="card cell">
     <div class="card-image">
       <figure class="image is-16by9 is-fullwidth">
-        <a href="../articles/swam_someone.html"><img src="../pix/bear1.jpg"></a>
+        <a href="../docs/vowel_cage.html"><img src="../pix/bear1.jpg"></a>
       </figure>
     </div>
+  </div>
+  <div class="card cell">
     <div class="card-content">
       <a class="title is-5" href="../articles/swam_someone.html">copper smoke cheese</a>
       <div class="tags">
@@ -101,13 +97,13 @@ with some css" />
 </div>
     </div>
 
-  </div>
-  <div class="card cell">
     <div class="card-image">
       <figure class="image is-16by9 is-fullwidth">
-        <a href="../docs/transportation_organized.html"><img src="../pix/bear1.jpg"></a>
+        <a href="../articles/swam_someone.html"><img src="../pix/bear1.jpg"></a>
       </figure>
     </div>
+  </div>
+  <div class="card cell">
     <div class="card-content">
       <a class="title is-5" href="../docs/transportation_organized.html">soon</a>
       <div class="tags">
@@ -124,13 +120,13 @@ with some css" />
 </div>
     </div>
 
-  </div>
-  <div class="card cell">
     <div class="card-image">
       <figure class="image is-16by9 is-fullwidth">
-        <a href="../docs/to_needs.html"><img src="../pix/bear1.jpg"></a>
+        <a href="../docs/transportation_organized.html"><img src="../pix/bear1.jpg"></a>
       </figure>
     </div>
+  </div>
+  <div class="card cell">
     <div class="card-content">
       <a class="title is-5" href="../docs/to_needs.html">sport spite</a>
       <div class="tags">
@@ -147,13 +143,13 @@ with some css" />
 </div>
     </div>
 
-  </div>
-  <div class="card cell">
     <div class="card-image">
       <figure class="image is-16by9 is-fullwidth">
-        <a href="../docs/young_while.html"><img src="../pix/bear1.jpg"></a>
+        <a href="../docs/to_needs.html"><img src="../pix/bear1.jpg"></a>
       </figure>
     </div>
+  </div>
+  <div class="card cell">
     <div class="card-content">
       <a class="title is-5" href="../docs/young_while.html">winter youth western</a>
       <div class="tags">
@@ -170,6 +166,11 @@ with some css" />
 </div>
     </div>
 
+    <div class="card-image">
+      <figure class="image is-16by9 is-fullwidth">
+        <a href="../docs/young_while.html"><img src="../pix/bear1.jpg"></a>
+      </figure>
+    </div>
   </div>
 </div>
 
@@ -177,20 +178,22 @@ with some css" />
 <footer class="footer has-background-dark mt-auto" style="color: silver">
   <div class="content">
     <div class="container is-max-desktop px-3 is-size-7">
-      <div class="is-flex-tablet is-flex-direction-row is-justify-content-space-between">
-        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem"><p>
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          <p>
 Example site.
 </p>
 <ul>
 <li><a href="../rss.xml">RSS</a></li>
 <li><a href="../atom.xml">Atom</a></li>
 </ul></div>
-        <div class="col" style="margin-right: 2rem;margin-bottom: 2rem"><p>
+        <div class="column m-footer-column py-0 has-text-white content">
+          <p>
 All rights are copyrighted,<br>
 from the long time ago<br>
 to thhe distant future
 </p></div>
-        <div class="col"><p>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
 That's all, folks
 </p></div>
       </div>

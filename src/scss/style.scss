@@ -7,11 +7,10 @@ $beige-lighter: #eff0eb;
 
 // Override global Sass variables from the /utilities folder
 @use "bulma/sass/utilities" with ($family-primary: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-  $grey-dark: $brown,
-  $grey-light: $beige-light,
-  $primary: $purple,
-  /* $card-radius: 0.25rem, */
-  $link: $pink,
+  /* $grey-dark: $brown, */
+  /* $grey-light: $beige-light, */
+  $primary: #13af61,
+  $link: #5bff2a,
   $control-border-width: 2px);
 //
 
@@ -23,6 +22,7 @@ $beige-lighter: #eff0eb;
 /* @forward "bulma/sass/components/modal"; */
 @forward "bulma/sass/components/navbar";
 @forward "bulma/sass/components/pagination";
+@forward "bulma/sass/elements/block";
 @forward "bulma/sass/elements/button";
 @forward "bulma/sass/elements/icon";
 @forward "bulma/sass/elements/content";
@@ -35,6 +35,7 @@ $beige-lighter: #eff0eb;
 @forward "bulma/sass/layout/footer";
 @forward "bulma/sass/layout/hero";
 @forward "bulma/sass/helpers/";
+@forward "bulma/sass/helpers/color";
 @forward "bulma/sass/helpers/flexbox";
 @forward "bulma/sass/grid/";
 // Import the themes so that all CSS variables have a value
@@ -53,4 +54,40 @@ body {
 body {
   display: flex;
   flex-direction: column;
+}
+
+.m-columnized {
+  column-count: 3;
+
+  @media (max-width: 800px) {
+    column-count: 2;
+  }
+}
+
+.m-page-list {
+  &>.card {
+    max-width: 50%;
+
+    @media (max-width: 800px) {
+      max-width: 100%;
+    }
+  }
+
+  .column {
+    max-width: 50%;
+
+    @media (max-width: 800px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.m-footer-column {
+  border-left: 1px solid gray;
+  margin-bottom: 2rem !important;
+
+  a,
+  a:visited {
+    color: white;
+  }
 }

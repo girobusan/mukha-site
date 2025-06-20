@@ -1,6 +1,8 @@
 const { src, dest, watch, series, parallel } = require("gulp");
 const rename = require("gulp-rename");
 const postcss = require("gulp-postcss");
+const purgecss = require("gulp-purgecss");
+var uglify = require("gulp-uglify");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 var exec = require("child_process").exec;
@@ -24,7 +26,8 @@ async function buildCSS() {
 
 async function productionCSS() {
   return src("src/scss/style.scss")
-    .pipe(sourcemaps.init())
+    .pipe(sass().on("error", sass.logError))
+    .pipe(purgecss({ content: ["src/static/**/*.html"] }))
     .pipe(sass({ style: "compressed" }).on("error", sass.logError))
     .pipe(dest("src/site/config/themes/basic/assets/"));
 }

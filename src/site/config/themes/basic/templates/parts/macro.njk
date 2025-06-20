@@ -9,7 +9,7 @@
 {% endif %}
 {% endmacro%}
 
-{% macro fileListEntry(page) %}
+{% macro _fileListEntry(page) %}
 <div class="file_list_entry">
   <h2 class="is-size-3"><a href="{{ page.file.path }}">{{ page.meta.title }}</a></h2>
   {% if page.meta.tags %}
@@ -23,42 +23,10 @@
 </div>
 {% endmacro %}
 
-{% macro pagesList(plist, where) %}
-<script defer>
-  window.masonry.init({
-    container: "#pagesList",
-    bySize: true,
-    countFn: (e) => {
-      return Math.floor(e.getBoundingClientRect().width / 300) || 1;
-    }
-  })
-</script>
-<div class="m-page-list columns" id="pagesList">
-  {% for P in plist %}
-  <div class="card cell">
-    <div class="card-image">
-      <figure class="image is-16by9 is-fullwidth">
-        <a href="{{ P.file.path }}"><img src="/pix/bear1.jpg"></a>
-      </figure>
-    </div>
-    <div class="card-content">
-      <a class="title is-5" href="{{ P.file.path }}">{{P.meta.title}}</a>
-      {% if P.meta.tags %}
-      <div class="tags">
-        {% for T in P.meta.tags %}
-        <!--{{T.tag}} | {{where.tag}} | {{page.title}}-->
-        {% if T.tag == where.tag %}
-        <span class="tag" style="border:1px solid gray">{{T.meta.title}}</span>
-        {% else %}
-        <a class="tag" href="{{T.file.path}}">{{T.meta.title}}</a>
-        {% endif %}
-        {% endfor %}
-      </div>
-      {% endif %}
-      <div class="is-size-7">{{P.meta.excerpt}}</div>
-    </div>
 
-  </div>
-  {% endfor %}
-</div>
+
+{% macro smallPageDate(p) %}
+{% set year = p.meta.date.getFullYear() %}
+{% set month = ( 100 + (p.meta.date.getMonth()+1) ).toString().substring(1) %}
+<div class="is-size-7">{{year}}.{{month}}.{{p.meta.date.getDate()}}</div>
 {% endmacro %}

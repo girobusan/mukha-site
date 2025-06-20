@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ meta.title }}::{{ config.title }}</title>
   <meta property="og:title" content="{{ meta.title}}" />
+  {% if page.meta.image or config.image %}
+  {% if page.meta.image %}
+  {% set img = page.meta.image%}
+  {% else %}
+  {% set img = config.image %}
+  {% endif %}
+  <meta property="og:image" content="{{config.url}}{{img}}" />
+  {% endif %}
   <meta property="og:description" content="{%- if meta.excerpt -%}
       {{ meta.excerpt | striptags -}}
       {% else %}{{ config.description}}{% endif %}" />

@@ -1,10 +1,17 @@
+{% set WIDE= true %}
 {% extends "empty.njk" %}
-{% from "parts/macro.njk" import bigArticleHeader, pagesList %}
+{% from "parts/macro.njk" import bigArticleHeader %}
+{% from "parts/page_lists.njk" import listAsTitles %}
+{% from "parts/page_lists.njk" import listAsCards as pagesList %}
 
 {% block content %}
-{{ bigArticleHeader("Tag: " + meta.title , [] , 0)}}
-
-{% set p = makePagination(page.list) %}
+<div class="container is-max-tablet my-6 px3">
+  {{ bigArticleHeader("Tag: " + meta.title , [] , 0)}}
+  {% if html %}
+  <div class="content">{{html}}</div>
+  {% endif %}
+</div>
+{% set p = makePagination(page.list , 20) %}
 {% if page.list_page %}
 {{ pagesList( page.list_page , page) }}
 {% endif %}

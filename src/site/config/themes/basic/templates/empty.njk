@@ -1,9 +1,8 @@
 {% include "parts/html_start.njk" %}
 {% include "parts/navbar.njk" %}
-{% from "parts/macro.njk" import bigArticleHeader , fileListEntry %}
 {% block top %}
 {% endblock %}
-<div class="container my-6 px-3 ">
+<div class="container my-6 px-3 {% if not WIDE %}is-max-tablet{% endif %}">
   {% block content %}
 
   {% endblock %}

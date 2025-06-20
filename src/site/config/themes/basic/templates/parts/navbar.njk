@@ -2,7 +2,7 @@
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     {% if not page.file.path.startsWith("/index") %}
-    <a class="navbar-item has-text-weight-bold" href="/index.html">
+    <a class="navbar-item has-text-weight-bold has-text-white" href="/index.html">
       {{ config.title }}
     </a>
     {% endif %}
@@ -15,7 +15,7 @@
     </a>
   </div>
 
-  <div id="navbarMenu" class="navbar-menu">
+  <div id="navbarMenu" class="navbar-menu has-text-white">
     <div class="navbar-start">
       {#-
       <!--<div class="navbar-item has-dropdown is-hoverable">
@@ -43,7 +43,7 @@
 
     <div class="navbar-end">
       {% for item in menu %}
-      <a class="navbar-item" href="{{ item.file.path }}">
+      <a class="navbar-item has-text-white" href="{{ item.file.path }}">
         {{ item.meta.title}}
       </a>
       {% endfor %}
