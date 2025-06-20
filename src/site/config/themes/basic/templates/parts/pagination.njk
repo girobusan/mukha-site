@@ -27,9 +27,10 @@
         {% endfor %}
         {% else %}
 
-        <li>
+        {#<li>
           <a href="{{ links[0] }}" class="pagination-link ">{{1}}</a>
-        </li>
+        </li>#}
+        {# first page #} {{ pagelnk( links[0] , 1 , currentPage )}}
 
         <li><span class="pagination-ellipsis">&hellip;</span></li>
 

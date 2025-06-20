@@ -86,6 +86,14 @@ body {
   border-left: 1px solid gray;
   margin-bottom: 2rem !important;
 
+  &:last-child {
+    border-right: 1px solid gray;
+  }
+
+  @media (max-width: 800px) {
+    border: none;
+  }
+
   a,
   a:visited {
     color: white;

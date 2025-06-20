@@ -18611,6 +18611,14 @@ body {
   border-left: 1px solid gray;
   margin-bottom: 2rem !important;
 }
+.m-footer-column:last-child {
+  border-right: 1px solid gray;
+}
+@media (max-width: 800px) {
+  .m-footer-column {
+    border: none;
+  }
+}
 .m-footer-column a,
 .m-footer-column a:visited {
   color: white;
