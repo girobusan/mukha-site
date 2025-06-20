@@ -2,9 +2,12 @@
 {% include "parts/navbar.njk" %}
 {% from "parts/macro.njk" import bigArticleHeader %}
 
+{% set bcr=list.getBreadcrumbs(page , 1) %}
+
 {% from "parts/page_lists.njk" import listAsTitles %}
 <div class="container my-6 px-3 is-max-tablet">
-  {{ bigArticleHeader(meta.title , meta.tags , meta.date) }}
+
+  {{ bigArticleHeader(page , bcr) }}
   <div class="content mb-6">
     {{ html }}
     {% if meta.date %}

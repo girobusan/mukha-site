@@ -1,8 +1,22 @@
-{% macro bigArticleHeader(title , tags , date) %}
-<h1 class="title is-1">{{ title}}</h1>
-{% if tags %}
+{% macro breadcrumbs(bclist) %}
+{% if bclist.length>0 %}
+<nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="/index.html">🏠</a></li>
+    {% for bc in bclist %}
+    <li><a href="{{bc.file.path}}">{{ bc.meta.title }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}
+{% endmacro %}
+
+{% macro bigArticleHeader(pg , bcr) %}
+{{ breadcrumbs(bcr) }}
+<h1 class="title is-1">{{ pg.meta.title}}</h1>
+{% if pg.meta.tags %}
 <div class="tags">
-  {% for tag in tags %}
+  {% for tag in pg.meta.tags %}
   <a class="tag is-medium" href="{{ tag.file.path }}">{{ tag.meta.title }}</a>
   {% endfor %}
 </div>

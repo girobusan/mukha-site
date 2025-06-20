@@ -4,9 +4,10 @@
 {% from "parts/page_lists.njk" import listAsTitles %}
 {% from "parts/page_lists.njk" import listAsCards as pagesList %}
 
+{% set bcr=list.getBreadcrumbs(page , 1) %}
 {% block content %}
 <div class="container is-max-tablet my-6 px3">
-  {{ bigArticleHeader("Tag: " + meta.title , [] , 0)}}
+  {{ bigArticleHeader(page , bcr)}}
   {% if html %}
   <div class="content">{{html}}</div>
   {% endif %}
