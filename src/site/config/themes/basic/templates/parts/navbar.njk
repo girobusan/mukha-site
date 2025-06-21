@@ -1,4 +1,4 @@
-{% set menu = list.getNearDirs("/index.html") %}
+{% set menu = list.getNearDirs("/index.html").sortByMeta("menuitem" , true , false) %}
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     {% if not page.file.path.startsWith("/index") %}

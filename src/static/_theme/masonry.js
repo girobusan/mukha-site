@@ -99,7 +99,7 @@ window.masonry = {
     //throttle
     window.setTimeout(() => {
       window.addEventListener("resize", M.doColumns);
-      M.doColumns();
-    }, 300);
+      //M.doColumns();
+    }, 200);
   },
 };

@@ -6,9 +6,16 @@
         <description>The example site for Mukha SSG
 also experimental theme
 with some css</description>
-        <lastBuildDate>Fri, 20 Jun 2025 17:21:40 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 21 Jun 2025 15:31:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Documentation]]></title>
+            <link>https://example.site/docs/index.html</link>
+            <guid isPermaLink="false">https://example.site/docs/index.html</guid>
+            <pubDate>Sat, 21 Jun 2025 10:30:00 GMT</pubDate>
+            <description><![CDATA[Docs]]></description>
+        </item>
         <item>
             <title><![CDATA[Welcome page]]></title>
             <link>https://example.site/index.html</link>
@@ -235,14 +242,6 @@ with some css</description>
             <guid isPermaLink="false">https://example.site/articles/yard_writing.html</guid>
             <pubDate>Mon, 16 Jun 2025 06:54:01 GMT</pubDate>
             <description><![CDATA[broad house married vapor tin gain race nor found throat connected action than listen pay frame replace create exist answer pipe merely seldom who effect ran thy identity lay pig here discover flag bell corner music positive view combine ought leader forgot customs answer work teach forget roar bend shore sink tool birds speed store gone supper root toy next slept sentence ill time hung surrounded adult thumb facing valuable consist aid equally team mud toy bag steep new seldom long slept]]></description>
-            <enclosure url="https://example.site/pix/default.jpg" length="0" type="image/jpg"/>
-        </item>
-        <item>
-            <title><![CDATA[recall package]]></title>
-            <link>https://example.site/articles/both_useful.html</link>
-            <guid isPermaLink="false">https://example.site/articles/both_useful.html</guid>
-            <pubDate>Mon, 16 Jun 2025 06:54:01 GMT</pubDate>
-            <description><![CDATA[local pick eight needed president flower position duty short trouble garden stems star title running alike result trick she realize shelf wrapped state figure serve complete thank told feature of clearly board whether nothing easy thick at firm instance fellow cabin tune swim pond fix finish develop early popular gas dog substance interest won facing aware division history collect power older queen straw deal parallel some fireplace heard theory sing silence post adjective poem card lonely needs dress plenty serious meet more cook noise snow bite teacher bean shout rapidly general rhythm clothes nervous meal ate habit discuss pig]]></description>
             <enclosure url="https://example.site/pix/default.jpg" length="0" type="image/jpg"/>
         </item>
     </channel>
