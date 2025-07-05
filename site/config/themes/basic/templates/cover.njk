@@ -1,0 +1,21 @@
+{% set WIDE=true %}
+{% extends "empty.njk" %}
+{% from "parts/page_lists.njk" import listAsCards as pagesList %}
+
+{% block top %}
+<section class="hero is-primary has-text-white  {% if page.page_number < 2 %}is-medium{% endif %}">
+  <div class="hero-body">
+    <p class="title is-1 has-text-white">{{ config.title }}{% if page.page_number>1 %} ({{page.page_number}}/{{
+      page.page_links.length}}){% endif %}</p>
+    <p class="subtitle has-text-white">{{ config.description}}</p>
+  </div>
+</section>
+{% endblock %}
+{% set allPages = list.getAllFiles("/index.html") %}
+{% set p = splitToPages(allPages , 10) %}
+{% block content %}
+{# content {{ allPages.length }} #}
+{% if page.list_page %}
+{{ pagesList( page.list_page) }}
+{% endif %}
+{% endblock %}

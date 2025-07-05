@@ -1,6 +1,7 @@
 *.vim
 src/random_pages/out
 src/mukha.js
+static/
 .DS_Store
 *.vim
 *.LICENSE.txt

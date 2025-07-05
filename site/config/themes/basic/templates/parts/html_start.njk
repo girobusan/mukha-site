@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ meta.title }}::{{ config.title }}</title>
+  <meta property="og:title" content="{{ meta.title}}" />
+  {% if page.meta.image or config.image %}
+  {% if page.meta.image %}
+  {% set img = page.meta.image%}
+  {% else %}
+  {% set img = config.image %}
+  {% endif %}
+  <meta property="og:image" content="{{config.url}}{{img}}" />
+  {% endif %}
+  <meta property="og:description" content="{%- if meta.excerpt -%}
+      {{ meta.excerpt | striptags -}}
+      {% else %}{{ config.description}}{% endif %}" />
+  <link href="/_theme/style.css" rel="stylesheet">
+  <link href="/_theme/highlight/styles/atom-one-light.css" rel="stylesheet">
+  <script src="/_theme/navbar.js">
+  </script>
+  <script src="/_theme/masonry.js"></script>
+  <script src="/_theme/highlight/highlight.min.js"></script>
+</head>
+
+<body>

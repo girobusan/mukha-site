@@ -1,0 +1,108 @@
+// Set your brand colors
+$purple: #8a4d76;
+$pink: #fa7c91;
+$brown: #444;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+
+$my-primary: #13af61;
+
+// Override global Sass variables from the /utilities folder
+@use "bulma/sass/utilities" with ($family-primary: 'system-ui,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
+  /* $grey-dark: $brown, */
+  /* $grey-light: $beige-light, */
+  $primary: $my-primary,
+  $link: #5bff2a,
+  $control-border-width: 2px);
+//
+
+// Import the components you need
+@forward "bulma/sass/base";
+/* @forward "bulma/sass/" */
+@forward "bulma/sass/components/card" with ($card-radius: 0.25rem,
+  $card-content-padding: 1rem);
+/* @forward "bulma/sass/components/modal"; */
+@forward "bulma/sass/components/navbar";
+@forward "bulma/sass/components/pagination";
+@forward "bulma/sass/components/breadcrumb";
+@forward "bulma/sass/elements/block";
+@forward "bulma/sass/elements/button";
+@forward "bulma/sass/elements/icon";
+@forward "bulma/sass/elements/content";
+@forward "bulma/sass/elements/title";
+@forward "bulma/sass/elements/image";
+/* @forward "bulma/sass/elements/notification"; */
+/* @forward "bulma/sass/elements/progress"; */
+@forward "bulma/sass/elements/tag";
+@forward "bulma/sass/layout/container";
+@forward "bulma/sass/layout/footer";
+@forward "bulma/sass/layout/hero";
+@forward "bulma/sass/helpers/";
+@forward "bulma/sass/helpers/color";
+@forward "bulma/sass/helpers/flexbox";
+@forward "bulma/sass/grid/";
+// Import the themes so that all CSS variables have a value
+@forward "bulma/sass/themes";
+
+html,
+body {
+  height: 100vh;
+  font-size: 18px;
+
+  @media (max-width: 800px) {
+    font-size: 18px;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.m-columnized {
+  column-count: 2;
+
+  @media (max-width: 800px) {
+    column-count: 1;
+  }
+}
+
+.m-page-list {
+  &>.card {
+    max-width: 50%;
+
+    @media (max-width: 800px) {
+      max-width: 100%;
+    }
+  }
+
+  .column {
+    max-width: 50%;
+
+    @media (max-width: 800px) {
+      max-width: 100%;
+    }
+  }
+}
+
+.m-footer-column {
+  border-left: 1px solid gray;
+  margin-bottom: 2rem !important;
+
+  &:last-child {
+    border-right: 1px solid gray;
+  }
+
+  @media (max-width: 800px) {
+    border: none;
+  }
+
+  a,
+  a:visited {
+    color: white;
+  }
+}
+
+.card.is-outlined {
+  border: 1px solid $my-primary;
+}

@@ -8,7 +8,7 @@ const sourcemaps = require("gulp-sourcemaps");
 var exec = require("child_process").exec;
 
 async function buildSite(cb) {
-  exec("mukha-ssg", { cwd: "src" }, (err, out, stderr) => {
+  exec("mukha-ssg -o docs", { cwd: "." }, (err, out, stderr) => {
     // console.log(out);
     stderr && console.log(stderr);
     err && console.error(err);
@@ -16,10 +16,10 @@ async function buildSite(cb) {
   });
 }
 async function buildCSS() {
-  return src("src/scss/style.scss")
+  return src("scss/style.scss")
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
-    .pipe(dest("src/site/config/themes/basic/assets/"))
+    .pipe(dest("site/config/themes/basic/assets/"))
     .pipe(sourcemaps.write("."));
   //.pipe(dest("css/"));
 }
@@ -27,17 +27,21 @@ async function buildCSS() {
 async function productionCSS() {
   return src("src/scss/style.scss")
     .pipe(sass().on("error", sass.logError))
-    .pipe(purgecss({ content: ["src/static/**/*.html"] }))
+    .pipe(purgecss({ content: ["static/**/*.html"] }))
     .pipe(sass({ style: "compressed" }).on("error", sass.logError))
     .pipe(dest("src/site/config/themes/basic/assets/"));
 }
 
 async function watchCSS() {
-  return watch(["src/scss/*.scss"], buildCSS);
+  return watch(["scss/*.scss"], buildCSS);
 }
 
 async function watchSite() {
-  return watch(["src/site/"], { delay: 500 }, buildSite);
+  exec("mukha-ssg -w", { cwd: "." }, (err, out, stderr) => {
+    // console.log(out);
+    stderr && console.log(stderr);
+    err && console.error(err);
+  });
 }
 
 async function watchAll() {
