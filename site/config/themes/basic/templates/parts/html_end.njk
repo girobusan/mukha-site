@@ -1,8 +1,19 @@
 {% from "parts/pagination.njk" import pagination %}
-{% if page.page_count %}
-{% if page.page_count>1 %}
-{{ pagination( page.page_number , page.page_links)}}
-{% endif %}
+{% if page.page_count and page.page_count>1 %}
+<nav class="pagination" role="navigation" aria-label="pagination">
+  {% set paginas = util.paginate() %}
+  <ul class="pagination-list is-justify-content-center">
+    {% for pagina in paginas %}
+    <li>
+      {% if pagina.type!="current" %}
+      <a href="{{pagina.link}}" class="pagination-link">{{pagina.label}}</a>
+      {% else %}
+      <a href="" class="pagination-link is-current">{{pagina.label}}</a>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</nav>
 {% endif %}
 <footer class="footer has-background-dark mt-auto" style="color: silver">
   <div class="content">
