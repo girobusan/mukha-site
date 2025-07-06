@@ -43,7 +43,7 @@ doc: lister_ru
 
 #### getAllWithMeta(name)
 
-Возвращает все страницы, у которых определено заданное поле метаданных
+Возвращает все страницы (lister), у которых определено заданное поле метаданных.
 
 #### getNearFiles( path_to_file)
 
@@ -51,7 +51,7 @@ doc: lister_ru
 
 #### getNearDirs( path_to_file)
 
-То же самое для директорий, т. е. директорий с файлом `index.html`.
+То же самое для директорий, т. е. файлов `index.html`.
 
 #### getAllFiles( path_to_file)
 
