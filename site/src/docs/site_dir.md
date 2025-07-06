@@ -1,6 +1,7 @@
 ---
 title: Структура директории сайта
 doc: site_dir_ru
+excerpt: Что куда класть и зачем
 lang: ru
 ---
 

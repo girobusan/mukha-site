@@ -20,7 +20,7 @@ doc: templating_ru
 
 {% raw %}
 
-```jinja2
+```jinja
 {% if page.file.path.startsWith("/index") and page.index %}
 {% extends "cover.njk" %} {# заглавная страница #}
 {% elseif page.tag %} {# страница тега #}
@@ -40,7 +40,7 @@ doc: templating_ru
 
 {% raw %}
 
-```jinja2
+```jinja
 {{ include("includes/footer.njk") }}
 ```
 

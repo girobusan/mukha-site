@@ -1,6 +1,6 @@
 column1: |-
   <p>
-  Example site.
+  Сделано <strong class="has-text-white">Мухой!</strong>
   </p>
   <ul>
   <li><a href="/rss.xml">RSS</a></li>
@@ -9,12 +9,9 @@ column1: |-
 
 column2: |-
   <p>
-  All rights are copyrighted,<br>
-  from the long time ago<br>
-  to thhe distant future
+  &copy; 2025...
   </p>
 
 column3: |-
   <p>
-  That's all, folks
   </p>

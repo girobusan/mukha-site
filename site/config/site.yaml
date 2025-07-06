@@ -4,9 +4,7 @@ motto: "Делай мухой!"
 url: "https://example.site"
 theme: basic
 description: |-
-  The example site for Mukha SSG
-  also experimental theme
-  with some css
+  Быстрый и простой генератор статичных сайтов.
 #default maximum length of the list;
 #max number of entries on single page
 #of multipage lists
