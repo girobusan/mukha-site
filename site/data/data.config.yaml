@@ -1,0 +1,37 @@
+- task: slugify
+  dataset: examples.movies
+  input_col: name_en
+  output_col: movie_slug
+
+- task: aggregate
+  dataset: examples.movies
+  type: count_u
+  group_by: year
+  input_col: name_en
+  output_col: movies_year
+
+- task: render
+  dataset: examples.movies
+  type: row
+  path: /examples/movies/[movie_slug].html
+  meta:
+    title: "[name_ru]"
+    group: movies
+    tags: "[company], [director_ru]"
+  markdown: |-
+    ### [director_en]
+    - Year: [year]
+    - Rating: [rating_IMDB]
+
+- task: render
+  dataset: examples.movies
+  type: col
+  col: year
+  path: /examples/years/[year].html
+  meta:
+    title: "[year] ([movies_year])"
+    croup: years
+  markdown: |-
+    {% for row in page.local_data %}
+    - [{{ row.name_ru }}](/examples/movies/{{row.movie_slug}}.html)
+    {% endfor %}
