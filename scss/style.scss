@@ -23,6 +23,7 @@ $my-primary: #13af61;
   $card-content-padding: 1rem);
 /* @forward "bulma/sass/components/modal"; */
 @forward "bulma/sass/components/navbar";
+@forward "bulma/sass/components/modal";
 @forward "bulma/sass/components/pagination";
 @forward "bulma/sass/components/breadcrumb";
 @forward "bulma/sass/elements/block";

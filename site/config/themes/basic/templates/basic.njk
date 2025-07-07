@@ -10,6 +10,8 @@
   {{ bigArticleHeader(page , bcr) }}
   <div class="content mb-6">
     {{ html }}
+    <button class="button is-small is-primary has-text-white mt-4 has-text-weight-normal" id="viewSourceBtn">Исходный
+      текст</button>
     {% if meta.date %}
     {% if meta.date.getFullYear() > 1980 %}
     <small class="">&mdash; {{ util.niceDate(meta.date)}}</small>

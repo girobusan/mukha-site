@@ -276,7 +276,10 @@
     </li>
   </ul>
 </nav>
-<script id="pageSrc" lang="text/markdown">"---
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 ">
+    <pre>---
 title: Welcome page
 date: 2025.06.16 10:10
 ---
@@ -294,7 +297,19 @@ and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good a
 by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, 
 very popular during the Renaissance. The first line of Lorem Ipsum, 
 &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.
-"</script>
+</pre>"
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  console.log(B, M, C)
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
 <footer class="footer has-background-dark mt-auto" style="color: silver">
   <div class="content">
     <div class="container is-max-desktop px-3 is-size-7">
