@@ -18,7 +18,7 @@
   </div>
 
 
-  {% if page.index and not page.list %}
+  {% if page.index and not page.list and not page.hide_list %}
   {% set pls = list.getNearFiles(page.file.path) %}
   {% endif %}
 
@@ -26,7 +26,7 @@
   {% set pls = list.tags() %}
   {% endif %}
 
-  {% if pls %}
+  {% if pls and not page.meta.hide_list %}
   {{ listAsTitles( pls , page)}}
   {% endif %}
 

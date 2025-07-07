@@ -18664,6 +18664,14 @@ body {
   flex-direction: column;
 }
 
+.content .wide_table table {
+  width: 90vw;
+  margin-left: 50%;
+  transform: translate(-50%, 0);
+  display: block;
+  overflow: auto;
+}
+
 .m-columnized {
   column-count: 2;
 }
