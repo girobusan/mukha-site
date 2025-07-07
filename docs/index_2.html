@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome page :: Mukha SSG</title>
+  <meta property="og:title" content="Welcome page" />
+  <meta property="og:description" content="Welcome to this amazing Mukha site!" />
+  <link href="_theme/style.css" rel="stylesheet">
+  <link href="_theme/highlight/styles/atom-one-light.css" rel="stylesheet">
+  <script src="_theme/navbar.js">
+  </script>
+  <script src="_theme/masonry.js"></script>
+  <script src="_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="docs/index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="examples/index.html">
+        Примеры
+      </a>
+      <a class="navbar-item has-text-white" href="tags/index.html">
+        Теги
+      </a>
+</div>
+  </div>
+</nav>
+<section class="hero is-primary has-text-white  ">
+  <div class="hero-body">
+    <p class="title is-1 has-text-white">Mukha SSG (2/5)</p>
+    <p class="subtitle has-text-white">Быстрый и простой генератор статичных сайтов.</p>
+  </div>
+</section>
+<div class="container my-6 px-3 ">
+
+<script defer>
+  window.masonry.init({
+    container: "#pagesList",
+    bySize: true,
+    countFn: (e) => {
+      return Math.floor(e.getBoundingClientRect().width / 300) || 1;
+    }
+  })
+</script>
+<div class="m-page-list columns" id="pagesList">
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/the_batman.html">Бэтмен</a>
+      <div class="tags">
+        <!--dc |  | -->
+        <a class="tag" href="tags/dc.html">DC</a>
+        <!--mett_rivz |  | -->
+        <a class="tag" href="tags/mett_rivz.html">Мэтт Ривз</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/spider-man_no_way_home.html">Человек-паук: Нет пути домой</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--dzhon_uotts |  | -->
+        <a class="tag" href="tags/dzhon_uotts.html">Джон Уоттс</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/eternals.html">Вечные</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--khloia_chzhao |  | -->
+        <a class="tag" href="tags/khloia_chzhao.html">Хлоя Чжао</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/shang-chi_and_the_legend_of_the_ten_rings.html">Шан-Чи и легенда о десяти кольцах</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--destin_deniel_kretton |  | -->
+        <a class="tag" href="tags/destin_deniel_kretton.html">Дестин Дэниел Креттон</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/the_suicide_squad.html">Отряд Самоубийц</a>
+      <div class="tags">
+        <!--dc |  | -->
+        <a class="tag" href="tags/dc.html">DC</a>
+        <!--dzheims_gann |  | -->
+        <a class="tag" href="tags/dzheims_gann.html">Джеймс Ганн</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/black_widow.html">Черная Вдова</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--keit_shortland |  | -->
+        <a class="tag" href="tags/keit_shortland.html">Кейт Шортланд</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/zack_snyders_justice_league.html">Лига справедливости Зака ​​Снайдера</a>
+      <div class="tags">
+        <!--dc |  | -->
+        <a class="tag" href="tags/dc.html">DC</a>
+        <!--zak_snaider |  | -->
+        <a class="tag" href="tags/zak_snaider.html">Зак Снайдер</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/wonder_woman_1984.html">Чудо-женщина 1984</a>
+      <div class="tags">
+        <!--dc |  | -->
+        <a class="tag" href="tags/dc.html">DC</a>
+        <!--petti_dzhenkins |  | -->
+        <a class="tag" href="tags/petti_dzhenkins.html">Пэтти Дженкинс</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/birds_of_prey_and_the_fantabulous_emancipation_of_one_harley_quinn.html">Хищные птицы и Потрясающая история Харли Квинн</a>
+      <div class="tags">
+        <!--dc |  | -->
+        <a class="tag" href="tags/dc.html">DC</a>
+        <!--keti_ian |  | -->
+        <a class="tag" href="tags/keti_ian.html">Кэти Янь</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/joker.html">Джокер</a>
+      <div class="tags">
+        <!--dc |  | -->
+        <a class="tag" href="tags/dc.html">DC</a>
+        <!--todd_fillips |  | -->
+        <a class="tag" href="tags/todd_fillips.html">Тодд Филлипс</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/spider-man_far_from_home.html">Человек-паук: Вдали от дома</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--dzhon_uotts |  | -->
+        <a class="tag" href="tags/dzhon_uotts.html">Джон Уоттс</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/avengers_endgame.html">Мстители: Финал</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--entoni_russo |  | -->
+        <a class="tag" href="tags/entoni_russo.html">Энтони Руссо</a>
+        <!--dzho_russo |  | -->
+        <a class="tag" href="tags/dzho_russo.html">Джо Руссо</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/shazam.html">Шазам!</a>
+      <div class="tags">
+        <!--dc |  | -->
+        <a class="tag" href="tags/dc.html">DC</a>
+        <!--devid_f_sandberg |  | -->
+        <a class="tag" href="tags/devid_f_sandberg.html">Дэвид Ф. Сандберг</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/captain_marvel.html">Капитан Марвел</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--anna_boden |  | -->
+        <a class="tag" href="tags/anna_boden.html">Анна Боден</a>
+        <!--raian_flek |  | -->
+        <a class="tag" href="tags/raian_flek.html">Райан Флек</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/aquaman.html">Аквамен</a>
+      <div class="tags">
+        <!--dc |  | -->
+        <a class="tag" href="tags/dc.html">DC</a>
+        <!--dzheims_van |  | -->
+        <a class="tag" href="tags/dzheims_van.html">Джеймс Ван</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/ant-man_and_the_wasp.html">Человек-муравей и Оса</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--peiton_rid |  | -->
+        <a class="tag" href="tags/peiton_rid.html">Пейтон Рид</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/avengers_infinity_war.html">Мстители: Война бесконечности</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--entoni_russo |  | -->
+        <a class="tag" href="tags/entoni_russo.html">Энтони Руссо</a>
+        <!--dzho_russo |  | -->
+        <a class="tag" href="tags/dzho_russo.html">Джо Руссо</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/black_panther.html">Черная пантера</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--raian_kugler |  | -->
+        <a class="tag" href="tags/raian_kugler.html">Райан Куглер</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/justice_league.html">Лига Справедливости</a>
+      <div class="tags">
+        <!--dc |  | -->
+        <a class="tag" href="tags/dc.html">DC</a>
+        <!--zak_snaider |  | -->
+        <a class="tag" href="tags/zak_snaider.html">Зак Снайдер</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/movies/thor_ragnarok.html">Тор: Рагнарёк</a>
+      <div class="tags">
+        <!--marvel |  | -->
+        <a class="tag" href="tags/marvel.html">Marvel</a>
+        <!--taika_vaititi |  | -->
+        <a class="tag" href="tags/taika_vaititi.html">Тайка Вайтити</a>
+      </div>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <ul class="pagination-list is-justify-content-center">
+    <li>
+      <a href="index.html" class="pagination-link">1</a>
+    </li>
+    <li>
+      <a href="" class="pagination-link is-current">2</a>
+    </li>
+    <li>
+      <a href="index_3.html" class="pagination-link">3</a>
+    </li>
+    <li>
+      <a href="index_4.html" class="pagination-link">4</a>
+    </li>
+    <li>
+      <a href="index_5.html" class="pagination-link">5</a>
+    </li>
+  </ul>
+</nav>
+<script id="pageSrc" lang="text/markdown">"---
+title: Welcome page
+date: 2025.06.16 10:10
+---
+Welcome to this amazing Mukha site!
+
+Contrary to popular belief, Lorem Ipsum is not simply random text. 
+It has roots in a piece of classical Latin literature from 45 BC, making 
+it over 2000 years old. 
+
+Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, 
+looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum 
+passage, and going through the cites of the word in classical literature, 
+discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 
+and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) 
+by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, 
+very popular during the Renaissance. The first line of Lorem Ipsum, 
+&quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.
+"</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          <p>
+Сделано <strong class="has-text-white">Мухой!</strong>
+</p>
+<ul>
+<li><a href="rss.xml">RSS</a></li>
+<li><a href="atom.xml">Atom</a></li>
+</ul></div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          <p>
+&copy; 2025...
+</p></div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

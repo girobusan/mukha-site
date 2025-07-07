@@ -19,9 +19,10 @@
     group: movies
     tags: "[company], [director_ru]"
   markdown: |-
-    ### [director_en]
-    - Year: [year]
-    - Rating: [rating_IMDB]
+    - Компания: **[company]**
+    - Режиссер: **[director_ru]**
+    - Год выхода: **[year]**
+    - Рейтинг IMDB: **[rating_IMDB]**
 
 - task: render
   dataset: examples.movies
@@ -33,5 +34,5 @@
     croup: years
   markdown: |-
     {% for row in page.local_data %}
-    - [{{ row.name_ru }}](/examples/movies/{{row.movie_slug}}.html)
+    - {{row.company}} : [{{ row.name_ru }}](/examples/movies/{{row.movie_slug}}.html)
     {% endfor %}

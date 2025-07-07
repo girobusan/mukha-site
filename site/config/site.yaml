@@ -16,5 +16,6 @@ tags_page: "/tags/index.html"
 
 #RSS props
 rss_uri: "/rss.xml"
+atom_uri: "/atom.xml"
 #max count of rss feed items
 rss_length: 30

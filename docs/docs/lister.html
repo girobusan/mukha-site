@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Объект lister :: Mukha SSG</title>
+  <meta property="og:title" content="Объект lister" />
+  <meta property="og:description" content="Объект lister — похожий на массив (array-like) объект, предназначенный для хранения и обработки списков страниц . Такой объект доступен в переменной шаблона list:" />
+  <link href="../_theme/style.css" rel="stylesheet">
+  <link href="../_theme/highlight/styles/atom-one-light.css" rel="stylesheet">
+  <script src="../_theme/navbar.js">
+  </script>
+  <script src="../_theme/masonry.js"></script>
+  <script src="../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Примеры
+      </a>
+      <a class="navbar-item has-text-white" href="../tags/index.html">
+        Теги
+      </a>
+</div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet">
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">🏠</a></li>
+    <li><a href="index.html">Документация</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Объект lister</h1>
+
+  <div class="content mb-6">
+    <p>Объект lister — <em>похожий на массив</em> (array-like) объект, предназначенный
+для хранения и обработки списков <a href="page_obj.html">страниц </a>. Такой объект доступен в переменной
+шаблона <code>list</code>:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
+  {% for item in list.getNearFiles(&quot;/blog/index.html&quot;) %}
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{{ item.file.path }}&quot;</span>&gt;</span>{{ item.meta.title }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  {% endfor %}
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<h2>Методы для работы со страницами</h2>
+<h4>tags()</h4>
+<p>Возвращает список (Array) тегов (страниц!), отсортированный по алфавиту без учета регистра.</p>
+<h4>getByPath( p )</h4>
+<p>Возвращает страницу с заданным адресом, если она есть в списке.</p>
+<h4>sortByMeta( name , as_number , desc)</h4>
+<p>Возвращает новый <code>lister</code>, отсортированный по заданному полю метаданных (<code>name</code>, строка), второй параметр (<code>as_number</code>, true или false) указывает, надо ли интерпретировать значение поля как число, третий (<code>desc</code>, true или false) — задает сортировку в убывающем порядке. Значение параметра <code>as_number</code> может игнорироваться для известных типов метаданных (meta.date).</p>
+<h4>getByMeta( name , value)</h4>
+<p>Возвращает страницу, значение поля метаданных которой соответствует заданному.</p>
+<h4>getAllByMeta( name , value)</h4>
+<p>Возвращает <code>lister</code> — все страницы, значение поля метаданных которых соответствует заданному.</p>
+<h4>getAllWithMeta(name)</h4>
+<p>Возвращает все страницы (lister), у которых определено заданное поле метаданных.</p>
+<h4>getNearFiles( path_to_file)</h4>
+<p>Возвращает <code>lister</code> со списком всех страниц, находящихся на одном уровне со страницей по заданному пути. Не проверяет существование файла.</p>
+<h4>getNearDirs( path_to_file)</h4>
+<p>То же самое для директорий, т. е. файлов <code>index.html</code>.</p>
+<h4>getAllFiles( path_to_file)</h4>
+<p>Рекурсивный список (lister) всех страниц ниже по древу директорий заданного.</p>
+<h4>getAllDirs( path_to_file)</h4>
+<p>То же для директорий.</p>
+<h4>getParent( path_to_file )</h4>
+<p>Родительская директория (первая директория с файлом <code>index.html</code> выше по дереву директорий)</p>
+<h4>getBreadcrumbs( path_to_file , skip)</h4>
+<p>Список (Array) всех страниц <code>index.htm</code>, начиная от корневой директории сайта, по пути к странице. Второй параметр позволяет пропустить заданное количество директорий.</p>
+<h2>Поддерживаемые методы массива</h2>
+<table>
+<thead>
+<tr>
+<th>Метод/поле</th>
+<th>Особенности</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>forEach</td>
+<td></td>
+</tr>
+<tr>
+<td>for ... in</td>
+<td></td>
+</tr>
+<tr>
+<td>length</td>
+<td></td>
+</tr>
+<tr>
+<td>sort</td>
+<td>Возвращает новый lister</td>
+</tr>
+<tr>
+<td>slice</td>
+<td>То же</td>
+</tr>
+<tr>
+<td>map</td>
+<td>То же</td>
+</tr>
+</tbody>
+</table>
+<h2>Специальные методы</h2>
+<table>
+<thead>
+<tr>
+<th>Метод</th>
+<th>Что делает</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unwrap()</td>
+<td>Возвращает содержимое lister в виде массива.</td>
+</tr>
+<tr>
+<td>append(array)</td>
+<td>Возвращает новый lister c  массивом, образованным конкатенацией исходного массива с переданным в качестве параметра.</td>
+</tr>
+</tbody>
+</table>
+
+  </div>
+
+
+
+
+
+</div>
+<script id="pageSrc" lang="text/markdown">"---
+title: Объект lister
+doc: lister_ru
+---
+
+Объект lister — _похожий на массив_ (array-like) объект, предназначенный
+для хранения и обработки списков [страниц ](/+doc:page_obj_ru). Такой объект доступен в переменной
+шаблона `list`:
+
+{% raw %}
+
+```html
+&lt;ul class=&quot;menu&quot;&gt;
+  {% for item in list.getNearFiles(&quot;/blog/index.html&quot;) %}
+  &lt;li&gt;&lt;a href=&quot;{{ item.file.path }}&quot;&gt;{{ item.meta.title }}&lt;/a&gt;&lt;/li&gt;
+  {% endfor %}
+&lt;/ul&gt;
+```
+
+{% endraw %}
+
+## Методы для работы со страницами
+
+#### tags()
+
+Возвращает список (Array) тегов (страниц!), отсортированный по алфавиту без учета регистра.
+
+#### getByPath( p )
+
+Возвращает страницу с заданным адресом, если она есть в списке.
+
+#### sortByMeta( name , as_number , desc)
+
+Возвращает новый `lister`, отсортированный по заданному полю метаданных (`name`, строка), второй параметр (`as_number`, true или false) указывает, надо ли интерпретировать значение поля как число, третий (`desc`, true или false) — задает сортировку в убывающем порядке. Значение параметра `as_number` может игнорироваться для известных типов метаданных (meta.date).
+
+#### getByMeta( name , value)
+
+Возвращает страницу, значение поля метаданных которой соответствует заданному.
+
+#### getAllByMeta( name , value)
+
+Возвращает `lister` — все страницы, значение поля метаданных которых соответствует заданному.
+
+#### getAllWithMeta(name)
+
+Возвращает все страницы (lister), у которых определено заданное поле метаданных.
+
+#### getNearFiles( path_to_file)
+
+Возвращает `lister` со списком всех страниц, находящихся на одном уровне со страницей по заданному пути. Не проверяет существование файла.
+
+#### getNearDirs( path_to_file)
+
+То же самое для директорий, т. е. файлов `index.html`.
+
+#### getAllFiles( path_to_file)
+
+Рекурсивный список (lister) всех страниц ниже по древу директорий заданного.
+
+#### getAllDirs( path_to_file)
+
+То же для директорий.
+
+#### getParent( path_to_file )
+
+Родительская директория (первая директория с файлом `index.html` выше по дереву директорий)
+
+#### getBreadcrumbs( path_to_file , skip)
+
+Список (Array) всех страниц `index.htm`, начиная от корневой директории сайта, по пути к странице. Второй параметр позволяет пропустить заданное количество директорий.
+
+## Поддерживаемые методы массива
+
+| Метод/поле | Особенности             |
+| ---------- | ----------------------- |
+| forEach    |                         |
+| for ... in |                         |
+| length     |                         |
+| sort       | Возвращает новый lister |
+| slice      | То же                   |
+| map        | То же                   |
+
+## Специальные методы
+
+| Метод         | Что делает                                                                                                           |
+| ------------- | -------------------------------------------------------------------------------------------------------------------- |
+| unwrap()      | Возвращает содержимое lister в виде массива.                                                                         |
+| append(array) | Возвращает новый lister c  массивом, образованным конкатенацией исходного массива с переданным в качестве параметра. |
+"</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          <p>
+Сделано <strong class="has-text-white">Мухой!</strong>
+</p>
+<ul>
+<li><a href="../rss.xml">RSS</a></li>
+<li><a href="../atom.xml">Atom</a></li>
+</ul></div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          <p>
+&copy; 2025...
+</p></div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

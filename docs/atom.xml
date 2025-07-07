@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://example.site</id>
+    <title>Mukha SSG</title>
+    <updated>2025-07-07T18:56:53.769Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://example.site"/>
+    <subtitle>Быстрый и простой генератор статичных сайтов.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Welcome page]]></title>
+        <id>https://example.site/index.html</id>
+        <link href="https://example.site/index.html"/>
+        <updated>2025-06-16T07:10:00.000Z</updated>
+        <summary type="html"><![CDATA[Welcome to this amazing Mukha site!]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Запуск и использование]]></title>
+        <id>https://example.site/docs/cli.html</id>
+        <link href="https://example.site/docs/cli.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Использование в <em>командной строке.</em>]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Конфигурационный файл сайта]]></title>
+        <id>https://example.site/docs/config.html</id>
+        <link href="https://example.site/docs/config.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Файл находится в папке <code>site_dir/config/site.yaml</code>]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Пример конфигурационного файла данных]]></title>
+        <id>https://example.site/docs/data_config.html</id>
+        <link href="https://example.site/docs/data_config.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[{% raw %}]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Обработка данных]]></title>
+        <id>https://example.site/docs/data_config_tasks.html</id>
+        <link href="https://example.site/docs/data_config_tasks.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[В редких случаях вам может понадобится (или захотеться) не просто подключить данные к сайту, но и обработать их, и/или сгенерировать из них страницы для сайта. <strong>Делать это совершенно необязательно</strong>, но возможно.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Объект file]]></title>
+        <id>https://example.site/docs/file_obj.html</id>
+        <link href="https://example.site/docs/file_obj.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Объект используется внутри генератора. Содержит поля:]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Интеграция с gulp]]></title>
+        <id>https://example.site/docs/gulp_integration.html</id>
+        <link href="https://example.site/docs/gulp_integration.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Муха легко интегрируется в процесс разработки с gulp, предоставляя быстрый
+предпросмотр сайта в браузре и позволяя объединить разработку
+css и шаблонов сайта в единый процесс.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Документация]]></title>
+        <id>https://example.site/docs/index.html</id>
+        <link href="https://example.site/docs/index.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Docs]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Вставки]]></title>
+        <id>https://example.site/docs/inserts.html</id>
+        <link href="https://example.site/docs/inserts.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Для вставки дополнительного контента в текст применяется синтаксис вставки.
+Длинная форма рассчитана на использование в будущем визуальном редакторе, и
+выглядит так:]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Установка]]></title>
+        <id>https://example.site/docs/install.html</id>
+        <link href="https://example.site/docs/install.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Муха не зависит от внешних инструментов, кроме Node.js.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Объект lister]]></title>
+        <id>https://example.site/docs/lister.html</id>
+        <link href="https://example.site/docs/lister.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Объект lister — <em>похожий на массив</em> (array-like) объект, предназначенный
+для хранения и обработки списков <a href="https://example.site/docs/page_obj.html">страниц </a>. Такой объект доступен в переменной
+шаблона <code>list</code>:]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Объект page (страница)]]></title>
+        <id>https://example.site/docs/page_obj.html</id>
+        <link href="https://example.site/docs/page_obj.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Объект page представляет страницу на сайте. В нем доступны следующие поля:]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Структура директории сайта]]></title>
+        <id>https://example.site/docs/site_dir.html</id>
+        <link href="https://example.site/docs/site_dir.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Что куда класть и зачем]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Переменные шаблона]]></title>
+        <id>https://example.site/docs/template_vars.html</id>
+        <link href="https://example.site/docs/template_vars.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[В шаблонизаторе для каждого файла доступны следующие переменные:]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Темы и шаблоны]]></title>
+        <id>https://example.site/docs/templating.html</id>
+        <link href="https://example.site/docs/templating.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Внешнее оформление в Мухе создается при помощи тем. Доступные темы хранятся в директории <code>config/themes</code> сайта. Директории тем имеют следующую структуру:]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Фильтр to_table]]></title>
+        <id>https://example.site/docs/to_table.html</id>
+        <link href="https://example.site/docs/to_table.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Кроме <a href="https://mozilla.github.io/nunjucks/templating.html#builtin-filters"> стандартных фильтров Nunjucks </a>, в Мухе доступен фильтр,
+выводящий табличный набор данных в виде таблицы. В самом простом
+варианте используется так:]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Примеры]]></title>
+        <id>https://example.site/examples/index.html</id>
+        <link href="https://example.site/examples/index.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[#### Использование тегов шаблонизатора в тексте]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Табличка]]></title>
+        <id>https://example.site/examples/movie_table.html</id>
+        <link href="https://example.site/examples/movie_table.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Тут табличка, из которой сделаны
+генерации.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Теги шаблонизатора]]></title>
+        <id>https://example.site/examples/template_tags.html</id>
+        <link href="https://example.site/examples/template_tags.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[В тексте можно использовать теги шаблонизатора. Например,
+чтобы вывести какую-то информацию:]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Теги]]></title>
+        <id>https://example.site/tags/index.html</id>
+        <link href="https://example.site/tags/index.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Фильмы]]></title>
+        <id>https://example.site/examples/movies/index.html</id>
+        <link href="https://example.site/examples/movies/index.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Фильмы по годам]]></title>
+        <id>https://example.site/examples/years/index.html</id>
+        <link href="https://example.site/examples/years/index.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Черная пантера: Ваканда навсегда]]></title>
+        <id>https://example.site/examples/movies/black_panther_wakanda_forever.html</id>
+        <link href="https://example.site/examples/movies/black_panther_wakanda_forever.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Черный Адам]]></title>
+        <id>https://example.site/examples/movies/black_adam.html</id>
+        <link href="https://example.site/examples/movies/black_adam.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Тор: Любовь и гром]]></title>
+        <id>https://example.site/examples/movies/thor_love_and_thunder.html</id>
+        <link href="https://example.site/examples/movies/thor_love_and_thunder.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Доктор Стрэндж в мультивселенной безумия]]></title>
+        <id>https://example.site/examples/movies/doctor_strange_in_the_multiverse_of_madness.html</id>
+        <link href="https://example.site/examples/movies/doctor_strange_in_the_multiverse_of_madness.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Бэтмен]]></title>
+        <id>https://example.site/examples/movies/the_batman.html</id>
+        <link href="https://example.site/examples/movies/the_batman.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Человек-паук: Нет пути домой]]></title>
+        <id>https://example.site/examples/movies/spider-man_no_way_home.html</id>
+        <link href="https://example.site/examples/movies/spider-man_no_way_home.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Вечные]]></title>
+        <id>https://example.site/examples/movies/eternals.html</id>
+        <link href="https://example.site/examples/movies/eternals.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Шан-Чи и легенда о десяти кольцах]]></title>
+        <id>https://example.site/examples/movies/shang-chi_and_the_legend_of_the_ten_rings.html</id>
+        <link href="https://example.site/examples/movies/shang-chi_and_the_legend_of_the_ten_rings.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+    </entry>
+</feed>
