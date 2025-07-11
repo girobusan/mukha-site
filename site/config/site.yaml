@@ -19,3 +19,4 @@ rss_uri: "/rss.xml"
 atom_uri: "/atom.xml"
 #max count of rss feed items
 rss_length: 30
+edit_cmd: gedit
