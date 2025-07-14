@@ -10,6 +10,14 @@
   input_col: name_en
   output_col: movies_year
 
+- task: del_cols
+  dataset: examples.movies
+  cols: ["minutes_long", "budget" , "rating_metacritic"]
+
+- task: number
+  dataset: examples.movies
+  cols: ["rating_metacritic"]
+
 - task: render
   dataset: examples.movies
   type: row

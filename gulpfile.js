@@ -6,6 +6,7 @@ var uglify = require("gulp-uglify");
 const sass = require("gulp-sass")(require("sass"));
 const sourcemaps = require("gulp-sourcemaps");
 var exec = require("child_process").exec;
+var spawn = require("child_process").spawn;
 
 async function buildSite(cb) {
   exec("mukha-ssg -o docs", { cwd: "." }, (err, out, stderr) => {
@@ -37,11 +38,7 @@ async function watchCSS() {
 }
 
 async function watchSite() {
-  exec("mukha-ssg -w", { cwd: "." }, (err, out, stderr) => {
-    // console.log(out);
-    stderr && console.log(stderr);
-    err && console.error(err);
-  });
+  spawn("mukha-ssg", ["-w"]);
 }
 
 async function watchAll() {
