@@ -3,11 +3,18 @@
 {% from "parts/page_lists.njk" import listAsCards as pagesList %}
 
 {% block top %}
-<section class="hero is-primary has-text-white  {% if page.page_number < 2 %}is-medium{% endif %}">
+<section class="hero is-primary has-text-white  is-small">
   <div class="hero-body">
-    <p class="title is-1 has-text-white">{{ config.title }}{% if page.page_number>1 %} ({{page.page_number}}/{{
+    <p class="title is-2 has-text-white">{{ config.title }}{% if page.page_number>1 %} ({{page.page_number}}/{{
       page.page_links.length}}){% endif %}</p>
     <p class="subtitle has-text-white">{{ config.description}}</p>
+    <div class="columns">
+      <div class="column">
+        <h4 class="">Простой</h4>
+      </div>
+      <div class="column">2</div>
+      <div class="column">3</div>
+    </div>
   </div>
 </section>
 {% endblock %}

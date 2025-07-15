@@ -12,7 +12,7 @@
 
 - task: del_cols
   dataset: examples.movies
-  cols: ["minutes_long", "budget" , "rating_metacritic"]
+  cols: ["minutes_long", "budget", "rating_metacritic"]
 
 - task: number
   dataset: examples.movies
@@ -25,7 +25,7 @@
   meta:
     title: "[name_ru]"
     group: movies
-    tags: "[company], [director_ru]"
+    excerpt: "[company], [director_ru]"
   markdown: |-
     - Компания: **[company]**
     - Режиссер: **[director_ru]**

@@ -44,17 +44,14 @@
 {% macro listAsTitles(plist , where) %}
 <div class="m-columnized">
   {% for P in plist %}
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="{{ P.file.path}}">{{ P.meta.title}}</a> {%
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="{{ P.file.path}}">{{
+      P.meta.title}}</a> {%
     if
     P.list
     %}({{P.list.length}}){% endif %}
-    {% if not P.list and P.meta.date.getTime()>100 %}{{ smallPageDate(P)}}{% endif %}
-    {% if P.meta.tags %}
-    <div class="tags">
-      {% for tg in P.meta.tags %}
-      <a href="{{tg.file.path}}" class="tag is-small">{{tg.meta.title}}</a>
-      {% endfor %}
-    </div>
+    {% if P.meta.excerpt %}
+    <div class="excerpt is-size-6 mb-6">{{P.meta.excerpt}}</div>
     {% endif %}
   </div>
   {% endfor %}

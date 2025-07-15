@@ -11,9 +11,12 @@
   <link href="../../_theme/highlight/styles/atom-one-light.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
+  <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
   <script src="../../_theme/highlight/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+  <script data-location="/examples/movies/index.html" src="../../_js/client.js">
+</script>
 </head>
 
 <body>
@@ -39,13 +42,18 @@
       <a class="navbar-item has-text-white" href="../../docs/index.html">
         Документация
       </a>
+      <a class="navbar-item has-text-white" href="../../guides/index.html">
+        Гайды
+      </a>
       <a class="navbar-item has-text-white" href="../index.html">
         Примеры
       </a>
       <a class="navbar-item has-text-white" href="../../tags/index.html">
         Теги
       </a>
-</div>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded" placeholder="Поиск"></input>
+      </div></div>
   </div>
 </nav>
 
@@ -72,270 +80,213 @@
 
 
   <div class="m-columnized">
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="black_panther_wakanda_forever.html">Черная пантера: Ваканда навсегда</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/raian_kugler.html" class="tag is-small">Райан Куглер</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_panther_wakanda_forever.html">Черная пантера: Ваканда навсегда</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Райан Куглер</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="black_adam.html">Черный Адам</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/zhaume_kolet-serra.html" class="tag is-small">Жауме Кольет-Серра</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_adam.html">Черный Адам</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Жауме Кольет-Серра</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="thor_love_and_thunder.html">Тор: Любовь и гром</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/taika_vaititi.html" class="tag is-small">Тайка Вайтити</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor_love_and_thunder.html">Тор: Любовь и гром</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Тайка Вайтити</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="doctor_strange_in_the_multiverse_of_madness.html">Доктор Стрэндж в мультивселенной безумия</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/sem_reimi.html" class="tag is-small">Сэм Рэйми</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="doctor_strange_in_the_multiverse_of_madness.html">Доктор Стрэндж в мультивселенной безумия</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Сэм Рэйми</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="the_batman.html">Бэтмен</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/mett_rivz.html" class="tag is-small">Мэтт Ривз</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_batman.html">Бэтмен</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Мэтт Ривз</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="spider-man_no_way_home.html">Человек-паук: Нет пути домой</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/dzhon_uotts.html" class="tag is-small">Джон Уоттс</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="spider-man_no_way_home.html">Человек-паук: Нет пути домой</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Джон Уоттс</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="eternals.html">Вечные</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/khloia_chzhao.html" class="tag is-small">Хлоя Чжао</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="eternals.html">Вечные</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Хлоя Чжао</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="shang-chi_and_the_legend_of_the_ten_rings.html">Шан-Чи и легенда о десяти кольцах</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/destin_deniel_kretton.html" class="tag is-small">Дестин Дэниел Креттон</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="shang-chi_and_the_legend_of_the_ten_rings.html">Шан-Чи и легенда о десяти кольцах</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Дестин Дэниел Креттон</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="the_suicide_squad.html">Отряд Самоубийц</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/dzheims_gann.html" class="tag is-small">Джеймс Ганн</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_suicide_squad.html">Отряд Самоубийц</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Джеймс Ганн</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="black_widow.html">Черная Вдова</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/keit_shortland.html" class="tag is-small">Кейт Шортланд</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_widow.html">Черная Вдова</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Кейт Шортланд</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="zack_snyders_justice_league.html">Лига справедливости Зака ​​Снайдера</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/zak_snaider.html" class="tag is-small">Зак Снайдер</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="zack_snyders_justice_league.html">Лига справедливости Зака ​​Снайдера</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Зак Снайдер</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="wonder_woman_1984.html">Чудо-женщина 1984</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/petti_dzhenkins.html" class="tag is-small">Пэтти Дженкинс</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="wonder_woman_1984.html">Чудо-женщина 1984</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Пэтти Дженкинс</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="birds_of_prey_and_the_fantabulous_emancipation_of_one_harley_quinn.html">Хищные птицы и Потрясающая история Харли Квинн</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/keti_ian.html" class="tag is-small">Кэти Янь</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="birds_of_prey_and_the_fantabulous_emancipation_of_one_harley_quinn.html">Хищные птицы и Потрясающая история Харли Квинн</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Кэти Янь</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="joker.html">Джокер</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/todd_fillips.html" class="tag is-small">Тодд Филлипс</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="joker.html">Джокер</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Тодд Филлипс</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="spider-man_far_from_home.html">Человек-паук: Вдали от дома</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/dzhon_uotts.html" class="tag is-small">Джон Уоттс</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="spider-man_far_from_home.html">Человек-паук: Вдали от дома</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Джон Уоттс</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="avengers_endgame.html">Мстители: Финал</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/entoni_russo.html" class="tag is-small">Энтони Руссо</a>
-      <a href="../../tags/dzho_russo.html" class="tag is-small">Джо Руссо</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="avengers_endgame.html">Мстители: Финал</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Энтони Руссо, Джо Руссо</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="shazam.html">Шазам!</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/devid_f_sandberg.html" class="tag is-small">Дэвид Ф. Сандберг</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="shazam.html">Шазам!</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Дэвид Ф. Сандберг</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="captain_marvel.html">Капитан Марвел</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/anna_boden.html" class="tag is-small">Анна Боден</a>
-      <a href="../../tags/raian_flek.html" class="tag is-small">Райан Флек</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_marvel.html">Капитан Марвел</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Анна Боден, Райан Флек</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="aquaman.html">Аквамен</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/dzheims_van.html" class="tag is-small">Джеймс Ван</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="aquaman.html">Аквамен</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Джеймс Ван</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="ant-man_and_the_wasp.html">Человек-муравей и Оса</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/peiton_rid.html" class="tag is-small">Пейтон Рид</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="ant-man_and_the_wasp.html">Человек-муравей и Оса</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Пейтон Рид</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="avengers_infinity_war.html">Мстители: Война бесконечности</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/entoni_russo.html" class="tag is-small">Энтони Руссо</a>
-      <a href="../../tags/dzho_russo.html" class="tag is-small">Джо Руссо</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="avengers_infinity_war.html">Мстители: Война бесконечности</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Энтони Руссо, Джо Руссо</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="black_panther.html">Черная пантера</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/raian_kugler.html" class="tag is-small">Райан Куглер</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_panther.html">Черная пантера</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Райан Куглер</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="justice_league.html">Лига Справедливости</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/zak_snaider.html" class="tag is-small">Зак Снайдер</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="justice_league.html">Лига Справедливости</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Зак Снайдер</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="thor_ragnarok.html">Тор: Рагнарёк</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/taika_vaititi.html" class="tag is-small">Тайка Вайтити</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor_ragnarok.html">Тор: Рагнарёк</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Тайка Вайтити</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="wonder_woman.html">Чудо-женщина</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/petti_dzhenkins.html" class="tag is-small">Пэтти Дженкинс</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="wonder_woman.html">Чудо-женщина</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Пэтти Дженкинс</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="spider-man_homecoming.html">Человек-паук: Возвращение домой</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/dzhon_uotts.html" class="tag is-small">Джон Уоттс</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="spider-man_homecoming.html">Человек-паук: Возвращение домой</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Джон Уоттс</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="guardians_of_the_galaxy_vol_2.html">Стражи Галактики Том 2</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/dzheims_gann.html" class="tag is-small">Джеймс Ганн</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="guardians_of_the_galaxy_vol_2.html">Стражи Галактики Том 2</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Джеймс Ганн</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="doctor_strange.html">Доктор Стрэндж</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/skott_derrikson.html" class="tag is-small">Скотт Дерриксон</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="doctor_strange.html">Доктор Стрэндж</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Скотт Дерриксон</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="suicide_squad.html">Отряд Самоубийц</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/devid_eir.html" class="tag is-small">Дэвид Эйр</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="suicide_squad.html">Отряд Самоубийц</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Дэвид Эйр</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="captain_america_civil_war.html">Капитан Америка: Противостояние</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/entoni_russo.html" class="tag is-small">Энтони Руссо</a>
-      <a href="../../tags/dzho_russo.html" class="tag is-small">Джо Руссо</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_america_civil_war.html">Капитан Америка: Противостояние</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Энтони Руссо, Джо Руссо</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="batman_v_superman_dawn_of_justice.html">Бэтмен против Супермена: На заре справедливости</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/zak_snaider.html" class="tag is-small">Зак Снайдер</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="batman_v_superman_dawn_of_justice.html">Бэтмен против Супермена: На заре справедливости</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Зак Снайдер</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="ant-man.html">Человек-муравей</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/peiton_rid.html" class="tag is-small">Пейтон Рид</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="ant-man.html">Человек-муравей</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Пейтон Рид</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="avengers_age_of_ultron.html">Мстители: Эра Альтрона</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/dzhoss_uidon.html" class="tag is-small">Джосс Уидон</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="avengers_age_of_ultron.html">Мстители: Эра Альтрона</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Джосс Уидон</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="guardians_of_the_galaxy.html">Стражи Галактики</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/dzheims_gann.html" class="tag is-small">Джеймс Ганн</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="guardians_of_the_galaxy.html">Стражи Галактики</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Джеймс Ганн</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="captain_america_the_winter_soldier.html">Капитан Америка: Зимний Солдат</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/entoni_russo.html" class="tag is-small">Энтони Руссо</a>
-      <a href="../../tags/dzho_russo.html" class="tag is-small">Джо Руссо</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_america_the_winter_soldier.html">Капитан Америка: Зимний Солдат</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Энтони Руссо, Джо Руссо</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="thor_the_dark_world.html">Тор: Царство тьмы</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/alan_teilor.html" class="tag is-small">Алан Тейлор</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor_the_dark_world.html">Тор: Царство тьмы</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Алан Тейлор</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="man_of_steel.html">Еловек из стали</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/zak_snaider.html" class="tag is-small">Зак Снайдер</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="man_of_steel.html">Еловек из стали</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Зак Снайдер</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="iron_man_three.html">Железный человек 3</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/shein_blek.html" class="tag is-small">Шейн Блэк</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="iron_man_three.html">Железный человек 3</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Шейн Блэк</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="the_dark_knight_rises.html">Возрождение Темного Рыцаря</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/kristofer_nolan.html" class="tag is-small">Кристофер Нолан</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_dark_knight_rises.html">Возрождение Темного Рыцаря</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Кристофер Нолан</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="the_avengers.html">Мстители</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/dzhoss_uidon.html" class="tag is-small">Джосс Уидон</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_avengers.html">Мстители</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Джосс Уидон</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="captain_america_the_first_avenger.html">Капитан Америка: Первый мститель</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/dzho_dzhonston.html" class="tag is-small">Джо Джонстон</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_america_the_first_avenger.html">Капитан Америка: Первый мститель</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Джо Джонстон</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="green_lantern.html">Зеленый Фонарь</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/martin_kempbell.html" class="tag is-small">Мартин Кэмпбелл</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="green_lantern.html">Зеленый Фонарь</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Мартин Кэмпбелл</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="thor.html">Тор</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/kennet_brana.html" class="tag is-small">Кеннет Брана</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor.html">Тор</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Кеннет Брана</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="jonah_hex.html">Джона Хекс</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/dzhimmi_kheiuord.html" class="tag is-small">Джимми Хейуорд</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="jonah_hex.html">Джона Хекс</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Джимми Хейуорд</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="iron_man_2.html">Железный человек 2</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/dzhon_favro.html" class="tag is-small">Джон Фавро</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="iron_man_2.html">Железный человек 2</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Джон Фавро</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="watchmen.html">Стражи</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/zak_snaider.html" class="tag is-small">Зак Снайдер</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="watchmen.html">Стражи</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Зак Снайдер</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="the_dark_knight.html">Темный рыцарь</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/kristofer_nolan.html" class="tag is-small">Кристофер Нолан</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_dark_knight.html">Темный рыцарь</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Кристофер Нолан</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="the_incredible_hulk.html">Невероятный Халк</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/lui_letere.html" class="tag is-small">Луи Летерье</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_incredible_hulk.html">Невероятный Халк</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Луи Летерье</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="iron_man.html">Железный Человек</a>     <div class="tags">
-      <a href="../../tags/marvel.html" class="tag is-small">Marvel</a>
-      <a href="../../tags/dzhon_favro.html" class="tag is-small">Джон Фавро</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="iron_man.html">Железный Человек</a>     <div class="excerpt is-size-6 mb-6"><p>Marvel, Джон Фавро</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="superman_returns.html">Возвращение Супермена</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/braian_singer.html" class="tag is-small">Брайан Сингер</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="superman_returns.html">Возвращение Супермена</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Брайан Сингер</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="batman_begins.html">Бэтмен начинается</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/kristofer_nolan.html" class="tag is-small">Кристофер Нолан</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="batman_begins.html">Бэтмен начинается</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Кристофер Нолан</p>
+</div>
   </div>
-  <div class="block mb-3" style="break-inside: avoid;"><a cllass="is-5" href="catwoman.html">Женщина-кошка</a>     <div class="tags">
-      <a href="../../tags/dc.html" class="tag is-small">DC</a>
-      <a href="../../tags/pitof.html" class="tag is-small">Питоф</a>
-    </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="catwoman.html">Женщина-кошка</a>     <div class="excerpt is-size-6 mb-6"><p>DC, Питоф</p>
+</div>
   </div>
 
 </div>
@@ -358,7 +309,6 @@ title: Фильмы
   const B = document.getElementById("viewSourceBtn");
   const M = document.getElementById("viewSource");
   const C = document.getElementById("unViewSource");
-  console.log(B, M, C)
   B && B.addEventListener("click", () => M.classList.add("is-active"))
   C && C.addEventListener("click", () => M.classList.remove("is-active"))
 

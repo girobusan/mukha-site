@@ -11,9 +11,12 @@
   <link href="../_theme/highlight/styles/atom-one-light.css" rel="stylesheet">
   <script src="../_theme/navbar.js">
   </script>
+  <script src="../search_client.js"></script>
   <script src="../_theme/masonry.js"></script>
   <script src="../_theme/highlight/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+  <script data-location="/examples/movie_table.html" src="../_js/client.js">
+</script>
 </head>
 
 <body>
@@ -39,13 +42,18 @@
       <a class="navbar-item has-text-white" href="../docs/index.html">
         Документация
       </a>
+      <a class="navbar-item has-text-white" href="../guides/index.html">
+        Гайды
+      </a>
       <a class="navbar-item has-text-white" href="index.html">
         Примеры
       </a>
       <a class="navbar-item has-text-white" href="../tags/index.html">
         Теги
       </a>
-</div>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded" placeholder="Поиск"></input>
+      </div></div>
   </div>
 </nav>
 
@@ -73,15 +81,12 @@
 </code></pre>
 <small class="wide_table">
 <table>
-<thead><tr><th>name_en</th><th>name_ru</th><th>company</th><th>rating_IMDB</th><th>rating_metacritic</th><th>minutes_long</th><th>year</th><th>budget</th><th>director_ru</th><th>director_en</th><th>movie_slug</th><th>movies_year</th></tr></thead><tbody><tr>
+<thead><tr><th>name_en</th><th>name_ru</th><th>company</th><th>rating_IMDB</th><th>year</th><th>director_ru</th><th>director_en</th><th>movie_slug</th><th>movies_year</th></tr></thead><tbody><tr>
 <td>Black Panther: Wakanda Forever</td>
 <td>Черная пантера: Ваканда навсегда</td>
 <td>Marvel</td>
 <td>6,4</td>
-<td>67</td>
-<td>161</td>
 <td>2022</td>
-<td>250</td>
 <td>Райан Куглер</td>
 <td>Ryan Coogler</td>
 <td>black_panther_wakanda_forever</td>
@@ -91,10 +96,7 @@
 <td>Черный Адам</td>
 <td>DC</td>
 <td>6,4</td>
-<td>41</td>
-<td>125</td>
 <td>2022</td>
-<td>200</td>
 <td>Жауме Кольет-Серра</td>
 <td>Jaume Collet-Serra</td>
 <td>black_adam</td>
@@ -104,10 +106,7 @@
 <td>Тор: Любовь и гром</td>
 <td>Marvel</td>
 <td>6,3</td>
-<td>57</td>
-<td>118</td>
 <td>2022</td>
-<td>250</td>
 <td>Тайка Вайтити</td>
 <td>Taika Waititi</td>
 <td>thor_love_and_thunder</td>
@@ -117,10 +116,7 @@
 <td>Доктор Стрэндж в мультивселенной безумия</td>
 <td>Marvel</td>
 <td>6,9</td>
-<td>60</td>
-<td>126</td>
 <td>2022</td>
-<td>200</td>
 <td>Сэм Рэйми</td>
 <td>Sam Raimi</td>
 <td>doctor_strange_in_the_multiverse_of_madness</td>
@@ -130,10 +126,7 @@
 <td>Бэтмен</td>
 <td>DC</td>
 <td>7,8</td>
-<td>72</td>
-<td>176</td>
 <td>2022</td>
-<td>200</td>
 <td>Мэтт Ривз</td>
 <td>Matt Reeves</td>
 <td>the_batman</td>
@@ -143,10 +136,7 @@
 <td>Человек-паук: Нет пути домой</td>
 <td>Marvel</td>
 <td>8,2</td>
-<td>71</td>
-<td>148</td>
 <td>2021</td>
-<td>200</td>
 <td>Джон Уоттс</td>
 <td>John Watts</td>
 <td>spider-man_no_way_home</td>
@@ -156,10 +146,7 @@
 <td>Вечные</td>
 <td>Marvel</td>
 <td>6,3</td>
-<td>52</td>
-<td>156</td>
 <td>2021</td>
-<td>200</td>
 <td>Хлоя Чжао</td>
 <td>Chloe Zhao</td>
 <td>eternals</td>
@@ -169,10 +156,7 @@
 <td>Шан-Чи и легенда о десяти кольцах</td>
 <td>Marvel</td>
 <td>7,4</td>
-<td>71</td>
-<td>132</td>
 <td>2021</td>
-<td>150</td>
 <td>Дестин Дэниел Креттон</td>
 <td>Destin Daniel Cretton</td>
 <td>shang-chi_and_the_legend_of_the_ten_rings</td>
@@ -182,10 +166,7 @@
 <td>Отряд Самоубийц</td>
 <td>DC</td>
 <td>7,2</td>
-<td>72</td>
-<td>132</td>
 <td>2021</td>
-<td>185</td>
 <td>Джеймс Ганн</td>
 <td>James Gunn</td>
 <td>the_suicide_squad</td>
@@ -195,10 +176,7 @@
 <td>Черная Вдова</td>
 <td>Marvel</td>
 <td>6,7</td>
-<td>67</td>
-<td>134</td>
 <td>2021</td>
-<td>200</td>
 <td>Кейт Шортланд</td>
 <td>Cate Shortland</td>
 <td>black_widow</td>
@@ -208,10 +186,7 @@
 <td>Лига справедливости Зака ​​Снайдера</td>
 <td>DC</td>
 <td>8,0</td>
-<td>54</td>
-<td>242</td>
 <td>2021</td>
-<td>300</td>
 <td>Зак Снайдер</td>
 <td>Zack Snyder</td>
 <td>zack_snyders_justice_league</td>
@@ -221,10 +196,7 @@
 <td>Чудо-женщина 1984</td>
 <td>DC</td>
 <td>5,4</td>
-<td>60</td>
-<td>151</td>
 <td>2020</td>
-<td>200</td>
 <td>Пэтти Дженкинс</td>
 <td>Patty Jenkins</td>
 <td>wonder_woman_1984</td>
@@ -234,10 +206,7 @@
 <td>Хищные птицы и Потрясающая история Харли Квинн</td>
 <td>DC</td>
 <td>6,0</td>
-<td>60</td>
-<td>109</td>
 <td>2020</td>
-<td>84,5</td>
 <td>Кэти Янь</td>
 <td>Cathy Yan</td>
 <td>birds_of_prey_and_the_fantabulous_emancipation_of_one_harley_quinn</td>
@@ -247,10 +216,7 @@
 <td>Джокер</td>
 <td>DC</td>
 <td>8,7</td>
-<td>59</td>
-<td>122</td>
 <td>2019</td>
-<td>55</td>
 <td>Тодд Филлипс</td>
 <td>Todd Phillips</td>
 <td>joker</td>
@@ -260,10 +226,7 @@
 <td>Человек-паук: Вдали от дома</td>
 <td>Marvel</td>
 <td>7,6</td>
-<td>69</td>
-<td>129</td>
 <td>2019</td>
-<td>160</td>
 <td>Джон Уоттс</td>
 <td>John Watts</td>
 <td>spider-man_far_from_home</td>
@@ -273,10 +236,7 @@
 <td>Мстители: Финал</td>
 <td>Marvel</td>
 <td>8,5</td>
-<td>78</td>
-<td>181</td>
 <td>2019</td>
-<td>356</td>
 <td>Энтони Руссо, Джо Руссо</td>
 <td>Anthony Russo, Joe Russo</td>
 <td>avengers_endgame</td>
@@ -286,10 +246,7 @@
 <td>Шазам!</td>
 <td>DC</td>
 <td>7,1</td>
-<td>71</td>
-<td>132</td>
 <td>2019</td>
-<td>100</td>
 <td>Дэвид Ф. Сандберг</td>
 <td>David F. Sandberg</td>
 <td>shazam</td>
@@ -299,10 +256,7 @@
 <td>Капитан Марвел</td>
 <td>Marvel</td>
 <td>6,9</td>
-<td>64</td>
-<td>123</td>
 <td>2019</td>
-<td>175</td>
 <td>Анна Боден, Райан Флек</td>
 <td>Anna Boden, Ryan Fleck</td>
 <td>captain_marvel</td>
@@ -312,10 +266,7 @@
 <td>Аквамен</td>
 <td>DC</td>
 <td>7,0</td>
-<td>55</td>
-<td>143</td>
 <td>2018</td>
-<td>160</td>
 <td>Джеймс Ван</td>
 <td>James Wan</td>
 <td>aquaman</td>
@@ -325,10 +276,7 @@
 <td>Человек-муравей и Оса</td>
 <td>Marvel</td>
 <td>7,1</td>
-<td>70</td>
-<td>118</td>
 <td>2018</td>
-<td>162</td>
 <td>Пейтон Рид</td>
 <td>Peyton Reed</td>
 <td>ant-man_and_the_wasp</td>
@@ -338,10 +286,7 @@
 <td>Мстители: Война бесконечности</td>
 <td>Marvel</td>
 <td>8,5</td>
-<td>68</td>
-<td>149</td>
 <td>2018</td>
-<td>321</td>
 <td>Энтони Руссо, Джо Руссо</td>
 <td>Anthony Russo, Joe Russo</td>
 <td>avengers_infinity_war</td>
@@ -351,10 +296,7 @@
 <td>Черная пантера</td>
 <td>Marvel</td>
 <td>7,3</td>
-<td>88</td>
-<td>134</td>
 <td>2018</td>
-<td>200</td>
 <td>Райан Куглер</td>
 <td>Ryan Coogler</td>
 <td>black_panther</td>
@@ -364,10 +306,7 @@
 <td>Лига Справедливости</td>
 <td>DC</td>
 <td>6,4</td>
-<td>45</td>
-<td>120</td>
 <td>2017</td>
-<td>300</td>
 <td>Зак Снайдер</td>
 <td>Zack Snyder</td>
 <td>justice_league</td>
@@ -377,10 +316,7 @@
 <td>Тор: Рагнарёк</td>
 <td>Marvel</td>
 <td>7,9</td>
-<td>74</td>
-<td>130</td>
 <td>2017</td>
-<td>180</td>
 <td>Тайка Вайтити</td>
 <td>Taika Waititi</td>
 <td>thor_ragnarok</td>
@@ -390,10 +326,7 @@
 <td>Чудо-женщина</td>
 <td>DC</td>
 <td>7,4</td>
-<td>76</td>
-<td>141</td>
 <td>2017</td>
-<td>149</td>
 <td>Пэтти Дженкинс</td>
 <td>Patty Jenkins</td>
 <td>wonder_woman</td>
@@ -403,10 +336,7 @@
 <td>Человек-паук: Возвращение домой</td>
 <td>Marvel</td>
 <td>7,4</td>
-<td>73</td>
-<td>133</td>
 <td>2017</td>
-<td>175</td>
 <td>Джон Уоттс</td>
 <td>John Watts</td>
 <td>spider-man_homecoming</td>
@@ -416,10 +346,7 @@
 <td>Стражи Галактики Том 2</td>
 <td>Marvel</td>
 <td>7,6</td>
-<td>67</td>
-<td>136</td>
 <td>2017</td>
-<td>200</td>
 <td>Джеймс Ганн</td>
 <td>James Gunn</td>
 <td>guardians_of_the_galaxy_vol_2</td>
@@ -429,10 +356,7 @@
 <td>Доктор Стрэндж</td>
 <td>Marvel</td>
 <td>7,5</td>
-<td>72</td>
-<td>115</td>
 <td>2016</td>
-<td>165</td>
 <td>Скотт Дерриксон</td>
 <td>Scott Derrickson</td>
 <td>doctor_strange</td>
@@ -442,10 +366,7 @@
 <td>Отряд Самоубийц</td>
 <td>DC</td>
 <td>6,0</td>
-<td>40</td>
-<td>123</td>
 <td>2016</td>
-<td>175</td>
 <td>Дэвид Эйр</td>
 <td>David Ayer</td>
 <td>suicide_squad</td>
@@ -455,10 +376,7 @@
 <td>Капитан Америка: Противостояние</td>
 <td>Marvel</td>
 <td>7,8</td>
-<td>75</td>
-<td>147</td>
 <td>2016</td>
-<td>250</td>
 <td>Энтони Руссо, Джо Руссо</td>
 <td>Anthony Russo, Joe Russo</td>
 <td>captain_america_civil_war</td>
@@ -468,10 +386,7 @@
 <td>Бэтмен против Супермена: На заре справедливости</td>
 <td>DC</td>
 <td>6,5</td>
-<td>44</td>
-<td>151</td>
 <td>2016</td>
-<td>250</td>
 <td>Зак Снайдер</td>
 <td>Zack Snyder</td>
 <td>batman_v_superman_dawn_of_justice</td>
@@ -481,10 +396,7 @@
 <td>Человек-муравей</td>
 <td>Marvel</td>
 <td>7,3</td>
-<td>64</td>
-<td>117</td>
 <td>2015</td>
-<td>130</td>
 <td>Пейтон Рид</td>
 <td>Peyton Reed</td>
 <td>ant-man</td>
@@ -494,10 +406,7 @@
 <td>Мстители: Эра Альтрона</td>
 <td>Marvel</td>
 <td>7,3</td>
-<td>66</td>
-<td>141</td>
 <td>2015</td>
-<td>250</td>
 <td>Джосс Уидон</td>
 <td>Joss Whedon</td>
 <td>avengers_age_of_ultron</td>
@@ -507,10 +416,7 @@
 <td>Стражи Галактики</td>
 <td>Marvel</td>
 <td>8,0</td>
-<td>76</td>
-<td>121</td>
 <td>2014</td>
-<td>170</td>
 <td>Джеймс Ганн</td>
 <td>James Gunn</td>
 <td>guardians_of_the_galaxy</td>
@@ -520,10 +426,7 @@
 <td>Капитан Америка: Зимний Солдат</td>
 <td>Marvel</td>
 <td>7,7</td>
-<td>70</td>
-<td>136</td>
 <td>2014</td>
-<td>170</td>
 <td>Энтони Руссо, Джо Руссо</td>
 <td>Anthony Russo, Joe Russo</td>
 <td>captain_america_the_winter_soldier</td>
@@ -533,10 +436,7 @@
 <td>Тор: Царство тьмы</td>
 <td>Marvel</td>
 <td>6,9</td>
-<td>54</td>
-<td>112</td>
 <td>2013</td>
-<td>170</td>
 <td>Алан Тейлор</td>
 <td>Alan Taylor</td>
 <td>thor_the_dark_world</td>
@@ -546,10 +446,7 @@
 <td>Еловек из стали</td>
 <td>DC</td>
 <td>7,1</td>
-<td>55</td>
-<td>143</td>
 <td>2013</td>
-<td>225</td>
 <td>Зак Снайдер</td>
 <td>Zack Snyder</td>
 <td>man_of_steel</td>
@@ -559,10 +456,7 @@
 <td>Железный человек 3</td>
 <td>Marvel</td>
 <td>7,2</td>
-<td>62</td>
-<td>130</td>
 <td>2013</td>
-<td>200</td>
 <td>Шейн Блэк</td>
 <td>Shane Black</td>
 <td>iron_man_three</td>
@@ -572,10 +466,7 @@
 <td>Возрождение Темного Рыцаря</td>
 <td>DC</td>
 <td>8,4</td>
-<td>78</td>
-<td>164</td>
 <td>2012</td>
-<td>250</td>
 <td>Кристофер Нолан</td>
 <td>Christopher Nolan</td>
 <td>the_dark_knight_rises</td>
@@ -585,10 +476,7 @@
 <td>Мстители</td>
 <td>Marvel</td>
 <td>8,0</td>
-<td>69</td>
-<td>143</td>
 <td>2012</td>
-<td>220</td>
 <td>Джосс Уидон</td>
 <td>Joss Whedon</td>
 <td>the_avengers</td>
@@ -598,10 +486,7 @@
 <td>Капитан Америка: Первый мститель</td>
 <td>Marvel</td>
 <td>6,9</td>
-<td>66</td>
-<td>124</td>
 <td>2011</td>
-<td>140</td>
 <td>Джо Джонстон</td>
 <td>Joe Johnston</td>
 <td>captain_america_the_first_avenger</td>
@@ -611,10 +496,7 @@
 <td>Зеленый Фонарь</td>
 <td>DC</td>
 <td>5,5</td>
-<td>39</td>
-<td>114</td>
 <td>2011</td>
-<td>200</td>
 <td>Мартин Кэмпбелл</td>
 <td>Martin Campbell</td>
 <td>green_lantern</td>
@@ -624,10 +506,7 @@
 <td>Тор</td>
 <td>Marvel</td>
 <td>7,0</td>
-<td>57</td>
-<td>115</td>
 <td>2011</td>
-<td>150</td>
 <td>Кеннет Брана</td>
 <td>Kenneth Branagh</td>
 <td>thor</td>
@@ -637,10 +516,7 @@
 <td>Джона Хекс</td>
 <td>DC</td>
 <td>4,7</td>
-<td>33</td>
-<td>81</td>
 <td>2010</td>
-<td>47</td>
 <td>Джимми Хейуорд</td>
 <td>Jimmy Hayward</td>
 <td>jonah_hex</td>
@@ -650,10 +526,7 @@
 <td>Железный человек 2</td>
 <td>Marvel</td>
 <td>7,0</td>
-<td>57</td>
-<td>124</td>
 <td>2010</td>
-<td>200</td>
 <td>Джон Фавро</td>
 <td>Jon Favreau</td>
 <td>iron_man_2</td>
@@ -663,10 +536,7 @@
 <td>Стражи</td>
 <td>DC</td>
 <td>7,6</td>
-<td>56</td>
-<td>162</td>
 <td>2009</td>
-<td>130</td>
 <td>Зак Снайдер</td>
 <td>Zack Snyder</td>
 <td>watchmen</td>
@@ -676,10 +546,7 @@
 <td>Темный рыцарь</td>
 <td>DC</td>
 <td>9,0</td>
-<td>84</td>
-<td>152</td>
 <td>2008</td>
-<td>185</td>
 <td>Кристофер Нолан</td>
 <td>Christopher Nolan</td>
 <td>the_dark_knight</td>
@@ -689,10 +556,7 @@
 <td>Невероятный Халк</td>
 <td>Marvel</td>
 <td>6,7</td>
-<td>61</td>
-<td>112</td>
 <td>2008</td>
-<td>150</td>
 <td>Луи Летерье</td>
 <td>Louis Leterrier</td>
 <td>the_incredible_hulk</td>
@@ -702,10 +566,7 @@
 <td>Железный Человек</td>
 <td>Marvel</td>
 <td>7,9</td>
-<td>79</td>
-<td>126</td>
 <td>2008</td>
-<td>140</td>
 <td>Джон Фавро</td>
 <td>Jon Favreau</td>
 <td>iron_man</td>
@@ -715,10 +576,7 @@
 <td>Возвращение Супермена</td>
 <td>DC</td>
 <td>6,0</td>
-<td>72</td>
-<td>154</td>
 <td>2006</td>
-<td>270</td>
 <td>Брайан Сингер</td>
 <td>Bryan Singer</td>
 <td>superman_returns</td>
@@ -728,10 +586,7 @@
 <td>Бэтмен начинается</td>
 <td>DC</td>
 <td>8,2</td>
-<td>70</td>
-<td>140</td>
 <td>2005</td>
-<td>150</td>
 <td>Кристофер Нолан</td>
 <td>Christopher Nolan</td>
 <td>batman_begins</td>
@@ -741,10 +596,7 @@
 <td>Женщина-кошка</td>
 <td>DC</td>
 <td>3,3</td>
-<td>27</td>
-<td>104</td>
 <td>2004</td>
-<td>100</td>
 <td>Питоф</td>
 <td>Pitof</td>
 <td>catwoman</td>
@@ -799,7 +651,6 @@ excerpt: |-
   const B = document.getElementById("viewSourceBtn");
   const M = document.getElementById("viewSource");
   const C = document.getElementById("unViewSource");
-  console.log(B, M, C)
   B && B.addEventListener("click", () => M.classList.add("is-active"))
   C && C.addEventListener("click", () => M.classList.remove("is-active"))
 

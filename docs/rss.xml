@@ -4,9 +4,17 @@
         <title>Mukha SSG</title>
         <link>https://example.site</link>
         <description>Быстрый и простой генератор статичных сайтов.</description>
-        <lastBuildDate>Mon, 07 Jul 2025 19:55:18 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 15 Jul 2025 13:12:41 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Использование данных]]></title>
+            <link>https://example.site/docs/mukha_data_ru.html</link>
+            <guid isPermaLink="false">https://example.site/docs/mukha_data_ru.html</guid>
+            <pubDate>Sun, 13 Jul 2025 14:49:00 GMT</pubDate>
+            <description><![CDATA[Данные являются полноправной частью контента Мухи. Их можно использовать как в шаблонах,
+так и в тексте и даже немножко <a href="https://example.site/docs/data_config_tasks.html">обрабатывать</a>.]]></description>
+        </item>
         <item>
             <title><![CDATA[Welcome page]]></title>
             <link>https://example.site/index.html</link>
@@ -48,15 +56,6 @@
             <guid isPermaLink="false">https://example.site/docs/file_obj.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Объект используется внутри генератора. Содержит поля:]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Интеграция с gulp]]></title>
-            <link>https://example.site/docs/gulp_integration.html</link>
-            <guid isPermaLink="false">https://example.site/docs/gulp_integration.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Муха легко интегрируется в процесс разработки с gulp, предоставляя быстрый
-предпросмотр сайта в браузре и позволяя объединить разработку
-css и шаблонов сайта в единый процесс.]]></description>
         </item>
         <item>
             <title><![CDATA[Документация]]></title>
@@ -151,6 +150,21 @@ css и шаблонов сайта в единый процесс.]]></descripti
 чтобы вывести какую-то информацию:]]></description>
         </item>
         <item>
+            <title><![CDATA[Интеграция с gulp]]></title>
+            <link>https://example.site/guides/gulp_integration.html</link>
+            <guid isPermaLink="false">https://example.site/guides/gulp_integration.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[Муха легко интегрируется в процесс разработки с gulp, предоставляя быстрый
+предпросмотр сайта в браузре и позволяя объединить разработку
+css и шаблонов сайта в единый процесс.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Гайды]]></title>
+            <link>https://example.site/guides/index.html</link>
+            <guid isPermaLink="false">https://example.site/guides/index.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Теги]]></title>
             <link>https://example.site/tags/index.html</link>
             <guid isPermaLink="false">https://example.site/tags/index.html</guid>
@@ -173,48 +187,42 @@ css и шаблонов сайта в единый процесс.]]></descripti
             <link>https://example.site/examples/movies/black_panther_wakanda_forever.html</link>
             <guid isPermaLink="false">https://example.site/examples/movies/black_panther_wakanda_forever.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[Marvel, Райан Куглер]]></description>
         </item>
         <item>
             <title><![CDATA[Черный Адам]]></title>
             <link>https://example.site/examples/movies/black_adam.html</link>
             <guid isPermaLink="false">https://example.site/examples/movies/black_adam.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[DC, Жауме Кольет-Серра]]></description>
         </item>
         <item>
             <title><![CDATA[Тор: Любовь и гром]]></title>
             <link>https://example.site/examples/movies/thor_love_and_thunder.html</link>
             <guid isPermaLink="false">https://example.site/examples/movies/thor_love_and_thunder.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[Marvel, Тайка Вайтити]]></description>
         </item>
         <item>
             <title><![CDATA[Доктор Стрэндж в мультивселенной безумия]]></title>
             <link>https://example.site/examples/movies/doctor_strange_in_the_multiverse_of_madness.html</link>
             <guid isPermaLink="false">https://example.site/examples/movies/doctor_strange_in_the_multiverse_of_madness.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[Marvel, Сэм Рэйми]]></description>
         </item>
         <item>
             <title><![CDATA[Бэтмен]]></title>
             <link>https://example.site/examples/movies/the_batman.html</link>
             <guid isPermaLink="false">https://example.site/examples/movies/the_batman.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[DC, Мэтт Ривз]]></description>
         </item>
         <item>
             <title><![CDATA[Человек-паук: Нет пути домой]]></title>
             <link>https://example.site/examples/movies/spider-man_no_way_home.html</link>
             <guid isPermaLink="false">https://example.site/examples/movies/spider-man_no_way_home.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Вечные]]></title>
-            <link>https://example.site/examples/movies/eternals.html</link>
-            <guid isPermaLink="false">https://example.site/examples/movies/eternals.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Шан-Чи и легенда о десяти кольцах]]></title>
-            <link>https://example.site/examples/movies/shang-chi_and_the_legend_of_the_ten_rings.html</link>
-            <guid isPermaLink="false">https://example.site/examples/movies/shang-chi_and_the_legend_of_the_ten_rings.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[Marvel, Джон Уоттс]]></description>
         </item>
     </channel>
 </rss>

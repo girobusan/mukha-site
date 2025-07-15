@@ -11,9 +11,12 @@
   <link href="_theme/highlight/styles/atom-one-light.css" rel="stylesheet">
   <script src="_theme/navbar.js">
   </script>
+  <script src="search_client.js"></script>
   <script src="_theme/masonry.js"></script>
   <script src="_theme/highlight/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+  <script data-location="/index_5.html" src="_js/client.js">
+</script>
 </head>
 
 <body>
@@ -39,18 +42,23 @@
       <a class="navbar-item has-text-white" href="docs/index.html">
         Документация
       </a>
+      <a class="navbar-item has-text-white" href="guides/index.html">
+        Гайды
+      </a>
       <a class="navbar-item has-text-white" href="examples/index.html">
         Примеры
       </a>
       <a class="navbar-item has-text-white" href="tags/index.html">
         Теги
       </a>
-</div>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded" placeholder="Поиск"></input>
+      </div></div>
   </div>
 </nav>
-<section class="hero is-primary has-text-white  ">
+<section class="hero is-primary has-text-white  is-small">
   <div class="hero-body">
-    <p class="title is-1 has-text-white">Mukha SSG (5/5)</p>
+    <p class="title is-2 has-text-white">Mukha SSG (5/5)</p>
     <p class="subtitle has-text-white">Быстрый и простой генератор статичных сайтов.</p>
   </div>
 </section>
@@ -66,6 +74,13 @@
   })
 </script>
 <div class="m-page-list columns" id="pagesList">
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="examples/years/2011.html">2011 (3)</a>
+      <div class="is-size-7"></div>
+    </div>
+
+  </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
       <a class="title is-5" href="examples/years/2010.html">2010 (2)</a>
@@ -137,19 +152,20 @@
 title: Welcome page
 date: 2025.06.16 10:10
 ---
+
 Welcome to this amazing Mukha site!
 
-Contrary to popular belief, Lorem Ipsum is not simply random text. 
-It has roots in a piece of classical Latin literature from 45 BC, making 
-it over 2000 years old. 
+Contrary to popular belief, Lorem Ipsum is not simply random text.
+It has roots in a piece of classical Latin literature from 45 BC, making
+it over 2000 years old.
 
-Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, 
-looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum 
-passage, and going through the cites of the word in classical literature, 
-discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 
-and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) 
-by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, 
-very popular during the Renaissance. The first line of Lorem Ipsum, 
+Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
+looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
+passage, and going through the cites of the word in classical literature,
+discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
+and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil)
+by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
+very popular during the Renaissance. The first line of Lorem Ipsum,
 &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.
 </pre>"
   </div>
@@ -159,7 +175,6 @@ very popular during the Renaissance. The first line of Lorem Ipsum,
   const B = document.getElementById("viewSourceBtn");
   const M = document.getElementById("viewSource");
   const C = document.getElementById("unViewSource");
-  console.log(B, M, C)
   B && B.addEventListener("click", () => M.classList.add("is-active"))
   C && C.addEventListener("click", () => M.classList.remove("is-active"))
 

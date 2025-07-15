@@ -11,9 +11,12 @@
   <link href="../_theme/highlight/styles/atom-one-light.css" rel="stylesheet">
   <script src="../_theme/navbar.js">
   </script>
+  <script src="../search_client.js"></script>
   <script src="../_theme/masonry.js"></script>
   <script src="../_theme/highlight/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+  <script data-location="/docs/lister.html" src="../_js/client.js">
+</script>
 </head>
 
 <body>
@@ -39,13 +42,18 @@
       <a class="navbar-item has-text-white" href="index.html">
         Документация
       </a>
+      <a class="navbar-item has-text-white" href="../guides/index.html">
+        Гайды
+      </a>
       <a class="navbar-item has-text-white" href="../examples/index.html">
         Примеры
       </a>
       <a class="navbar-item has-text-white" href="../tags/index.html">
         Теги
       </a>
-</div>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded" placeholder="Поиск"></input>
+      </div></div>
   </div>
 </nav>
 
@@ -60,6 +68,9 @@
 </nav>
 
 <h1 class="title is-1">Объект lister</h1>
+<div class="tags">
+  <a class="tag is-medium" href="../tags/obekty.html">Объекты</a>
+</div>
 
   <div class="content mb-6">
     <p>Объект lister — <em>похожий на массив</em> (array-like) объект, предназначенный
@@ -71,85 +82,460 @@
   {% endfor %}
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
-<h2>Методы для работы со страницами</h2>
-<h4>tags()</h4>
-<p>Возвращает список (Array) тегов (страниц!), отсортированный по алфавиту без учета регистра.</p>
-<h4>getByPath( p )</h4>
-<p>Возвращает страницу с заданным адресом, если она есть в списке.</p>
-<h4>sortByMeta( name , as_number , desc)</h4>
-<p>Возвращает новый <code>lister</code>, отсортированный по заданному полю метаданных (<code>name</code>, строка), второй параметр (<code>as_number</code>, true или false) указывает, надо ли интерпретировать значение поля как число, третий (<code>desc</code>, true или false) — задает сортировку в убывающем порядке. Значение параметра <code>as_number</code> может игнорироваться для известных типов метаданных (meta.date).</p>
-<h4>getByMeta( name , value)</h4>
-<p>Возвращает страницу, значение поля метаданных которой соответствует заданному.</p>
-<h4>getAllByMeta( name , value)</h4>
-<p>Возвращает <code>lister</code> — все страницы, значение поля метаданных которых соответствует заданному.</p>
-<h4>getAllWithMeta(name)</h4>
-<p>Возвращает все страницы (lister), у которых определено заданное поле метаданных.</p>
-<h4>getNearFiles( path_to_file)</h4>
-<p>Возвращает <code>lister</code> со списком всех страниц, находящихся на одном уровне со страницей по заданному пути. Не проверяет существование файла.</p>
-<h4>getNearDirs( path_to_file)</h4>
-<p>То же самое для директорий, т. е. файлов <code>index.html</code>.</p>
-<h4>getAllFiles( path_to_file)</h4>
-<p>Рекурсивный список (lister) всех страниц ниже по древу директорий заданного.</p>
-<h4>getAllDirs( path_to_file)</h4>
-<p>То же для директорий.</p>
-<h4>getParent( path_to_file )</h4>
-<p>Родительская директория (первая директория с файлом <code>index.html</code> выше по дереву директорий)</p>
-<h4>getBreadcrumbs( path_to_file , skip)</h4>
-<p>Список (Array) всех страниц <code>index.htm</code>, начиная от корневой директории сайта, по пути к странице. Второй параметр позволяет пропустить заданное количество директорий.</p>
-<h2>Поддерживаемые методы массива</h2>
+<h2>Поля и методы</h2>
+<div class="mb-4">
+<strong>tags
+(
+ )
+  </strong>
+<div>Параметры: нет</div>
+<div>Возвращает список тегов, отсортированный по названию</div>
+</div>
+<div class="mb-4">
+<strong>sortByMeta
+(
+    meta_name,    as_number,    desc )
+  </strong>
+<div>Возвращает копию Lister, отсортированную по указанным метаданным</div>
 <table>
 <thead>
 <tr>
-<th>Метод/поле</th>
-<th>Особенности</th>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>forEach</td>
-<td></td>
+<td><code>meta_name</code></td>
+<td>string</td>
+<td>Поле метаданных</td>
 </tr>
 <tr>
-<td>for ... in</td>
-<td></td>
+<td><code>as_number</code></td>
+<td>boolean</td>
+<td>Числовая сортировка</td>
 </tr>
 <tr>
-<td>length</td>
-<td></td>
+<td><code>desc</code></td>
+<td>boolean</td>
+<td>Сортировать в нисходящем порядке</td>
 </tr>
-<tr>
-<td>sort</td>
-<td>Возвращает новый lister</td>
-</tr>
-<tr>
-<td>slice</td>
-<td>То же</td>
-</tr>
-<tr>
-<td>map</td>
-<td>То же</td>
-</tr>
-</tbody>
-</table>
-<h2>Специальные методы</h2>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>getByPath
+(
+    path )
+  </strong>
+<div>Возвращает страницу по пути на сайте</div>
 <table>
 <thead>
 <tr>
-<th>Метод</th>
-<th>Что делает</th>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>unwrap()</td>
-<td>Возвращает содержимое lister в виде массива.</td>
+<td><code>path</code></td>
+<td>string</td>
+<td>Путь</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>getByMeta
+(
+    meta_name,    meta_value )
+  </strong>
+<div>Возвращает страницу по паре имя/значение метаданных</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meta_name</code></td>
+<td>string</td>
+<td>Поле метаданных</td>
 </tr>
 <tr>
-<td>append(array)</td>
-<td>Возвращает новый lister c  массивом, образованным конкатенацией исходного массива с переданным в качестве параметра.</td>
+<td><code>meta_value</code></td>
+<td>string|number</td>
+<td>Значение</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>excludeByMeta
+(
+    meta_name,    meta_value )
+  </strong>
+<div>Исключает страницы по паре имя/значение метаданных, возвращает новый Lister</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meta_name</code></td>
+<td>string</td>
+<td>Поле метаданных</td>
+</tr>
+<tr>
+<td><code>meta_value</code></td>
+<td>string|number</td>
+<td>Значение</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>getAllByMeta
+(
+    meta_name,    meta_value )
+  </strong>
+<div>Возвращает все страницы с указанным значением метаданных</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meta_name</code></td>
+<td>string</td>
+<td>Поле метаданных</td>
+</tr>
+<tr>
+<td><code>meta_value</code></td>
+<td>string|number</td>
+<td>Значение</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>getAllWithMeta
+(
+    meta_name )
+  </strong>
+<div>Возвращает все страницы, содержащие указанные метаданные</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meta_name</code></td>
+<td>string</td>
+<td>Поле метаданных</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>getAllFiles
+(
+    page )
+  </strong>
+<div>Возвращает все страницы ниже указанного пути (не включая теги, виртуальные и индексные страницы)</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Путь или объект page</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>getAllDirs
+(
+    page )
+  </strong>
+<div>Возвращает все индексные страницы (директории) ниже указанного пути</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Путь или объект page</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>getNearFiles
+(
+    page )
+  </strong>
+<div>Возвращает все страницы в той же директории, что и указанный путь</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Путь или объект page</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>getNearDirs
+(
+    page )
+  </strong>
+<div>Возвращает все индексные страницы (директории) в директории указанного пути</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Путь или объект page</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>getParent
+(
+    page )
+  </strong>
+<div>Возвращает ближайший индексный файл выше по дереву директорий</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Путь или объект page</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>getBreadcrumbs
+(
+    page )
+  </strong>
+<div>Возвращает "хлебные крошки", директории без индексных файлов пропускаются. Второй параметр определяет, сколько директорий пропустить</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Путь или объект page</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>forEach
+(
+    fn )
+  </strong>
+<div>Стандартный forEach()</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fn</code></td>
+<td>function</td>
+<td>Функция, выполняемая для каждого элемента</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>map
+(
+    fn )
+  </strong>
+<div>Стандартный  map()</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fn</code></td>
+<td>function</td>
+<td>Функция, выполняемая для каждого элемента</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>slice
+(
+    start,    end,    ... )
+  </strong>
+<div>Стандартный slice() (возвращает массив)</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>number</td>
+<td>Начальный индекс</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>number</td>
+<td>Конечный индекс</td>
+</tr>
+<tr>
+<td><code>...</code></td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>sort
+(
+    fn )
+  </strong>
+<div>Возвращает отсортированную копию.</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fn</code></td>
+<td>function</td>
+<td>функция сортировки</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>length
+  </strong>
+<div>Параметры: нет</div>
+<div>Поле length — количество элементов.</div>
+</div>
+<div class="mb-4">
+<strong>replace
+(
+    array )
+  </strong>
+<div>Заменяет текущий список новым и возвращает новый Lister</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>array</code></td>
+<td>array</td>
+<td>Массив страниц</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>append
+(
+    array )
+  </strong>
+<div>Добавляет список к текущему Lister, возвращает новый Lister</div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Зачем</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>array</code></td>
+<td>array</td>
+<td>Массив страниц</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-4">
+<strong>unwrap
+(
+ )
+  </strong>
+<div>Параметры: нет</div>
+<div>Возвращает исходный массив страниц</div>
+</div>
 
     <button class="button is-small is-primary has-text-white mt-4 has-text-weight-normal" id="viewSourceBtn">Исходный
       текст</button>
@@ -166,6 +552,7 @@
     <pre>---
 title: Объект lister
 doc: lister_ru
+tags: объекты
 ---
 
 Объект lister — _похожий на массив_ (array-like) объект, предназначенный
@@ -184,73 +571,45 @@ doc: lister_ru
 
 {% endraw %}
 
-## Методы для работы со страницами
+## Поля и методы
 
-#### tags()
+{% for fl in data.datasets.api.lister %}
 
-Возвращает список (Array) тегов (страниц!), отсортированный по алфавиту без учета регистра.
-
-#### getByPath( p )
-
-Возвращает страницу с заданным адресом, если она есть в списке.
-
-#### sortByMeta( name , as_number , desc)
-
-Возвращает новый `lister`, отсортированный по заданному полю метаданных (`name`, строка), второй параметр (`as_number`, true или false) указывает, надо ли интерпретировать значение поля как число, третий (`desc`, true или false) — задает сортировку в убывающем порядке. Значение параметра `as_number` может игнорироваться для известных типов метаданных (meta.date).
-
-#### getByMeta( name , value)
-
-Возвращает страницу, значение поля метаданных которой соответствует заданному.
-
-#### getAllByMeta( name , value)
-
-Возвращает `lister` — все страницы, значение поля метаданных которых соответствует заданному.
-
-#### getAllWithMeta(name)
-
-Возвращает все страницы (lister), у которых определено заданное поле метаданных.
-
-#### getNearFiles( path_to_file)
-
-Возвращает `lister` со списком всех страниц, находящихся на одном уровне со страницей по заданному пути. Не проверяет существование файла.
-
-#### getNearDirs( path_to_file)
-
-То же самое для директорий, т. е. файлов `index.html`.
-
-#### getAllFiles( path_to_file)
-
-Рекурсивный список (lister) всех страниц ниже по древу директорий заданного.
-
-#### getAllDirs( path_to_file)
-
-То же для директорий.
-
-#### getParent( path_to_file )
-
-Родительская директория (первая директория с файлом `index.html` выше по дереву директорий)
-
-#### getBreadcrumbs( path_to_file , skip)
-
-Список (Array) всех страниц `index.htm`, начиная от корневой директории сайта, по пути к странице. Второй параметр позволяет пропустить заданное количество директорий.
-
-## Поддерживаемые методы массива
-
-| Метод/поле | Особенности             |
-| ---------- | ----------------------- |
-| forEach    |                         |
-| for ... in |                         |
-| length     |                         |
-| sort       | Возвращает новый lister |
-| slice      | То же                   |
-| map        | То же                   |
-
-## Специальные методы
-
-| Метод         | Что делает                                                                                                           |
-| ------------- | -------------------------------------------------------------------------------------------------------------------- |
-| unwrap()      | Возвращает содержимое lister в виде массива.                                                                         |
-| append(array) | Возвращает новый lister c  массивом, образованным конкатенацией исходного массива с переданным в качестве параметра. |
+&lt;div class=&quot;mb-4&quot;&gt;
+&lt;strong&gt;{{fl.method}}
+    {% if not fl.notfn %}(
+    {% if fl.params_desc %}
+    {% for pr in fl.params_desc %}
+    {{ pr[0] }}{% if not loop.last %},{% endif %}
+    {% endfor %}
+    {% endif %} )
+    {% endif %}
+  &lt;/strong&gt;
+{% if not fl.params_desc %}
+&lt;div&gt;Параметры: {{ fl.params or &quot;нет&quot;}}&lt;/div&gt;
+{% endif %}
+&lt;div&gt;{{fl.description}}&lt;/div&gt;
+{% if fl.params_desc %}
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;td&gt;Параметр&lt;/td&gt;
+&lt;td&gt;Тип&lt;/td&gt;
+&lt;td&gt;Зачем&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+{% for row in fl.params_desc %}
+&lt;tr&gt;
+&lt;td&gt;&lt;code&gt;{{row[0]}}&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;{{row[1]}}&lt;/td&gt;
+&lt;td&gt;{{row[2]}}&lt;/td&gt;
+&lt;/tr&gt;
+{% endfor %}
+&lt;/tbody&gt;&lt;/table&gt;
+{% endif %}
+&lt;/div&gt;
+{% endfor %}
 </pre>"
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
@@ -259,7 +618,6 @@ doc: lister_ru
   const B = document.getElementById("viewSourceBtn");
   const M = document.getElementById("viewSource");
   const C = document.getElementById("unViewSource");
-  console.log(B, M, C)
   B && B.addEventListener("click", () => M.classList.add("is-active"))
   C && C.addEventListener("click", () => M.classList.remove("is-active"))
 

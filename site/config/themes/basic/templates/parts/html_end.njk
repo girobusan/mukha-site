@@ -17,8 +17,8 @@
 {% endif %}
 <div class="modal has-background-white" id="viewSource">
   <div class="modal-background"></div>
-  <div class="modal-content px-2 py-2 ">
-    <pre>{{page.file.getContent() | escape}}</pre>"
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">{{page.file.getContent() | escape | nl2br }}</div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
 </div>

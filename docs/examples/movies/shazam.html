@@ -6,14 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Шазам! :: Mukha SSG</title>
   <meta property="og:title" content="Шазам!" />
-  <meta property="og:description" content="Быстрый и простой генератор статичных сайтов." />
+  <meta property="og:description" content="DC, Дэвид Ф. Сандберг" />
   <link href="../../_theme/style.css" rel="stylesheet">
   <link href="../../_theme/highlight/styles/atom-one-light.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
+  <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
   <script src="../../_theme/highlight/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
+  <script data-location="/examples/movies/shazam.html" src="../../_js/client.js">
+</script>
 </head>
 
 <body>
@@ -39,13 +42,18 @@
       <a class="navbar-item has-text-white" href="../../docs/index.html">
         Документация
       </a>
+      <a class="navbar-item has-text-white" href="../../guides/index.html">
+        Гайды
+      </a>
       <a class="navbar-item has-text-white" href="../index.html">
         Примеры
       </a>
       <a class="navbar-item has-text-white" href="../../tags/index.html">
         Теги
       </a>
-</div>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded" placeholder="Поиск"></input>
+      </div></div>
   </div>
 </nav>
 
@@ -61,10 +69,6 @@
 </nav>
 
 <h1 class="title is-1">Шазам!</h1>
-<div class="tags">
-  <a class="tag is-medium" href="../../tags/dc.html">DC</a>
-  <a class="tag is-medium" href="../../tags/devid_f_sandberg.html">Дэвид Ф. Сандберг</a>
-</div>
 
   <div class="content mb-6">
     <ul>
@@ -97,7 +101,6 @@
   const B = document.getElementById("viewSourceBtn");
   const M = document.getElementById("viewSource");
   const C = document.getElementById("unViewSource");
-  console.log(B, M, C)
   B && B.addEventListener("click", () => M.classList.add("is-active"))
   C && C.addEventListener("click", () => M.classList.remove("is-active"))
 
