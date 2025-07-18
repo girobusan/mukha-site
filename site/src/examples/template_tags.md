@@ -9,12 +9,14 @@ mymeta: test
 
 #### Метаданные страницы:
 
-**{{ page.meta.mymeta }}**
+Код:
 
-#### Исходный текст страницы:
-
-Лучше сочетать с JS.
-
-```@raw
-<pre>{{ page.file.getContent()}}</pre>
 ```
+{% raw %} **{{ page.meta.title }}** {% endraw %}
+```
+
+Результат:
+
+**{{ page.meta.title }}**
+
+

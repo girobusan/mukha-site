@@ -25,11 +25,11 @@
   meta:
     title: "[name_ru]"
     group: movies
-    excerpt: "[company], [director_ru]"
+    excerpt: "Компания _[company]_, режиссер — [director_ru], [year] год."
   markdown: |-
     - Компания: **[company]**
     - Режиссер: **[director_ru]**
-    - Год выхода: **[year]**
+    - Год выхода: [ **[year]** ](/examples/years/[year].html)
     - Рейтинг IMDB: **[rating_IMDB]**
 
 - task: render
@@ -38,8 +38,9 @@
   col: year
   path: /examples/years/[year].html
   meta:
-    title: "[year] ([movies_year])"
+    title: "[year]"
     croup: years
+    excerpt: "Вышло фильмов: [movies_year]"
   markdown: |-
     {% for row in page.local_data %}
     - {{row.company}} : [{{ row.name_ru }}](/examples/movies/{{row.movie_slug}}.html)
