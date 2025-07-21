@@ -19878,6 +19878,18 @@ body {
   flex-direction: column;
 }
 
+pre {
+  background: none;
+  padding: 0 !important;
+}
+pre .hljs {
+  margin: 0;
+}
+
+code {
+  color: #444;
+}
+
 .search_results {
   background-color: white !important;
   min-width: 20rem;

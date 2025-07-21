@@ -1,6 +1,8 @@
 ---
 title: Пример конфигурационного файла данных
 doc: data_config_example_ru
+excerpt: |-
+  Примеры конфигурации в JSON и YAML
 ---
 
 {% raw %}
