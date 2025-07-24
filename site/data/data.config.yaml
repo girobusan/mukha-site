@@ -45,3 +45,4 @@
     {% for row in page.local_data %}
     - {{row.company}} : [{{ row.name_ru }}](/examples/movies/{{row.movie_slug}}.html)
     {% endfor %}
+    {{ saveData("test" , page.local_data) }}
