@@ -14,5 +14,5 @@ excerpt: |-
 
 
 <small class="wide_table">
-{{ data.datasets.examples.movies | to_table }}
+{{ datasets.examples.movies | to_table }}
 </small>

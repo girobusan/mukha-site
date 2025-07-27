@@ -5,25 +5,22 @@ excerpt: Что куда класть и зачем
 lang: ru
 ---
 
-```
-📁site/
-   📁config/
-      site.yaml ← обязательно
-      📁themes/
-         📁<theme_name>/
-            📁templates/...
-            📁assets/...
-
-   📁data/
-     ...data files...
-     data.config.yaml ← необязательно
-
-   📁src/
-     ...sources...
-
-   📁assets/
-     ...assets...
-```
+<pre class="mermaid">
+graph TB
+    A[site] --- B[config]
+    A --- C[data] --- K(["data.config.yaml (необязательно)"])
+    C --- C1@{shape: procs , label: "json, yaml, csv..."}
+    A --- D[src]
+    A --- E[assets]
+    B --- F(["site.yaml (обязательно)"])
+    %%F --- |Конфигурационный файл сайта| F
+    B --- G[themes]
+    G --- H[theme_name1]
+    G --- I[theme_name2]
+    G --- J[...]
+    H --- L[templates]
+    H --- L1[assets]
+</pre>
 
 ## site/config/
 
