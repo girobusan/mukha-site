@@ -19963,3 +19963,9 @@ code {
 .card.is-outlined {
   border: 1px solid #13af61;
 }
+
+figure.image.noresize img {
+  width: auto;
+  display: block;
+  margin: 0 auto;
+}

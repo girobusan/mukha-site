@@ -150,3 +150,11 @@ code {
 .card.is-outlined {
   border: 1px solid $my-primary;
 }
+
+figure.image {
+  &.noresize img {
+    width: auto;
+    display: block;
+    margin: 0 auto;
+  }
+}
