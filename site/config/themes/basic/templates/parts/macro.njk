@@ -11,9 +11,10 @@
 {% endif %}
 {% endmacro %}
 
-{% macro bigArticleHeader(pg , bcr) %}
+{% macro bigArticleHeader(pg , bcr , LANG) %}
 {{ breadcrumbs(bcr) }}
 <h1 class="title is-1">{{ pg.meta.title}}</h1>
+<!--{{ LANG }}-->
 {% if pg.meta.tags %}
 <div class="tags">
   {% for tag in pg.meta.tags %}

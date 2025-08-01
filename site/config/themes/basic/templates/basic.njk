@@ -7,11 +7,17 @@
 {% from "parts/page_lists.njk" import listAsTitles %}
 <div class="container my-6 px-3 is-max-tablet" {%if not page.virtual %}data-pagefind-body{% endif %}>
 
-  {{ bigArticleHeader(page , bcr) }}
+  {{ bigArticleHeader(page , bcr , LANG) }}
   <div class="content mb-6">
     {{ html }}
-    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">Исходный
-      текст</button>
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      {% if LANG=='ru' %}
+      Исходный
+      текст
+      {% else %}
+      Page source
+      {% endif %}
+    </button>
     {# if meta.date %}
     {% if meta.date.getFullYear() > 1980 %}
     <small class="">&mdash; {{ util.niceDate(meta.date)}}</small>

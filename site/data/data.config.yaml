@@ -18,10 +18,11 @@
   dataset: examples.movies
   cols: ["rating_metacritic"]
 
+# render russian
 - task: render
   dataset: examples.movies
   type: row
-  path: /examples/movies/[movie_slug].html
+  path: /ru/examples/movies/[movie_slug].html
   meta:
     title: "[name_ru]"
     group: movies
@@ -29,20 +30,50 @@
   markdown: |-
     - Компания: **[company]**
     - Режиссер: **[director_ru]**
-    - Год выхода: [ **[year]** ](/examples/years/[year].html)
+    - Год выхода: [ **[year]** ](/ru/examples/years/[year].html)
     - Рейтинг IMDB: **[rating_IMDB]**
 
 - task: render
   dataset: examples.movies
   type: col
   col: year
-  path: /examples/years/[year].html
+  path: /ru/examples/years/[year].html
   meta:
     title: "[year]"
     croup: years
     excerpt: "Вышло фильмов: [movies_year]"
   markdown: |-
     {% for row in page.local_data %}
-    - {{row.company}} : [{{ row.name_ru }}](/examples/movies/{{row.movie_slug}}.html)
+    - {{row.company}} : [{{ row.name_ru }}](/ru/examples/movies/{{row.movie_slug}}.html)
+    {% endfor %}
+    {{ saveData("test" , page.local_data) }}
+
+# render english
+- task: render
+  dataset: examples.movies
+  type: row
+  path: /en/examples/movies/[movie_slug].html
+  meta:
+    title: "[name_en]"
+    group: movies
+    excerpt: "Company: _[company]_, director: — [director_en], [year] year."
+  markdown: |-
+    - Company: **[company]**
+    - Director: **[director_en]**
+    - Year: [ **[year]** ](/en/examples/years/[year].html)
+    - IMDB: **[rating_IMDB]**
+
+- task: render
+  dataset: examples.movies
+  type: col
+  col: year
+  path: /en/examples/years/[year].html
+  meta:
+    title: "[year]"
+    croup: years
+    excerpt: "Movies: [movies_year]"
+  markdown: |-
+    {% for row in page.local_data %}
+    - {{row.company}} : [{{ row.name_en }}](/en/examples/movies/{{row.movie_slug}}.html)
     {% endfor %}
     {{ saveData("test" , page.local_data) }}

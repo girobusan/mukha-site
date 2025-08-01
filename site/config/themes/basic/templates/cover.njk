@@ -7,11 +7,23 @@
   <div class="hero-body">
     <p class="title is-2 has-text-white">{{ config.title }}{% if page.page_number>1 %} ({{page.page_number}}/{{
       page.page_links.length}}){% endif %}</p>
-    <p class="subtitle has-text-white">{{ config.description}}</p>
+    <p class="subtitle has-text-white">{{ config[ "description_" + LANG ]}}</p>
+    <div class="field has-addons">
+      {% if LANG=='en' %}
+      <p class-"control">
+        <a href="/ru/index.html" class="button is-small">Русский</a>
+      </p>
+      {% endif %}
+      {% if LANG=='ru'%}
+      <p class="control">
+        <a href="/en/index.html" class="button is-small">English</a>
+      </p>
+      {% endif %}
+    </div>
   </div>
 </section>
 {% endblock %}
-{% set allPages = list.getAllFiles("/index.html").sortByMeta("order" , false , true) %}
+{% set allPages = list.getAllFiles(page.file.path).sortByMeta("order" , false , true) %}
 {% set p = splitToPages(allPages , 20) %}
 {% block content %}
 {# content {{ allPages.length }} #}

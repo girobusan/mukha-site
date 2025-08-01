@@ -5,6 +5,10 @@ url: "https://example.site"
 theme: basic
 description: |-
   Быстрый и простой генератор статичных сайтов.
+description_ru: |-
+  Быстрый и простой генератор статичных сайтов.
+description_en: |-
+  Quick and simple static site generator.
 #default maximum length of the list;
 #max number of entries on single page
 #of multipage lists

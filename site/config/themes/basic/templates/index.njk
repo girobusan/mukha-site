@@ -1,5 +1,13 @@
-{# util.debug(page.file.path)#}
-{% if page.file.path.startsWith("/index") and page.index %}
+{% set LANG='en' %}
+{% if page.file.path.startsWith('/ru/') %}
+{% set LANG='ru' %}
+{% endif %}
+
+{% if page.permalink=='/index.html' %}
+{# start page #}
+{% set LANG_CHOOSER=true %}
+{% extends "cover.njk" %}
+{% elseif page.permalink=='/ru/index.html' or page.permalink=='/en/index.html' %}
 {% extends "cover.njk" %}
 {% elseif page.tag %}
 {% extends "tag.njk" %}

@@ -1,4 +1,4 @@
-{% set menu = list.getNearDirs("/index.html").sortByMeta("menuitem" , true , false) %}
+{% set menu = list.getNearDirs("/" + LANG +"/index.html").sortByMeta("menuitem" , true , false) %}
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <span class="navbar-item has-text-weight-bold has-text-white">
@@ -47,7 +47,8 @@
       </a>
       {% endfor %}
       <div class="navbar-item">
-        <input type="text" data-role="lunr-search" class="input is-small is-rounded" placeholder="Поиск"></input>
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="{% if LANG=='ru' %}Поиск{% else %}Search{% endif %}"></input>
       </div>
       {#-
       <!--<div class="buttons">

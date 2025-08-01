@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="{{ LANG }}">
 
 <head>
   <meta charset="UTF-8">
@@ -16,7 +16,7 @@
   {% endif %}
   <meta property="og:description" content="{%- if meta.excerpt -%}
       {{ meta.excerpt | striptags -}}
-      {% else %}{{ config.description}}{% endif %}" />
+      {% else %}{{ config[ " description_" + LANG ]}}{% endif %}" />
   <link href="/_theme/style.css" rel="stylesheet">
   <link href="/_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="/_theme/navbar.js">

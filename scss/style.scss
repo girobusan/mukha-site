@@ -13,13 +13,13 @@ $my-primary: #13af61;
   /* $grey-light: $beige-light, */
   $primary: $my-primary,
   $link: #5bff2a,
-  $control-border-width: 2px);
+  $control-border-width: 1px);
 //
 
 // Import the components you need
 @forward "bulma/sass/base";
 /* @forward "bulma/sass/" */
-@forward "bulma/sass/components/card" with ($card-radius: 0.25rem,
+@forward "bulma/sass/components/card" with ($card-radius: 0.5rem,
   $card-content-padding: 1rem);
 /* @forward "bulma/sass/components/modal"; */
 @forward "bulma/sass/components/navbar";
