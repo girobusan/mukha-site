@@ -34,7 +34,7 @@ excerpt: |-
 В node можно использовать так:
 
 ```js
-// hooks/after/myhook.js
+// hooks/after.d/myhook.js
 process.stdio.on("data" , 
 (d)=>{
   let output_dir = d.toString(); 
@@ -46,7 +46,7 @@ process.stdio.on("data" ,
 Или в скрипте оболочки:
 
 ```bash
-# hooks/after/myhook.sh
+# hooks/after.sh
 read OUTDIR
 cd $OUTDIR
 # do stuff

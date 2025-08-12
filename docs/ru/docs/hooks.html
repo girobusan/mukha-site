@@ -88,7 +88,7 @@
 <h3>after</h3>
 <p>Запускается после завершения генерации, на стандартный ввод получает выходную директорию.
 В node можно использовать так:</p>
-<pre><code class="language-js"><span class="hljs-comment">// hooks/after/myhook.js</span>
+<pre><code class="language-js"><span class="hljs-comment">// hooks/after.d/myhook.js</span>
 process.<span class="hljs-property">stdio</span>.<span class="hljs-title function_">on</span>(<span class="hljs-string">&quot;data&quot;</span> , 
 <span class="hljs-function">(<span class="hljs-params">d</span>)=&gt;</span>{
   <span class="hljs-keyword">let</span> output_dir = d.<span class="hljs-title function_">toString</span>(); 
@@ -97,7 +97,7 @@ process.<span class="hljs-property">stdio</span>.<span class="hljs-title functio
 
 </code></pre>
 <p>Или в скрипте оболочки:</p>
-<pre><code class="language-bash"><span class="hljs-comment"># hooks/after/myhook.sh</span>
+<pre><code class="language-bash"><span class="hljs-comment"># hooks/after.sh</span>
 <span class="hljs-built_in">read</span> OUTDIR
 <span class="hljs-built_in">cd</span> <span class="hljs-variable">$OUTDIR</span>
 <span class="hljs-comment"># do stuff</span>
@@ -154,7 +154,7 @@ excerpt: |-<br />
 В node можно использовать так:<br />
 <br />
 ```js<br />
-// hooks/after/myhook.js<br />
+// hooks/after.d/myhook.js<br />
 process.stdio.on(&quot;data&quot; , <br />
 (d)=&gt;{<br />
   let output_dir = d.toString(); <br />
@@ -166,7 +166,7 @@ process.stdio.on(&quot;data&quot; , <br />
 Или в скрипте оболочки:<br />
 <br />
 ```bash<br />
-# hooks/after/myhook.sh<br />
+# hooks/after.sh<br />
 read OUTDIR<br />
 cd $OUTDIR<br />
 # do stuff<br />
