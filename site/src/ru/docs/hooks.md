@@ -43,13 +43,14 @@ process.stdio.on("data" ,
 
 ```
 
-Или в скрипте оболочки:
+Или в скрипте оболочки, публикация через surge.sh:
 
 ```bash
+#!/usr/bin/env sh
 # hooks/after.sh
-read OUTDIR
-cd $OUTDIR
-# do stuff
+read PRJ_DIR
+surge --project $PRJ_DIR
+
 ```
 
 

@@ -41,6 +41,10 @@ async function watchSite() {
   spawn("mukha-ssg", ["-w"]);
 }
 
+async function editSite() {
+  spawn("mukha-ssg", ["-wc", "-o", "docs"]);
+}
+
 async function watchAll() {
   watchCSS();
   watchSite();
@@ -52,3 +56,4 @@ exports.css = buildCSS;
 exports.buildSite = buildSite;
 exports.watchAll = watchAll;
 exports.prodCSS = productionCSS;
+exports.editSite = editSite;

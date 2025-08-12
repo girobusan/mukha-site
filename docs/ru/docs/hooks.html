@@ -96,11 +96,12 @@ process.<span class="hljs-property">stdio</span>.<span class="hljs-title functio
 })
 
 </code></pre>
-<p>Или в скрипте оболочки:</p>
-<pre><code class="language-bash"><span class="hljs-comment"># hooks/after.sh</span>
-<span class="hljs-built_in">read</span> OUTDIR
-<span class="hljs-built_in">cd</span> <span class="hljs-variable">$OUTDIR</span>
-<span class="hljs-comment"># do stuff</span>
+<p>Или в скрипте оболочки, публикация через surge.sh:</p>
+<pre><code class="language-bash"><span class="hljs-meta">#!/usr/bin/env sh</span>
+<span class="hljs-comment"># hooks/after.sh</span>
+<span class="hljs-built_in">read</span> PRJ_DIR
+surge --project <span class="hljs-variable">$PRJ_DIR</span>
+
 </code></pre>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
@@ -163,13 +164,14 @@ process.stdio.on(&quot;data&quot; , <br />
 <br />
 ```<br />
 <br />
-Или в скрипте оболочки:<br />
+Или в скрипте оболочки, публикация через surge.sh:<br />
 <br />
 ```bash<br />
+#!/usr/bin/env sh<br />
 # hooks/after.sh<br />
-read OUTDIR<br />
-cd $OUTDIR<br />
-# do stuff<br />
+read PRJ_DIR<br />
+surge --project $PRJ_DIR<br />
+<br />
 ```<br />
 <br />
 <br />
