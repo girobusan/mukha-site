@@ -30,8 +30,8 @@
     "sass": "^1.83.4"
   },
   "scripts": {
-    "watch": "gulp watch",
-    "build": "gulp sass"
+    "watch": "gulp watchAll",
+    "edit": "mukha-ssg -wc -o docs"
   },
   "license": "MIT",
   "dependencies": {
