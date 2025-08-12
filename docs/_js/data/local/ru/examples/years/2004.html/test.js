@@ -1,0 +1,1 @@
+window.Mukha.registerData( "/ru/examples/years/2004.html" , "test" , {"cols":["name_en","name_ru","company","rating_IMDB","year","director_ru","director_en","movie_slug","movies_year"],"rows":[["Catwoman","Женщина-кошка","DC","3,3","2004","Питоф","Pitof","catwoman",1]]} , true)

@@ -8,22 +8,26 @@
   <meta property="og:title" content="Welcome page" />
   <meta property="og:description" content="Welcome to this amazing Mukha site!" />
   <link href="_theme/style.css" rel="stylesheet">
-  <link href="_theme/highlight/styles/atom-one-light.css" rel="stylesheet">
+  <link href="_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="_theme/navbar.js">
   </script>
+  <script data-location="/index_2.html" src="_js/client.js">
+</script>
   <script src="search_client.js"></script>
   <script src="_theme/masonry.js"></script>
   <script src="_theme/highlight/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
-  <script data-location="/index_2.html" src="_js/client.js">
-</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
 </head>
 
 <body>
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <span class="navbar-item has-text-weight-bold has-text-white">
-      <a href="index.html" class="has-text-white">
+      <a href="en/index.html" class="has-text-white">
         Mukha SSG
       </a>
     </span>
@@ -39,27 +43,27 @@
     <div class="navbar-start"></div>
 
     <div class="navbar-end">
-      <a class="navbar-item has-text-white" href="docs/index.html">
-        Документация
+      <a class="navbar-item has-text-white" href="en/docs/index.html">
+        Documentation
       </a>
-      <a class="navbar-item has-text-white" href="guides/index.html">
-        Гайды
-      </a>
-      <a class="navbar-item has-text-white" href="examples/index.html">
-        Примеры
-      </a>
-      <a class="navbar-item has-text-white" href="tags/index.html">
-        Теги
+      <a class="navbar-item has-text-white" href="en/examples/index.html">
+        Examples
       </a>
       <div class="navbar-item">
-        <input type="text" data-role="lunr-search" class="input is-small is-rounded" placeholder="Поиск"></input>
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
       </div></div>
   </div>
 </nav>
-<section class="hero is-primary has-text-white  is-small">
+<section class="hero is-primary has-text-white  is-medium">
   <div class="hero-body">
-    <p class="title is-2 has-text-white">Mukha SSG (2/5)</p>
-    <p class="subtitle has-text-white">Быстрый и простой генератор статичных сайтов.</p>
+    <p class="title is-2 has-text-white">Mukha SSG (2/4)</p>
+    <p class="subtitle has-text-white">Quick and simple static site generator.</p>
+    <div class="field has-addons">
+      <p class-"control">
+        <a href="ru/index.html" class="button is-small">Русский</a>
+      </p>
+    </div>
   </div>
 </section>
 <div class="container my-6 px-3 ">
@@ -76,160 +80,160 @@
 <div class="m-page-list columns" id="pagesList">
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/doctor_strange_in_the_multiverse_of_madness.html">Доктор Стрэндж в мультивселенной безумия</a>
-      <div class="is-size-7"><p>Marvel, Сэм Рэйми</p>
+      <a class="title is-5" href="en/examples/movies/shazam.html">Shazam!</a>
+      <div class="is-size-7"><p>Company: <em>DC</em>, director: — David F. Sandberg, 2019 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/the_batman.html">Бэтмен</a>
-      <div class="is-size-7"><p>DC, Мэтт Ривз</p>
+      <a class="title is-5" href="en/examples/movies/captain_marvel.html">Captain Marvel</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Anna Boden, Ryan Fleck, 2019 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/spider-man_no_way_home.html">Человек-паук: Нет пути домой</a>
-      <div class="is-size-7"><p>Marvel, Джон Уоттс</p>
+      <a class="title is-5" href="en/examples/movies/aquaman.html">Aquaman</a>
+      <div class="is-size-7"><p>Company: <em>DC</em>, director: — James Wan, 2018 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/eternals.html">Вечные</a>
-      <div class="is-size-7"><p>Marvel, Хлоя Чжао</p>
+      <a class="title is-5" href="en/examples/movies/ant-man_and_the_wasp.html">Ant-Man and the Wasp</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Peyton Reed, 2018 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/shang-chi_and_the_legend_of_the_ten_rings.html">Шан-Чи и легенда о десяти кольцах</a>
-      <div class="is-size-7"><p>Marvel, Дестин Дэниел Креттон</p>
+      <a class="title is-5" href="en/examples/movies/avengers_infinity_war.html">Avengers: Infinity War</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Anthony Russo, Joe Russo, 2018 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/the_suicide_squad.html">Отряд Самоубийц</a>
-      <div class="is-size-7"><p>DC, Джеймс Ганн</p>
+      <a class="title is-5" href="en/examples/movies/black_panther.html">Black Panther</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Ryan Coogler, 2018 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/black_widow.html">Черная Вдова</a>
-      <div class="is-size-7"><p>Marvel, Кейт Шортланд</p>
+      <a class="title is-5" href="en/examples/movies/justice_league.html">Justice League</a>
+      <div class="is-size-7"><p>Company: <em>DC</em>, director: — Zack Snyder, 2017 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/zack_snyders_justice_league.html">Лига справедливости Зака ​​Снайдера</a>
-      <div class="is-size-7"><p>DC, Зак Снайдер</p>
+      <a class="title is-5" href="en/examples/movies/thor_ragnarok.html">Thor: Ragnarok</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Taika Waititi, 2017 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/wonder_woman_1984.html">Чудо-женщина 1984</a>
-      <div class="is-size-7"><p>DC, Пэтти Дженкинс</p>
+      <a class="title is-5" href="en/examples/movies/wonder_woman.html">Wonder Woman</a>
+      <div class="is-size-7"><p>Company: <em>DC</em>, director: — Patty Jenkins, 2017 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/birds_of_prey_and_the_fantabulous_emancipation_of_one_harley_quinn.html">Хищные птицы и Потрясающая история Харли Квинн</a>
-      <div class="is-size-7"><p>DC, Кэти Янь</p>
+      <a class="title is-5" href="en/examples/movies/spider-man_homecoming.html">Spider-Man: Homecoming</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — John Watts, 2017 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/joker.html">Джокер</a>
-      <div class="is-size-7"><p>DC, Тодд Филлипс</p>
+      <a class="title is-5" href="en/examples/movies/guardians_of_the_galaxy_vol_2.html">Guardians of the Galaxy Vol. 2</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — James Gunn, 2017 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/spider-man_far_from_home.html">Человек-паук: Вдали от дома</a>
-      <div class="is-size-7"><p>Marvel, Джон Уоттс</p>
+      <a class="title is-5" href="en/examples/movies/doctor_strange.html">Doctor Strange</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Scott Derrickson, 2016 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/avengers_endgame.html">Мстители: Финал</a>
-      <div class="is-size-7"><p>Marvel, Энтони Руссо, Джо Руссо</p>
+      <a class="title is-5" href="en/examples/movies/suicide_squad.html">Suicide Squad</a>
+      <div class="is-size-7"><p>Company: <em>DC</em>, director: — David Ayer, 2016 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/shazam.html">Шазам!</a>
-      <div class="is-size-7"><p>DC, Дэвид Ф. Сандберг</p>
+      <a class="title is-5" href="en/examples/movies/captain_america_civil_war.html">Captain America: Civil War</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Anthony Russo, Joe Russo, 2016 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/captain_marvel.html">Капитан Марвел</a>
-      <div class="is-size-7"><p>Marvel, Анна Боден, Райан Флек</p>
+      <a class="title is-5" href="en/examples/movies/batman_v_superman_dawn_of_justice.html">Batman v Superman: Dawn of Justice</a>
+      <div class="is-size-7"><p>Company: <em>DC</em>, director: — Zack Snyder, 2016 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/aquaman.html">Аквамен</a>
-      <div class="is-size-7"><p>DC, Джеймс Ван</p>
+      <a class="title is-5" href="en/examples/movies/ant-man.html">Ant-Man</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Peyton Reed, 2015 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/ant-man_and_the_wasp.html">Человек-муравей и Оса</a>
-      <div class="is-size-7"><p>Marvel, Пейтон Рид</p>
+      <a class="title is-5" href="en/examples/movies/avengers_age_of_ultron.html">Avengers: Age of Ultron</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Joss Whedon, 2015 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/avengers_infinity_war.html">Мстители: Война бесконечности</a>
-      <div class="is-size-7"><p>Marvel, Энтони Руссо, Джо Руссо</p>
+      <a class="title is-5" href="en/examples/movies/guardians_of_the_galaxy.html">Guardians of the Galaxy</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — James Gunn, 2014 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/black_panther.html">Черная пантера</a>
-      <div class="is-size-7"><p>Marvel, Райан Куглер</p>
+      <a class="title is-5" href="en/examples/movies/captain_america_the_winter_soldier.html">Captain America: The Winter Soldier</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Anthony Russo, Joe Russo, 2014 year.</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/justice_league.html">Лига Справедливости</a>
-      <div class="is-size-7"><p>DC, Зак Снайдер</p>
+      <a class="title is-5" href="en/examples/movies/thor_the_dark_world.html">Thor: The Dark World</a>
+      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Alan Taylor, 2013 year.</p>
 </div>
     </div>
 
@@ -251,34 +255,31 @@
     <li>
       <a href="index_4.html" class="pagination-link">4</a>
     </li>
-    <li>
-      <a href="index_5.html" class="pagination-link">5</a>
-    </li>
   </ul>
 </nav>
 <div class="modal has-background-white" id="viewSource">
   <div class="modal-background"></div>
-  <div class="modal-content px-2 py-2 ">
-    <pre>---
-title: Welcome page
-date: 2025.06.16 10:10
----
-
-Welcome to this amazing Mukha site!
-
-Contrary to popular belief, Lorem Ipsum is not simply random text.
-It has roots in a piece of classical Latin literature from 45 BC, making
-it over 2000 years old.
-
-Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
-passage, and going through the cites of the word in classical literature,
-discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil)
-by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
-very popular during the Renaissance. The first line of Lorem Ipsum,
-&quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.
-</pre>"
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Welcome page<br />
+date: 2025.06.16 10:10<br />
+---<br />
+<br />
+Welcome to this amazing Mukha site!<br />
+<br />
+Contrary to popular belief, Lorem Ipsum is not simply random text.<br />
+It has roots in a piece of classical Latin literature from 45 BC, making<br />
+it over 2000 years old.<br />
+<br />
+Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,<br />
+looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum<br />
+passage, and going through the cites of the word in classical literature,<br />
+discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32<br />
+and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil)<br />
+by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,<br />
+very popular during the Renaissance. The first line of Lorem Ipsum,<br />
+&quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.<br />
+</div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
 </div>
@@ -295,17 +296,9 @@ very popular during the Renaissance. The first line of Lorem Ipsum,
     <div class="container is-max-desktop px-3 is-size-7">
       <div class="columns">
         <div class="column m-footer-column py-0 has-text-white content">
-          <p>
-Сделано <strong class="has-text-white">Мухой!</strong>
-</p>
-<ul>
-<li><a href="rss.xml">RSS</a></li>
-<li><a href="atom.xml">Atom</a></li>
-</ul></div>
+          Made with Mukha</div>
         <div class="column m-footer-column py-0 has-text-white content">
-          <p>
-&copy; 2025...
-</p></div>
+          &copy; 2025...</div>
         <div class="column m-footer-column py-0 has-text-white content"><p>
 </p></div>
       </div>

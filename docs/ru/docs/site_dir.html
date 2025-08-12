@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Структура директории сайта :: Mukha SSG</title>
+  <meta property="og:title" content="Структура директории сайта" />
+  <meta property="og:description" content="Что куда класть и зачем" />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/ru/docs/site_dir.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="../guides/index.html">
+        Гайды
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Примеры
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Поиск"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">🏠</a></li>
+    <li><a href="../index.html">Муха</a></li>
+    <li><a href="index.html">Документация</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Структура директории сайта</h1>
+<!--ru-->
+
+  <div class="content mb-6">
+    <pre class="mermaid">
+graph TB
+    A[site] --- B[config]
+    A --- C[data] --- K(["data.config.yaml (необязательно)"])
+    C --- C1@{shape: procs , label: "json, yaml, csv..."}
+    A --- D[src]
+    A --- E[assets]
+    A --- M[hooks]
+    B --- F(["site.yaml (обязательно)"])
+    %%F --- |Конфигурационный файл сайта| F
+    B --- G[themes]
+    G --- H[theme_name1]
+    G --- I[theme_name2]
+    G --- J[...]
+    H --- L[templates]
+    H --- L1[assets]
+</pre>
+<h2>site/config/</h2>
+<p>В этой директории хранится <a href="config.html">конфигурационный файл</a> и файлы тем.</p>
+<h2>site/data/</h2>
+<p>Директория для подключенных данных. Все файлы <code>csv</code> и <code>json</code>
+из этой папки будут доступны при генерации сайта. Необязательный файл
+<code>data.config.yaml</code> или <code>data.config.json</code> предназначен для описания
+<a href="data_config_tasks.html">операций</a>, которые будут произведены над данными, в том числе — параметры
+генерации страниц из данных.</p>
+<h2>site/src/</h2>
+<p>Файлы из этой папки будут обработаны при генерации сайта, из файлов в
+markdown будут сгенерированы страницы, остальные файлы скопируются
+в выходную директорию.</p>
+<h2>site/assets/</h2>
+<p>Все файлы из этой папки будут скопированы в выходную директорию без обработки.
+Удобное место для файла  .nojekyll 😃</p>
+<h2>site/hooks</h2>
+<p>Директория <a href="hooks.html">хуков</a></p>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Исходный
+      текст
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Структура директории сайта<br />
+doc: site_dir_ru<br />
+excerpt: Что куда класть и зачем<br />
+lang: ru<br />
+---<br />
+<br />
+&lt;pre class=&quot;mermaid&quot;&gt;<br />
+graph TB<br />
+    A[site] --- B[config]<br />
+    A --- C[data] --- K([&quot;data.config.yaml (необязательно)&quot;])<br />
+    C --- C1@{shape: procs , label: &quot;json, yaml, csv...&quot;}<br />
+    A --- D[src]<br />
+    A --- E[assets]<br />
+    A --- M[hooks]<br />
+    B --- F([&quot;site.yaml (обязательно)&quot;])<br />
+    %%F --- |Конфигурационный файл сайта| F<br />
+    B --- G[themes]<br />
+    G --- H[theme_name1]<br />
+    G --- I[theme_name2]<br />
+    G --- J[...]<br />
+    H --- L[templates]<br />
+    H --- L1[assets]<br />
+&lt;/pre&gt;<br />
+<br />
+## site/config/<br />
+<br />
+В этой директории хранится [конфигурационный файл](/+doc:config_file_ru) и файлы тем.<br />
+<br />
+## site/data/<br />
+<br />
+Директория для подключенных данных. Все файлы `csv` и `json`<br />
+из этой папки будут доступны при генерации сайта. Необязательный файл<br />
+`data.config.yaml` или `data.config.json` предназначен для описания<br />
+[операций](/+doc:data_config_ru), которые будут произведены над данными, в том числе — параметры<br />
+генерации страниц из данных.<br />
+<br />
+## site/src/<br />
+<br />
+Файлы из этой папки будут обработаны при генерации сайта, из файлов в<br />
+markdown будут сгенерированы страницы, остальные файлы скопируются<br />
+в выходную директорию.<br />
+<br />
+## site/assets/<br />
+<br />
+Все файлы из этой папки будут скопированы в выходную директорию без обработки. <br />
+Удобное место для файла  .nojekyll :)<br />
+<br />
+## site/hooks<br />
+<br />
+Директория [хуков](/+doc:hooks_ru)<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Сделано Мухой</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

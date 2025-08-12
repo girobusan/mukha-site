@@ -23,7 +23,7 @@
   </div>
 </section>
 {% endblock %}
-{% set allPages = list.getAllFiles(page.file.path).sortByMeta("order" , false , true) %}
+{% set allPages = list.getAllFiles("/" + LANG + "/index.html").sortByMeta("order" , false , true) %}
 {% set p = splitToPages(allPages , 20) %}
 {% block content %}
 {# content {{ allPages.length }} #}

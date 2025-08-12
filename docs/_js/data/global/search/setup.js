@@ -1,0 +1,1 @@
+window.Mukha.registerData( "search" , "setup" , {"langs":["ru","en"],"stemmer":true,"multi":true} , false)

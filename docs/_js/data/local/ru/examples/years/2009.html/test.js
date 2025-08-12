@@ -1,0 +1,1 @@
+window.Mukha.registerData( "/ru/examples/years/2009.html" , "test" , {"cols":["name_en","name_ru","company","rating_IMDB","year","director_ru","director_en","movie_slug","movies_year"],"rows":[["Watchmen","Стражи","DC","7,6","2009","Зак Снайдер","Zack Snyder","watchmen",1]]} , true)

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Movies :: Mukha SSG</title>
+  <meta property="og:title" content="Movies" />
+  <meta property="og:description" content="Example of page generation from a table. One page is generated for each row. Code from data.config.yaml:" />
+  <link href="../../../_theme/style.css" rel="stylesheet">
+  <link href="../../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/examples/movies/index.html" src="../../../_js/client.js">
+</script>
+  <script src="../../../search_client.js"></script>
+  <script src="../../../_theme/masonry.js"></script>
+  <script src="../../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="../../docs/index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../index.html">🏠</a></li>
+    <li><a href="../../index.html">Mukha</a></li>
+    <li><a href="../index.html">Examples</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Movies</h1>
+<!--en-->
+
+  <div class="content mb-6">
+    <p>Example of page generation from a table. One page is generated for each row. Code from <a href="../../docs/data_config_tasks.html">data.config.yaml</a>:</p>
+<pre><code class="language-yaml"><span class="hljs-comment"># First create a column with a string suitable for filename</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">slugify</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">name_en</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">movie_slug</span>
+
+<span class="hljs-comment"># Actual generation</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">render</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">row</span>
+  <span class="hljs-attr">path:</span> <span class="hljs-string">/examples/movies/[movie_slug].html</span>
+  <span class="hljs-attr">meta:</span>
+    <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[name_ru]&quot;</span>
+    <span class="hljs-attr">excerpt:</span> <span class="hljs-string">&quot;Company _[company]_, director — [director_en], year [year].&quot;</span>
+  <span class="hljs-attr">markdown:</span> <span class="hljs-string">|-
+    - Company: **[company]**
+    - Director: **[director_en]**
+    - Release year: [ **[year]** ](/examples/years/[year].html)
+    - IMDB Rating: **[rating_IMDB]**
+</span></code></pre>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+  <div class="m-columnized">
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_panther_wakanda_forever.html">Black Panther: Wakanda Forever</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Ryan Coogler, 2022 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_adam.html">Black Adam</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Jaume Collet-Serra, 2022 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor_love_and_thunder.html">Thor: Love and Thunder</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Taika Waititi, 2022 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="doctor_strange_in_the_multiverse_of_madness.html">Doctor Strange in the Multiverse of Madness</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Sam Raimi, 2022 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_batman.html">The Batman</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Matt Reeves, 2022 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="spider-man_no_way_home.html">Spider-Man: No Way Home</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — John Watts, 2021 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="eternals.html">Eternals</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Chloe Zhao, 2021 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="shang-chi_and_the_legend_of_the_ten_rings.html">Shang-Chi and the Legend of the Ten Rings</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Destin Daniel Cretton, 2021 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_suicide_squad.html">The Suicide Squad</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — James Gunn, 2021 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_widow.html">Black Widow</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Cate Shortland, 2021 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="zack_snyders_justice_league.html">Zack Snyder's Justice League</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Zack Snyder, 2021 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="wonder_woman_1984.html">Wonder Woman 1984</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Patty Jenkins, 2020 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="birds_of_prey_and_the_fantabulous_emancipation_of_one_harley_quinn.html">Birds of Prey and the Fantabulous Emancipation of One Harley Quinn</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Cathy Yan, 2020 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="joker.html">Joker</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Todd Phillips, 2019 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="spider-man_far_from_home.html">Spider-Man: Far from Home</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — John Watts, 2019 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="avengers_endgame.html">Avengers: Endgame</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Anthony Russo, Joe Russo, 2019 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="shazam.html">Shazam!</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — David F. Sandberg, 2019 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_marvel.html">Captain Marvel</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Anna Boden, Ryan Fleck, 2019 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="aquaman.html">Aquaman</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — James Wan, 2018 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="ant-man_and_the_wasp.html">Ant-Man and the Wasp</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Peyton Reed, 2018 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="avengers_infinity_war.html">Avengers: Infinity War</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Anthony Russo, Joe Russo, 2018 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_panther.html">Black Panther</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Ryan Coogler, 2018 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="justice_league.html">Justice League</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Zack Snyder, 2017 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor_ragnarok.html">Thor: Ragnarok</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Taika Waititi, 2017 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="wonder_woman.html">Wonder Woman</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Patty Jenkins, 2017 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="spider-man_homecoming.html">Spider-Man: Homecoming</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — John Watts, 2017 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="guardians_of_the_galaxy_vol_2.html">Guardians of the Galaxy Vol. 2</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — James Gunn, 2017 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="doctor_strange.html">Doctor Strange</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Scott Derrickson, 2016 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="suicide_squad.html">Suicide Squad</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — David Ayer, 2016 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_america_civil_war.html">Captain America: Civil War</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Anthony Russo, Joe Russo, 2016 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="batman_v_superman_dawn_of_justice.html">Batman v Superman: Dawn of Justice</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Zack Snyder, 2016 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="ant-man.html">Ant-Man</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Peyton Reed, 2015 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="avengers_age_of_ultron.html">Avengers: Age of Ultron</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Joss Whedon, 2015 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="guardians_of_the_galaxy.html">Guardians of the Galaxy</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — James Gunn, 2014 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_america_the_winter_soldier.html">Captain America: The Winter Soldier</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Anthony Russo, Joe Russo, 2014 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor_the_dark_world.html">Thor: The Dark World</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Alan Taylor, 2013 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="man_of_steel.html">Man of Steel</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Zack Snyder, 2013 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="iron_man_three.html">Iron Man Three</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Shane Black, 2013 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_dark_knight_rises.html">The Dark Knight Rises</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Christopher Nolan, 2012 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_avengers.html">The Avengers</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Joss Whedon, 2012 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_america_the_first_avenger.html">Captain America: The First Avenger</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Joe Johnston, 2011 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="green_lantern.html">Green Lantern</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Martin Campbell, 2011 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor.html">Thor</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Kenneth Branagh, 2011 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="jonah_hex.html">Jonah Hex</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Jimmy Hayward, 2010 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="iron_man_2.html">Iron Man 2</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Jon Favreau, 2010 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="watchmen.html">Watchmen</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Zack Snyder, 2009 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_dark_knight.html">The Dark Knight</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Christopher Nolan, 2008 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_incredible_hulk.html">The Incredible Hulk</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Louis Leterrier, 2008 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="iron_man.html">Iron Man</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>Marvel</em>, director: — Jon Favreau, 2008 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="superman_returns.html">Superman Returns</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Bryan Singer, 2006 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="batman_begins.html">Batman Begins</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Christopher Nolan, 2005 year.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="catwoman.html">Catwoman</a>     <div class="excerpt is-size-6 mb-6"><p>Company: <em>DC</em>, director: — Pitof, 2004 year.</p>
+</div>
+  </div>
+
+</div>
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Movies<br />
+---<br />
+<br />
+Example of page generation from a table. One page is generated for each row. Code from [data.config.yaml](/+doc:data_config_en):<br />
+<br />
+{% raw %}<br />
+```yaml<br />
+# First create a column with a string suitable for filename<br />
+- task: slugify<br />
+  dataset: examples.movies<br />
+  input_col: name_en<br />
+  output_col: movie_slug<br />
+<br />
+# Actual generation<br />
+- task: render<br />
+  dataset: examples.movies<br />
+  type: row<br />
+  path: /examples/movies/[movie_slug].html<br />
+  meta:<br />
+    title: &quot;[name_ru]&quot;<br />
+    excerpt: &quot;Company _[company]_, director — [director_en], year [year].&quot;<br />
+  markdown: |-<br />
+    - Company: **[company]**<br />
+    - Director: **[director_en]**<br />
+    - Release year: [ **[year]** ](/examples/years/[year].html)<br />
+    - IMDB Rating: **[rating_IMDB]**<br />
+```<br />
+<br />
+{% endraw %}<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

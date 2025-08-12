@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Java Script API :: Mukha SSG</title>
+  <meta property="og:title" content="Java Script API" />
+  <meta property="og:description" content="API для пользовательских скриптов" />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/ru/docs/js_api.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="../guides/index.html">
+        Гайды
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Примеры
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Поиск"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">🏠</a></li>
+    <li><a href="../index.html">Муха</a></li>
+    <li><a href="index.html">Документация</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Java Script API</h1>
+<!--ru-->
+
+  <div class="content mb-6">
+    <p>Для прозрачной работы с данными на клиенте, и более эффективной
+разработки пользовательских скриптов Муха позволяет подключить  простое API  для
+Java Script.</p>
+<hr>
+<p>API работает независимо от расположения сайта, например, данные загружаются
+как при открытии страниц по сети, так и локально (по протоколу file://).Для его подключения нужно:</p>
+<ul>
+<li>В шаблоне, <em>как можно ближе к началу HTML</em>, разместить тег <code>{{ jsapi }}</code></li>
+<li>В <a href="config.html">конфигурационном файле</a> добавить опцию <code>js_api: true</code></li>
+</ul>
+<p>При подключенном API становится доступен объект <code>window.Mukha</code>. Ниже список его полей.</p>
+<h3>Доступные поля</h3>
+<div class="mb-6">
+<strong>
+permalink</strong>
+<div>Ссылка от корня (root-relative) на текущую страницу. Эта ссылка
+не всегда может быть однозначно получена из URL, поэтому
+лучше использовать API. </div>
+</div>
+<div class="mb-6">
+<strong>
+relative(
+from , to )
+</strong>
+<div>Возвращает относительную ссылку со страницы, указанной первым параметром
+на страницу, указанную вторым. </div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Что это</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>from</code></td>
+<td>string</td>
+<td>Ссылка от корня сайта на страницу, с которой должна быть ссылка</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td>string</td>
+<td>Ссылка на страницу, на которую надо сослаться.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>
+relTo(
+to )
+</strong>
+<div>Преобразует ссылку от корня сайта в относительную, с текущей страницы </div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Что это</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>to</code></td>
+<td>string</td>
+<td>Каноническая ссылка на страницу</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>
+getData(
+dataset )
+</strong>
+<div>Запрашивает сохраненный для JS API глобальный датасет по имени. Возвращает
+Promise, которые разрешается запрошенным объектом данных. </div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Что это</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset</code></td>
+<td>string</td>
+<td>Имя датасета</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>
+getLocalData(
+dataset , path )
+</strong>
+<div>Запрашивает локальный датасет. Возвращает
+Promise, которые разрешается запрошенным объектом данных. </div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Что это</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset</code></td>
+<td>string</td>
+<td>Имя локального датасета</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>string</td>
+<td>Опционально: путь до страницы. Позволяет загрузить локальный датасет страницы, отличной от текущей</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>
+attachScript(
+url )
+</strong>
+<div>Присоединяет скрипт по указанному URL, возвращает Promise, который
+разрешается, если скрипт был удачно загружен. </div>
+<table>
+<thead>
+<tr>
+<td>Параметр</td>
+<td>Тип</td>
+<td>Что это</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>URL скрипта для загрузки.</td>
+</tr>
+</tbody></table>
+</div>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Исходный
+      текст
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Java Script API<br />
+excerpt: API для пользовательских скриптов<br />
+doc: jsapi_ru<br />
+---<br />
+<br />
+Для прозрачной работы с данными на клиенте, и более эффективной<br />
+разработки пользовательских скриптов Муха позволяет подключить  простое API  для<br />
+Java Script. <br />
+<br />
+---<br />
+<br />
+API работает независимо от расположения сайта, например, данные загружаются<br />
+как при открытии страниц по сети, так и локально (по протоколу file://).Для его подключения нужно:<br />
+<br />
+- В шаблоне, _как можно ближе к началу HTML_, разместить тег {% raw %}`{{ jsapi }}`{% endraw %}<br />
+- В [конфигурационном файле](/+doc:config_file_ru) добавить опцию `js_api: true`<br />
+<br />
+При подключенном API становится доступен объект `window.Mukha`. Ниже список его полей.<br />
+<br />
+###  Доступные поля<br />
+<br />
+{% for unit in data.datasets.api.jsapi %}<br />
+&lt;div class=&quot;mb-6&quot;&gt;<br />
+&lt;strong&gt;<br />
+{{ unit.field }}{% if unit.isFunction %}(<br />
+{% if unit.params %}<br />
+{% for P in unit.params %}<br />
+{{ P[0] }}{% if not loop.last %} , {% endif %}<br />
+{% endfor %}<br />
+{% endif %} )<br />
+{% endif %}<br />
+&lt;/strong&gt;<br />
+&lt;div&gt;{{ unit.description}} &lt;/div&gt;<br />
+{% if unit.params %}<br />
+&lt;table&gt;<br />
+&lt;thead&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;Параметр&lt;/td&gt;<br />
+&lt;td&gt;Тип&lt;/td&gt;<br />
+&lt;td&gt;Что это&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/thead&gt;<br />
+&lt;tbody&gt;<br />
+{% for row in unit.params %}<br />
+&lt;tr&gt;<br />
+&lt;td&gt;&lt;code&gt;{{row[0]}}&lt;/code&gt;&lt;/td&gt;<br />
+&lt;td&gt;{{row[1]}}&lt;/td&gt;<br />
+&lt;td&gt;{{row[2]}}&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+{% endfor %}<br />
+&lt;/tbody&gt;&lt;/table&gt;<br />
+{% endif %}<br />
+<br />
+&lt;/div&gt;<br />
+{% endfor %}<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Сделано Мухой</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

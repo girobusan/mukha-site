@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Муха :: Mukha SSG</title>
+  <meta property="og:title" content="Муха" />
+  <meta property="og:description" content="" />
+  <link href="../_theme/style.css" rel="stylesheet">
+  <link href="../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../_theme/navbar.js">
+  </script>
+  <script data-location="/ru/index.html" src="../_js/client.js">
+</script>
+  <script src="../search_client.js"></script>
+  <script src="../_theme/masonry.js"></script>
+  <script src="../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="javascript:;" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="docs/index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="guides/index.html">
+        Гайды
+      </a>
+      <a class="navbar-item has-text-white" href="examples/index.html">
+        Примеры
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Поиск"></input>
+      </div></div>
+  </div>
+</nav>
+<section class="hero is-primary has-text-white  is-medium">
+  <div class="hero-body">
+    <p class="title is-2 has-text-white">Mukha SSG</p>
+    <p class="subtitle has-text-white">Быстрый и простой генератор статичных сайтов.</p>
+    <div class="field has-addons">
+      <p class="control">
+        <a href="../en/index.html" class="button is-small">English</a>
+      </p>
+    </div>
+  </div>
+</section>
+<div class="container my-6 px-3 ">
+
+<script defer>
+  window.masonry.init({
+    container: "#pagesList",
+    bySize: true,
+    countFn: (e) => {
+      return Math.floor(e.getBoundingClientRect().width / 300) || 1;
+    }
+  })
+</script>
+<div class="m-page-list columns" id="pagesList">
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/cli.html">Запуск и использование</a>
+      <div class="is-size-7"><p>Использование в <em>командной строке.</em></p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/install.html">Установка</a>
+      <div class="is-size-7"><p>Три способа установки</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/hooks.html">Хуки</a>
+      <div class="is-size-7"><p>Хуки позволяют запускать произвольные скрипты во время генерации сайта.
+Их можно писать на любом языке.</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/watch_mode.html">Режим предпросмотра</a>
+      <div class="is-size-7"><p>Режим предпросмотра позволяет в реальном времени отслеживать вносимые в сайт изменения.
+Удобно использовать при <a href="guides/gulp_integration.html">интеграции с gulp</a>.</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/data2js.html">Сохранение данных для клиентских скриптов</a>
+      <div class="is-size-7"><p>При помощи Java Script API данные можно пробросить в клиентский скрипт. Они будут сохранены, а после
+могут быть асинхронно  загружены по запросу. При этом табличные данные будут
+сохранены в компактном формате.</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/links.html">Ссылки</a>
+      <div class="is-size-7"><p>В аргументах функций, в метаданных и текстах ссылки на документы на сайте
+Муха распознает ссылки от корня (root-relative):</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/intro.html">О проекте</a>
+      <div class="is-size-7"><p>Муха — <em>еще один</em> генератор статических сайтов со своими фишками.</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/search.html">Встроенный поиск</a>
+      <div class="is-size-7"><p>В Муху интегрована индексация и поиск с использованием <a href="https://lunrjs.com/">lunr</a>.  
+Поиск работает независимо от способа доставки контента.</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/mukha_data_ru.html">Подключение данных</a>
+      <div class="is-size-7"><p>Данные являются полноправной частью контента Мухи. Их можно использовать как в шаблонах,
+так и в тексте и даже немножко <a href="docs/data_config_tasks.html">обрабатывать</a>.</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/config.html">Конфигурационный файл сайта</a>
+      <div class="is-size-7"><p>Файл находится в папке <code>site_dir/config/site.yaml</code></p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/data_config.html">Пример конфигурационного файла данных</a>
+      <div class="is-size-7"><p>Примеры конфигурации в JSON и YAML</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/data_config_tasks.html">Обработка данных</a>
+      <div class="is-size-7"><p>Иногда вам может понадобиться не просто подключить данные к сайту, но и обработать их, и/или сгенерировать из них страницы для сайта. Делать это необязательно, но возможно.</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/file_obj.html">Объект file</a>
+      <div class="tags">
+        <!--obekty |  | -->
+        <a class="tag" href="../tags/obekty.html">Объекты</a>
+      </div>
+      <div class="is-size-7"><p>Объект используется внутри генератора. Содержит поля:</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/inserts.html">Вставки</a>
+      <div class="is-size-7"><p>Для вставки дополнительного контента в текст применяется синтаксис вставки.
+Длинная форма рассчитана на использование в будущем визуальном редакторе, и
+выглядит так:</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/js_api.html">Java Script API</a>
+      <div class="is-size-7"><p>API для пользовательских скриптов</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/lister.html">Объект lister</a>
+      <div class="tags">
+        <!--obekty |  | -->
+        <a class="tag" href="../tags/obekty.html">Объекты</a>
+      </div>
+      <div class="is-size-7"><p>Объект lister — <em>похожий на массив</em> (array-like) объект, предназначенный
+для хранения и обработки списков <a href="docs/page_obj.html">страниц </a>.</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/page_obj.html">Объект page (страница)</a>
+      <div class="tags">
+        <!--shablony |  | -->
+        <a class="tag" href="../tags/shablony.html">шаблоны</a>
+        <!--obekty |  | -->
+        <a class="tag" href="../tags/obekty.html">Объекты</a>
+      </div>
+      <div class="is-size-7"><p>Объект page представляет страницу на сайте. В нем доступны следующие поля:</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/site_dir.html">Структура директории сайта</a>
+      <div class="is-size-7"><p>Что куда класть и зачем</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/template_vars.html">Переменные шаблона</a>
+      <div class="tags">
+        <!--shablony |  | -->
+        <a class="tag" href="../tags/shablony.html">шаблоны</a>
+      </div>
+      <div class="is-size-7"><p>В шаблонизаторе для каждого файла доступны следующие переменные:</p>
+</div>
+    </div>
+
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="docs/templating.html">Темы и шаблоны</a>
+      <div class="is-size-7"><p>Внешнее оформление в Мухе создается при помощи тем. Доступные темы хранятся в директории <code>config/themes</code> сайта. Директории тем имеют следующую структуру:</p>
+</div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <ul class="pagination-list is-justify-content-center">
+    <li>
+      <a href="" class="pagination-link is-current">1</a>
+    </li>
+    <li>
+      <a href="index_2.html" class="pagination-link">2</a>
+    </li>
+    <li>
+      <a href="index_3.html" class="pagination-link">3</a>
+    </li>
+    <li>
+      <a href="index_4.html" class="pagination-link">4</a>
+    </li>
+    <li>
+      <a href="index_5.html" class="pagination-link">5</a>
+    </li>
+  </ul>
+</nav>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Муха<br />
+date: 2025.06.16 10:10<br />
+---<br />
+<br />
+Документация, примеры и прочее<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Сделано Мухой</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

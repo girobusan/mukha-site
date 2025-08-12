@@ -194,43 +194,45 @@
     function t(e, t) {
       return n.posix.relative(n.posix.dirname(e), t);
     }
-    function r(e, t, r) {
-      const n = e.split(".");
-      n.reduce((e, t, o) => (e[t] || (o + 1 === n.length ? e[t] = r : e[t] = {}), e = e[t]), t);
-      return t;
+    console.info("Mukha JS API client", "0.1.0b", "at", e);
+    var r = {},
+      o = {};
+    function i(e, t) {
+      return e.startsWith("/") ? "/_js/data/local" + e + "/" + t + ".js" : "/_js/data/global/" + e + "/" + t.replace(/\./g, "/") + ".js";
     }
-    console.info("Mukha JS API client", "0.0.14b", "at", e);
-    var o = {},
-      i = {};
+    function a(n, a) {
+      if (o[a] && o[a][n]) return Promise.resolve(o[a][n]);
+      let l = i(a, n);
+      return c = l, new Promise((n, o) => {
+        let i = document.createElement("script");
+        i.addEventListener("error", () => o("no data")), document.body.appendChild(i), i.src = t(e, c), r[c] = e => {
+          delete r[c], n(e);
+        };
+      });
+      var c;
+    }
     window.Mukha = {
-      registerData: (e, t, n) => {
-        let a = t;
-        if (n && (a = function (e) {
+      registerData: (e, t, n, a) => function (e, t, n, a) {
+        let l = i(e, t);
+        o[e] && o[e][t] || (o[e] || (o[e] = {}), o[e][t] = a ? function (e) {
           const t = [];
           return e.rows.forEach(r => {
             t.push(e.cols.reduce((e, t, n) => (e[t] = r[n], e), {}));
           }), t;
-        }(t)), i[e]) return i[e](a), void delete i[e];
-        console.warn("Unrequested dataset:", e), r(e, o, t);
-      },
+        }(n) : n, r[l] && r[l](o[e][t]));
+      }(e, t, n, a),
       relpath: (e, r) => t(e, r),
+      relTo: r => t(e, r),
+      attachScript: e => (console.info("jsapi: Attaching:", e), new Promise((t, r) => {
+        let n = document.createElement("script");
+        n.addEventListener("load", t), n.addEventListener("error", r), document.body.appendChild(n), n.setAttribute("src", e);
+      })),
       permalink: e,
-      getData: function (n, a) {
-        let l = a;
-        l || (l = "datasets");
-        let c = l + "." + n,
-          s = function (e, t, r) {
-            const n = r || ".";
-            return e.split(n).filter(e => e).reduce((e, t) => e ? e[t] : void 0, t);
-          }(c, o);
-        if (s) return Promise.resolve(s);
-        let f = "/_js/data/global/" + l + "/" + n.split(".").join("/") + ".js";
-        return new Promise((n, a) => {
-          let l = document.createElement("script");
-          l.addEventListener("error", () => a("no data")), document.body.appendChild(l), l.src = t(e, f), i[c] = e => {
-            r(c, o, e), n(e);
-          };
-        });
+      getLocalData: function (t, r) {
+        return a(t, r || e);
+      },
+      getData: function (e, t) {
+        return a(e, t || "datasets");
       }
     };
   }();

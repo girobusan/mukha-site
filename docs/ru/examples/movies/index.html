@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Фильмы :: Mukha SSG</title>
+  <meta property="og:title" content="Фильмы" />
+  <meta property="og:description" content="Пример генерации страниц из таблицы. Для каждой строки сгенерирована одна страница. Код из data.config.yaml:" />
+  <link href="../../../_theme/style.css" rel="stylesheet">
+  <link href="../../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../../_theme/navbar.js">
+  </script>
+  <script data-location="/ru/examples/movies/index.html" src="../../../_js/client.js">
+</script>
+  <script src="../../../search_client.js"></script>
+  <script src="../../../_theme/masonry.js"></script>
+  <script src="../../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="../../docs/index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="../../guides/index.html">
+        Гайды
+      </a>
+      <a class="navbar-item has-text-white" href="../index.html">
+        Примеры
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Поиск"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../index.html">🏠</a></li>
+    <li><a href="../../index.html">Муха</a></li>
+    <li><a href="../index.html">Примеры</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Фильмы</h1>
+<!--ru-->
+
+  <div class="content mb-6">
+    <p>Пример генерации страниц из таблицы. Для каждой строки сгенерирована одна страница. Код из <a href="../../docs/data_config_tasks.html">data.config.yaml</a>:</p>
+<pre><code class="language-yaml"><span class="hljs-comment"># Сначала делаем колонку, в которой будет строка, подходящая</span>
+<span class="hljs-comment"># для имени файла</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">slugify</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">name_en</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">movie_slug</span>
+
+<span class="hljs-comment"># Собственно, генерация</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">render</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">row</span>
+  <span class="hljs-attr">path:</span> <span class="hljs-string">/examples/movies/[movie_slug].html</span>
+  <span class="hljs-attr">meta:</span>
+    <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[name_ru]&quot;</span>
+    <span class="hljs-attr">excerpt:</span> <span class="hljs-string">&quot;Компания _[company]_, режиссер — [director_ru], [year] год.&quot;</span>
+  <span class="hljs-attr">markdown:</span> <span class="hljs-string">|-
+    - Компания: **[company]**
+    - Режиссер: **[director_ru]**
+    - Год выхода: [ **[year]** ](/examples/years/[year].html)
+    - Рейтинг IMDB: **[rating_IMDB]**
+</span></code></pre>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Исходный
+      текст
+    </button>
+    
+  </div>
+
+
+
+
+  <div class="m-columnized">
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_panther_wakanda_forever.html">Черная пантера: Ваканда навсегда</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Райан Куглер, 2022 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_adam.html">Черный Адам</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Жауме Кольет-Серра, 2022 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor_love_and_thunder.html">Тор: Любовь и гром</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Тайка Вайтити, 2022 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="doctor_strange_in_the_multiverse_of_madness.html">Доктор Стрэндж в мультивселенной безумия</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Сэм Рэйми, 2022 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_batman.html">Бэтмен</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Мэтт Ривз, 2022 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="spider-man_no_way_home.html">Человек-паук: Нет пути домой</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Джон Уоттс, 2021 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="eternals.html">Вечные</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Хлоя Чжао, 2021 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="shang-chi_and_the_legend_of_the_ten_rings.html">Шан-Чи и легенда о десяти кольцах</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Дестин Дэниел Креттон, 2021 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_suicide_squad.html">Отряд Самоубийц</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Джеймс Ганн, 2021 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_widow.html">Черная Вдова</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Кейт Шортланд, 2021 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="zack_snyders_justice_league.html">Лига справедливости Зака ​​Снайдера</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Зак Снайдер, 2021 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="wonder_woman_1984.html">Чудо-женщина 1984</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Пэтти Дженкинс, 2020 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="birds_of_prey_and_the_fantabulous_emancipation_of_one_harley_quinn.html">Хищные птицы и Потрясающая история Харли Квинн</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Кэти Янь, 2020 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="joker.html">Джокер</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Тодд Филлипс, 2019 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="spider-man_far_from_home.html">Человек-паук: Вдали от дома</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Джон Уоттс, 2019 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="avengers_endgame.html">Мстители: Финал</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Энтони Руссо, Джо Руссо, 2019 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="shazam.html">Шазам!</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Дэвид Ф. Сандберг, 2019 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_marvel.html">Капитан Марвел</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Анна Боден, Райан Флек, 2019 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="aquaman.html">Аквамен</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Джеймс Ван, 2018 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="ant-man_and_the_wasp.html">Человек-муравей и Оса</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Пейтон Рид, 2018 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="avengers_infinity_war.html">Мстители: Война бесконечности</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Энтони Руссо, Джо Руссо, 2018 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="black_panther.html">Черная пантера</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Райан Куглер, 2018 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="justice_league.html">Лига Справедливости</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Зак Снайдер, 2017 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor_ragnarok.html">Тор: Рагнарёк</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Тайка Вайтити, 2017 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="wonder_woman.html">Чудо-женщина</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Пэтти Дженкинс, 2017 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="spider-man_homecoming.html">Человек-паук: Возвращение домой</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Джон Уоттс, 2017 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="guardians_of_the_galaxy_vol_2.html">Стражи Галактики Том 2</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Джеймс Ганн, 2017 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="doctor_strange.html">Доктор Стрэндж</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Скотт Дерриксон, 2016 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="suicide_squad.html">Отряд Самоубийц</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Дэвид Эйр, 2016 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_america_civil_war.html">Капитан Америка: Противостояние</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Энтони Руссо, Джо Руссо, 2016 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="batman_v_superman_dawn_of_justice.html">Бэтмен против Супермена: На заре справедливости</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Зак Снайдер, 2016 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="ant-man.html">Человек-муравей</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Пейтон Рид, 2015 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="avengers_age_of_ultron.html">Мстители: Эра Альтрона</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Джосс Уидон, 2015 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="guardians_of_the_galaxy.html">Стражи Галактики</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Джеймс Ганн, 2014 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_america_the_winter_soldier.html">Капитан Америка: Зимний Солдат</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Энтони Руссо, Джо Руссо, 2014 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor_the_dark_world.html">Тор: Царство тьмы</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Алан Тейлор, 2013 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="man_of_steel.html">Еловек из стали</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Зак Снайдер, 2013 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="iron_man_three.html">Железный человек 3</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Шейн Блэк, 2013 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_dark_knight_rises.html">Возрождение Темного Рыцаря</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Кристофер Нолан, 2012 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_avengers.html">Мстители</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Джосс Уидон, 2012 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="captain_america_the_first_avenger.html">Капитан Америка: Первый мститель</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Джо Джонстон, 2011 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="green_lantern.html">Зеленый Фонарь</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Мартин Кэмпбелл, 2011 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="thor.html">Тор</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Кеннет Брана, 2011 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="jonah_hex.html">Джона Хекс</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Джимми Хейуорд, 2010 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="iron_man_2.html">Железный человек 2</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Джон Фавро, 2010 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="watchmen.html">Стражи</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Зак Снайдер, 2009 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_dark_knight.html">Темный рыцарь</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Кристофер Нолан, 2008 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="the_incredible_hulk.html">Невероятный Халк</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Луи Летерье, 2008 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="iron_man.html">Железный Человек</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>Marvel</em>, режиссер — Джон Фавро, 2008 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="superman_returns.html">Возвращение Супермена</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Брайан Сингер, 2006 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="batman_begins.html">Бэтмен начинается</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Кристофер Нолан, 2005 год.</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="catwoman.html">Женщина-кошка</a>     <div class="excerpt is-size-6 mb-6"><p>Компания <em>DC</em>, режиссер — Питоф, 2004 год.</p>
+</div>
+  </div>
+
+</div>
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Фильмы<br />
+---<br />
+<br />
+Пример генерации страниц из таблицы. Для каждой строки сгенерирована одна страница. Код из [data.config.yaml](/+doc:data_config_ru):<br />
+<br />
+{% raw %}<br />
+```yaml<br />
+# Сначала делаем колонку, в которой будет строка, подходящая<br />
+# для имени файла<br />
+- task: slugify<br />
+  dataset: examples.movies<br />
+  input_col: name_en<br />
+  output_col: movie_slug<br />
+<br />
+# Собственно, генерация<br />
+- task: render<br />
+  dataset: examples.movies<br />
+  type: row<br />
+  path: /examples/movies/[movie_slug].html<br />
+  meta:<br />
+    title: &quot;[name_ru]&quot;<br />
+    excerpt: &quot;Компания _[company]_, режиссер — [director_ru], [year] год.&quot;<br />
+  markdown: |-<br />
+    - Компания: **[company]**<br />
+    - Режиссер: **[director_ru]**<br />
+    - Год выхода: [ **[year]** ](/examples/years/[year].html)<br />
+    - Рейтинг IMDB: **[rating_IMDB]**<br />
+```<br />
+<br />
+{% endraw %}<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Сделано Мухой</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

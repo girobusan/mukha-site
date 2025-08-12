@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2021 :: Mukha SSG</title>
+  <meta property="og:title" content="2021" />
+  <meta property="og:description" content="Movies: 6" />
+  <link href="../../../_theme/style.css" rel="stylesheet">
+  <link href="../../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/examples/years/2021.html" src="../../../_js/client.js">
+</script>
+  <script src="../../../search_client.js"></script>
+  <script src="../../../_theme/masonry.js"></script>
+  <script src="../../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="../../docs/index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../index.html">🏠</a></li>
+    <li><a href="../../index.html">Mukha</a></li>
+    <li><a href="../index.html">Examples</a></li>
+    <li><a href="index.html">Movies by Year</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">2021</h1>
+<!--en-->
+
+  <div class="content mb-6">
+    <ul>
+<li>Marvel : <a href="../movies/spider-man_no_way_home.html">Spider-Man: No Way Home</a></li>
+<li>Marvel : <a href="../movies/eternals.html">Eternals</a></li>
+<li>Marvel : <a href="../movies/shang-chi_and_the_legend_of_the_ten_rings.html">Shang-Chi and the Legend of the Ten Rings</a></li>
+<li>DC : <a href="../movies/the_suicide_squad.html">The Suicide Squad</a></li>
+<li>Marvel : <a href="../movies/black_widow.html">Black Widow</a></li>
+<li>DC : <a href="../movies/zack_snyders_justice_league.html">Zack Snyder's Justice League</a></li>
+</ul>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">{% for row in page.local_data %}<br />
+- {{row.company}} : [{{ row.name_en }}](/en/examples/movies/{{row.movie_slug}}.html)<br />
+{% endfor %}<br />
+{{ saveData(&quot;test&quot; , page.local_data) }}</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

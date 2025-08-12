@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Запуск и использование :: Mukha SSG</title>
+  <meta property="og:title" content="Запуск и использование" />
+  <meta property="og:description" content="Использование в командной строке." />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/ru/docs/cli.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="../guides/index.html">
+        Гайды
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Примеры
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Поиск"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">🏠</a></li>
+    <li><a href="../index.html">Муха</a></li>
+    <li><a href="index.html">Документация</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Запуск и использование</h1>
+<!--ru-->
+
+  <div class="content mb-6">
+    <p>Если исходная директория называется <code>site</code> , то для генерации достаточно выполнить команду <code>mukha-ssg</code> в директории уровнем выше. Сгенерированные файлы будут размещены в директории <code>static</code> рядом с директорией сайта.</p>
+<p>Кроме того, можно использовать ключи командной строки:</p>
+<table>
+<thead>
+<tr>
+<th>краткий</th>
+<th>полный</th>
+<th>значение</th>
+<th>что делает</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-v</td>
+<td>--version</td>
+<td>нет</td>
+<td>Выведет в консоль версию мухи</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>--input</td>
+<td>директория</td>
+<td>Указывает директорию, из которой брать файлы, по умолчанию — директория site в текущей директории.</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>--output</td>
+<td>директория</td>
+<td>Путь для сгенерированных файлов, по умолчанию — static.</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>--timed</td>
+<td>нет</td>
+<td>Если установлен, то файлы, дата которых находится в будущем, будут пропущены при генерации.</td>
+</tr>
+<tr>
+<td>-с</td>
+<td>--cleanup</td>
+<td>нет</td>
+<td>Очистит выходную директорию от лишних файлов <strong>после</strong> генерации.</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>--watch</td>
+<td>нет</td>
+<td>Включает режим  разработки, подробнее ниже.</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>--port</td>
+<td>номер порта &gt;1024</td>
+<td>Порт, на котором будет открыт сервер для разработки.</td>
+</tr>
+</tbody>
+</table>
+<h2>Примеры</h2>
+<p>Включает режим разработки, сервер будет доступен по адресу http://localhost:8000</p>
+<pre><code class="language-shell">mukha-ssg -w -p 8000
+</code></pre>
+<p>Берет исходные файлы в директории <code>site</code>, сохраняет результат в <code>blog</code>, которую очищает от лишних файлов после генерации</p>
+<pre><code class="language-bash">mukha-ssg --output blog -c
+</code></pre>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Исходный
+      текст
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Запуск и использование<br />
+excerpt: Использование в _командной строке._<br />
+part: basics<br />
+doc: cli_ru<br />
+order: &quot;1.02&quot;<br />
+---<br />
+<br />
+Если исходная директория называется `site` , то для генерации достаточно выполнить команду `mukha-ssg` в директории уровнем выше. Сгенерированные файлы будут размещены в директории `static` рядом с директорией сайта.<br />
+<br />
+Кроме того, можно использовать ключи командной строки:<br />
+<br />
+| краткий | полный    | значение          | что делает                                                                                         |<br />
+| ------- | --------- | ----------------- | -------------------------------------------------------------------------------------------------- |<br />
+| -v      | --version | нет               | Выведет в консоль версию мухи                                                                      |<br />
+| -i      | --input   | директория        | Указывает директорию, из которой брать файлы, по умолчанию — директория site в текущей директории. |<br />
+| -o      | --output  | директория        | Путь для сгенерированных файлов, по умолчанию — static.                                            |<br />
+| -t      | --timed   | нет               | Если установлен, то файлы, дата которых находится в будущем, будут пропущены при генерации.        |<br />
+| -с      | --cleanup | нет               | Очистит выходную директорию от лишних файлов **после** генерации.                                  |<br />
+| -w      | --watch   | нет               | Включает режим  разработки, подробнее ниже.                                                        |<br />
+| -p      | --port    | номер порта &gt;1024 | Порт, на котором будет открыт сервер для разработки.                                               |<br />
+<br />
+## Примеры<br />
+<br />
+Включает режим разработки, сервер будет доступен по адресу http://localhost:8000<br />
+<br />
+```shell<br />
+mukha-ssg -w -p 8000<br />
+```<br />
+<br />
+Берет исходные файлы в директории `site`, сохраняет результат в `blog`, которую очищает от лишних файлов после генерации<br />
+<br />
+```bash<br />
+mukha-ssg --output blog -c<br />
+```<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Сделано Мухой</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

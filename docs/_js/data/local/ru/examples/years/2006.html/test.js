@@ -1,0 +1,1 @@
+window.Mukha.registerData( "/ru/examples/years/2006.html" , "test" , {"cols":["name_en","name_ru","company","rating_IMDB","year","director_ru","director_en","movie_slug","movies_year"],"rows":[["Superman Returns","Возвращение Супермена","DC","6,0","2006","Брайан Сингер","Bryan Singer","superman_returns",1]]} , true)

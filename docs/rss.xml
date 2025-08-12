@@ -4,16 +4,64 @@
         <title>Mukha SSG</title>
         <link>https://example.site</link>
         <description>Быстрый и простой генератор статичных сайтов.</description>
-        <lastBuildDate>Tue, 15 Jul 2025 13:12:41 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 12 Aug 2025 16:15:34 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <item>
-            <title><![CDATA[Использование данных]]></title>
-            <link>https://example.site/docs/mukha_data_ru.html</link>
-            <guid isPermaLink="false">https://example.site/docs/mukha_data_ru.html</guid>
+            <title><![CDATA[Хуки]]></title>
+            <link>https://example.site/ru/docs/hooks.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/hooks.html</guid>
+            <pubDate>Tue, 12 Aug 2025 15:54:00 GMT</pubDate>
+            <description><![CDATA[Хуки позволяют запускать произвольные скрипты во время генерации сайта.
+Их можно писать на любом языке.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Режим предпросмотра]]></title>
+            <link>https://example.site/ru/docs/watch_mode.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/watch_mode.html</guid>
+            <pubDate>Wed, 30 Jul 2025 15:46:00 GMT</pubDate>
+            <description><![CDATA[Режим предпросмотра позволяет в реальном времени отслеживать вносимые в сайт изменения.
+Удобно использовать при <a href="https://example.site/ru/guides/gulp_integration.html">интеграции с gulp</a>.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Сохранение данных для клиентских скриптов]]></title>
+            <link>https://example.site/ru/docs/data2js.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/data2js.html</guid>
+            <pubDate>Sun, 27 Jul 2025 12:19:00 GMT</pubDate>
+            <description><![CDATA[При помощи Java Script API данные можно пробросить в клиентский скрипт. Они будут сохранены, а после
+могут быть асинхронно  загружены по запросу. При этом табличные данные будут
+сохранены в компактном формате. ]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Ссылки]]></title>
+            <link>https://example.site/ru/docs/links.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/links.html</guid>
+            <pubDate>Mon, 21 Jul 2025 15:48:00 GMT</pubDate>
+            <description><![CDATA[В аргументах функций, в метаданных и текстах ссылки на документы на сайте
+Муха распознает ссылки от корня (root-relative):]]></description>
+        </item>
+        <item>
+            <title><![CDATA[О проекте]]></title>
+            <link>https://example.site/ru/docs/intro.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/intro.html</guid>
+            <pubDate>Mon, 21 Jul 2025 06:31:00 GMT</pubDate>
+            <description><![CDATA[Муха — <em>еще один</em> генератор статических сайтов со своими фишками.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Встроенный поиск]]></title>
+            <link>https://example.site/ru/docs/search.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/search.html</guid>
+            <pubDate>Sat, 19 Jul 2025 07:34:00 GMT</pubDate>
+            <description><![CDATA[В Муху интегрована индексация и поиск с использованием <a href="https://lunrjs.com/">lunr</a>.  
+Поиск работает независимо от способа доставки контента.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Подключение данных]]></title>
+            <link>https://example.site/ru/docs/mukha_data_ru.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/mukha_data_ru.html</guid>
             <pubDate>Sun, 13 Jul 2025 14:49:00 GMT</pubDate>
             <description><![CDATA[Данные являются полноправной частью контента Мухи. Их можно использовать как в шаблонах,
-так и в тексте и даже немножко <a href="https://example.site/docs/data_config_tasks.html">обрабатывать</a>.]]></description>
+так и в тексте и даже немножко <a href="https://example.site/ru/docs/data_config_tasks.html">обрабатывать</a>.]]></description>
         </item>
         <item>
             <title><![CDATA[Welcome page]]></title>
@@ -23,51 +71,109 @@
             <description><![CDATA[Welcome to this amazing Mukha site!]]></description>
         </item>
         <item>
+            <title><![CDATA[Mukha]]></title>
+            <link>https://example.site/en/index.html</link>
+            <guid isPermaLink="false">https://example.site/en/index.html</guid>
+            <pubDate>Mon, 16 Jun 2025 07:10:00 GMT</pubDate>
+            <description><![CDATA[Welcome to this amazing Mukha site!]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Муха]]></title>
+            <link>https://example.site/ru/index.html</link>
+            <guid isPermaLink="false">https://example.site/ru/index.html</guid>
+            <pubDate>Mon, 16 Jun 2025 07:10:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Data Processing]]></title>
+            <link>https://example.site/en/docs/data_config_tasks.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/data_config_tasks.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[Sometimes you may need not just to connect data to your site, but also process it and/or generate pages from it. This is optional but possible.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Documentation]]></title>
+            <link>https://example.site/en/docs/index.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/index.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[Docs]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Filter to_table]]></title>
+            <link>https://example.site/en/docs/to_table_flt.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/to_table_flt.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[The <code>to_table</code> filter is used to display tabular data as formatted tables,
+optionally with specified columns.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Examples]]></title>
+            <link>https://example.site/en/examples/index.html</link>
+            <guid isPermaLink="false">https://example.site/en/examples/index.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[#### Using template tags in text]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Table]]></title>
+            <link>https://example.site/en/examples/movie_table.html</link>
+            <guid isPermaLink="false">https://example.site/en/examples/movie_table.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is the table used for
+generations.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Template Tags]]></title>
+            <link>https://example.site/en/examples/template_tags.html</link>
+            <guid isPermaLink="false">https://example.site/en/examples/template_tags.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[You can use template tags in the text. For example,
+to display some information:]]></description>
+        </item>
+        <item>
             <title><![CDATA[Запуск и использование]]></title>
-            <link>https://example.site/docs/cli.html</link>
-            <guid isPermaLink="false">https://example.site/docs/cli.html</guid>
+            <link>https://example.site/ru/docs/cli.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/cli.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Использование в <em>командной строке.</em>]]></description>
         </item>
         <item>
             <title><![CDATA[Конфигурационный файл сайта]]></title>
-            <link>https://example.site/docs/config.html</link>
-            <guid isPermaLink="false">https://example.site/docs/config.html</guid>
+            <link>https://example.site/ru/docs/config.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/config.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Файл находится в папке <code>site_dir/config/site.yaml</code>]]></description>
         </item>
         <item>
             <title><![CDATA[Пример конфигурационного файла данных]]></title>
-            <link>https://example.site/docs/data_config.html</link>
-            <guid isPermaLink="false">https://example.site/docs/data_config.html</guid>
+            <link>https://example.site/ru/docs/data_config.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/data_config.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[{% raw %}]]></description>
+            <description><![CDATA[Примеры конфигурации в JSON и YAML]]></description>
         </item>
         <item>
             <title><![CDATA[Обработка данных]]></title>
-            <link>https://example.site/docs/data_config_tasks.html</link>
-            <guid isPermaLink="false">https://example.site/docs/data_config_tasks.html</guid>
+            <link>https://example.site/ru/docs/data_config_tasks.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/data_config_tasks.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[В редких случаях вам может понадобится (или захотеться) не просто подключить данные к сайту, но и обработать их, и/или сгенерировать из них страницы для сайта. <strong>Делать это совершенно необязательно</strong>, но возможно.]]></description>
+            <description><![CDATA[Иногда вам может понадобиться не просто подключить данные к сайту, но и обработать их, и/или сгенерировать из них страницы для сайта. Делать это необязательно, но возможно.]]></description>
         </item>
         <item>
             <title><![CDATA[Объект file]]></title>
-            <link>https://example.site/docs/file_obj.html</link>
-            <guid isPermaLink="false">https://example.site/docs/file_obj.html</guid>
+            <link>https://example.site/ru/docs/file_obj.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/file_obj.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Объект используется внутри генератора. Содержит поля:]]></description>
         </item>
         <item>
             <title><![CDATA[Документация]]></title>
-            <link>https://example.site/docs/index.html</link>
-            <guid isPermaLink="false">https://example.site/docs/index.html</guid>
+            <link>https://example.site/ru/docs/index.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/index.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Docs]]></description>
         </item>
         <item>
             <title><![CDATA[Вставки]]></title>
-            <link>https://example.site/docs/inserts.html</link>
-            <guid isPermaLink="false">https://example.site/docs/inserts.html</guid>
+            <link>https://example.site/ru/docs/inserts.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/inserts.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Для вставки дополнительного контента в текст применяется синтаксис вставки.
 Длинная форма рассчитана на использование в будущем визуальном редакторе, и
@@ -75,154 +181,53 @@
         </item>
         <item>
             <title><![CDATA[Установка]]></title>
-            <link>https://example.site/docs/install.html</link>
-            <guid isPermaLink="false">https://example.site/docs/install.html</guid>
+            <link>https://example.site/ru/docs/install.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/install.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Муха не зависит от внешних инструментов, кроме Node.js.]]></description>
+            <description><![CDATA[ Три способа установки]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Java Script API]]></title>
+            <link>https://example.site/ru/docs/js_api.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/js_api.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[API для пользовательских скриптов]]></description>
         </item>
         <item>
             <title><![CDATA[Объект lister]]></title>
-            <link>https://example.site/docs/lister.html</link>
-            <guid isPermaLink="false">https://example.site/docs/lister.html</guid>
+            <link>https://example.site/ru/docs/lister.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/lister.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Объект lister — <em>похожий на массив</em> (array-like) объект, предназначенный
-для хранения и обработки списков <a href="https://example.site/docs/page_obj.html">страниц </a>. Такой объект доступен в переменной
-шаблона <code>list</code>:]]></description>
+для хранения и обработки списков <a href="https://example.site/ru/docs/page_obj.html">страниц </a>.]]></description>
         </item>
         <item>
             <title><![CDATA[Объект page (страница)]]></title>
-            <link>https://example.site/docs/page_obj.html</link>
-            <guid isPermaLink="false">https://example.site/docs/page_obj.html</guid>
+            <link>https://example.site/ru/docs/page_obj.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/page_obj.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Объект page представляет страницу на сайте. В нем доступны следующие поля:]]></description>
         </item>
         <item>
             <title><![CDATA[Структура директории сайта]]></title>
-            <link>https://example.site/docs/site_dir.html</link>
-            <guid isPermaLink="false">https://example.site/docs/site_dir.html</guid>
+            <link>https://example.site/ru/docs/site_dir.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/site_dir.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Что куда класть и зачем]]></description>
         </item>
         <item>
             <title><![CDATA[Переменные шаблона]]></title>
-            <link>https://example.site/docs/template_vars.html</link>
-            <guid isPermaLink="false">https://example.site/docs/template_vars.html</guid>
+            <link>https://example.site/ru/docs/template_vars.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/template_vars.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[В шаблонизаторе для каждого файла доступны следующие переменные:]]></description>
         </item>
         <item>
             <title><![CDATA[Темы и шаблоны]]></title>
-            <link>https://example.site/docs/templating.html</link>
-            <guid isPermaLink="false">https://example.site/docs/templating.html</guid>
+            <link>https://example.site/ru/docs/templating.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/templating.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Внешнее оформление в Мухе создается при помощи тем. Доступные темы хранятся в директории <code>config/themes</code> сайта. Директории тем имеют следующую структуру:]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Фильтр to_table]]></title>
-            <link>https://example.site/docs/to_table.html</link>
-            <guid isPermaLink="false">https://example.site/docs/to_table.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Кроме <a href="https://mozilla.github.io/nunjucks/templating.html#builtin-filters"> стандартных фильтров Nunjucks </a>, в Мухе доступен фильтр,
-выводящий табличный набор данных в виде таблицы. В самом простом
-варианте используется так:]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Примеры]]></title>
-            <link>https://example.site/examples/index.html</link>
-            <guid isPermaLink="false">https://example.site/examples/index.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[#### Использование тегов шаблонизатора в тексте]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Табличка]]></title>
-            <link>https://example.site/examples/movie_table.html</link>
-            <guid isPermaLink="false">https://example.site/examples/movie_table.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Тут табличка, из которой сделаны
-генерации.]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Теги шаблонизатора]]></title>
-            <link>https://example.site/examples/template_tags.html</link>
-            <guid isPermaLink="false">https://example.site/examples/template_tags.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[В тексте можно использовать теги шаблонизатора. Например,
-чтобы вывести какую-то информацию:]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Интеграция с gulp]]></title>
-            <link>https://example.site/guides/gulp_integration.html</link>
-            <guid isPermaLink="false">https://example.site/guides/gulp_integration.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Муха легко интегрируется в процесс разработки с gulp, предоставляя быстрый
-предпросмотр сайта в браузре и позволяя объединить разработку
-css и шаблонов сайта в единый процесс.]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Гайды]]></title>
-            <link>https://example.site/guides/index.html</link>
-            <guid isPermaLink="false">https://example.site/guides/index.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Теги]]></title>
-            <link>https://example.site/tags/index.html</link>
-            <guid isPermaLink="false">https://example.site/tags/index.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Фильмы]]></title>
-            <link>https://example.site/examples/movies/index.html</link>
-            <guid isPermaLink="false">https://example.site/examples/movies/index.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Фильмы по годам]]></title>
-            <link>https://example.site/examples/years/index.html</link>
-            <guid isPermaLink="false">https://example.site/examples/years/index.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Черная пантера: Ваканда навсегда]]></title>
-            <link>https://example.site/examples/movies/black_panther_wakanda_forever.html</link>
-            <guid isPermaLink="false">https://example.site/examples/movies/black_panther_wakanda_forever.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Marvel, Райан Куглер]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Черный Адам]]></title>
-            <link>https://example.site/examples/movies/black_adam.html</link>
-            <guid isPermaLink="false">https://example.site/examples/movies/black_adam.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[DC, Жауме Кольет-Серра]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Тор: Любовь и гром]]></title>
-            <link>https://example.site/examples/movies/thor_love_and_thunder.html</link>
-            <guid isPermaLink="false">https://example.site/examples/movies/thor_love_and_thunder.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Marvel, Тайка Вайтити]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Доктор Стрэндж в мультивселенной безумия]]></title>
-            <link>https://example.site/examples/movies/doctor_strange_in_the_multiverse_of_madness.html</link>
-            <guid isPermaLink="false">https://example.site/examples/movies/doctor_strange_in_the_multiverse_of_madness.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Marvel, Сэм Рэйми]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Бэтмен]]></title>
-            <link>https://example.site/examples/movies/the_batman.html</link>
-            <guid isPermaLink="false">https://example.site/examples/movies/the_batman.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[DC, Мэтт Ривз]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Человек-паук: Нет пути домой]]></title>
-            <link>https://example.site/examples/movies/spider-man_no_way_home.html</link>
-            <guid isPermaLink="false">https://example.site/examples/movies/spider-man_no_way_home.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Marvel, Джон Уоттс]]></description>
         </item>
     </channel>
 </rss>

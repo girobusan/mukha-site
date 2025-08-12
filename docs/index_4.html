@@ -8,22 +8,26 @@
   <meta property="og:title" content="Welcome page" />
   <meta property="og:description" content="Welcome to this amazing Mukha site!" />
   <link href="_theme/style.css" rel="stylesheet">
-  <link href="_theme/highlight/styles/atom-one-light.css" rel="stylesheet">
+  <link href="_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="_theme/navbar.js">
   </script>
+  <script data-location="/index_4.html" src="_js/client.js">
+</script>
   <script src="search_client.js"></script>
   <script src="_theme/masonry.js"></script>
   <script src="_theme/highlight/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
-  <script data-location="/index_4.html" src="_js/client.js">
-</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
 </head>
 
 <body>
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <span class="navbar-item has-text-weight-bold has-text-white">
-      <a href="index.html" class="has-text-white">
+      <a href="en/index.html" class="has-text-white">
         Mukha SSG
       </a>
     </span>
@@ -39,27 +43,27 @@
     <div class="navbar-start"></div>
 
     <div class="navbar-end">
-      <a class="navbar-item has-text-white" href="docs/index.html">
-        Документация
+      <a class="navbar-item has-text-white" href="en/docs/index.html">
+        Documentation
       </a>
-      <a class="navbar-item has-text-white" href="guides/index.html">
-        Гайды
-      </a>
-      <a class="navbar-item has-text-white" href="examples/index.html">
-        Примеры
-      </a>
-      <a class="navbar-item has-text-white" href="tags/index.html">
-        Теги
+      <a class="navbar-item has-text-white" href="en/examples/index.html">
+        Examples
       </a>
       <div class="navbar-item">
-        <input type="text" data-role="lunr-search" class="input is-small is-rounded" placeholder="Поиск"></input>
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
       </div></div>
   </div>
 </nav>
-<section class="hero is-primary has-text-white  is-small">
+<section class="hero is-primary has-text-white  is-medium">
   <div class="hero-body">
-    <p class="title is-2 has-text-white">Mukha SSG (4/5)</p>
-    <p class="subtitle has-text-white">Быстрый и простой генератор статичных сайтов.</p>
+    <p class="title is-2 has-text-white">Mukha SSG (4/4)</p>
+    <p class="subtitle has-text-white">Quick and simple static site generator.</p>
+    <div class="field has-addons">
+      <p class-"control">
+        <a href="ru/index.html" class="button is-small">Русский</a>
+      </p>
+    </div>
   </div>
 </section>
 <div class="container my-6 px-3 ">
@@ -76,150 +80,113 @@
 <div class="m-page-list columns" id="pagesList">
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/jonah_hex.html">Джона Хекс</a>
-      <div class="is-size-7"><p>DC, Джимми Хейуорд</p>
+      <a class="title is-5" href="en/examples/years/2018.html">2018</a>
+      <div class="is-size-7"><p>Movies: 4</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/iron_man_2.html">Железный человек 2</a>
-      <div class="is-size-7"><p>Marvel, Джон Фавро</p>
+      <a class="title is-5" href="en/examples/years/2017.html">2017</a>
+      <div class="is-size-7"><p>Movies: 5</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/watchmen.html">Стражи</a>
-      <div class="is-size-7"><p>DC, Зак Снайдер</p>
+      <a class="title is-5" href="en/examples/years/2016.html">2016</a>
+      <div class="is-size-7"><p>Movies: 4</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/the_dark_knight.html">Темный рыцарь</a>
-      <div class="is-size-7"><p>DC, Кристофер Нолан</p>
+      <a class="title is-5" href="en/examples/years/2015.html">2015</a>
+      <div class="is-size-7"><p>Movies: 2</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/the_incredible_hulk.html">Невероятный Халк</a>
-      <div class="is-size-7"><p>Marvel, Луи Летерье</p>
+      <a class="title is-5" href="en/examples/years/2014.html">2014</a>
+      <div class="is-size-7"><p>Movies: 2</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/iron_man.html">Железный Человек</a>
-      <div class="is-size-7"><p>Marvel, Джон Фавро</p>
+      <a class="title is-5" href="en/examples/years/2013.html">2013</a>
+      <div class="is-size-7"><p>Movies: 3</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/superman_returns.html">Возвращение Супермена</a>
-      <div class="is-size-7"><p>DC, Брайан Сингер</p>
+      <a class="title is-5" href="en/examples/years/2012.html">2012</a>
+      <div class="is-size-7"><p>Movies: 2</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/batman_begins.html">Бэтмен начинается</a>
-      <div class="is-size-7"><p>DC, Кристофер Нолан</p>
+      <a class="title is-5" href="en/examples/years/2011.html">2011</a>
+      <div class="is-size-7"><p>Movies: 3</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/movies/catwoman.html">Женщина-кошка</a>
-      <div class="is-size-7"><p>DC, Питоф</p>
+      <a class="title is-5" href="en/examples/years/2010.html">2010</a>
+      <div class="is-size-7"><p>Movies: 2</p>
 </div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/years/2022.html">2022 (5)</a>
-      <div class="is-size-7"></div>
+      <a class="title is-5" href="en/examples/years/2009.html">2009</a>
+      <div class="is-size-7"><p>Movies: 1</p>
+</div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/years/2021.html">2021 (6)</a>
-      <div class="is-size-7"></div>
+      <a class="title is-5" href="en/examples/years/2008.html">2008</a>
+      <div class="is-size-7"><p>Movies: 3</p>
+</div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/years/2020.html">2020 (2)</a>
-      <div class="is-size-7"></div>
+      <a class="title is-5" href="en/examples/years/2006.html">2006</a>
+      <div class="is-size-7"><p>Movies: 1</p>
+</div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/years/2019.html">2019 (5)</a>
-      <div class="is-size-7"></div>
+      <a class="title is-5" href="en/examples/years/2005.html">2005</a>
+      <div class="is-size-7"><p>Movies: 1</p>
+</div>
     </div>
 
   </div>
   <div class="card cell is-outlined m-no-img-card">
     <div class="card-content">
-      <a class="title is-5" href="examples/years/2018.html">2018 (4)</a>
-      <div class="is-size-7"></div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="examples/years/2017.html">2017 (5)</a>
-      <div class="is-size-7"></div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="examples/years/2016.html">2016 (4)</a>
-      <div class="is-size-7"></div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="examples/years/2015.html">2015 (2)</a>
-      <div class="is-size-7"></div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="examples/years/2014.html">2014 (2)</a>
-      <div class="is-size-7"></div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="examples/years/2013.html">2013 (3)</a>
-      <div class="is-size-7"></div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="examples/years/2012.html">2012 (2)</a>
-      <div class="is-size-7"></div>
+      <a class="title is-5" href="en/examples/years/2004.html">2004</a>
+      <div class="is-size-7"><p>Movies: 1</p>
+</div>
     </div>
 
   </div>
@@ -240,34 +207,31 @@
     <li>
       <a href="" class="pagination-link is-current">4</a>
     </li>
-    <li>
-      <a href="index_5.html" class="pagination-link">5</a>
-    </li>
   </ul>
 </nav>
 <div class="modal has-background-white" id="viewSource">
   <div class="modal-background"></div>
-  <div class="modal-content px-2 py-2 ">
-    <pre>---
-title: Welcome page
-date: 2025.06.16 10:10
----
-
-Welcome to this amazing Mukha site!
-
-Contrary to popular belief, Lorem Ipsum is not simply random text.
-It has roots in a piece of classical Latin literature from 45 BC, making
-it over 2000 years old.
-
-Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,
-looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum
-passage, and going through the cites of the word in classical literature,
-discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil)
-by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
-very popular during the Renaissance. The first line of Lorem Ipsum,
-&quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.
-</pre>"
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Welcome page<br />
+date: 2025.06.16 10:10<br />
+---<br />
+<br />
+Welcome to this amazing Mukha site!<br />
+<br />
+Contrary to popular belief, Lorem Ipsum is not simply random text.<br />
+It has roots in a piece of classical Latin literature from 45 BC, making<br />
+it over 2000 years old.<br />
+<br />
+Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia,<br />
+looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum<br />
+passage, and going through the cites of the word in classical literature,<br />
+discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32<br />
+and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil)<br />
+by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,<br />
+very popular during the Renaissance. The first line of Lorem Ipsum,<br />
+&quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32.<br />
+</div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
 </div>
@@ -284,17 +248,9 @@ very popular during the Renaissance. The first line of Lorem Ipsum,
     <div class="container is-max-desktop px-3 is-size-7">
       <div class="columns">
         <div class="column m-footer-column py-0 has-text-white content">
-          <p>
-Сделано <strong class="has-text-white">Мухой!</strong>
-</p>
-<ul>
-<li><a href="rss.xml">RSS</a></li>
-<li><a href="atom.xml">Atom</a></li>
-</ul></div>
+          Made with Mukha</div>
         <div class="column m-footer-column py-0 has-text-white content">
-          <p>
-&copy; 2025...
-</p></div>
+          &copy; 2025...</div>
         <div class="column m-footer-column py-0 has-text-white content"><p>
 </p></div>
       </div>

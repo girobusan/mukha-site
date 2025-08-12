@@ -9,7 +9,7 @@ var exec = require("child_process").exec;
 var spawn = require("child_process").spawn;
 
 async function buildSite(cb) {
-  exec("mukha-ssg -o docs", { cwd: "." }, (err, out, stderr) => {
+  exec("mukha-ssg -o docs -c", { cwd: "." }, (err, out, stderr) => {
     // console.log(out);
     stderr && console.log(stderr);
     err && console.error(err);

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Конфигурационный файл сайта :: Mukha SSG</title>
+  <meta property="og:title" content="Конфигурационный файл сайта" />
+  <meta property="og:description" content="Файл находится в папке site_dir/config/site.yaml" />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/ru/docs/config.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="../guides/index.html">
+        Гайды
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Примеры
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Поиск"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">🏠</a></li>
+    <li><a href="../index.html">Муха</a></li>
+    <li><a href="index.html">Документация</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Конфигурационный файл сайта</h1>
+<!--ru-->
+
+  <div class="content mb-6">
+    <p>Файл находится в папке <code>site_dir/config/site.yaml</code></p>
+<pre><code class="language-yaml"><span class="hljs-comment"># О сайте</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;Example site&quot;</span>
+
+<span class="hljs-comment"># Короткий «девиз»</span>
+<span class="hljs-attr">motto:</span> <span class="hljs-string">&quot;Proud to be default&quot;</span>
+
+<span class="hljs-comment"># Картинка, будет отображаться</span>
+<span class="hljs-comment"># при ссылке на сайт и в лентах.</span>
+<span class="hljs-attr">image:</span> <span class="hljs-string">/path/to/image/ext</span>
+
+<span class="hljs-comment"># Описание сайта, отображается</span>
+<span class="hljs-comment"># в лентах.</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">|-
+  Long description
+  of the site
+</span>
+<span class="hljs-comment"># Автор</span>
+<span class="hljs-attr">author:</span> <span class="hljs-string">&quot;Incognito&quot;</span>
+
+<span class="hljs-comment"># Адрес сайта. Не должен заканчиваться на «/»</span>
+<span class="hljs-comment"># Если сайт находится в поддиректории,</span>
+<span class="hljs-comment"># она должна быть включена в адрес.</span>
+<span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://example.site&quot;</span>
+
+<span class="hljs-comment"># Название темы. Без темы не запустится.</span>
+<span class="hljs-attr">theme:</span> <span class="hljs-string">theme_name</span>
+
+<span class="hljs-comment"># Сколько единиц списка должно</span>
+<span class="hljs-comment"># быть на одной странице при разбиении</span>
+<span class="hljs-comment"># списка на странцы по-умолчанию.</span>
+<span class="hljs-attr">list_length:</span> <span class="hljs-number">20</span>
+
+<span class="hljs-comment"># Путь к директории, где будут файла тегов.</span>
+<span class="hljs-attr">tags_dir:</span> <span class="hljs-string">&quot;/tags&quot;</span>
+
+<span class="hljs-comment"># Если определена эта опция, и указанный файл</span>
+<span class="hljs-comment"># присутствует на сайте, в свойство `list` этого файла</span>
+<span class="hljs-comment"># будет записан список тегов, отсортированный по алфавиту.</span>
+<span class="hljs-attr">tags_page:</span> <span class="hljs-string">&quot;/tags/index.html&quot;</span>
+
+<span class="hljs-comment"># RSS и Atom</span>
+<span class="hljs-attr">rss_uri:</span> <span class="hljs-string">&quot;/rss.xml&quot;</span>
+<span class="hljs-attr">atom_uri:</span> <span class="hljs-string">&quot;/atom.xml&quot;</span>
+
+<span class="hljs-comment"># Максимальное количество статей</span>
+<span class="hljs-comment"># в лентах.</span>
+<span class="hljs-attr">feed_length:</span> <span class="hljs-number">30</span>
+
+<span class="hljs-comment"># Команда вызова редактора (см. «Режим предпросмотра»)</span>
+<span class="hljs-attr">edit_cmd:</span> <span class="hljs-string">code</span>
+
+<span class="hljs-comment"># Включение (или выключение) JS API</span>
+<span class="hljs-attr">js_api:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Включение встроенного поиска</span>
+<span class="hljs-attr">search:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Сохранять и показывать выдержки из статей</span>
+<span class="hljs-comment"># в результатах поиска</span>
+<span class="hljs-attr">keep_excerpts:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Индексировать контент на языках,</span>
+<span class="hljs-comment"># обязательно массив, даже если язык один!</span>
+<span class="hljs-comment"># Для одного языка будет: search_lang: [&quot;ru&quot;]</span>
+<span class="hljs-comment"># Для поиска только на английском язык можно не указывать</span>
+<span class="hljs-attr">search_lang:</span> [<span class="hljs-string">&quot;ru&quot;</span>, <span class="hljs-string">&quot;en&quot;</span>]
+</code></pre>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Исходный
+      текст
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Конфигурационный файл сайта<br />
+doc: config_file_ru<br />
+lang: ru<br />
+---<br />
+<br />
+Файл находится в папке `site_dir/config/site.yaml`<br />
+<br />
+```yaml<br />
+# О сайте<br />
+title: &quot;Example site&quot;<br />
+<br />
+# Короткий «девиз»<br />
+motto: &quot;Proud to be default&quot;<br />
+<br />
+# Картинка, будет отображаться<br />
+# при ссылке на сайт и в лентах.<br />
+image: /path/to/image/ext<br />
+<br />
+# Описание сайта, отображается<br />
+# в лентах.<br />
+description: |-<br />
+  Long description<br />
+  of the site<br />
+<br />
+# Автор<br />
+author: &quot;Incognito&quot;<br />
+<br />
+# Адрес сайта. Не должен заканчиваться на «/»<br />
+# Если сайт находится в поддиректории,<br />
+# она должна быть включена в адрес.<br />
+url: &quot;https://example.site&quot;<br />
+<br />
+# Название темы. Без темы не запустится.<br />
+theme: theme_name<br />
+<br />
+# Сколько единиц списка должно<br />
+# быть на одной странице при разбиении<br />
+# списка на странцы по-умолчанию.<br />
+list_length: 20<br />
+<br />
+# Путь к директории, где будут файла тегов.<br />
+tags_dir: &quot;/tags&quot;<br />
+<br />
+# Если определена эта опция, и указанный файл<br />
+# присутствует на сайте, в свойство `list` этого файла<br />
+# будет записан список тегов, отсортированный по алфавиту.<br />
+tags_page: &quot;/tags/index.html&quot;<br />
+<br />
+# RSS и Atom<br />
+rss_uri: &quot;/rss.xml&quot;<br />
+atom_uri: &quot;/atom.xml&quot;<br />
+<br />
+# Максимальное количество статей<br />
+# в лентах.<br />
+feed_length: 30<br />
+<br />
+# Команда вызова редактора (см. «Режим предпросмотра»)<br />
+edit_cmd: code<br />
+<br />
+# Включение (или выключение) JS API<br />
+js_api: true<br />
+<br />
+# Включение встроенного поиска<br />
+search: true<br />
+<br />
+# Сохранять и показывать выдержки из статей<br />
+# в результатах поиска<br />
+keep_excerpts: true<br />
+<br />
+# Индексировать контент на языках,<br />
+# обязательно массив, даже если язык один!<br />
+# Для одного языка будет: search_lang: [&quot;ru&quot;]<br />
+# Для поиска только на английском язык можно не указывать<br />
+search_lang: [&quot;ru&quot;, &quot;en&quot;]<br />
+```<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Сделано Мухой</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data Processing :: Mukha SSG</title>
+  <meta property="og:title" content="Data Processing" />
+  <meta property="og:description" content="Sometimes you may need not just to connect data to your site, but also process it and/or generate pages from it. This is optional but possible." />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/docs/data_config_tasks.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">🏠</a></li>
+    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Data Processing</h1>
+<!--en-->
+
+  <div class="content mb-6">
+    <p>Sometimes you may need not just to connect data to your site, but also process it and/or generate pages from it. This is optional but possible.</p>
+<hr>
+<p>The configuration file <code>data.config.yaml</code> (or <code>data.config.json</code>) defines how data will be processed before being connected to the site. It also configures page generation from data.</p>
+<p>The file is written in <code>yaml</code> or <code>json</code> format. It consists of a list of data operations (array of objects). All actions described in the file are performed sequentially, except for page generation - pages are generated strictly after all other actions are completed.</p>
+<p>Each action has mandatory parameters <code>dataset</code> and <code>task</code>. Below is the general scheme, all examples here and below are in <code>yaml</code> format.</p>
+<pre><code class="language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">&lt;action</span> <span class="hljs-string">name&gt;</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">&lt;dataset</span> <span class="hljs-string">name&gt;</span>
+  <span class="hljs-string">...</span> <span class="hljs-string">other</span> <span class="hljs-string">parameters</span> <span class="hljs-string">may</span> <span class="hljs-string">vary</span> <span class="hljs-string">depending</span> <span class="hljs-string">on</span> <span class="hljs-string">the</span> <span class="hljs-string">action</span>
+</code></pre>
+<p>Actions can only be performed on tabular data, i.e. data that can be represented as a table. The number of actions is limited only by common sense.</p>
+<p>Non-tabular data can be used on pages, inserted into templates, but cannot be processed.</p>
+<h2>Data Actions</h2>
+<h3>slugify</h3>
+<p>Creates a new column based on the selected one, where each value from the selected column corresponds to a unique string consisting of Latin alphabet letters, numbers and underscores. This function is needed for creating pages - its result can always be used as part of a URL.</p>
+<p>For example, if you have a table with actor names and you need to create a page for each of them, you can use slugify to add a column that will later be used as a filename when generating pages:</p>
+<pre><code class="language-yaml">
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">slugify</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">tables.movies</span>
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">actor_name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">actor_page_name</span>
+</code></pre>
+<p>Parameters:</p>
+<ul>
+<li><code>input_col</code> - column based on which the new column will be created</li>
+<li><code>output_col</code> - name of the new column</li>
+</ul>
+<h3>sort</h3>
+<p>Sorts the dataset by the specified column.
+Parameters:</p>
+<ul>
+<li><code>col</code> - column to sort by</li>
+<li><code>as_number</code> - boolean value - whether to interpret column content as a number. The result may be unexpected (for now) as locale is not taken into account.</li>
+<li><code>desc</code> - boolean value, sort in descending order.</li>
+</ul>
+<h3>del_cols</h3>
+<p>Deletes columns from the table. Useful when you want to save the table for JavaScript, to avoid saving and downloading unnecessary data.</p>
+<ul>
+<li><code>cols</code> - list of column names to delete</li>
+</ul>
+<pre><code class="language-yaml">
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">del_cols</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">cols:</span> [<span class="hljs-string">&quot;minutes_long&quot;</span>, <span class="hljs-string">&quot;budget&quot;</span>, <span class="hljs-string">&quot;rating_metacritic&quot;</span>]
+</code></pre>
+<h3>aggregate</h3>
+<p>Warning: it's better to prepare data in advance using more suitable tools! The aggregate action allows simple aggregations - sum, count, median. For example, this can be used to add to a table listing actors and movies they starred in, the number of movies each actor appeared in:</p>
+<pre><code class="language-yaml">
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">aggregate</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">table.actors</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">count_u</span>
+  <span class="hljs-attr">col:</span> <span class="hljs-string">movie_name</span>
+  <span class="hljs-attr">group_by:</span> <span class="hljs-string">actor_name</span> <span class="hljs-comment"># Optional parameter.</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">filmed_in</span>
+</code></pre>
+<h4>Parameters:</h4>
+<ul>
+<li><code>type</code> - aggregation type: count, count_u, sum, average, median</li>
+<li><code>col</code> - column where aggregation will be performed</li>
+<li><code>group_by</code> - optional, column by which values will be grouped</li>
+<li><code>output_col</code> - name of the new column where results will be stored</li>
+</ul>
+<h2>Page Generation</h2>
+<p>The <strong>render</strong> action generates pages from tabular data. Render actions are executed after all others.</p>
+<p>Two main generation types are defined by the type parameter (see below). Other parameters determine the location and content of generated pages.</p>
+<ul>
+<li><code>path</code> - Full address of the generated page</li>
+<li><code>meta</code> - Metadata, any fields can be filled</li>
+<li><code>markdown</code> or <code>html</code> - Page content can be generated either in markdown or directly in html (in the latter case the text won't be processed by markdown parser). Template tags will be processed in any case.</li>
+</ul>
+<p>Column values from the processed dataset can be inserted into property values using simple substitution syntax:</p>
+<pre><code class="language-yaml">
+  <span class="hljs-attr">task:</span> <span class="hljs-string">render</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">row</span>
+  <span class="hljs-comment"># Filename will be generated from movie_slug column</span>
+  <span class="hljs-attr">path:</span> <span class="hljs-string">/examples/movies/[movie_slug].html</span>
+  <span class="hljs-attr">meta:</span>
+  <span class="hljs-comment"># Page title = name field</span>
+    <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[name]&quot;</span>
+</code></pre>
+<h3>type: row</h3>
+<p>The simplest: pages are generated for each table row. The generated page's <code>local_data</code> field will contain a single-row table.</p>
+<h3>type: col</h3>
+<p>Pages are generated for each unique value in the specified column. In the generated page, the <code>local_data</code> field will contain a table subset during generation - all rows where the selected column's value is the same.</p>
+<p>This data can be iterated through using template tags, and/or saved for use in client scripts via JavaScript API.</p>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Data Processing<br />
+doc: data_config_en<br />
+---<br />
+<br />
+Sometimes you may need not just to connect data to your site, but also process it and/or generate pages from it. This is optional but possible.<br />
+<br />
+----<br />
+<br />
+The configuration file `data.config.yaml` (or `data.config.json`) defines how data will be processed before being connected to the site. It also configures page generation from data.<br />
+<br />
+The file is written in `yaml` or `json` format. It consists of a list of data operations (array of objects). All actions described in the file are performed sequentially, except for page generation - pages are generated strictly after all other actions are completed.<br />
+<br />
+Each action has mandatory parameters `dataset` and `task`. Below is the general scheme, all examples here and below are in `yaml` format.<br />
+<br />
+```yaml<br />
+- task: &lt;action name&gt;<br />
+  dataset: &lt;dataset name&gt;<br />
+  ... other parameters may vary depending on the action<br />
+```<br />
+<br />
+Actions can only be performed on tabular data, i.e. data that can be represented as a table. The number of actions is limited only by common sense.<br />
+<br />
+Non-tabular data can be used on pages, inserted into templates, but cannot be processed.<br />
+<br />
+## Data Actions<br />
+<br />
+### slugify<br />
+<br />
+Creates a new column based on the selected one, where each value from the selected column corresponds to a unique string consisting of Latin alphabet letters, numbers and underscores. This function is needed for creating pages - its result can always be used as part of a URL.<br />
+<br />
+For example, if you have a table with actor names and you need to create a page for each of them, you can use slugify to add a column that will later be used as a filename when generating pages:<br />
+```yaml<br />
+<br />
+- task: slugify<br />
+  dataset: tables.movies<br />
+  input_col: actor_name<br />
+  output_col: actor_page_name<br />
+```<br />
+<br />
+Parameters:<br />
+<br />
+- `input_col` - column based on which the new column will be created<br />
+- `output_col` - name of the new column<br />
+<br />
+### sort<br />
+<br />
+Sorts the dataset by the specified column.<br />
+Parameters:<br />
+<br />
+- `col` - column to sort by<br />
+- `as_number` - boolean value - whether to interpret column content as a number. The result may be unexpected (for now) as locale is not taken into account.<br />
+- `desc` - boolean value, sort in descending order.<br />
+<br />
+### del_cols<br />
+<br />
+Deletes columns from the table. Useful when you want to save the table for JavaScript, to avoid saving and downloading unnecessary data.<br />
+<br />
+- `cols` - list of column names to delete<br />
+<br />
+```yaml<br />
+<br />
+- task: del_cols<br />
+  dataset: examples.movies<br />
+  cols: [&quot;minutes_long&quot;, &quot;budget&quot;, &quot;rating_metacritic&quot;]<br />
+```<br />
+### aggregate<br />
+<br />
+Warning: it&#39;s better to prepare data in advance using more suitable tools! The aggregate action allows simple aggregations - sum, count, median. For example, this can be used to add to a table listing actors and movies they starred in, the number of movies each actor appeared in:<br />
+<br />
+```yaml<br />
+<br />
+- task: aggregate<br />
+  dataset: table.actors<br />
+  type: count_u<br />
+  col: movie_name<br />
+  group_by: actor_name # Optional parameter.<br />
+  output_col: filmed_in<br />
+```<br />
+<br />
+#### Parameters:<br />
+<br />
+- `type` - aggregation type: count, count_u, sum, average, median<br />
+- `col` - column where aggregation will be performed<br />
+- `group_by` - optional, column by which values will be grouped<br />
+- `output_col` - name of the new column where results will be stored<br />
+<br />
+## Page Generation<br />
+<br />
+The **render** action generates pages from tabular data. Render actions are executed after all others.<br />
+<br />
+Two main generation types are defined by the type parameter (see below). Other parameters determine the location and content of generated pages.<br />
+<br />
+- `path` - Full address of the generated page<br />
+- `meta` - Metadata, any fields can be filled<br />
+-  `markdown` or `html` - Page content can be generated either in markdown or directly in html (in the latter case the text won&#39;t be processed by markdown parser). Template tags will be processed in any case.<br />
+<br />
+Column values from the processed dataset can be inserted into property values using simple substitution syntax:<br />
+<br />
+```yaml<br />
+<br />
+  task: render<br />
+  dataset: examples.movies<br />
+  type: row<br />
+  # Filename will be generated from movie_slug column<br />
+  path: /examples/movies/[movie_slug].html<br />
+  meta:<br />
+  # Page title = name field<br />
+    title: &quot;[name]&quot;<br />
+```<br />
+<br />
+### type: row<br />
+<br />
+The simplest: pages are generated for each table row. The generated page&#39;s `local_data` field will contain a single-row table.<br />
+<br />
+### type: col<br />
+<br />
+Pages are generated for each unique value in the specified column. In the generated page, the `local_data` field will contain a table subset during generation - all rows where the selected column&#39;s value is the same.<br />
+<br />
+This data can be iterated through using template tags, and/or saved for use in client scripts via JavaScript API.<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

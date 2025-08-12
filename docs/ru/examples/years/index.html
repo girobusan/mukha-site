@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Фильмы по годам :: Mukha SSG</title>
+  <meta property="og:title" content="Фильмы по годам" />
+  <meta property="og:description" content="Для каждого значения года сгенерирована страница со списком фильмов за этот год. Число фильмов за год добавлено агрегацией. Код из data.config.yaml: # Считаем количество фильмов за год - task: aggregate dataset: examples.movies type: count_u group_by: year input_col: name_en output_col: movies_year" />
+  <link href="../../../_theme/style.css" rel="stylesheet">
+  <link href="../../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../../_theme/navbar.js">
+  </script>
+  <script data-location="/ru/examples/years/index.html" src="../../../_js/client.js">
+</script>
+  <script src="../../../search_client.js"></script>
+  <script src="../../../_theme/masonry.js"></script>
+  <script src="../../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="../../docs/index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="../../guides/index.html">
+        Гайды
+      </a>
+      <a class="navbar-item has-text-white" href="../index.html">
+        Примеры
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Поиск"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../../index.html">🏠</a></li>
+    <li><a href="../../index.html">Муха</a></li>
+    <li><a href="../index.html">Примеры</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Фильмы по годам</h1>
+<!--ru-->
+
+  <div class="content mb-6">
+    <p>Для каждого значения года сгенерирована страница со списком фильмов
+за этот год. Число фильмов за год добавлено <em>агрегацией</em>. Код из <a href="../../docs/data_config_tasks.html">data.config.yaml</a>:</p>
+<pre><code class="language-yaml"><span class="hljs-comment"># Считаем количество фильмов за год</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">aggregate</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">count_u</span>
+  <span class="hljs-attr">group_by:</span> <span class="hljs-string">year</span>
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">name_en</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">movies_year</span>
+
+<span class="hljs-comment"># Генерируем страницы</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">render</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">col</span>
+  <span class="hljs-attr">col:</span> <span class="hljs-string">year</span>
+  <span class="hljs-attr">path:</span> <span class="hljs-string">/examples/years/[year].html</span>
+  <span class="hljs-attr">meta:</span>
+    <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[year]&quot;</span>
+    <span class="hljs-attr">excerpt:</span> <span class="hljs-string">&quot;Вышло фильмов: [movies_year]&quot;</span>
+  <span class="hljs-attr">markdown:</span> <span class="hljs-string">|-
+    {% for row in page.local_data %}
+    - {{row.company}} : [{{ row.name_ru }}](/examples/movies/{{row.movie_slug}}.html)
+    {% endfor %}
+</span></code></pre>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Исходный
+      текст
+    </button>
+    
+  </div>
+
+
+
+
+  <div class="m-columnized">
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2022.html">2022</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 5</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2021.html">2021</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 6</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2020.html">2020</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 2</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2019.html">2019</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 5</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2018.html">2018</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 4</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2017.html">2017</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 5</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2016.html">2016</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 4</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2015.html">2015</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 2</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2014.html">2014</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 2</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2013.html">2013</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 3</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2012.html">2012</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 2</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2011.html">2011</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 3</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2010.html">2010</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 2</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2009.html">2009</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 1</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2008.html">2008</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 3</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2006.html">2006</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 1</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2005.html">2005</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 1</p>
+</div>
+  </div>
+  <div class="block mb-3" style="break-inside: avoid;">
+    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="2004.html">2004</a>     <div class="excerpt is-size-6 mb-6"><p>Вышло фильмов: 1</p>
+</div>
+  </div>
+
+</div>
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Фильмы по годам<br />
+doc: generation_col_ru<br />
+---<br />
+<br />
+Для каждого значения года сгенерирована страница со списком фильмов<br />
+за этот год. Число фильмов за год добавлено _агрегацией_. Код из [data.config.yaml](/+doc:data_config_ru):<br />
+{% raw %}<br />
+```yaml<br />
+# Считаем количество фильмов за год<br />
+- task: aggregate<br />
+  dataset: examples.movies<br />
+  type: count_u<br />
+  group_by: year<br />
+  input_col: name_en<br />
+  output_col: movies_year<br />
+<br />
+# Генерируем страницы<br />
+- task: render<br />
+  dataset: examples.movies<br />
+  type: col<br />
+  col: year<br />
+  path: /examples/years/[year].html<br />
+  meta:<br />
+    title: &quot;[year]&quot;<br />
+    excerpt: &quot;Вышло фильмов: [movies_year]&quot;<br />
+  markdown: |-<br />
+    {% for row in page.local_data %}<br />
+    - {{row.company}} : [{{ row.name_ru }}](/examples/movies/{{row.movie_slug}}.html)<br />
+    {% endfor %}<br />
+```<br />
+{% endraw %}<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Сделано Мухой</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Пример конфигурационного файла данных :: Mukha SSG</title>
+  <meta property="og:title" content="Пример конфигурационного файла данных" />
+  <meta property="og:description" content="Примеры конфигурации в JSON и YAML" />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/ru/docs/data_config.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="../guides/index.html">
+        Гайды
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Примеры
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Поиск"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../index.html">🏠</a></li>
+    <li><a href="../index.html">Муха</a></li>
+    <li><a href="index.html">Документация</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Пример конфигурационного файла данных</h1>
+<!--ru-->
+
+  <div class="content mb-6">
+    <pre><code class="language-yaml"><span class="hljs-comment"># add sug for making urls</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">slugify</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">tables.movies</span>
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">slug</span>
+
+<span class="hljs-comment"># render page for each  row</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">render</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">row</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">tables.movies</span>
+  <span class="hljs-attr">path:</span> <span class="hljs-string">&quot;/movies/[slug].html&quot;</span>
+  <span class="hljs-attr">markdown:</span> <span class="hljs-string">|-
+    - Company: **[[company]]**
+    - Director: **[director]**
+    - Year: **[[year]](/movies/year_[year].html)**
+</span>  <span class="hljs-attr">meta:</span>
+    <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[name]&quot;</span>
+    <span class="hljs-attr">date:</span> <span class="hljs-string">&quot;2022.11.22 13:30&quot;</span>
+    <span class="hljs-attr">group:</span> <span class="hljs-string">movies</span>
+
+  <span class="hljs-comment"># render page for each unique value</span>
+  <span class="hljs-comment"># in column</span>
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">render</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">col</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">tables.movies</span>
+  <span class="hljs-attr">col:</span> <span class="hljs-string">year</span>
+  <span class="hljs-attr">path:</span> <span class="hljs-string">&quot;/movies/year_[value].html&quot;</span>
+  <span class="hljs-comment"># use html here, because md may mess up</span>
+  <span class="hljs-comment"># the nunjuck syntax</span>
+  <span class="hljs-attr">html:</span> <span class="hljs-string">|-
+    &lt;ul&gt;
+    {% for p in page.local_data %}
+    &lt;li&gt;&lt;a href=&quot;/movies/{{ p.slug }}.html&quot;&gt;{{ p.name}}&lt;/a&gt;&lt;/li&gt;
+    {% endfor %}
+    &lt;/ul&gt;
+    &lt;hr /&gt;
+</span>  <span class="hljs-attr">meta:</span>
+    <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;Year [value]&quot;</span>
+    <span class="hljs-attr">date:</span> <span class="hljs-string">&quot;2022.11.12 23.23&quot;</span>
+    <span class="hljs-attr">group:</span> <span class="hljs-string">movie_year</span>
+</code></pre>
+<p>То же самое, но <code>json</code> :</p>
+<pre><code class="language-json"><span class="hljs-punctuation">[</span>
+  <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;task&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;slugify&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;dataset&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tables.movies&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;input_col&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;name&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;output_col&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;slug&quot;</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;task&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;render&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;row&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;dataset&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tables.movies&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;path&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/movies/[slug].html&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;markdown&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;- Company: **[[company]]**\n- Director: **[director]**\n- Year: **[[year]](/movies/year_[year].html)**&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;meta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;[name]&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;date&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2022.11.22 13:30&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;group&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;movies&quot;</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;task&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;render&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;type&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;col&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;dataset&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;tables.movies&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;col&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;year&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;path&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/movies/year_[value].html&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;html&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;&lt;ul&gt;\n{% for p in page.local_data %}\n&lt;li&gt;&lt;a href=\&quot;/movies/{{ p.slug }}.html\&quot;&gt;{{ p.name}}&lt;/a&gt;&lt;/li&gt;\n{% endfor %}\n&lt;/ul&gt;\n&lt;hr /&gt;&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;meta&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
+      <span class="hljs-attr">&quot;title&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Year [value]&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;date&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2022.11.12 23.23&quot;</span><span class="hljs-punctuation">,</span>
+      <span class="hljs-attr">&quot;group&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;movie_year&quot;</span>
+    <span class="hljs-punctuation">}</span>
+  <span class="hljs-punctuation">}</span>
+<span class="hljs-punctuation">]</span>
+</code></pre>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Исходный
+      текст
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Пример конфигурационного файла данных<br />
+doc: data_config_example_ru<br />
+excerpt: |-<br />
+  Примеры конфигурации в JSON и YAML<br />
+---<br />
+<br />
+{% raw %}<br />
+<br />
+```yaml<br />
+# add sug for making urls<br />
+- task: slugify<br />
+  dataset: tables.movies<br />
+  input_col: name<br />
+  output_col: slug<br />
+<br />
+# render page for each  row<br />
+- task: render<br />
+  type: row<br />
+  dataset: tables.movies<br />
+  path: &quot;/movies/[slug].html&quot;<br />
+  markdown: |-<br />
+    - Company: **[[company]]**<br />
+    - Director: **[director]**<br />
+    - Year: **[[year]](/movies/year_[year].html)**<br />
+  meta:<br />
+    title: &quot;[name]&quot;<br />
+    date: &quot;2022.11.22 13:30&quot;<br />
+    group: movies<br />
+<br />
+  # render page for each unique value<br />
+  # in column<br />
+- task: render<br />
+  type: col<br />
+  dataset: tables.movies<br />
+  col: year<br />
+  path: &quot;/movies/year_[value].html&quot;<br />
+  # use html here, because md may mess up<br />
+  # the nunjuck syntax<br />
+  html: |-<br />
+    &lt;ul&gt;<br />
+    {% for p in page.local_data %}<br />
+    &lt;li&gt;&lt;a href=&quot;/movies/{{ p.slug }}.html&quot;&gt;{{ p.name}}&lt;/a&gt;&lt;/li&gt;<br />
+    {% endfor %}<br />
+    &lt;/ul&gt;<br />
+    &lt;hr /&gt;<br />
+  meta:<br />
+    title: &quot;Year [value]&quot;<br />
+    date: &quot;2022.11.12 23.23&quot;<br />
+    group: movie_year<br />
+```<br />
+<br />
+То же самое, но `json` :<br />
+<br />
+```json<br />
+[<br />
+  {<br />
+    &quot;task&quot;: &quot;slugify&quot;,<br />
+    &quot;dataset&quot;: &quot;tables.movies&quot;,<br />
+    &quot;input_col&quot;: &quot;name&quot;,<br />
+    &quot;output_col&quot;: &quot;slug&quot;<br />
+  },<br />
+  {<br />
+    &quot;task&quot;: &quot;render&quot;,<br />
+    &quot;type&quot;: &quot;row&quot;,<br />
+    &quot;dataset&quot;: &quot;tables.movies&quot;,<br />
+    &quot;path&quot;: &quot;/movies/[slug].html&quot;,<br />
+    &quot;markdown&quot;: &quot;- Company: **[[company]]**&#92;n- Director: **[director]**&#92;n- Year: **[[year]](/movies/year_[year].html)**&quot;,<br />
+    &quot;meta&quot;: {<br />
+      &quot;title&quot;: &quot;[name]&quot;,<br />
+      &quot;date&quot;: &quot;2022.11.22 13:30&quot;,<br />
+      &quot;group&quot;: &quot;movies&quot;<br />
+    }<br />
+  },<br />
+  {<br />
+    &quot;task&quot;: &quot;render&quot;,<br />
+    &quot;type&quot;: &quot;col&quot;,<br />
+    &quot;dataset&quot;: &quot;tables.movies&quot;,<br />
+    &quot;col&quot;: &quot;year&quot;,<br />
+    &quot;path&quot;: &quot;/movies/year_[value].html&quot;,<br />
+    &quot;html&quot;: &quot;&lt;ul&gt;&#92;n{% for p in page.local_data %}&#92;n&lt;li&gt;&lt;a href=&#92;&quot;/movies/{{ p.slug }}.html&#92;&quot;&gt;{{ p.name}}&lt;/a&gt;&lt;/li&gt;&#92;n{% endfor %}&#92;n&lt;/ul&gt;&#92;n&lt;hr /&gt;&quot;,<br />
+    &quot;meta&quot;: {<br />
+      &quot;title&quot;: &quot;Year [value]&quot;,<br />
+      &quot;date&quot;: &quot;2022.11.12 23.23&quot;,<br />
+      &quot;group&quot;: &quot;movie_year&quot;<br />
+    }<br />
+  }<br />
+]<br />
+```<br />
+<br />
+{% endraw %}<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Сделано Мухой</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

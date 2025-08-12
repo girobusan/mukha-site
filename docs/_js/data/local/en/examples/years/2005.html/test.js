@@ -1,0 +1,1 @@
+window.Mukha.registerData( "/en/examples/years/2005.html" , "test" , {"cols":["name_en","name_ru","company","rating_IMDB","year","director_ru","director_en","movie_slug","movies_year"],"rows":[["Batman Begins","Бэтмен начинается","DC","8,2","2005","Кристофер Нолан","Christopher Nolan","batman_begins",1]]} , true)
