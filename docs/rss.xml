@@ -4,9 +4,16 @@
         <title>Mukha SSG</title>
         <link>https://example.site</link>
         <description>Быстрый и простой генератор статичных сайтов.</description>
-        <lastBuildDate>Tue, 12 Aug 2025 18:35:32 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 13 Aug 2025 16:20:04 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Создание сайта]]></title>
+            <link>https://example.site/ru/docs/create_site.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/create_site.html</guid>
+            <pubDate>Wed, 13 Aug 2025 16:05:00 GMT</pubDate>
+            <description><![CDATA[Чтобы быстро создать сайт, можно запустить генератор с ключом <code>-n</code> (<code>--new</code>)]]></description>
+        </item>
         <item>
             <title><![CDATA[Хуки]]></title>
             <link>https://example.site/ru/docs/hooks.html</link>
@@ -221,13 +228,6 @@ to display some information:]]></description>
             <guid isPermaLink="false">https://example.site/ru/docs/template_vars.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[В шаблонизаторе для каждого файла доступны следующие переменные:]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Темы и шаблоны]]></title>
-            <link>https://example.site/ru/docs/templating.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/templating.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Внешнее оформление в Мухе создается при помощи тем. Доступные темы хранятся в директории <code>config/themes</code> сайта. Директории тем имеют следующую структуру:]]></description>
         </item>
     </channel>
 </rss>

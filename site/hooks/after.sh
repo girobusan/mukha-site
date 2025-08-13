@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
-read PDIR
-surge --project $PDIR
+. ./hooks/.env
+read PRJ_DIR
+surge --project $PRJ_DIR

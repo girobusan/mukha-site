@@ -31,7 +31,9 @@
   },
   "scripts": {
     "watch": "gulp watchAll",
-    "edit": "mukha-ssg -wc -o docs"
+    "edit": "mukha-ssg -wc -o docs",
+    "build": "mukha-ssg -c -o docs",
+    "edit2": ". ./.env ; mukha-ssg -wc"
   },
   "license": "MIT",
   "dependencies": {

@@ -2,6 +2,7 @@
 src/random_pages/out
 src/mukha.js
 ref/
+.env
 static/
 .DS_Store
 *.vim
