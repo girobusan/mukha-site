@@ -194,7 +194,7 @@
     function t(e, t) {
       return n.posix.relative(n.posix.dirname(e), t);
     }
-    console.info("Mukha JS API client", "0.1.2b", "at", e);
+    console.info("Mukha JS API client", "0.1.3b", "at", e);
     var r = {},
       o = {};
     function i(e, t) {

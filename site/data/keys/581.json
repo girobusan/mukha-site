@@ -1,0 +1,24 @@
+{
+  "url": "https://anapioficeandfire.com/api/characters/581",
+  "name": "Jon Penrose",
+  "gender": "Male",
+  "culture": "",
+  "born": "",
+  "died": "",
+  "titles": [
+    "Ser"
+  ],
+  "aliases": [],
+  "father": "",
+  "mother": "",
+  "spouse": "",
+  "allegiances": [
+    "https://anapioficeandfire.com/api/houses/300"
+  ],
+  "books": [
+    "https://anapioficeandfire.com/api/books/4"
+  ],
+  "povBooks": [],
+  "tvSeries": [],
+  "playedBy": []
+}

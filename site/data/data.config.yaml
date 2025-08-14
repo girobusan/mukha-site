@@ -77,3 +77,29 @@
     - {{row.company}} : [{{ row.name_en }}](/en/examples/movies/{{row.movie_slug}}.html)
     {% endfor %}
     {{ saveData("test" , page.local_data) }}
+
+- task: render
+  type: key
+  dataset: keys
+  path: /en/examples/chars/[key].html
+  meta:
+    title: "Ice And Fire, [key]"
+  markdown: |-
+    {{ page.local_data.name}}
+    ========================
+
+    - Gender: **{{page.local_data.gender}}**
+    - API URL: **{{page.local_data.url}}**
+
+- task: render
+  type: key
+  dataset: keys
+  path: /ru/examples/chars/[key].html
+  meta:
+    title: "Ice And Fire, [key]"
+  markdown: |-
+    {{ page.local_data.name}}
+    ========================
+
+    - Gender: **{{page.local_data.gender}}**
+    - API URL: **{{page.local_data.url}}**
