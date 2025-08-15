@@ -16,4 +16,7 @@ in two different ways:
 
 - **[ Movies ](/en/examples/movies/index.html)** - to create a page for each movie, I use row-based generation.
 - **[ Years ](/en/examples/years/index.html)** - to calculate the number of movies per year, I use on-the-fly aggregation and generate pages based on the `year` column values.
-- **[ Ice And Fire ](/en/examples/chars/index.html)** - generated from the set of JSON files
+
+Input is a set of JSON files, generation by key (works for directories too):
+
+- **[ Ice And Fire ](/en/examples/chars/index.html)**
