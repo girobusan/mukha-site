@@ -4,9 +4,16 @@
         <title>Mukha SSG</title>
         <link>https://example.site</link>
         <description>Быстрый и простой генератор статичных сайтов.</description>
-        <lastBuildDate>Thu, 14 Aug 2025 09:43:31 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 15 Aug 2025 10:56:44 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Characters]]></title>
+            <link>https://example.site/en/examples/chars/index.html</link>
+            <guid isPermaLink="false">https://example.site/en/examples/chars/index.html</guid>
+            <pubDate>Thu, 14 Aug 2025 11:23:00 GMT</pubDate>
+            <description><![CDATA[Pages, generated from the set of JSON files.]]></description>
+        </item>
         <item>
             <title><![CDATA[Создание сайта]]></title>
             <link>https://example.site/ru/docs/create_site.html</link>
@@ -221,13 +228,6 @@ to display some information:]]></description>
             <guid isPermaLink="false">https://example.site/ru/docs/site_dir.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Что куда класть и зачем]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Переменные шаблона]]></title>
-            <link>https://example.site/ru/docs/template_vars.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/template_vars.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[В шаблонизаторе для каждого файла доступны следующие переменные:]]></description>
         </item>
     </channel>
 </rss>

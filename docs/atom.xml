@@ -2,10 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://example.site</id>
     <title>Mukha SSG</title>
-    <updated>2025-08-14T09:43:31.416Z</updated>
+    <updated>2025-08-15T10:56:44.042Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://example.site"/>
     <subtitle>Быстрый и простой генератор статичных сайтов.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Characters]]></title>
+        <id>https://example.site/en/examples/chars/index.html</id>
+        <link href="https://example.site/en/examples/chars/index.html"/>
+        <updated>2025-08-14T11:23:00.000Z</updated>
+        <summary type="html"><![CDATA[Pages, generated from the set of JSON files.]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Создание сайта]]></title>
         <id>https://example.site/ru/docs/create_site.html</id>
@@ -220,12 +227,5 @@ to display some information:]]></summary>
         <link href="https://example.site/ru/docs/site_dir.html"/>
         <updated>1970-01-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Что куда класть и зачем]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Переменные шаблона]]></title>
-        <id>https://example.site/ru/docs/template_vars.html</id>
-        <link href="https://example.site/ru/docs/template_vars.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[В шаблонизаторе для каждого файла доступны следующие переменные:]]></summary>
     </entry>
 </feed>

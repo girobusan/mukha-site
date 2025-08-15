@@ -4,18 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Examples :: Mukha SSG</title>
-  <meta property="og:title" content="Examples" />
-  <meta property="og:description" content="Using template tags in text" />
-  <link href="../../_theme/style.css" rel="stylesheet">
-  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
-  <script src="../../_theme/navbar.js">
+  <title>Ice And Fire, 251 :: Mukha SSG</title>
+  <meta property="og:title" content="Ice And Fire, 251" />
+  <meta property="og:description" content="" />
+  <link href="../../../_theme/style.css" rel="stylesheet">
+  <link href="../../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../../_theme/navbar.js">
   </script>
-  <script data-location="/en/examples/index.html" src="../../_js/client.js">
+  <script data-location="/en/examples/chars/251.html" src="../../../_js/client.js">
 </script>
-  <script src="../../search_client.js"></script>
-  <script src="../../_theme/masonry.js"></script>
-  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script src="../../../search_client.js"></script>
+  <script src="../../../_theme/masonry.js"></script>
+  <script src="../../../_theme/highlight/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
@@ -27,7 +27,7 @@
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <span class="navbar-item has-text-weight-bold has-text-white">
-      <a href="../index.html" class="has-text-white">
+      <a href="../../index.html" class="has-text-white">
         Mukha SSG
       </a>
     </span>
@@ -43,10 +43,10 @@
     <div class="navbar-start"></div>
 
     <div class="navbar-end">
-      <a class="navbar-item has-text-white" href="../docs/index.html">
+      <a class="navbar-item has-text-white" href="../../docs/index.html">
         Documentation
       </a>
-      <a class="navbar-item has-text-white" href="javascript:;">
+      <a class="navbar-item has-text-white" href="../index.html">
         Examples
       </a>
       <div class="navbar-item">
@@ -61,26 +61,21 @@
 
   <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../index.html">🏠</a></li>
-    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="../../../index.html">🏠</a></li>
+    <li><a href="../../index.html">Mukha</a></li>
+    <li><a href="../index.html">Examples</a></li>
+    <li><a href="index.html">Characters</a></li>
   </ul>
 </nav>
 
-<h1 class="title is-1">Examples</h1>
+<h1 class="title is-1">Ice And Fire, 251</h1>
 <!--en-->
 
   <div class="content mb-6">
-    <h4>Using template tags in text</h4>
+    <h1>Colmar Frey</h1>
 <ul>
-<li><a href="template_tags.html"> Basic examples </a></li>
-</ul>
-<h4>Generating pages from data</h4>
-<p>Input is <a href="movie_table.html"> this table </a>, output is two sets of pages generated
-in two different ways:</p>
-<ul>
-<li><strong><a href="movies/index.html"> Movies </a></strong> - to create a page for each movie, I use row-based generation.</li>
-<li><strong><a href="years/index.html"> Years </a></strong> - to calculate the number of movies per year, I use on-the-fly aggregation and generate pages based on the <code>year</code> column values.</li>
-<li><strong><a href="chars/index.html"> Ice And Fire </a></strong> - generated from the set of JSON files</li>
+<li>Gender: <strong>Male</strong></li>
+<li>API URL: <strong>https://anapioficeandfire.com/api/characters/251</strong></li>
 </ul>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
@@ -97,26 +92,11 @@ in two different ways:</p>
 <div class="modal has-background-white" id="viewSource">
   <div class="modal-background"></div>
   <div class="modal-content px-2 py-2 has-background-white">
-    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
-title: Examples<br />
-menuitem: 5<br />
-hide_list: true<br />
-name: examples_intro_en<br />
----<br />
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">{{ page.local_data.name}}<br />
+========================<br />
 <br />
-#### Using template tags in text<br />
-<br />
-- [ Basic examples ](/+name:template_tags_en)<br />
-<br />
-####   Generating pages from data<br />
-<br />
-Input is [ this table ](/+name:movies_table_en), output is two sets of pages generated<br />
-in two different ways:<br />
-<br />
-- **[ Movies ](/en/examples/movies/index.html)** - to create a page for each movie, I use row-based generation.<br />
-- **[ Years ](/en/examples/years/index.html)** - to calculate the number of movies per year, I use on-the-fly aggregation and generate pages based on the `year` column values.<br />
-- **[ Ice And Fire ](/en/examples/chars/index.html)** - generated from the set of JSON files<br />
-</div>
+- Gender: **{{page.local_data.gender}}**<br />
+- API URL: **{{page.local_data.url}}**</div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
 </div>
