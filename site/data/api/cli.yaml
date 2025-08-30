@@ -7,14 +7,14 @@
 
 - short: "-i"
   long: "--input"
-  value: "директория"
+  value: "string"
   description:
     ru: "Указывает директорию, из которой брать файлы, по умолчанию — директория `site` в текущей директории"
     en: "Specifies the directory to take files from, default is the `site` directory in the current directory"
 
 - short: "-o"
   long: "--output"
-  value: "директория"
+  value: "string"
   description:
     ru: "Путь для сгенерированных файлов, по умолчанию — static"
     en: "Path for generated files, default is static"
@@ -42,7 +42,7 @@
 
 - short: "-p"
   long: "--port"
-  value: "номер порта >1024 или 0"
+  value: "number >1024 || 0"
   description:
     ru: "Порт, на котором будет открыт сервер для разработки. Порт 0 — автоматический выбор свободного порта"
     en: "Port on which the development server will be opened. Port 0 - automatic selection of a free port"
@@ -56,7 +56,7 @@
 
 - short: "-l"
   long: "--loglevel"
-  value: "уровень логгирования"
+  value: "string"
   description:
     ru: "Количество выводимой информации, info, warn, debug или error"
     en: "Amount of information to output: info, warn, debug or error"
