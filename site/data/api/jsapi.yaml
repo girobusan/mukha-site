@@ -4,46 +4,78 @@
     Ссылка от корня (root-relative) на текущую страницу. Эта ссылка
     не всегда может быть однозначно получена из URL, поэтому
     лучше использовать API.
+  description_en: |-
+    Root-relative link to the current page. This link
+    cannot always be unambiguously derived from the URL, so
+    it's better to use the API.
 
 - field: relative
   isFunction: true
   description: |-
     Возвращает относительную ссылку со страницы, указанной первым параметром
     на страницу, указанную вторым.
+  description_en: |-
+    Returns a relative link from the page specified by the first parameter
+    to the page specified by the second.
   params:
     - [
         "from",
         "string",
         "Ссылка от корня сайта на страницу, с которой должна быть ссылка",
+        "Root-relative link to the page from which the link should originate",
       ]
-    - ["to", "string", "Ссылка на страницу, на которую надо сослаться."]
+    - [
+        "to",
+        "string",
+        "Ссылка на страницу, на которую надо сослаться.",
+        "Link to the page to be referenced.",
+      ]
 
 - field: relTo
   isFunction: true
   description: |-
     Преобразует ссылку от корня сайта в относительную, с текущей страницы
+  description_en: |-
+    Converts a root-relative site link into a relative one from the current page
   params:
-    - ["to", "string", "Каноническая ссылка на страницу"]
+    - [
+        "to",
+        "string",
+        "Каноническая ссылка на страницу",
+        "Canonical link to the page",
+      ]
 
 - field: getData
   isFunction: true
   description: |-
     Запрашивает сохраненный для JS API глобальный датасет по имени. Возвращает
     Promise, которые разрешается запрошенным объектом данных.
+  description_en: |-
+    Requests a global dataset saved for the JS API by name. Returns
+    a Promise that resolves with the requested data object.
   params:
-    - ["dataset", "string", "Имя датасета"]
+    - ["dataset", "string", "Имя датасета", "Name of the dataset"]
 
 - field: getLocalData
   isFunction: true
   description: |-
     Запрашивает локальный датасет. Возвращает
     Promise, которые разрешается запрошенным объектом данных.
+  description_en: |-
+    Requests a local dataset. Returns
+    a Promise that resolves with the requested data object.
   params:
-    - ["dataset", "string", "Имя локального датасета"]
+    - [
+        "dataset",
+        "string",
+        "Имя локального датасета",
+        "Name of the local dataset",
+      ]
     - [
         "path",
         "string",
         "Опционально: путь до страницы. Позволяет загрузить локальный датасет страницы, отличной от текущей",
+        "Optional: path to the page. Allows loading a local dataset from a page other than the current one",
       ]
 
 - field: attachScript
@@ -51,5 +83,13 @@
   description: |-
     Присоединяет скрипт по указанному URL, возвращает Promise, который
     разрешается, если скрипт был удачно загружен.
+  description_en: |-
+    Attaches a script from the specified URL, returns a Promise that
+    resolves if the script was successfully loaded.
   params:
-    - ["url", "string", "URL скрипта для загрузки."]
+    - [
+        "url",
+        "string",
+        "URL скрипта для загрузки.",
+        "URL of the script to load.",
+      ]

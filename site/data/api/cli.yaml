@@ -1,0 +1,62 @@
+- short: "-v"
+  long: "--version"
+  value: ""
+  description:
+    ru: "Выведет в консоль версию Мухи"
+    en: "Outputs the Mukha version to the console"
+
+- short: "-i"
+  long: "--input"
+  value: "директория"
+  description:
+    ru: "Указывает директорию, из которой брать файлы, по умолчанию — директория `site` в текущей директории"
+    en: "Specifies the directory to take files from, default is the `site` directory in the current directory"
+
+- short: "-o"
+  long: "--output"
+  value: "директория"
+  description:
+    ru: "Путь для сгенерированных файлов, по умолчанию — static"
+    en: "Path for generated files, default is static"
+
+- short: "-t"
+  long: "--timed"
+  value: ""
+  description:
+    ru: "Если установлен, то файлы, дата которых находится в будущем, будут пропущены при генерации"
+    en: "If set, files with dates in the future will be skipped during generation"
+
+- short: "-с"
+  long: "--cleanup"
+  value: ""
+  description:
+    ru: "Очистит выходную директорию от лишних файлов <strong>после </strong>генерации"
+    en: "Cleans up the output directory from unnecessary files <strong>after</strong> generation"
+
+- short: "-w"
+  long: "--watch"
+  value: ""
+  description:
+    ru: "Включает режим разработки, подробнее ниже"
+    en: "Enables development mode, see below for details"
+
+- short: "-p"
+  long: "--port"
+  value: "номер порта >1024 или 0"
+  description:
+    ru: "Порт, на котором будет открыт сервер для разработки. Порт 0 — автоматический выбор свободного порта"
+    en: "Port on which the development server will be opened. Port 0 - automatic selection of a free port"
+
+- short: "-n"
+  long: "--new"
+  value: ""
+  description:
+    ru: "Создание нового сайта в текущей директории"
+    en: "Create a new site in the current directory"
+
+- short: "-l"
+  long: "--loglevel"
+  value: "уровень логгирования"
+  description:
+    ru: "Количество выводимой информации, info, warn, debug или error"
+    en: "Amount of information to output: info, warn, debug or error"

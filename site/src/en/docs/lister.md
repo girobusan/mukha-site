@@ -1,14 +1,14 @@
 ---
-title: Объект lister
-doc: lister_ru
-tags: объекты
+title: Lister object
+doc: lister_en
+tags: objects
 ---
 
-Объект lister — _похожий на массив_ (array-like) объект, предназначенный
-для хранения и обработки списков [страниц ](/+doc:page_obj_ru). 
+The lister object is an _array-like_ object designed
+for storing and processing lists of [pages](/+doc:page_obj_en).
 
-Он доступен в переменной
-шаблона `list`:
+It is available in the template variable
+`list`:
 
 {% raw %}
 
@@ -22,7 +22,7 @@ tags: объекты
 
 {% endraw %}
 
-## Поля и методы
+## Fields and methods
 
 {% for fl in data.datasets.api.lister %}
 
@@ -37,16 +37,16 @@ tags: объекты
     {% endif %}
   </strong>
 {% if not fl.params_desc %}
-<div>Параметры: {{ fl.params or "нет"}}</div>
+<div>Parameters: {{ fl.params or "none"}}</div>
 {% endif %}
-<div>{{fl.description}}</div>
+<div>{{fl.description_en}}</div>
 {% if fl.params_desc %}
 <table>
 <thead>
 <tr>
-<td>Параметр</td>
-<td>Тип</td>
-<td>Зачем</td>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
 </tr>
 </thead>
 <tbody>
@@ -54,10 +54,11 @@ tags: объекты
 <tr>
 <td><code>{{row[0]}}</code></td>
 <td>{{row[1]}}</td>
-<td>{{row[2]}}</td>
+<td>{{row[3]}}</td>
 </tr>
 {% endfor %}
 </tbody></table>
 {% endif %}
 </div>
 {% endfor %}
+

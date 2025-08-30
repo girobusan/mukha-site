@@ -6,9 +6,14 @@
 - method: sortByMeta
   params: string, boolean, boolean
   params_desc:
-    - ["meta_name", "string", "Поле метаданных"]
-    - ["as_number", "boolean", "Числовая сортировка"]
-    - ["desc", "boolean", "Сортировать в нисходящем порядке"]
+    - ["meta_name", "string", "Поле метаданных", "Metadata field"]
+    - ["as_number", "boolean", "Числовая сортировка", "Numeric sorting"]
+    - [
+        "desc",
+        "boolean",
+        "Сортировать в нисходящем порядке",
+        "Sort in descending order",
+      ]
   description: Возвращает копию Lister, отсортированную по указанным метаданным
   description_en: Returns a copy of Lister sorted by the specified metadata
 
@@ -17,59 +22,59 @@
   description: Возвращает страницу по пути на сайте
   description_en: Returns a page by site path
   params_desc:
-    - ["path", "string", "Путь"]
+    - ["path", "string", "Путь", "Path"]
 
 - method: getByMeta
   params: string, any
   description: Возвращает страницу по паре имя/значение метаданных
   description_en: Returns a page by metadata name/value pair
   params_desc:
-    - ["meta_name", "string", "Поле метаданных"]
-    - ["meta_value", "string|number", "Значение"]
+    - ["meta_name", "string", "Поле метаданных", "Metadata field"]
+    - ["meta_value", "string|number", "Значение", "Value"]
 
 - method: excludeByMeta
   params: string, any
   description: Исключает страницы по паре имя/значение метаданных, возвращает новый Lister
   description_en: Excludes pages by metadata name/value pair, returns a new Lister
   params_desc:
-    - ["meta_name", "string", "Поле метаданных"]
-    - ["meta_value", "string|number", "Значение"]
+    - ["meta_name", "string", "Поле метаданных", "Metadata field"]
+    - ["meta_value", "string|number", "Значение", "Value"]
 
 - method: getAllByMeta
   params: string, any
   description: Возвращает все страницы с указанным значением метаданных
   description_en: Returns all pages with the specified metadata value
   params_desc:
-    - ["meta_name", "string", "Поле метаданных"]
-    - ["meta_value", "string|number", "Значение"]
+    - ["meta_name", "string", "Поле метаданных", "Metadata field"]
+    - ["meta_value", "string|number", "Значение", "Value"]
 
 - method: getAllWithMeta
   params: string
   description: Возвращает все страницы, содержащие указанные метаданные
   description_en: Returns all pages containing the specified metadata
   params_desc:
-    - ["meta_name", "string", "Поле метаданных"]
+    - ["meta_name", "string", "Поле метаданных", "Metadata field"]
 
 - method: getAllFiles
   params: string|Page
   description: Возвращает все страницы ниже указанного пути (не включая теги, виртуальные и индексные страницы)
   description_en: Returns all pages under the given path (excluding tags, virtual and index pages)
   params_desc:
-    - ["page", "string", "Путь или объект page"]
+    - ["page", "string", "Путь или объект page", "Path or page object"]
 
 - method: getAllDirs
   params: string|Page
   description: Возвращает все индексные страницы (директории) ниже указанного пути
   description_en: Returns all index pages (directories) under the given path
   params_desc:
-    - ["page", "string", "Путь или объект page"]
+    - ["page", "string", "Путь или объект page", "Path or page object"]
 
 - method: getNearFiles
   params: string|Page
   description: Возвращает все страницы в той же директории, что и указанный путь
   description_en: Returns all pages in the same directory as the specified path
   params_desc:
-    - ["page", "string", "Путь или объект page"]
+    - ["page", "string", "Путь или объект page", "Path or page object"]
 
 - method: getNearDirs
   params: string|Page
@@ -77,72 +82,87 @@
     Возвращает все индексные страницы (директории) в директории указанного пути
   description_en: Returns all index pages (directories) in the directory of the specified path
   params_desc:
-    - ["page", "string", "Путь или объект page"]
+    - ["page", "string", "Путь или объект page", "Path or page object"]
 
 - method: getParent
   params: string|Page
   description: Возвращает ближайший индексный файл выше по дереву директорий
   description_en: Returns the nearest index file up the directory tree
   params_desc:
-    - ["page", "string", "Путь или объект page"]
+    - ["page", "string", "Путь или объект page", "Path or page object"]
 
 - method: getBreadcrumbs
   params: string|Page, number
   description: Возвращает "хлебные крошки", директории без индексных файлов пропускаются. Второй параметр определяет, сколько директорий пропустить
   description_en: Returns breadcrumbs, directories without index files are skipped. The second parameter defines how many directories to skip
   params_desc:
-    - ["page", "string", "Путь или объект page"]
+    - ["page", "string", "Путь или объект page", "Path or page object"]
+    - [
+        "skip",
+        "number",
+        "Количество пропускаемых директорий",
+        "Number of directories to skip",
+      ]
 
 # Стандартные методы массива
 - method: forEach
   params: function
   description: Стандартный forEach()
-  description_en:
+  description_en: Standard forEach()
   params_desc:
-    - ["fn", "function", "Функция, выполняемая для каждого элемента"]
+    - [
+        "fn",
+        "function",
+        "Функция, выполняемая для каждого элемента",
+        "Function to execute for each element",
+      ]
 
 - method: map
   params: function
   description: Стандартный  map()
-  description_en:
+  description_en: Standard map()
   params_desc:
-    - ["fn", "function", "Функция, выполняемая для каждого элемента"]
+    - [
+        "fn",
+        "function",
+        "Функция, выполняемая для каждого элемента",
+        "Function to execute for each element",
+      ]
 
 - method: slice
   params: number, number
   description: Стандартный slice() (возвращает массив)
-  description_en:
+  description_en: Standard slice() (returns an array)
   params_desc:
-    - ["start", "number", "Начальный индекс"]
-    - ["end", "number", "Конечный индекс"]
-    - ["...", "...", "..."]
+    - ["start", "number", "Начальный индекс", "Start index"]
+    - ["end", "number", "Конечный индекс", "End index"]
 
 - method: sort
   params: function
   description: Возвращает отсортированную копию.
-  description_en:
+  description_en: Returns a sorted copy.
   params_desc:
-    - ["fn", "function", "функция сортировки"]
+    - ["fn", "function", "функция сортировки", "Sorting function"]
 
 - method: length
   notfn: true
   params:
   description: Поле length — количество элементов.
-  description_en:
+  description_en: Length field - number of elements.
 
 - method: replace
   params: array
   description: Заменяет текущий список новым и возвращает новый Lister
   description_en: Replaces the current list with a new one and returns a new Lister
   params_desc:
-    - ["array", "array", "Массив страниц"]
+    - ["array", "array", "Массив страниц", "Array of pages"]
 
 - method: append
   params: array
   description: Добавляет список к текущему Lister, возвращает новый Lister
-  description_en: Appends a list to the current Lister, returns new Liser
+  description_en: Appends a list to the current Lister, returns new Lister
   params_desc:
-    - ["array", "array", "Массив страниц"]
+    - ["array", "array", "Массив страниц", "Array of pages"]
 
 - method: unwrap
   params:
