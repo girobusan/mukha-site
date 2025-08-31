@@ -1,12 +1,14 @@
 #site properties
 title: "Mukha SSG"
+title_en: "Mukha SSG"
+title_ru: "ГСС «Муха»"
 motto: "Делай мухой!"
 url: "https://example.site"
 theme: basic
 description: |-
   Быстрый и простой генератор статичных сайтов.
 description_ru: |-
-  Быстрый и простой генератор статичных сайтов.
+  Быстрый и простой генератор статических сайтов.
 description_en: |-
   Quick and simple static site generator.
 #default maximum length of the list;

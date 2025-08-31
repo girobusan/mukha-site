@@ -27,7 +27,7 @@
 
 
   {% if page.index and not page.list and not page.hide_list %}
-  {% set pls = list.getNearFiles(page.file.path) %}
+  {% set pls = list.getNearFiles(page.file.path).sortByMeta("order" , false , false) %}
   {% endif %}
 
   {% if page.meta.taglist %}

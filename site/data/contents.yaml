@@ -1,0 +1,58 @@
+- title:
+    ru: "Начало работы"
+    en: "Getting started"
+  pages:
+    - intro.md
+    - install.md
+    - create_site.md
+    - watch_mode.md
+    - cli.md
+    - site_dir.md
+    - config.md
+
+- title:
+    ru: "Редактирование контента"
+    en: "Editing"
+  pages:
+    - markdown.md
+    - links.md
+    - inserts.md
+
+- title:
+    ru: "Шаблоны"
+    en: "Templating"
+  pages:
+    - templating.md
+    - template_vars.md
+    - lister.md
+    - file_obj.md
+    - page_obj.md
+    - to_table.md
+
+- title:
+    ru: "Данные"
+    en: "Data"
+  pages:
+    - data_basic.md
+    - data_config_tasks.md
+    - data_config.md
+    - data2js.md
+
+- title:
+    ru: "Java Script API"
+    en: "Java Script API"
+  pages:
+    - js_api.md
+
+- title:
+    ru: "Встроенный поиск"
+    en: "Search"
+  pages:
+    - search.md
+
+- title:
+    ru: "Интеграции"
+    en: "Integrations"
+  pages:
+    - gulp_integration.md
+    - hooks.md

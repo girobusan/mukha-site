@@ -5,7 +5,8 @@
 {% block top %}
 <section class="hero is-primary has-text-white  is-medium">
   <div class="hero-body">
-    <p class="title is-2 has-text-white">{{ config.title }}{% if page.page_number>1 %} ({{page.page_number}}/{{
+    <p class="title is-2 has-text-white">{{ config[ "title_" + LANG ] }}{% if page.page_number>1 %}
+      ({{page.page_number}}/{{
       page.page_links.length}}){% endif %}</p>
     <p class="subtitle has-text-white">{{ config[ "description_" + LANG ]}}</p>
     <div class="field has-addons">
@@ -23,11 +24,24 @@
   </div>
 </section>
 {% endblock %}
-{% set allPages = list.getAllFiles("/" + LANG + "/index.html").sortByMeta("order" , false , true) %}
-{% set p = splitToPages(allPages , 20) %}
 {% block content %}
-{# content {{ allPages.length }} #}
-{% if page.list_page %}
-{{ pagesList( page.list_page) }}
-{% endif %}
+<div class="columns">
+  {% set SP = datasets.selling_points %}
+  {% for S in SP %}
+  <div class="column">
+    <div class="card " style="height:100%">
+      <div class="card-header">
+        <div class="card-header-title">{{ S.title[LANG] }}</div>
+      </div>
+      <div class="card-content content">
+        <ul style="margin-left:1rem">
+          {% for P in S.text[LANG] %}
+          <li>{{P}}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}
