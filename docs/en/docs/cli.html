@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Command line usage :: Mukha SSG</title>
+  <meta property="og:title" content="Command line usage" />
+  <meta property="og:description" content="Usage in the command line." />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/docs/cli.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Command line usage</h1>
+<!--en-->
+
+  <div class="content mb-6">
+    <p>If the source directory is named <code>site</code>, then to generate the site, it is sufficient to run the <code>mukha-ssg</code> command in the parent directory. The generated files will be placed in the <code>static</code> directory next to the site directory.</p>
+<p>Additionally, you can use command line keys:
+<small></p>
+<table>
+<thead>
+<tr>
+<th>Short</th>
+<th>Full</th>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-v</td>
+<td>--version</td>
+<td>—</td>
+<td>Outputs the Mukha version to the console</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>--input</td>
+<td>directory</td>
+<td>Specifies the directory to take files from; defaults to the <code>site</code> directory in the current directory.</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>--output</td>
+<td>directory</td>
+<td>Path for the generated files; defaults to <code>static</code>.</td>
+</tr>
+<tr>
+<td>-t</td>
+<td>--timed</td>
+<td>—</td>
+<td>If set, files with a date in the future will be skipped during generation.</td>
+</tr>
+<tr>
+<td>-с</td>
+<td>--cleanup</td>
+<td>—</td>
+<td>Cleans the output directory of unnecessary files <strong>after</strong> generation.</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>--watch</td>
+<td>—</td>
+<td>Enables development mode; more details below.</td>
+</tr>
+<tr>
+<td>-p</td>
+<td>--port</td>
+<td>port number &gt;1024 or 0</td>
+<td>Port on which the development server will run. Port <code>0</code> means automatic selection of an available port.</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>--new</td>
+<td>—</td>
+<td>Creates a new site in the current directory</td>
+</tr>
+<tr>
+<td>-l</td>
+<td><nobr>--loglevel</nobr></td>
+<td>logging level</td>
+<td>Amount of information output, <code>info</code>, <code>warn</code>, <code>debug</code>, or <code>error</code></td>
+</tr>
+</tbody>
+</table>
+</small>
+<h2>Examples</h2>
+<p>Enables development mode; the server will be available at <code>http://localhost:8000</code></p>
+<pre><code class="language-shell">mukha-ssg -w -p 8000
+</code></pre>
+<p>Takes source files from the <code>site</code> directory, saves the result in <code>blog</code>, and cleans it of unnecessary files after generation.</p>
+<pre><code class="language-bash">mukha-ssg --output blog -c
+</code></pre>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Command line usage<br />
+excerpt: Usage in the _command line._<br />
+part: basics<br />
+doc: cli_en<br />
+order: &quot;1.02&quot;<br />
+---<br />
+<br />
+If the source directory is named `site`, then to generate the site, it is sufficient to run the `mukha-ssg` command in the parent directory. The generated files will be placed in the `static` directory next to the site directory.<br />
+<br />
+Additionally, you can use command line keys:<br />
+&lt;small&gt;<br />
+| Short   | Full         | Value             | Description                                                                                         |<br />
+| ------- | ------------ | ----------------- | --------------------------------------------------------------------------------------------------- |<br />
+| -v      | --version    | —                 | Outputs the Mukha version to the console                                                           |<br />
+| -i      | --input      | directory         | Specifies the directory to take files from; defaults to the `site` directory in the current directory. |<br />
+| -o      | --output     | directory         | Path for the generated files; defaults to `static`.                                                |<br />
+| -t      | --timed      | —                 | If set, files with a date in the future will be skipped during generation.                          |<br />
+| -с      | --cleanup    | —                 | Cleans the output directory of unnecessary files **after** generation.                             |<br />
+| -w      | --watch      | —                 | Enables development mode; more details below.                                                      |<br />
+| -p      | --port       | port number &gt;1024 or 0 | Port on which the development server will run. Port `0` means automatic selection of an available port. |<br />
+| -n      | --new        | —                 | Creates a new site in the current directory                                                        |<br />
+| -l | &lt;nobr&gt;--loglevel&lt;/nobr&gt; | logging level | Amount of information output, `info`, `warn`, `debug`, or `error`   |<br />
+&lt;/small&gt;<br />
+<br />
+## Examples<br />
+<br />
+Enables development mode; the server will be available at `http://localhost:8000`<br />
+<br />
+```shell<br />
+mukha-ssg -w -p 8000<br />
+```<br />
+<br />
+Takes source files from the `site` directory, saves the result in `blog`, and cleans it of unnecessary files after generation.<br />
+<br />
+```bash<br />
+mukha-ssg --output blog -c<br />
+```<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

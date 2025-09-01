@@ -59,9 +59,9 @@
 
 <div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
 
-  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../index.html">🏠</a></li>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
     <li><a href="../index.html">Mukha</a></li>
   </ul>
 </nav>
@@ -80,7 +80,10 @@ in two different ways:</p>
 <ul>
 <li><strong><a href="movies/index.html"> Movies </a></strong> - to create a page for each movie, I use row-based generation.</li>
 <li><strong><a href="years/index.html"> Years </a></strong> - to calculate the number of movies per year, I use on-the-fly aggregation and generate pages based on the <code>year</code> column values.</li>
-<li><strong><a href="chars/index.html"> Ice And Fire </a></strong> - generated from the set of JSON files</li>
+</ul>
+<p>Input is a set of JSON files, generation by key (works for directories too):</p>
+<ul>
+<li><strong><a href="chars/index.html"> Ice And Fire </a></strong></li>
 </ul>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
@@ -115,7 +118,10 @@ in two different ways:<br />
 <br />
 - **[ Movies ](/en/examples/movies/index.html)** - to create a page for each movie, I use row-based generation.<br />
 - **[ Years ](/en/examples/years/index.html)** - to calculate the number of movies per year, I use on-the-fly aggregation and generate pages based on the `year` column values.<br />
-- **[ Ice And Fire ](/en/examples/chars/index.html)** - generated from the set of JSON files<br />
+<br />
+Input is a set of JSON files, generation by key (works for directories too):<br />
+<br />
+- **[ Ice And Fire ](/en/examples/chars/index.html)**<br />
 </div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>

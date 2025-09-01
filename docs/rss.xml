@@ -4,9 +4,32 @@
         <title>Mukha SSG</title>
         <link>https://example.site</link>
         <description>Быстрый и простой генератор статичных сайтов.</description>
-        <lastBuildDate>Fri, 15 Aug 2025 10:56:44 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Sep 2025 08:54:36 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Смена темы оформления]]></title>
+            <link>https://example.site/ru/docs/change_theme.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/change_theme.html</guid>
+            <pubDate>Mon, 01 Sep 2025 08:34:00 GMT</pubDate>
+            <description><![CDATA[Сайт по-умолчанию имеет очень простую тему, с ней можно поиграться, но не жить.  Давайте скачаем и установим
+более интересную тему, <em>notepad</em>.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Страницы и пагинация]]></title>
+            <link>https://example.site/ru/docs/pagination.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/pagination.html</guid>
+            <pubDate>Mon, 01 Sep 2025 06:32:00 GMT</pubDate>
+            <description><![CDATA[Муха позволяет разбить на страницы произвольный список, как правило, эта функция
+нужна для вывода длинного списка страниц.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Генерация по ключу]]></title>
+            <link>https://example.site/ru/examples/chars/index.html</link>
+            <guid isPermaLink="false">https://example.site/ru/examples/chars/index.html</guid>
+            <pubDate>Fri, 15 Aug 2025 14:09:00 GMT</pubDate>
+            <description><![CDATA[Генерация страниц из набора файлов JSON.]]></description>
+        </item>
         <item>
             <title><![CDATA[Characters]]></title>
             <link>https://example.site/en/examples/chars/index.html</link>
@@ -30,12 +53,20 @@
 Их можно писать на любом языке.]]></description>
         </item>
         <item>
+            <title><![CDATA[Preview Mode]]></title>
+            <link>https://example.site/en/docs/watch_mode.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/watch_mode.html</guid>
+            <pubDate>Wed, 30 Jul 2025 15:46:00 GMT</pubDate>
+            <description><![CDATA[Preview mode allows you to track changes made to the site in real time.
+Convenient to use when <a href="https://example.site/en/docs/gulp_integration.html">integrating with gulp</a>.]]></description>
+        </item>
+        <item>
             <title><![CDATA[Режим предпросмотра]]></title>
             <link>https://example.site/ru/docs/watch_mode.html</link>
             <guid isPermaLink="false">https://example.site/ru/docs/watch_mode.html</guid>
             <pubDate>Wed, 30 Jul 2025 15:46:00 GMT</pubDate>
             <description><![CDATA[Режим предпросмотра позволяет в реальном времени отслеживать вносимые в сайт изменения.
-Удобно использовать при <a href="https://example.site/ru/guides/gulp_integration.html">интеграции с gulp</a>.]]></description>
+Удобно использовать при <a href="https://example.site/ru/docs/gulp_integration.html">интеграции с gulp</a>.]]></description>
         </item>
         <item>
             <title><![CDATA[Сохранение данных для клиентских скриптов]]></title>
@@ -47,12 +78,25 @@
 сохранены в компактном формате. ]]></description>
         </item>
         <item>
+            <title><![CDATA[Links]]></title>
+            <link>https://example.site/en/docs/links.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/links.html</guid>
+            <pubDate>Mon, 21 Jul 2025 15:48:00 GMT</pubDate>
+            <description><![CDATA[In function arguments, metadata, and texts, Mukha recognizes root-relative links to documents on the site:]]></description>
+        </item>
+        <item>
             <title><![CDATA[Ссылки]]></title>
             <link>https://example.site/ru/docs/links.html</link>
             <guid isPermaLink="false">https://example.site/ru/docs/links.html</guid>
             <pubDate>Mon, 21 Jul 2025 15:48:00 GMT</pubDate>
-            <description><![CDATA[В аргументах функций, в метаданных и текстах ссылки на документы на сайте
-Муха распознает ссылки от корня (root-relative):]]></description>
+            <description><![CDATA[Обычные и «умные».]]></description>
+        </item>
+        <item>
+            <title><![CDATA[About the project]]></title>
+            <link>https://example.site/en/docs/intro.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/intro.html</guid>
+            <pubDate>Mon, 21 Jul 2025 06:31:00 GMT</pubDate>
+            <description><![CDATA[Mukha is <em>yet another</em> opinionated static site generator.]]></description>
         </item>
         <item>
             <title><![CDATA[О проекте]]></title>
@@ -60,6 +104,14 @@
             <guid isPermaLink="false">https://example.site/ru/docs/intro.html</guid>
             <pubDate>Mon, 21 Jul 2025 06:31:00 GMT</pubDate>
             <description><![CDATA[Муха — <em>еще один</em> генератор статических сайтов со своими фишками.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Built-in search]]></title>
+            <link>https://example.site/en/docs/search.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/search.html</guid>
+            <pubDate>Sat, 19 Jul 2025 07:34:00 GMT</pubDate>
+            <description><![CDATA[Mukha has integrated indexing and search using <a href="https://lunrjs.com/">lunr</a>.<br>
+Search works independently of the content delivery method.]]></description>
         </item>
         <item>
             <title><![CDATA[Встроенный поиск]]></title>
@@ -71,8 +123,8 @@
         </item>
         <item>
             <title><![CDATA[Подключение данных]]></title>
-            <link>https://example.site/ru/docs/mukha_data_ru.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/mukha_data_ru.html</guid>
+            <link>https://example.site/ru/docs/data_basic.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/data_basic.html</guid>
             <pubDate>Sun, 13 Jul 2025 14:49:00 GMT</pubDate>
             <description><![CDATA[Данные являются полноправной частью контента Мухи. Их можно использовать как в шаблонах,
 так и в тексте и даже немножко <a href="https://example.site/ru/docs/data_config_tasks.html">обрабатывать</a>.]]></description>
@@ -98,6 +150,20 @@
             <pubDate>Mon, 16 Jun 2025 07:10:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[Command line usage]]></title>
+            <link>https://example.site/en/docs/cli.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/cli.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[Usage in the <em>command line.</em>]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Site Configuration File]]></title>
+            <link>https://example.site/en/docs/config.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/config.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[The file is located in the <code>site_dir/config/site.yaml</code> folder]]></description>
+        </item>
+        <item>
             <title><![CDATA[Data Processing]]></title>
             <link>https://example.site/en/docs/data_config_tasks.html</link>
             <guid isPermaLink="false">https://example.site/en/docs/data_config_tasks.html</guid>
@@ -105,11 +171,42 @@
             <description><![CDATA[Sometimes you may need not just to connect data to your site, but also process it and/or generate pages from it. This is optional but possible.]]></description>
         </item>
         <item>
+            <title><![CDATA[Integration with gulp]]></title>
+            <link>https://example.site/en/docs/gulp_integration.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/gulp_integration.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[Mukha easily integrates into the development process with gulp, providing fast
+site preview in the browser and allowing the combination of
+css and site template development into a single process.]]></description>
+        </item>
+        <item>
             <title><![CDATA[Documentation]]></title>
             <link>https://example.site/en/docs/index.html</link>
             <guid isPermaLink="false">https://example.site/en/docs/index.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Docs]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Java Script API]]></title>
+            <link>https://example.site/en/docs/js_api.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/js_api.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[API for custom scripts]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Lister object]]></title>
+            <link>https://example.site/en/docs/lister.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/lister.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[The lister object is an <em>array-like</em> object designed
+for storing and processing lists of <a href="https://example.site/en/docs/page_obj.html">pages</a>.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Page object]]></title>
+            <link>https://example.site/en/docs/page_obj.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/page_obj.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[The page object represents a page on the site. The following fields are available in it:]]></description>
         </item>
         <item>
             <title><![CDATA[Filter to_table]]></title>
@@ -133,101 +230,6 @@ optionally with specified columns.]]></description>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[This is the table used for
 generations.]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Template Tags]]></title>
-            <link>https://example.site/en/examples/template_tags.html</link>
-            <guid isPermaLink="false">https://example.site/en/examples/template_tags.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[You can use template tags in the text. For example,
-to display some information:]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Запуск и использование]]></title>
-            <link>https://example.site/ru/docs/cli.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/cli.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Использование в <em>командной строке.</em>]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Конфигурационный файл сайта]]></title>
-            <link>https://example.site/ru/docs/config.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/config.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Файл находится в папке <code>site_dir/config/site.yaml</code>]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Пример конфигурационного файла данных]]></title>
-            <link>https://example.site/ru/docs/data_config.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/data_config.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Примеры конфигурации в JSON и YAML]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Обработка данных]]></title>
-            <link>https://example.site/ru/docs/data_config_tasks.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/data_config_tasks.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Иногда вам может понадобиться не просто подключить данные к сайту, но и обработать их, и/или сгенерировать из них страницы для сайта. Делать это необязательно, но возможно.]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Объект file]]></title>
-            <link>https://example.site/ru/docs/file_obj.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/file_obj.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Объект используется внутри генератора. Содержит поля:]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Документация]]></title>
-            <link>https://example.site/ru/docs/index.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/index.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Docs]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Вставки]]></title>
-            <link>https://example.site/ru/docs/inserts.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/inserts.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Для вставки дополнительного контента в текст применяется синтаксис вставки.
-Длинная форма рассчитана на использование в будущем визуальном редакторе, и
-выглядит так:]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Установка]]></title>
-            <link>https://example.site/ru/docs/install.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/install.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[ Три способа установки]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Java Script API]]></title>
-            <link>https://example.site/ru/docs/js_api.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/js_api.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[API для пользовательских скриптов]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Объект lister]]></title>
-            <link>https://example.site/ru/docs/lister.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/lister.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Объект lister — <em>похожий на массив</em> (array-like) объект, предназначенный
-для хранения и обработки списков <a href="https://example.site/ru/docs/page_obj.html">страниц </a>.]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Объект page (страница)]]></title>
-            <link>https://example.site/ru/docs/page_obj.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/page_obj.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Объект page представляет страницу на сайте. В нем доступны следующие поля:]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Структура директории сайта]]></title>
-            <link>https://example.site/ru/docs/site_dir.html</link>
-            <guid isPermaLink="false">https://example.site/ru/docs/site_dir.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Что куда класть и зачем]]></description>
         </item>
     </channel>
 </rss>

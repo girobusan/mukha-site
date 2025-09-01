@@ -6,6 +6,7 @@
     - install.md
     - create_site.md
     - watch_mode.md
+    - change_theme.md
     - cli.md
     - site_dir.md
     - config.md
@@ -27,6 +28,7 @@
     - lister.md
     - file_obj.md
     - page_obj.md
+    - pagination.md
     - to_table.md
 
 - title:

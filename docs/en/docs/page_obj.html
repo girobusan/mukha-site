@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page object :: Mukha SSG</title>
+  <meta property="og:title" content="Page object" />
+  <meta property="og:description" content="The page object represents a page on the site. The following fields are available in it:" />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/docs/page_obj.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Page object</h1>
+<!--en-->
+<div class="tags">
+  <a class="tag is-medium" href="../../tags/templates.html">templates</a>
+  <a class="tag is-medium" href="../../tags/objects.html">objects</a>
+</div>
+
+  <div class="content mb-6">
+    <p>The page object represents a page on the site. The following fields are available in it:</p>
+<h3>General</h3>
+<ul>
+<li><code>content</code> — raw page content in markdown</li>
+<li><code>html</code> — after processing, text rendered into html (available only in templates).</li>
+<li><code>meta</code> — page metadata (see below)</li>
+<li><code>file</code> — an object, representing a file. Important field — <code>file.path</code> contains the path to the page, generated from the file <strong>on the site.</strong></li>
+<li><code>permalink</code> — link to the page on the site, like the <code>file.path</code>, but for paginated content contains link to first page.</li>
+<li><code>virtual</code> — true for virtual pages</li>
+<li><code>index</code> — true if the page is an <code>index.md</code> file or any of its subpages</li>
+<li><code>list</code> — field is defined if the main content of the page is a list. For tag pages, this field contains a list of pages marked with the tag.</li>
+</ul>
+<h3>These — only for paginated pages:</h3>
+<ul>
+<li><code>page_count</code> — after pagination — the number of subpages</li>
+<li><code>page_links</code> — list of links to subpages</li>
+<li><code>page_number</code> — current subpage number, numbering starts from 1</li>
+<li><code>list_page</code> — the part of the paginated list that should be displayed on the current subpage</li>
+</ul>
+<h3>Only for pages generated from data:</h3>
+<ul>
+<li><code>local_data</code> — if the page was generated from data — the data of this page</li>
+</ul>
+<h2>Metadata (page.meta)</h2>
+<p>Any additional fields can be specified in the metadata,
+for example, page or group identifiers.</p>
+<p>Here is a list of fields that are used (reserved) by Mukha:</p>
+<ul>
+<li><code>title</code> — title, mandatory field</li>
+<li><code>date</code> — date, entered in the format YYYY.MM.DD HH:SS, replaced with a Date object</li>
+<li><code>tags</code> — list of tags separated by commas, converted into a list of tag pages.</li>
+<li><code>image</code> — image for the page, if not defined, Mukha will try to find the first image in the text</li>
+<li><code>excerpt</code> — excerpt, if not defined, it may be filled with the first paragraph of the text</li>
+<li><code>draft</code> — if true, the file is skipped during processing</li>
+</ul>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Page object<br />
+tags: templates, objects<br />
+doc: page_obj_en<br />
+---<br />
+<br />
+The page object represents a page on the site. The following fields are available in it:<br />
+<br />
+### General<br />
+<br />
+- `content` — raw page content in markdown<br />
+- `html` — after processing, text rendered into html (available only in templates).<br />
+- `meta` — page metadata (see below)<br />
+- `file` — an object, representing a file. Important field — `file.path` contains the path to the page, generated from the file **on the site.**<br />
+- `permalink` — link to the page on the site, like the `file.path`, but for paginated content contains link to first page.<br />
+- `virtual` — true for virtual pages<br />
+- `index` — true if the page is an `index.md` file or any of its subpages<br />
+- `list` — field is defined if the main content of the page is a list. For tag pages, this field contains a list of pages marked with the tag.<br />
+<br />
+### These — only for paginated pages:<br />
+<br />
+- `page_count` — after pagination — the number of subpages<br />
+- `page_links` — list of links to subpages<br />
+- `page_number` — current subpage number, numbering starts from 1<br />
+- `list_page` — the part of the paginated list that should be displayed on the current subpage<br />
+<br />
+### Only for pages generated from data:<br />
+<br />
+- `local_data` — if the page was generated from data — the data of this page<br />
+<br />
+## Metadata (page.meta)<br />
+<br />
+Any additional fields can be specified in the metadata,<br />
+for example, page or group identifiers.<br />
+<br />
+Here is a list of fields that are used (reserved) by Mukha:<br />
+<br />
+- `title` — title, mandatory field<br />
+- `date` — date, entered in the format YYYY.MM.DD HH:SS, replaced with a Date object<br />
+- `tags` — list of tags separated by commas, converted into a list of tag pages.<br />
+- `image` — image for the page, if not defined, Mukha will try to find the first image in the text<br />
+- `excerpt` — excerpt, if not defined, it may be filled with the first paragraph of the text<br />
+- `draft` — if true, the file is skipped during processing<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

@@ -2,10 +2,33 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://example.site</id>
     <title>Mukha SSG</title>
-    <updated>2025-08-15T10:56:44.042Z</updated>
+    <updated>2025-09-01T08:54:36.081Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://example.site"/>
     <subtitle>Быстрый и простой генератор статичных сайтов.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Смена темы оформления]]></title>
+        <id>https://example.site/ru/docs/change_theme.html</id>
+        <link href="https://example.site/ru/docs/change_theme.html"/>
+        <updated>2025-09-01T08:34:00.000Z</updated>
+        <summary type="html"><![CDATA[Сайт по-умолчанию имеет очень простую тему, с ней можно поиграться, но не жить.  Давайте скачаем и установим
+более интересную тему, <em>notepad</em>.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Страницы и пагинация]]></title>
+        <id>https://example.site/ru/docs/pagination.html</id>
+        <link href="https://example.site/ru/docs/pagination.html"/>
+        <updated>2025-09-01T06:32:00.000Z</updated>
+        <summary type="html"><![CDATA[Муха позволяет разбить на страницы произвольный список, как правило, эта функция
+нужна для вывода длинного списка страниц.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Генерация по ключу]]></title>
+        <id>https://example.site/ru/examples/chars/index.html</id>
+        <link href="https://example.site/ru/examples/chars/index.html"/>
+        <updated>2025-08-15T14:09:00.000Z</updated>
+        <summary type="html"><![CDATA[Генерация страниц из набора файлов JSON.]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Characters]]></title>
         <id>https://example.site/en/examples/chars/index.html</id>
@@ -29,12 +52,20 @@
 Их можно писать на любом языке.]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Preview Mode]]></title>
+        <id>https://example.site/en/docs/watch_mode.html</id>
+        <link href="https://example.site/en/docs/watch_mode.html"/>
+        <updated>2025-07-30T15:46:00.000Z</updated>
+        <summary type="html"><![CDATA[Preview mode allows you to track changes made to the site in real time.
+Convenient to use when <a href="https://example.site/en/docs/gulp_integration.html">integrating with gulp</a>.]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Режим предпросмотра]]></title>
         <id>https://example.site/ru/docs/watch_mode.html</id>
         <link href="https://example.site/ru/docs/watch_mode.html"/>
         <updated>2025-07-30T15:46:00.000Z</updated>
         <summary type="html"><![CDATA[Режим предпросмотра позволяет в реальном времени отслеживать вносимые в сайт изменения.
-Удобно использовать при <a href="https://example.site/ru/guides/gulp_integration.html">интеграции с gulp</a>.]]></summary>
+Удобно использовать при <a href="https://example.site/ru/docs/gulp_integration.html">интеграции с gulp</a>.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Сохранение данных для клиентских скриптов]]></title>
@@ -46,12 +77,25 @@
 сохранены в компактном формате. ]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Links]]></title>
+        <id>https://example.site/en/docs/links.html</id>
+        <link href="https://example.site/en/docs/links.html"/>
+        <updated>2025-07-21T15:48:00.000Z</updated>
+        <summary type="html"><![CDATA[In function arguments, metadata, and texts, Mukha recognizes root-relative links to documents on the site:]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Ссылки]]></title>
         <id>https://example.site/ru/docs/links.html</id>
         <link href="https://example.site/ru/docs/links.html"/>
         <updated>2025-07-21T15:48:00.000Z</updated>
-        <summary type="html"><![CDATA[В аргументах функций, в метаданных и текстах ссылки на документы на сайте
-Муха распознает ссылки от корня (root-relative):]]></summary>
+        <summary type="html"><![CDATA[Обычные и «умные».]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[About the project]]></title>
+        <id>https://example.site/en/docs/intro.html</id>
+        <link href="https://example.site/en/docs/intro.html"/>
+        <updated>2025-07-21T06:31:00.000Z</updated>
+        <summary type="html"><![CDATA[Mukha is <em>yet another</em> opinionated static site generator.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[О проекте]]></title>
@@ -59,6 +103,14 @@
         <link href="https://example.site/ru/docs/intro.html"/>
         <updated>2025-07-21T06:31:00.000Z</updated>
         <summary type="html"><![CDATA[Муха — <em>еще один</em> генератор статических сайтов со своими фишками.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Built-in search]]></title>
+        <id>https://example.site/en/docs/search.html</id>
+        <link href="https://example.site/en/docs/search.html"/>
+        <updated>2025-07-19T07:34:00.000Z</updated>
+        <summary type="html"><![CDATA[Mukha has integrated indexing and search using <a href="https://lunrjs.com/">lunr</a>.<br>
+Search works independently of the content delivery method.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Встроенный поиск]]></title>
@@ -70,8 +122,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Подключение данных]]></title>
-        <id>https://example.site/ru/docs/mukha_data_ru.html</id>
-        <link href="https://example.site/ru/docs/mukha_data_ru.html"/>
+        <id>https://example.site/ru/docs/data_basic.html</id>
+        <link href="https://example.site/ru/docs/data_basic.html"/>
         <updated>2025-07-13T14:49:00.000Z</updated>
         <summary type="html"><![CDATA[Данные являются полноправной частью контента Мухи. Их можно использовать как в шаблонах,
 так и в тексте и даже немножко <a href="https://example.site/ru/docs/data_config_tasks.html">обрабатывать</a>.]]></summary>
@@ -97,6 +149,20 @@
         <updated>2025-06-16T07:10:00.000Z</updated>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Command line usage]]></title>
+        <id>https://example.site/en/docs/cli.html</id>
+        <link href="https://example.site/en/docs/cli.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Usage in the <em>command line.</em>]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Site Configuration File]]></title>
+        <id>https://example.site/en/docs/config.html</id>
+        <link href="https://example.site/en/docs/config.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The file is located in the <code>site_dir/config/site.yaml</code> folder]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Data Processing]]></title>
         <id>https://example.site/en/docs/data_config_tasks.html</id>
         <link href="https://example.site/en/docs/data_config_tasks.html"/>
@@ -104,11 +170,42 @@
         <summary type="html"><![CDATA[Sometimes you may need not just to connect data to your site, but also process it and/or generate pages from it. This is optional but possible.]]></summary>
     </entry>
     <entry>
+        <title type="html"><![CDATA[Integration with gulp]]></title>
+        <id>https://example.site/en/docs/gulp_integration.html</id>
+        <link href="https://example.site/en/docs/gulp_integration.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Mukha easily integrates into the development process with gulp, providing fast
+site preview in the browser and allowing the combination of
+css and site template development into a single process.]]></summary>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Documentation]]></title>
         <id>https://example.site/en/docs/index.html</id>
         <link href="https://example.site/en/docs/index.html"/>
         <updated>1970-01-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Docs]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Java Script API]]></title>
+        <id>https://example.site/en/docs/js_api.html</id>
+        <link href="https://example.site/en/docs/js_api.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[API for custom scripts]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Lister object]]></title>
+        <id>https://example.site/en/docs/lister.html</id>
+        <link href="https://example.site/en/docs/lister.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The lister object is an <em>array-like</em> object designed
+for storing and processing lists of <a href="https://example.site/en/docs/page_obj.html">pages</a>.]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Page object]]></title>
+        <id>https://example.site/en/docs/page_obj.html</id>
+        <link href="https://example.site/en/docs/page_obj.html"/>
+        <updated>1970-01-01T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[The page object represents a page on the site. The following fields are available in it:]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Filter to_table]]></title>
@@ -132,100 +229,5 @@ optionally with specified columns.]]></summary>
         <updated>1970-01-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[This is the table used for
 generations.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Template Tags]]></title>
-        <id>https://example.site/en/examples/template_tags.html</id>
-        <link href="https://example.site/en/examples/template_tags.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[You can use template tags in the text. For example,
-to display some information:]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Запуск и использование]]></title>
-        <id>https://example.site/ru/docs/cli.html</id>
-        <link href="https://example.site/ru/docs/cli.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Использование в <em>командной строке.</em>]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Конфигурационный файл сайта]]></title>
-        <id>https://example.site/ru/docs/config.html</id>
-        <link href="https://example.site/ru/docs/config.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Файл находится в папке <code>site_dir/config/site.yaml</code>]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Пример конфигурационного файла данных]]></title>
-        <id>https://example.site/ru/docs/data_config.html</id>
-        <link href="https://example.site/ru/docs/data_config.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Примеры конфигурации в JSON и YAML]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Обработка данных]]></title>
-        <id>https://example.site/ru/docs/data_config_tasks.html</id>
-        <link href="https://example.site/ru/docs/data_config_tasks.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Иногда вам может понадобиться не просто подключить данные к сайту, но и обработать их, и/или сгенерировать из них страницы для сайта. Делать это необязательно, но возможно.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Объект file]]></title>
-        <id>https://example.site/ru/docs/file_obj.html</id>
-        <link href="https://example.site/ru/docs/file_obj.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Объект используется внутри генератора. Содержит поля:]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Документация]]></title>
-        <id>https://example.site/ru/docs/index.html</id>
-        <link href="https://example.site/ru/docs/index.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Docs]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Вставки]]></title>
-        <id>https://example.site/ru/docs/inserts.html</id>
-        <link href="https://example.site/ru/docs/inserts.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Для вставки дополнительного контента в текст применяется синтаксис вставки.
-Длинная форма рассчитана на использование в будущем визуальном редакторе, и
-выглядит так:]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Установка]]></title>
-        <id>https://example.site/ru/docs/install.html</id>
-        <link href="https://example.site/ru/docs/install.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[ Три способа установки]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java Script API]]></title>
-        <id>https://example.site/ru/docs/js_api.html</id>
-        <link href="https://example.site/ru/docs/js_api.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[API для пользовательских скриптов]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Объект lister]]></title>
-        <id>https://example.site/ru/docs/lister.html</id>
-        <link href="https://example.site/ru/docs/lister.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Объект lister — <em>похожий на массив</em> (array-like) объект, предназначенный
-для хранения и обработки списков <a href="https://example.site/ru/docs/page_obj.html">страниц </a>.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Объект page (страница)]]></title>
-        <id>https://example.site/ru/docs/page_obj.html</id>
-        <link href="https://example.site/ru/docs/page_obj.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Объект page представляет страницу на сайте. В нем доступны следующие поля:]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Структура директории сайта]]></title>
-        <id>https://example.site/ru/docs/site_dir.html</id>
-        <link href="https://example.site/ru/docs/site_dir.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Что куда класть и зачем]]></summary>
     </entry>
 </feed>

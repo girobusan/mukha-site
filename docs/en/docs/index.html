@@ -59,9 +59,9 @@
 
 <div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
 
-  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../index.html">🏠</a></li>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
     <li><a href="../index.html">Mukha</a></li>
   </ul>
 </nav>
@@ -70,7 +70,54 @@
 <!--en-->
 
   <div class="content mb-6">
-    
+    <h2>Getting started</h2>
+<ul>
+<li><a href="intro.html">About the project</a></li>
+<li style="color: silver">install.md</li>
+<li style="color: silver">create_site.md</li>
+<li><a href="watch_mode.html">Preview Mode</a></li>
+<li style="color: silver">change_theme.md</li>
+<li><a href="cli.html">Command line usage</a></li>
+<li style="color: silver">site_dir.md</li>
+<li><a href="config.html">Site Configuration File</a></li>
+</ul>
+<h2>Editing</h2>
+<ul>
+<li style="color: silver">markdown.md</li>
+<li><a href="links.html">Links</a></li>
+<li style="color: silver">inserts.md</li>
+</ul>
+<h2>Templating</h2>
+<ul>
+<li style="color: silver">templating.md</li>
+<li style="color: silver">template_vars.md</li>
+<li><a href="lister.html">Lister object</a></li>
+<li style="color: silver">file_obj.md</li>
+<li><a href="page_obj.html">Page object</a></li>
+<li style="color: silver">pagination.md</li>
+<li style="color: silver">to_table.md</li>
+</ul>
+<h2>Data</h2>
+<ul>
+<li style="color: silver">data_basic.md</li>
+<li><a href="data_config_tasks.html">Data Processing</a></li>
+<li style="color: silver">data_config.md</li>
+<li style="color: silver">data2js.md</li>
+</ul>
+<h2>Java Script API</h2>
+<ul>
+<li><a href="js_api.html">Java Script API</a></li>
+</ul>
+<h2>Search</h2>
+<ul>
+<li><a href="search.html">Built-in search</a></li>
+</ul>
+<h2>Integrations</h2>
+<ul>
+<li><a href="gulp_integration.html">Integration with gulp</a></li>
+<li style="color: silver">hooks.md</li>
+</ul>
+
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
       Page source
     </button>
@@ -79,19 +126,6 @@
 
 
 
-
-  <div class="m-columnized">
-  <div class="block mb-3" style="break-inside: avoid;">
-    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="data_config_tasks.html">Data Processing</a>     <div class="excerpt is-size-6 mb-6"><p>Sometimes you may need not just to connect data to your site, but also process it and/or generate pages from it. This is optional but possible.</p>
-</div>
-  </div>
-  <div class="block mb-3" style="break-inside: avoid;">
-    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="to_table_flt.html">Filter to_table</a>     <div class="excerpt is-size-6 mb-6"><p>The <code>to_table</code> filter is used to display tabular data as formatted tables,
-optionally with specified columns.</p>
-</div>
-  </div>
-
-</div>
 
 
 </div>
@@ -102,7 +136,24 @@ optionally with specified columns.</p>
 title: Documentation<br />
 excerpt: Docs<br />
 menuitem: 2<br />
+hide_list: true<br />
 ---<br />
+<br />
+{% for unit in datasets.contents %}<br />
+<br />
+&lt;h2&gt;{{ unit.title.en }}&lt;/h2&gt;<br />
+&lt;ul&gt;<br />
+{% for P in unit.pages %}<br />
+{% set PPath = &quot;/en/docs/&quot; + P.replace(&quot;.md&quot; , &quot;.html&quot;) %}<br />
+{% set PG = list.getByPath(PPath) %}<br />
+{% if PG %}<br />
+&lt;li&gt;&lt;a href=&quot;{{PPath}}&quot;&gt;{{PG.meta.title}}&lt;/a&gt;&lt;/li&gt;<br />
+{% else %}<br />
+&lt;li style=&quot;color: silver&quot;&gt;{{P}}&lt;/li&gt;<br />
+{% endif %}<br />
+{% endfor %}<br />
+&lt;/ul&gt;<br />
+{% endfor %}<br />
 </div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>

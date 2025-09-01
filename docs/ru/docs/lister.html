@@ -46,9 +46,6 @@
       <a class="navbar-item has-text-white" href="index.html">
         Документация
       </a>
-      <a class="navbar-item has-text-white" href="../guides/index.html">
-        Гайды
-      </a>
       <a class="navbar-item has-text-white" href="../examples/index.html">
         Примеры
       </a>
@@ -62,9 +59,9 @@
 
 <div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
 
-  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../index.html">🏠</a></li>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
     <li><a href="../index.html">Муха</a></li>
     <li><a href="index.html">Документация</a></li>
   </ul>
@@ -88,7 +85,7 @@
 <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
 </code></pre>
 <h2>Поля и методы</h2>
-<div class="mb-4">
+<div class="mb-6">
 <strong>tags
 (
  )
@@ -96,7 +93,7 @@
 <div>Параметры: нет</div>
 <div>Возвращает список тегов, отсортированный по названию</div>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>sortByMeta
 (
     meta_name,    as_number,    desc )
@@ -128,7 +125,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>getByPath
 (
     path )
@@ -150,7 +147,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>getByMeta
 (
     meta_name,    meta_value )
@@ -177,7 +174,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>excludeByMeta
 (
     meta_name,    meta_value )
@@ -204,7 +201,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>getAllByMeta
 (
     meta_name,    meta_value )
@@ -231,7 +228,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>getAllWithMeta
 (
     meta_name )
@@ -253,7 +250,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>getAllFiles
 (
     page )
@@ -275,7 +272,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>getAllDirs
 (
     page )
@@ -297,7 +294,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>getNearFiles
 (
     page )
@@ -319,7 +316,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>getNearDirs
 (
     page )
@@ -341,7 +338,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>getParent
 (
     page )
@@ -363,10 +360,10 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>getBreadcrumbs
 (
-    page )
+    page,    skip )
   </strong>
 <div>Возвращает "хлебные крошки", директории без индексных файлов пропускаются. Второй параметр определяет, сколько директорий пропустить</div>
 <table>
@@ -383,9 +380,14 @@
 <td>string</td>
 <td>Путь или объект page</td>
 </tr>
+<tr>
+<td><code>skip</code></td>
+<td>number</td>
+<td>Количество пропускаемых директорий</td>
+</tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>forEach
 (
     fn )
@@ -407,7 +409,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>map
 (
     fn )
@@ -429,10 +431,10 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>slice
 (
-    start,    end,    ... )
+    start,    end )
   </strong>
 <div>Стандартный slice() (возвращает массив)</div>
 <table>
@@ -454,14 +456,9 @@
 <td>number</td>
 <td>Конечный индекс</td>
 </tr>
-<tr>
-<td><code>...</code></td>
-<td>...</td>
-<td>...</td>
-</tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>sort
 (
     fn )
@@ -483,13 +480,13 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>length
   </strong>
 <div>Параметры: нет</div>
 <div>Поле length — количество элементов.</div>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>replace
 (
     array )
@@ -511,7 +508,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>append
 (
     array )
@@ -533,7 +530,7 @@
 </tr>
 </tbody></table>
 </div>
-<div class="mb-4">
+<div class="mb-6">
 <strong>unwrap
 (
  )
@@ -585,7 +582,7 @@ tags: объекты<br />
 <br />
 {% for fl in data.datasets.api.lister %}<br />
 <br />
-&lt;div class=&quot;mb-4&quot;&gt;<br />
+&lt;div class=&quot;mb-6&quot;&gt;<br />
 &lt;strong&gt;{{fl.method}}<br />
     {% if not fl.notfn %}(<br />
     {% if fl.params_desc %}<br />

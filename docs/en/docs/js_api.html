@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Java Script API :: Mukha SSG</title>
+  <meta property="og:title" content="Java Script API" />
+  <meta property="og:description" content="API for custom scripts" />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/docs/js_api.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Java Script API</h1>
+<!--en-->
+
+  <div class="content mb-6">
+    <p>For transparent work with data on the client side, and more efficient
+development of custom scripts, Mukha provides a simple API for
+Java Script.</p>
+<hr>
+<p>The API works independently of the site's location; for example, data is loaded
+both when opening pages over the network and locally (via the file:// protocol). To enable it, you need to:</p>
+<ul>
+<li>In the template, <em>as close to the beginning of the HTML as possible</em>, place the tag <code>{{ jsapi }}</code> (if it is not already there)</li>
+<li>In the <a href="config.html">configuration file</a>, add the option <code>js_api: true</code></li>
+</ul>
+<p>With the API connected, the <code>window.Mukha</code> object becomes available to scripts. Below is a list of its fields.</p>
+<h3>Available fields</h3>
+<div class="mb-6">
+<strong>
+permalink</strong>
+<div>Root-relative link to the current page. This link
+cannot always be unambiguously derived from the URL, so
+it's better to use the API. </div>
+</div>
+<div class="mb-6">
+<strong>
+relative(
+from , to )
+</strong>
+<div>Returns a relative link from the page specified by the first parameter
+to the page specified by the second. </div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>from</code></td>
+<td>string</td>
+<td>Root-relative link to the page from which the link should originate</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td>string</td>
+<td>Link to the page to be referenced.</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>
+relTo(
+to )
+</strong>
+<div>Converts a root-relative site link into a relative one from the current page </div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>to</code></td>
+<td>string</td>
+<td>Canonical link to the page</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>
+getData(
+dataset )
+</strong>
+<div>Requests a global dataset saved for the JS API by name. Returns
+a Promise that resolves with the requested data object. </div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset</code></td>
+<td>string</td>
+<td>Name of the dataset</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>
+getLocalData(
+dataset , path )
+</strong>
+<div>Requests a local dataset. Returns
+a Promise that resolves with the requested data object. </div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dataset</code></td>
+<td>string</td>
+<td>Name of the local dataset</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>string</td>
+<td>Optional: path to the page. Allows loading a local dataset from a page other than the current one</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>
+attachScript(
+url )
+</strong>
+<div>Attaches a script from the specified URL, returns a Promise that
+resolves if the script was successfully loaded. </div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Description</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>url</code></td>
+<td>string</td>
+<td>URL of the script to load.</td>
+</tr>
+</tbody></table>
+</div>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Java Script API<br />
+excerpt: API for custom scripts<br />
+doc: jsapi_en<br />
+---<br />
+<br />
+For transparent work with data on the client side, and more efficient<br />
+development of custom scripts, Mukha provides a simple API for<br />
+Java Script.<br />
+<br />
+---<br />
+<br />
+The API works independently of the site&#39;s location; for example, data is loaded<br />
+both when opening pages over the network and locally (via the file:// protocol). To enable it, you need to:<br />
+<br />
+- In the template, _as close to the beginning of the HTML as possible_, place the tag {% raw %}`{{ jsapi }}`{% endraw %} (if it is not already there)<br />
+- In the [configuration file](/+doc:config_file_en), add the option `js_api: true`<br />
+<br />
+With the API connected, the `window.Mukha` object becomes available to scripts. Below is a list of its fields.<br />
+<br />
+### Available fields<br />
+<br />
+{% for unit in data.datasets.api.jsapi %}<br />
+&lt;div class=&quot;mb-6&quot;&gt;<br />
+&lt;strong&gt;<br />
+{{ unit.field }}{% if unit.isFunction %}(<br />
+{% if unit.params %}<br />
+{% for P in unit.params %}<br />
+{{ P[0] }}{% if not loop.last %} , {% endif %}<br />
+{% endfor %}<br />
+{% endif %} )<br />
+{% endif %}<br />
+&lt;/strong&gt;<br />
+&lt;div&gt;{{ unit.description_en}} &lt;/div&gt;<br />
+{% if unit.params %}<br />
+&lt;table&gt;<br />
+&lt;thead&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;Parameter&lt;/td&gt;<br />
+&lt;td&gt;Type&lt;/td&gt;<br />
+&lt;td&gt;Description&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/thead&gt;<br />
+&lt;tbody&gt;<br />
+{% for row in unit.params %}<br />
+&lt;tr&gt;<br />
+&lt;td&gt;&lt;code&gt;{{row[0]}}&lt;/code&gt;&lt;/td&gt;<br />
+&lt;td&gt;{{row[1]}}&lt;/td&gt;<br />
+&lt;td&gt;{{row[3]}}&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+{% endfor %}<br />
+&lt;/tbody&gt;&lt;/table&gt;<br />
+{% endif %}<br />
+<br />
+&lt;/div&gt;<br />
+{% endfor %}<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

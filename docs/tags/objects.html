@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Гайды :: Mukha SSG</title>
-  <meta property="og:title" content="Гайды" />
+  <title>objects :: Mukha SSG</title>
+  <meta property="og:title" content="objects" />
   <meta property="og:description" content="" />
-  <link href="../../_theme/style.css" rel="stylesheet">
-  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
-  <script src="../../_theme/navbar.js">
+  <link href="../_theme/style.css" rel="stylesheet">
+  <link href="../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../_theme/navbar.js">
   </script>
-  <script data-location="/ru/guides/index.html" src="../../_js/client.js">
+  <script data-location="/tags/objects.html" src="../_js/client.js">
 </script>
-  <script src="../../search_client.js"></script>
-  <script src="../../_theme/masonry.js"></script>
-  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script src="../search_client.js"></script>
+  <script src="../_theme/masonry.js"></script>
+  <script src="../_theme/highlight/highlight.min.js"></script>
   <script>hljs.highlightAll();</script>
   <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
@@ -27,7 +27,7 @@
 <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
     <span class="navbar-item has-text-weight-bold has-text-white">
-      <a href="../index.html" class="has-text-white">
+      <a href="../en/index.html" class="has-text-white">
         Mukha SSG
       </a>
     </span>
@@ -43,67 +43,69 @@
     <div class="navbar-start"></div>
 
     <div class="navbar-end">
-      <a class="navbar-item has-text-white" href="../docs/index.html">
-        Документация
+      <a class="navbar-item has-text-white" href="../en/docs/index.html">
+        Documentation
       </a>
-      <a class="navbar-item has-text-white" href="javascript:;">
-        Гайды
-      </a>
-      <a class="navbar-item has-text-white" href="../examples/index.html">
-        Примеры
+      <a class="navbar-item has-text-white" href="../en/examples/index.html">
+        Examples
       </a>
       <div class="navbar-item">
         <input type="text" data-role="lunr-search" class="input is-small is-rounded"
-          placeholder="Поиск"></input>
+          placeholder="Search"></input>
       </div></div>
   </div>
 </nav>
-
-
-<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
-
-  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
-  <ul>
-    <li><a href="../../index.html">🏠</a></li>
-    <li><a href="../index.html">Муха</a></li>
-  </ul>
-</nav>
-
-<h1 class="title is-1">Гайды</h1>
-<!--ru-->
-
-  <div class="content mb-6">
-    
-    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
-      Исходный
-      текст
-    </button>
-    
-  </div>
-
-
-
-
-  <div class="m-columnized">
-  <div class="block mb-3" style="break-inside: avoid;">
-    <a class="is-size-5 has-text-weight-medium" style="line-height:110%" href="gulp_integration.html">Интеграция с gulp</a>     <div class="excerpt is-size-6 mb-6"><p>Муха легко интегрируется в процесс разработки с gulp, предоставляя быстрый
-предпросмотр сайта в браузре и позволяя объединить разработку
-css и шаблонов сайта в единый процесс.</p>
-</div>
-  </div>
+<div class="container my-6 px-3 ">
+<div class="container is-max-tablet my-6 px3">
+  
+<h1 class="title is-1">objects</h1>
+<!---->
 
 </div>
+<script defer>
+  window.masonry.init({
+    container: "#pagesList",
+    bySize: true,
+    countFn: (e) => {
+      return Math.floor(e.getBoundingClientRect().width / 300) || 1;
+    }
+  })
+</script>
+<div class="m-page-list columns" id="pagesList">
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="../en/docs/lister.html">Lister object</a>
+      <div class="tags">
+        <!--objects | objects | -->
+        <span class="tag" style="border:1px solid gray">objects</span>
+      </div>
+      <div class="is-size-7"><p>The lister object is an <em>array-like</em> object designed
+for storing and processing lists of <a href="../en/docs/page_obj.html">pages</a>.</p>
+</div>
+    </div>
 
+  </div>
+  <div class="card cell is-outlined m-no-img-card">
+    <div class="card-content">
+      <a class="title is-5" href="../en/docs/page_obj.html">Page object</a>
+      <div class="tags">
+        <!--templates | objects | -->
+        <a class="tag" href="templates.html">templates</a>
+        <!--objects | objects | -->
+        <span class="tag" style="border:1px solid gray">objects</span>
+      </div>
+      <div class="is-size-7"><p>The page object represents a page on the site. The following fields are available in it:</p>
+</div>
+    </div>
+
+  </div>
+</div>
 
 </div>
 <div class="modal has-background-white" id="viewSource">
   <div class="modal-background"></div>
   <div class="modal-content px-2 py-2 has-background-white">
-    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
-title: Гайды<br />
-menuitem: 3<br />
----<br />
-</div>
+    <div style="font-family: Menlo, monospace;font-size:0.8rem"></div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
 </div>
@@ -120,7 +122,7 @@ menuitem: 3<br />
     <div class="container is-max-desktop px-3 is-size-7">
       <div class="columns">
         <div class="column m-footer-column py-0 has-text-white content">
-          Сделано Мухой</div>
+          Made with Mukha</div>
         <div class="column m-footer-column py-0 has-text-white content">
           &copy; 2025...</div>
         <div class="column m-footer-column py-0 has-text-white content"><p>

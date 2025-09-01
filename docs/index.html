@@ -67,199 +67,51 @@
   </div>
 </section>
 <div class="container my-6 px-3 ">
-
-<script defer>
-  window.masonry.init({
-    container: "#pagesList",
-    bySize: true,
-    countFn: (e) => {
-      return Math.floor(e.getBoundingClientRect().width / 300) || 1;
-    }
-  })
-</script>
-<div class="m-page-list columns" id="pagesList">
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/docs/data_config_tasks.html">Data Processing</a>
-      <div class="is-size-7"><p>Sometimes you may need not just to connect data to your site, but also process it and/or generate pages from it. This is optional but possible.</p>
-</div>
+<div class="columns">
+  <div class="column">
+    <div class="card " style="height:100%">
+      <div class="card-header">
+        <div class="card-header-title">Simplicity</div>
+      </div>
+      <div class="card-content content">
+        <ul style="margin-left:1rem">
+          <li>A single file that can be stored with your site's source code.</li>
+          <li>Requires only Node.js, no external dependencies.</li>
+          <li>Minimal configuration needed.</li>
+        </ul>
+      </div>
     </div>
-
   </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/docs/to_table_flt.html">Filter to_table</a>
-      <div class="is-size-7"><p>The <code>to_table</code> filter is used to display tabular data as formatted tables,
-optionally with specified columns.</p>
-</div>
+  <div class="column">
+    <div class="card " style="height:100%">
+      <div class="card-header">
+        <div class="card-header-title">Self-contained</div>
+      </div>
+      <div class="card-content content">
+        <ul style="margin-left:1rem">
+          <li>Relative links - the site works even without a server.</li>
+          <li>Built-in search (works locally too).</li>
+          <li>Compatible with any hosting.</li>
+        </ul>
+      </div>
     </div>
-
   </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movie_table.html">Table</a>
-      <div class="is-size-7"><p>This is the table used for
-generations.</p>
-</div>
+  <div class="column">
+    <div class="card " style="height:100%">
+      <div class="card-header">
+        <div class="card-header-title">Works with data</div>
+      </div>
+      <div class="card-content content">
+        <ul style="margin-left:1rem">
+          <li>Data is a first-class content.</li>
+          <li>Generate pages from data without code — using simple declarative syntax.</li>
+          <li>Built-in functions for basic data processing.</li>
+        </ul>
+      </div>
     </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/template_tags.html">Template Tags</a>
-      <div class="is-size-7"><p>You can use template tags in the text. For example,
-to display some information:</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/black_panther_wakanda_forever.html">Black Panther: Wakanda Forever</a>
-      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Ryan Coogler, 2022 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/black_adam.html">Black Adam</a>
-      <div class="is-size-7"><p>Company: <em>DC</em>, director: — Jaume Collet-Serra, 2022 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/thor_love_and_thunder.html">Thor: Love and Thunder</a>
-      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Taika Waititi, 2022 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/doctor_strange_in_the_multiverse_of_madness.html">Doctor Strange in the Multiverse of Madness</a>
-      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Sam Raimi, 2022 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/the_batman.html">The Batman</a>
-      <div class="is-size-7"><p>Company: <em>DC</em>, director: — Matt Reeves, 2022 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/spider-man_no_way_home.html">Spider-Man: No Way Home</a>
-      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — John Watts, 2021 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/eternals.html">Eternals</a>
-      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Chloe Zhao, 2021 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/shang-chi_and_the_legend_of_the_ten_rings.html">Shang-Chi and the Legend of the Ten Rings</a>
-      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Destin Daniel Cretton, 2021 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/the_suicide_squad.html">The Suicide Squad</a>
-      <div class="is-size-7"><p>Company: <em>DC</em>, director: — James Gunn, 2021 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/black_widow.html">Black Widow</a>
-      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Cate Shortland, 2021 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/zack_snyders_justice_league.html">Zack Snyder's Justice League</a>
-      <div class="is-size-7"><p>Company: <em>DC</em>, director: — Zack Snyder, 2021 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/wonder_woman_1984.html">Wonder Woman 1984</a>
-      <div class="is-size-7"><p>Company: <em>DC</em>, director: — Patty Jenkins, 2020 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/birds_of_prey_and_the_fantabulous_emancipation_of_one_harley_quinn.html">Birds of Prey and the Fantabulous Emancipation of One Harley Quinn</a>
-      <div class="is-size-7"><p>Company: <em>DC</em>, director: — Cathy Yan, 2020 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/joker.html">Joker</a>
-      <div class="is-size-7"><p>Company: <em>DC</em>, director: — Todd Phillips, 2019 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/spider-man_far_from_home.html">Spider-Man: Far from Home</a>
-      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — John Watts, 2019 year.</p>
-</div>
-    </div>
-
-  </div>
-  <div class="card cell is-outlined m-no-img-card">
-    <div class="card-content">
-      <a class="title is-5" href="en/examples/movies/avengers_endgame.html">Avengers: Endgame</a>
-      <div class="is-size-7"><p>Company: <em>Marvel</em>, director: — Anthony Russo, Joe Russo, 2019 year.</p>
-</div>
-    </div>
-
   </div>
 </div>
-
 </div>
-<nav class="pagination" role="navigation" aria-label="pagination">
-  <ul class="pagination-list is-justify-content-center">
-    <li>
-      <a href="" class="pagination-link is-current">1</a>
-    </li>
-    <li>
-      <a href="index_2.html" class="pagination-link">2</a>
-    </li>
-    <li>
-      <a href="index_3.html" class="pagination-link">3</a>
-    </li>
-    <li>
-      <a href="index_4.html" class="pagination-link">4</a>
-    </li>
-  </ul>
-</nav>
 <div class="modal has-background-white" id="viewSource">
   <div class="modal-background"></div>
   <div class="modal-content px-2 py-2 has-background-white">

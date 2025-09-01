@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lister object :: Mukha SSG</title>
+  <meta property="og:title" content="Lister object" />
+  <meta property="og:description" content="The lister object is an array-like object designed for storing and processing lists of pages." />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/docs/lister.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Lister object</h1>
+<!--en-->
+<div class="tags">
+  <a class="tag is-medium" href="../../tags/objects.html">objects</a>
+</div>
+
+  <div class="content mb-6">
+    <p>The lister object is an <em>array-like</em> object designed
+for storing and processing lists of <a href="page_obj.html">pages</a>.</p>
+<p>It is available in the template variable
+<code>list</code>:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
+  {% for item in list.getNearFiles(&quot;/blog/index.html&quot;) %}
+  <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;{{ item.file.path }}&quot;</span>&gt;</span>{{ item.meta.title }}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+  {% endfor %}
+<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+</code></pre>
+<h2>Fields and methods</h2>
+<div class="mb-6">
+<strong>tags
+(
+ )
+  </strong>
+<div>Parameters: none</div>
+<div>Returns a list of tags sorted by title</div>
+</div>
+<div class="mb-6">
+<strong>sortByMeta
+(
+    meta_name,    as_number,    desc )
+  </strong>
+<div>Returns a copy of Lister sorted by the specified metadata</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meta_name</code></td>
+<td>string</td>
+<td>Metadata field</td>
+</tr>
+<tr>
+<td><code>as_number</code></td>
+<td>boolean</td>
+<td>Numeric sorting</td>
+</tr>
+<tr>
+<td><code>desc</code></td>
+<td>boolean</td>
+<td>Sort in descending order</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>getByPath
+(
+    path )
+  </strong>
+<div>Returns a page by site path</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td>string</td>
+<td>Path</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>getByMeta
+(
+    meta_name,    meta_value )
+  </strong>
+<div>Returns a page by metadata name/value pair</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meta_name</code></td>
+<td>string</td>
+<td>Metadata field</td>
+</tr>
+<tr>
+<td><code>meta_value</code></td>
+<td>string|number</td>
+<td>Value</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>excludeByMeta
+(
+    meta_name,    meta_value )
+  </strong>
+<div>Excludes pages by metadata name/value pair, returns a new Lister</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meta_name</code></td>
+<td>string</td>
+<td>Metadata field</td>
+</tr>
+<tr>
+<td><code>meta_value</code></td>
+<td>string|number</td>
+<td>Value</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>getAllByMeta
+(
+    meta_name,    meta_value )
+  </strong>
+<div>Returns all pages with the specified metadata value</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meta_name</code></td>
+<td>string</td>
+<td>Metadata field</td>
+</tr>
+<tr>
+<td><code>meta_value</code></td>
+<td>string|number</td>
+<td>Value</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>getAllWithMeta
+(
+    meta_name )
+  </strong>
+<div>Returns all pages containing the specified metadata</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>meta_name</code></td>
+<td>string</td>
+<td>Metadata field</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>getAllFiles
+(
+    page )
+  </strong>
+<div>Returns all pages under the given path (excluding tags, virtual and index pages)</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Path or page object</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>getAllDirs
+(
+    page )
+  </strong>
+<div>Returns all index pages (directories) under the given path</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Path or page object</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>getNearFiles
+(
+    page )
+  </strong>
+<div>Returns all pages in the same directory as the specified path</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Path or page object</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>getNearDirs
+(
+    page )
+  </strong>
+<div>Returns all index pages (directories) in the directory of the specified path</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Path or page object</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>getParent
+(
+    page )
+  </strong>
+<div>Returns the nearest index file up the directory tree</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Path or page object</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>getBreadcrumbs
+(
+    page,    skip )
+  </strong>
+<div>Returns breadcrumbs, directories without index files are skipped. The second parameter defines how many directories to skip</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td>string</td>
+<td>Path or page object</td>
+</tr>
+<tr>
+<td><code>skip</code></td>
+<td>number</td>
+<td>Number of directories to skip</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>forEach
+(
+    fn )
+  </strong>
+<div>Standard forEach()</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fn</code></td>
+<td>function</td>
+<td>Function to execute for each element</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>map
+(
+    fn )
+  </strong>
+<div>Standard map()</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fn</code></td>
+<td>function</td>
+<td>Function to execute for each element</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>slice
+(
+    start,    end )
+  </strong>
+<div>Standard slice() (returns an array)</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>start</code></td>
+<td>number</td>
+<td>Start index</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>number</td>
+<td>End index</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>sort
+(
+    fn )
+  </strong>
+<div>Returns a sorted copy.</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fn</code></td>
+<td>function</td>
+<td>Sorting function</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>length
+  </strong>
+<div>Parameters: none</div>
+<div>Length field - number of elements.</div>
+</div>
+<div class="mb-6">
+<strong>replace
+(
+    array )
+  </strong>
+<div>Replaces the current list with a new one and returns a new Lister</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>array</code></td>
+<td>array</td>
+<td>Array of pages</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>append
+(
+    array )
+  </strong>
+<div>Appends a list to the current Lister, returns new Lister</div>
+<table>
+<thead>
+<tr>
+<td>Parameter</td>
+<td>Type</td>
+<td>Purpose</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>array</code></td>
+<td>array</td>
+<td>Array of pages</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mb-6">
+<strong>unwrap
+(
+ )
+  </strong>
+<div>Parameters: none</div>
+<div>Returns the original array of pages</div>
+</div>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Lister object<br />
+doc: lister_en<br />
+tags: objects<br />
+---<br />
+<br />
+The lister object is an _array-like_ object designed<br />
+for storing and processing lists of [pages](/+doc:page_obj_en).<br />
+<br />
+It is available in the template variable<br />
+`list`:<br />
+<br />
+{% raw %}<br />
+<br />
+```html<br />
+&lt;ul class=&quot;menu&quot;&gt;<br />
+  {% for item in list.getNearFiles(&quot;/blog/index.html&quot;) %}<br />
+  &lt;li&gt;&lt;a href=&quot;{{ item.file.path }}&quot;&gt;{{ item.meta.title }}&lt;/a&gt;&lt;/li&gt;<br />
+  {% endfor %}<br />
+&lt;/ul&gt;<br />
+```<br />
+<br />
+{% endraw %}<br />
+<br />
+## Fields and methods<br />
+<br />
+{% for fl in data.datasets.api.lister %}<br />
+<br />
+&lt;div class=&quot;mb-6&quot;&gt;<br />
+&lt;strong&gt;{{fl.method}}<br />
+    {% if not fl.notfn %}(<br />
+    {% if fl.params_desc %}<br />
+    {% for pr in fl.params_desc %}<br />
+    {{ pr[0] }}{% if not loop.last %},{% endif %}<br />
+    {% endfor %}<br />
+    {% endif %} )<br />
+    {% endif %}<br />
+  &lt;/strong&gt;<br />
+{% if not fl.params_desc %}<br />
+&lt;div&gt;Parameters: {{ fl.params or &quot;none&quot;}}&lt;/div&gt;<br />
+{% endif %}<br />
+&lt;div&gt;{{fl.description_en}}&lt;/div&gt;<br />
+{% if fl.params_desc %}<br />
+&lt;table&gt;<br />
+&lt;thead&gt;<br />
+&lt;tr&gt;<br />
+&lt;td&gt;Parameter&lt;/td&gt;<br />
+&lt;td&gt;Type&lt;/td&gt;<br />
+&lt;td&gt;Purpose&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+&lt;/thead&gt;<br />
+&lt;tbody&gt;<br />
+{% for row in fl.params_desc %}<br />
+&lt;tr&gt;<br />
+&lt;td&gt;&lt;code&gt;{{row[0]}}&lt;/code&gt;&lt;/td&gt;<br />
+&lt;td&gt;{{row[1]}}&lt;/td&gt;<br />
+&lt;td&gt;{{row[3]}}&lt;/td&gt;<br />
+&lt;/tr&gt;<br />
+{% endfor %}<br />
+&lt;/tbody&gt;&lt;/table&gt;<br />
+{% endif %}<br />
+&lt;/div&gt;<br />
+{% endfor %}<br />
+<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

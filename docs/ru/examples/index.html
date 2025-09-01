@@ -46,9 +46,6 @@
       <a class="navbar-item has-text-white" href="../docs/index.html">
         Документация
       </a>
-      <a class="navbar-item has-text-white" href="../guides/index.html">
-        Гайды
-      </a>
       <a class="navbar-item has-text-white" href="javascript:;">
         Примеры
       </a>
@@ -62,9 +59,9 @@
 
 <div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
 
-  <nav class="breadcrumb has-bullet-separator is-small" aria-label="breadcrumbs">
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../../index.html">🏠</a></li>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
     <li><a href="../index.html">Муха</a></li>
   </ul>
 </nav>
@@ -83,6 +80,10 @@
 <ul>
 <li><strong><a href="movies/index.html"> Фильмы </a></strong> — чтобы сделать страничку для каждого фильма, использую генерацию по строкам.</li>
 <li><strong><a href="years/index.html"> Годы</a></strong> —  для вычисления количества фильмов за год использую агрегацию на месте, и генерирую страницы по значениям колонки <code>year</code></li>
+</ul>
+<p>На входе директория с файлами JSON, генерация по ключу(<code>key</code>, работает для директорий):</p>
+<ul>
+<li><strong><a href="chars/index.html"> Ice And Fire </a></strong></li>
 </ul>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
@@ -118,6 +119,10 @@ name: examples_intro_ru<br />
 <br />
 - **[ Фильмы ](/ru/examples/movies/index.html)** — чтобы сделать страничку для каждого фильма, использую генерацию по строкам.<br />
 - **[ Годы](/ru/examples/years/index.html)** —  для вычисления количества фильмов за год использую агрегацию на месте, и генерирую страницы по значениям колонки `year`<br />
+<br />
+На входе директория с файлами JSON, генерация по ключу(`key`, работает для директорий):<br />
+<br />
+- **[ Ice And Fire ](/ru/examples/chars/index.html)**<br />
 </div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Configuration File :: Mukha SSG</title>
+  <meta property="og:title" content="Site Configuration File" />
+  <meta property="og:description" content="The file is located in the site_dir/config/site.yaml folder" />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/docs/config.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Site Configuration File</h1>
+<!--en-->
+
+  <div class="content mb-6">
+    <p>The file is located in the <code>site_dir/config/site.yaml</code> folder</p>
+<pre><code class="language-yaml"><span class="hljs-comment"># About the site</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">&quot;Example site&quot;</span>
+
+<span class="hljs-comment"># Short &quot;motto&quot;</span>
+<span class="hljs-attr">motto:</span> <span class="hljs-string">&quot;Proud to be default&quot;</span>
+
+<span class="hljs-comment"># Image, will be displayed</span>
+<span class="hljs-comment"># when linking to the site and in feeds.</span>
+<span class="hljs-attr">image:</span> <span class="hljs-string">/path/to/image/ext</span>
+
+<span class="hljs-comment"># Site description, displayed</span>
+<span class="hljs-comment"># in feeds.</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">|-
+  Long description
+  of the site
+</span>
+<span class="hljs-comment"># Author</span>
+<span class="hljs-attr">author:</span> <span class="hljs-string">&quot;Incognito&quot;</span>
+
+<span class="hljs-comment"># Site URL. Should not end with &quot;/&quot;</span>
+<span class="hljs-comment"># If the site is located in a subdirectory,</span>
+<span class="hljs-comment"># it must be included in the URL.</span>
+<span class="hljs-attr">url:</span> <span class="hljs-string">&quot;https://example.site&quot;</span>
+
+<span class="hljs-comment"># Theme name. Won&#x27;t run without a theme.</span>
+<span class="hljs-attr">theme:</span> <span class="hljs-string">theme_name</span>
+
+<span class="hljs-comment"># How many list items</span>
+<span class="hljs-comment"># should be on one page by default when splitting</span>
+<span class="hljs-comment"># a list into pages.</span>
+<span class="hljs-attr">list_length:</span> <span class="hljs-number">20</span>
+
+<span class="hljs-comment"># Path to the directory where tag files will be stored.</span>
+<span class="hljs-attr">tags_dir:</span> <span class="hljs-string">&quot;/tags&quot;</span>
+
+<span class="hljs-comment"># If this option is defined and the specified file</span>
+<span class="hljs-comment"># is present on the site, the `list` property of this file</span>
+<span class="hljs-comment"># will be populated with a list of tags, sorted alphabetically.</span>
+<span class="hljs-attr">tags_page:</span> <span class="hljs-string">&quot;/tags/index.html&quot;</span>
+
+<span class="hljs-comment"># RSS and Atom</span>
+<span class="hljs-attr">rss_uri:</span> <span class="hljs-string">&quot;/rss.xml&quot;</span>
+<span class="hljs-attr">atom_uri:</span> <span class="hljs-string">&quot;/atom.xml&quot;</span>
+
+<span class="hljs-comment"># Maximum number of articles</span>
+<span class="hljs-comment"># in feeds.</span>
+<span class="hljs-attr">feed_length:</span> <span class="hljs-number">30</span>
+
+<span class="hljs-comment"># Editor invocation command (see &quot;Preview Mode&quot;)</span>
+<span class="hljs-attr">edit_cmd:</span> <span class="hljs-string">code</span>
+
+<span class="hljs-comment"># Enable (or disable) JS API</span>
+<span class="hljs-attr">js_api:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Enable built-in search</span>
+<span class="hljs-attr">search:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Save and display article excerpts</span>
+<span class="hljs-comment"># in search results</span>
+<span class="hljs-attr">keep_excerpts:</span> <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># Index content in languages,</span>
+<span class="hljs-comment"># must be an array, even if there&#x27;s only one language!</span>
+<span class="hljs-comment"># For one language: search_lang: [&quot;ru&quot;]</span>
+<span class="hljs-comment"># For search only in English, the language can be omitted</span>
+<span class="hljs-attr">search_lang:</span> [<span class="hljs-string">&quot;ru&quot;</span>, <span class="hljs-string">&quot;en&quot;</span>]
+</code></pre>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Site Configuration File<br />
+doc: config_file_en<br />
+lang: en<br />
+---<br />
+<br />
+The file is located in the `site_dir/config/site.yaml` folder<br />
+<br />
+```yaml<br />
+# About the site<br />
+title: &quot;Example site&quot;<br />
+<br />
+# Short &quot;motto&quot;<br />
+motto: &quot;Proud to be default&quot;<br />
+<br />
+# Image, will be displayed<br />
+# when linking to the site and in feeds.<br />
+image: /path/to/image/ext<br />
+<br />
+# Site description, displayed<br />
+# in feeds.<br />
+description: |-<br />
+  Long description<br />
+  of the site<br />
+<br />
+# Author<br />
+author: &quot;Incognito&quot;<br />
+<br />
+# Site URL. Should not end with &quot;/&quot;<br />
+# If the site is located in a subdirectory,<br />
+# it must be included in the URL.<br />
+url: &quot;https://example.site&quot;<br />
+<br />
+# Theme name. Won&#39;t run without a theme.<br />
+theme: theme_name<br />
+<br />
+# How many list items<br />
+# should be on one page by default when splitting<br />
+# a list into pages.<br />
+list_length: 20<br />
+<br />
+# Path to the directory where tag files will be stored.<br />
+tags_dir: &quot;/tags&quot;<br />
+<br />
+# If this option is defined and the specified file<br />
+# is present on the site, the `list` property of this file<br />
+# will be populated with a list of tags, sorted alphabetically.<br />
+tags_page: &quot;/tags/index.html&quot;<br />
+<br />
+# RSS and Atom<br />
+rss_uri: &quot;/rss.xml&quot;<br />
+atom_uri: &quot;/atom.xml&quot;<br />
+<br />
+# Maximum number of articles<br />
+# in feeds.<br />
+feed_length: 30<br />
+<br />
+# Editor invocation command (see &quot;Preview Mode&quot;)<br />
+edit_cmd: code<br />
+<br />
+# Enable (or disable) JS API<br />
+js_api: true<br />
+<br />
+# Enable built-in search<br />
+search: true<br />
+<br />
+# Save and display article excerpts<br />
+# in search results<br />
+keep_excerpts: true<br />
+<br />
+# Index content in languages,<br />
+# must be an array, even if there&#39;s only one language!<br />
+# For one language: search_lang: [&quot;ru&quot;]<br />
+# For search only in English, the language can be omitted<br />
+search_lang: [&quot;ru&quot;, &quot;en&quot;]<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

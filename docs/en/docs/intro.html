@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About the project :: Mukha SSG</title>
+  <meta property="og:title" content="About the project" />
+  <meta property="og:description" content="Mukha is yet another opinionated static site generator." />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/docs/intro.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">About the project</h1>
+<!--en-->
+
+  <div class="content mb-6">
+    <p>Mukha is <em>yet another</em> opinionated static site generator.</p>
+<h2>Simplicity</h2>
+<ul>
+<li>Does not depend on external tools, only Node.js is needed.</li>
+<li>Consists of a single file, which can be placed in the site repository if desired.</li>
+</ul>
+<h2>Blogging tools</h2>
+<ul>
+<li>Tags. Tag pages are generated automatically and/or manually.</li>
+<li>Integrated <a href="search.html">full-text search</a>.</li>
+<li>Source texts of pages are in markdown with additions (≈GFM).</li>
+<li>Arbitrary page metadata and tools for their use.</li>
+</ul>
+<h2>Portability</h2>
+<ul>
+<li>All links within the site are relative. The site works even if you just open a page in the browser, i.e., without a server, including search.</li>
+<li><a href="js_api.html">Java Script API</a> allows using relative addressing in custom scripts.</li>
+<li>&quot;Smart links&quot; - syntax that allows forming a link to a page that will not depend on its location on the site.</li>
+</ul>
+<h2>Design and development</h2>
+<ul>
+<li>Preview with auto-update in the browser, integration with <em>your favorite</em> editor for quick editing/adding pages.</li>
+<li>Uses the Nunjucks templating engine, templating functions can also be used in page content, for example, to display data (below).</li>
+<li>Separation of content and design. There is no need to explicitly specify a template for each page (and it is generally an anti-pattern).</li>
+<li><a href="lister.html">List generator</a> allows avoiding explicit editing of navigation elements in most cases.</li>
+<li>Multi-page lists, pagination widget generator.</li>
+<li>Mukha easily integrates with (almost) any development tools.</li>
+</ul>
+<h2>Data</h2>
+<ul>
+<li>Data is full-fledged content. All data files placed in the data directory are available during generation.</li>
+<li>Basic processing functions for tabular data - aggregation, column removal, slug generation, etc.</li>
+<li>Data can be used in templates and in content.</li>
+<li>Pages can be generated from data using a simple, <a href="../examples/years/index.html">declarative syntax</a>.</li>
+<li>Java Script API allows &quot;attaching&quot; data to the site for further use in custom scripts.</li>
+</ul>
+<h2>Considerations</h2>
+<ul>
+<li>The site structure is mainly determined by the structure of the source file directories.</li>
+<li>Currently, there are no functions for image processing; images are copied to the site as is.</li>
+<li>The plugin API is in the early stages of development.</li>
+</ul>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: &quot;About the project&quot;<br />
+tags: <br />
+date: &quot;2025.07.21 9:31&quot;<br />
+id: 42259f253bafa002778f8975e4b46d61<br />
+---<br />
+<br />
+Mukha is _yet another_ opinionated static site generator.<br />
+<br />
+## Simplicity<br />
+<br />
+- Does not depend on external tools, only Node.js is needed.<br />
+- Consists of a single file, which can be placed in the site repository if desired.<br />
+<br />
+## Blogging tools<br />
+<br />
+- Tags. Tag pages are generated automatically and/or manually.<br />
+- Integrated [full-text search](/+doc:search_en).<br />
+- Source texts of pages are in markdown with additions (≈GFM).<br />
+- Arbitrary page metadata and tools for their use.<br />
+<br />
+## Portability<br />
+<br />
+- All links within the site are relative. The site works even if you just open a page in the browser, i.e., without a server, including search.<br />
+- [Java Script API](/+doc:jsapi_en) allows using relative addressing in custom scripts.<br />
+- &quot;Smart links&quot; - syntax that allows forming a link to a page that will not depend on its location on the site.<br />
+<br />
+## Design and development<br />
+<br />
+- Preview with auto-update in the browser, integration with _your favorite_ editor for quick editing/adding pages.<br />
+- Uses the Nunjucks templating engine, templating functions can also be used in page content, for example, to display data (below).<br />
+- Separation of content and design. There is no need to explicitly specify a template for each page (and it is generally an anti-pattern).<br />
+- [List generator](/+doc:lister_en) allows avoiding explicit editing of navigation elements in most cases.<br />
+- Multi-page lists, pagination widget generator.<br />
+- Mukha easily integrates with (almost) any development tools.<br />
+<br />
+## Data<br />
+<br />
+- Data is full-fledged content. All data files placed in the data directory are available during generation.<br />
+- Basic processing functions for tabular data - aggregation, column removal, slug generation, etc.<br />
+- Data can be used in templates and in content.<br />
+- Pages can be generated from data using a simple, [declarative syntax](/+doc:generation_col_en).<br />
+- Java Script API allows &quot;attaching&quot; data to the site for further use in custom scripts.<br />
+<br />
+## Considerations<br />
+<br />
+- The site structure is mainly determined by the structure of the source file directories.<br />
+- Currently, there are no functions for image processing; images are copied to the site as is.<br />
+- The plugin API is in the early stages of development.<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

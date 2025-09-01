@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview Mode :: Mukha SSG</title>
+  <meta property="og:title" content="Preview Mode" />
+  <meta property="og:description" content="Preview mode allows you to track changes made to the site in real time. Convenient to use when integrating with gulp." />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/docs/watch_mode.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Preview Mode</h1>
+<!--en-->
+
+  <div class="content mb-6">
+    <p>Preview mode allows you to track changes made to the site in real time.
+Convenient to use when <a href="gulp_integration.html">integrating with gulp</a>.</p>
+<hr>
+<p>To enable preview mode, you need to run Mukha with the <code>-w</code> (<code>--watch</code>) parameter:</p>
+<pre><code class="language-shell">mukha-ssg -w
+</code></pre>
+<p>Mukha will generate the site and attempt to open the main page in the default browser. When changes are made
+to the source files, the site will be dynamically regenerated. During preview display,
+no files are written to disk, so after finishing, you will need to generate a new
+version with a separate command.</p>
+<h2>Automatic generation after preview is completed</h2>
+<p>If the output directory was explicitly specified when starting Mukha in preview mode, then
+after finishing, the changes made will be saved to disk.</p>
+<pre><code class="language-bash">mukha-ssg -o static -w
+</code></pre>
+<p>The <code>-w</code> key combines well, but amusingly, with the <code>-c</code> key (<code>--cleanup</code>, removing unnecessary files from the output directory after generation).</p>
+<pre><code class="language-shell">mukha-ssg -o static -wc
+</code></pre>
+<h2>Editor integration</h2>
+<p>If the <code>edit_cmd</code> option (text editor name) is set in the site configuration file, then a panel with buttons will appear at the bottom right
+on all pages available for editing:</p>
+<figure class="image noresize">
+    
+  <img src="../../px/watch_mode_buttons_2.png" alt="" />
+       
+
+</figure > 
+<ul>
+<li><code>edit</code> — opens the current page in the text editor.</li>
+<li><code>new page</code> (or <code>+page</code>) — creates a new page in the current <em>directory</em>.</li>
+<li><code>new dir</code> (or <code>+dir</code>) — creates a new directory in the current <em>directory</em> and an index.md file in it.</li>
+<li><code>del</code> — deletes the current page.</li>
+</ul>
+<p>Currently, the <code>edit_cmd</code> option must contain a single &quot;word&quot; — the editor launch command; the filename will be passed
+to the specified command as the sole parameter.</p>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: Preview Mode<br />
+tags: <br />
+date: &quot;2025.07.30 18:46&quot;<br />
+id: 8e6e003e61b384e59791f09abbd5e4e3<br />
+doc: watch_mode_en<br />
+---<br />
+<br />
+Preview mode allows you to track changes made to the site in real time.<br />
+Convenient to use when [integrating with gulp](/+doc:gulp_en).<br />
+<br />
+---<br />
+<br />
+To enable preview mode, you need to run Mukha with the `-w` (`--watch`) parameter:<br />
+<br />
+```shell<br />
+mukha-ssg -w<br />
+```<br />
+Mukha will generate the site and attempt to open the main page in the default browser. When changes are made<br />
+to the source files, the site will be dynamically regenerated. During preview display,<br />
+no files are written to disk, so after finishing, you will need to generate a new<br />
+version with a separate command.<br />
+<br />
+## Automatic generation after preview is completed<br />
+<br />
+If the output directory was explicitly specified when starting Mukha in preview mode, then<br />
+after finishing, the changes made will be saved to disk.<br />
+<br />
+```bash<br />
+mukha-ssg -o static -w<br />
+```<br />
+The `-w` key combines well, but amusingly, with the `-c` key (`--cleanup`, removing unnecessary files from the output directory after generation).<br />
+<br />
+```shell<br />
+mukha-ssg -o static -wc<br />
+```<br />
+<br />
+## Editor integration<br />
+<br />
+If the `edit_cmd` option (text editor name) is set in the site configuration file, then a panel with buttons will appear at the bottom right<br />
+on all pages available for editing:<br />
+<br />
+```@image<br />
+url: /px/watch_mode_buttons_2.png<br />
+classes:<br />
+  - noresize<br />
+```<br />
+<br />
+- `edit` — opens the current page in the text editor.<br />
+- `new page` (or `+page`) — creates a new page in the current *directory*.<br />
+- `new dir` (or `+dir`) — creates a new directory in the current *directory* and an index.md file in it.<br />
+- `del` — deletes the current page.<br />
+<br />
+Currently, the `edit_cmd` option must contain a single &quot;word&quot; — the editor launch command; the filename will be passed<br />
+to the specified command as the sole parameter.<br />
+<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>
