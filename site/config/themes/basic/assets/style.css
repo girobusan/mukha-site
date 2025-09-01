@@ -19964,6 +19964,14 @@ code {
   border: 1px solid #13af61;
 }
 
+figure.image {
+  margin-bottom: 1rem;
+}
+figure.image figcaption {
+  font-size: 0.8em;
+  line-height: 110%;
+  opacity: 0.75;
+}
 figure.image.noresize img {
   width: auto;
   display: block;

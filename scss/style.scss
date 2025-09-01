@@ -152,6 +152,14 @@ code {
 }
 
 figure.image {
+  margin-bottom: 1rem;
+
+  figcaption {
+    font-size: 0.8em;
+    line-height: 110%;
+    opacity: 0.75;
+  }
+
   &.noresize img {
     width: auto;
     display: block;

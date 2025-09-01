@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Documentation :: Mukha SSG</title>
-  <meta property="og:title" content="Documentation" />
-  <meta property="og:description" content="Docs" />
+  <title>Installation :: Mukha SSG</title>
+  <meta property="og:title" content="Installation" />
+  <meta property="og:description" content="Three installation methods" />
   <link href="../../_theme/style.css" rel="stylesheet">
   <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
-  <script data-location="/en/docs/index.html" src="../../_js/client.js">
+  <script data-location="/en/docs/install.html" src="../../_js/client.js">
 </script>
   <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
@@ -43,7 +43,7 @@
     <div class="navbar-start"></div>
 
     <div class="navbar-end">
-      <a class="navbar-item has-text-white" href="javascript:;">
+      <a class="navbar-item has-text-white" href="index.html">
         Documentation
       </a>
       <a class="navbar-item has-text-white" href="../examples/index.html">
@@ -63,60 +63,33 @@
   <ul>
     <!-- <li><a href="../../index.html">🏠</a></li> -->
     <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
   </ul>
 </nav>
 
-<h1 class="title is-1">Documentation</h1>
+<h1 class="title is-1">Installation</h1>
 <!--en-->
 
   <div class="content mb-6">
-    <h2>Getting started</h2>
-<ul>
-<li><a href="intro.html">About the project</a></li>
-<li><a href="install.html">Installation</a></li>
-<li><a href="create_site.html">Creating a Site</a></li>
-<li><a href="watch_mode.html">Preview Mode</a></li>
-<li><a href="change_theme.html">Changing the Theme</a></li>
-<li><a href="cli.html">Command line usage</a></li>
-<li><a href="site_dir.html">Site Directory Structure</a></li>
-<li><a href="config.html">Site Configuration File</a></li>
-</ul>
-<h2>Editing</h2>
-<ul>
-<li style="color: silver">markdown.md</li>
-<li><a href="links.html">Links</a></li>
-<li style="color: silver">inserts.md</li>
-</ul>
-<h2>Templating</h2>
-<ul>
-<li style="color: silver">templating.md</li>
-<li style="color: silver">template_vars.md</li>
-<li><a href="lister.html">Lister object</a></li>
-<li style="color: silver">file_obj.md</li>
-<li><a href="page_obj.html">Page object</a></li>
-<li style="color: silver">pagination.md</li>
-<li style="color: silver">to_table.md</li>
-</ul>
-<h2>Data</h2>
-<ul>
-<li style="color: silver">data_basic.md</li>
-<li><a href="data_config_tasks.html">Data Processing</a></li>
-<li style="color: silver">data_config.md</li>
-<li style="color: silver">data2js.md</li>
-</ul>
-<h2>Java Script API</h2>
-<ul>
-<li><a href="js_api.html">Java Script API</a></li>
-</ul>
-<h2>Search</h2>
-<ul>
-<li><a href="search.html">Built-in search</a></li>
-</ul>
-<h2>Integrations</h2>
-<ul>
-<li><a href="gulp_integration.html">Integration with gulp</a></li>
-<li style="color: silver">hooks.md</li>
-</ul>
+    <h3>NPM</h3>
+<p>The easiest way to install is using npm (npm is installed automatically with Node). Run the following command in your terminal:</p>
+<pre><code class="language-bash">npm install mukha-ssg
+</code></pre>
+<p>After this, Mukha can be launched with the <code>mukha-ssg</code> command. Examples in the documentation are provided for this installation method.</p>
+<h3>Git + NPM</h3>
+<p>You can clone the repository and use npm only to create the necessary links:</p>
+<pre><code class="language-shell">git clone ssh://git@gitverse.ru:2222/girobusan/mukha-ssg.git
+cd mukha-ssg
+npm install
+npm run build
+npm link
+</code></pre>
+<p>The result is the same as in the previous method.</p>
+<h3>Manual Installation</h3>
+<p>If for some reason you do not want to install via npm, you can download the distribution using any available method. The main file is called <code>mukha.js</code>. You can even store it with your site files. Run it with the command:</p>
+<pre><code class="language-bash">node &lt;path to file&gt;mukha.js &lt;<span class="hljs-built_in">command</span> line parameters&gt;
+</code></pre>
+<p>You will also need a starter site. You can download it separately and unpack it to a convenient location, or you can <a href="create_site.html">create one using Mukha itself</a>.</p>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
       Page source
@@ -133,27 +106,47 @@
   <div class="modal-background"></div>
   <div class="modal-content px-2 py-2 has-background-white">
     <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
-title: Documentation<br />
-excerpt: Docs<br />
-menuitem: 2<br />
-hide_list: true<br />
+title: Installation<br />
+doc: install_en<br />
+order: &quot;001_001&quot;<br />
+excerpt: |-<br />
+  Three installation methods<br />
 ---<br />
 <br />
-{% for unit in datasets.contents %}<br />
+### NPM<br />
 <br />
-&lt;h2&gt;{{ unit.title.en }}&lt;/h2&gt;<br />
-&lt;ul&gt;<br />
-{% for P in unit.pages %}<br />
-{% set PPath = &quot;/en/docs/&quot; + P.replace(&quot;.md&quot; , &quot;.html&quot;) %}<br />
-{% set PG = list.getByPath(PPath) %}<br />
-{% if PG %}<br />
-&lt;li&gt;&lt;a href=&quot;{{PPath}}&quot;&gt;{{PG.meta.title}}&lt;/a&gt;&lt;/li&gt;<br />
-{% else %}<br />
-&lt;li style=&quot;color: silver&quot;&gt;{{P}}&lt;/li&gt;<br />
-{% endif %}<br />
-{% endfor %}<br />
-&lt;/ul&gt;<br />
-{% endfor %}<br />
+The easiest way to install is using npm (npm is installed automatically with Node). Run the following command in your terminal:<br />
+<br />
+```bash<br />
+npm install mukha-ssg<br />
+```<br />
+<br />
+After this, Mukha can be launched with the `mukha-ssg` command. Examples in the documentation are provided for this installation method.<br />
+<br />
+### Git + NPM<br />
+<br />
+You can clone the repository and use npm only to create the necessary links:<br />
+<br />
+```shell<br />
+git clone ssh://git@gitverse.ru:2222/girobusan/mukha-ssg.git<br />
+cd mukha-ssg<br />
+npm install<br />
+npm run build<br />
+npm link<br />
+```<br />
+<br />
+The result is the same as in the previous method.<br />
+<br />
+### Manual Installation<br />
+<br />
+If for some reason you do not want to install via npm, you can download the distribution using any available method. The main file is called `mukha.js`. You can even store it with your site files. Run it with the command:<br />
+<br />
+```bash<br />
+node &lt;path to file&gt;mukha.js &lt;command line parameters&gt;<br />
+```<br />
+<br />
+You will also need a starter site. You can download it separately and unpack it to a convenient location, or you can [create one using Mukha itself](/+doc:make_site_en).<br />
+<br />
 </div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>

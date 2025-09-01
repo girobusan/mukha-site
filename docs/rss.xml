@@ -4,9 +4,16 @@
         <title>Mukha SSG</title>
         <link>https://example.site</link>
         <description>Быстрый и простой генератор статичных сайтов.</description>
-        <lastBuildDate>Mon, 01 Sep 2025 08:54:36 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 01 Sep 2025 18:32:39 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Changing the Theme]]></title>
+            <link>https://example.site/en/docs/change_theme.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/change_theme.html</guid>
+            <pubDate>Mon, 01 Sep 2025 08:34:00 GMT</pubDate>
+            <description><![CDATA[The site comes with a very simple default theme by default; you can play around with it, but it's not meant for long-term use. Let's download and install a more interesting theme, <em>notepad</em>.]]></description>
+        </item>
         <item>
             <title><![CDATA[Смена темы оформления]]></title>
             <link>https://example.site/ru/docs/change_theme.html</link>
@@ -36,6 +43,13 @@
             <guid isPermaLink="false">https://example.site/en/examples/chars/index.html</guid>
             <pubDate>Thu, 14 Aug 2025 11:23:00 GMT</pubDate>
             <description><![CDATA[Pages, generated from the set of JSON files.]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Creating a Site]]></title>
+            <link>https://example.site/en/docs/create_site.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/create_site.html</guid>
+            <pubDate>Wed, 13 Aug 2025 16:05:00 GMT</pubDate>
+            <description><![CDATA[To quickly create a site, you can run the generator with the <code>-n</code> (<code>--new</code>) key.]]></description>
         </item>
         <item>
             <title><![CDATA[Создание сайта]]></title>
@@ -187,6 +201,13 @@ css and site template development into a single process.]]></description>
             <description><![CDATA[Docs]]></description>
         </item>
         <item>
+            <title><![CDATA[Installation]]></title>
+            <link>https://example.site/en/docs/install.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/install.html</guid>
+            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
+            <description><![CDATA[Three installation methods]]></description>
+        </item>
+        <item>
             <title><![CDATA[Java Script API]]></title>
             <link>https://example.site/en/docs/js_api.html</link>
             <guid isPermaLink="false">https://example.site/en/docs/js_api.html</guid>
@@ -207,29 +228,6 @@ for storing and processing lists of <a href="https://example.site/en/docs/page_o
             <guid isPermaLink="false">https://example.site/en/docs/page_obj.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[The page object represents a page on the site. The following fields are available in it:]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Filter to_table]]></title>
-            <link>https://example.site/en/docs/to_table_flt.html</link>
-            <guid isPermaLink="false">https://example.site/en/docs/to_table_flt.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[The <code>to_table</code> filter is used to display tabular data as formatted tables,
-optionally with specified columns.]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Examples]]></title>
-            <link>https://example.site/en/examples/index.html</link>
-            <guid isPermaLink="false">https://example.site/en/examples/index.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[#### Using template tags in text]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Table]]></title>
-            <link>https://example.site/en/examples/movie_table.html</link>
-            <guid isPermaLink="false">https://example.site/en/examples/movie_table.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[This is the table used for
-generations.]]></description>
         </item>
     </channel>
 </rss>

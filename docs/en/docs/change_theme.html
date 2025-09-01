@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Changing the Theme :: Mukha SSG</title>
+  <meta property="og:title" content="Changing the Theme" />
+  <meta property="og:description" content="The site comes with a very simple default theme by default; you can play around with it, but it's not meant for long-term use. Let's download and install a more interesting theme, notepad." />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/docs/change_theme.html" src="../../_js/client.js">
+</script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Changing the Theme</h1>
+<!--en-->
+
+  <div class="content mb-6">
+    <p>The site comes with a very simple default theme by default; you can play around with it, but it's not meant for long-term use. Let's download and install a more interesting theme, <em>notepad</em>.</p>
+<h2>Download the Theme</h2>
+<p>All versions of the theme can be downloaded from the releases section of the base site repository, here:</p>
+<ul>
+<li><a href="https://github.com/girobusan/mukha-basic-site/releases/">https://github.com/girobusan/mukha-basic-site/releases/</a></li>
+</ul>
+<p>Click on the latest release and download the file named like <code>notepad_theme.&lt;version&gt;.dist.zip</code>.</p>
+<h2>Create a Directory</h2>
+<p>In your site's folder, find the subfolder <code>config/themes</code>. Inside it, create a folder named <code>notepad</code> and extract the contents of the downloaded archive into it. You should end up with two folders: <code>templates</code> and <code>assets</code> there. The final folder structure should look like this:</p>
+<pre><code class="language-yaml"><span class="hljs-string">site</span>
+   <span class="hljs-string">|
+   config
+        |
+        themes
+              |
+              bland     ← default theme
+              |
+              notepad
+                    |
+                    templates
+                    assets
+</span></code></pre>
+<h2>Site Configuration</h2>
+<p>Open the <a href="config.html">configuration file</a> <code>site/config/site.yaml</code>, find the line:</p>
+<pre><code class="language-yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">bland</span>
+</code></pre>
+<p>And change it to:</p>
+<pre><code class="language-yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">notepad</span>
+</code></pre>
+<p>Now you can run Mukha in preview mode or generate static files — the new theme should be applied.</p>
+<h2>If something went wrong</h2>
+<ul>
+<li>Check the directory names; they might be case-sensitive (on Mac and Linux).</li>
+<li>Read the error messages (it's better to run static generation for this, as some errors are not displayed in preview mode).</li>
+</ul>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: &quot;Changing the Theme&quot;<br />
+tags:<br />
+date: &quot;2025.09.1 11:34&quot;<br />
+id: 48cae17a2cc742da624be2443be68233<br />
+---<br />
+<br />
+The site comes with a very simple default theme by default; you can play around with it, but it&#39;s not meant for long-term use. Let&#39;s download and install a more interesting theme, _notepad_.<br />
+<br />
+## Download the Theme<br />
+<br />
+All versions of the theme can be downloaded from the releases section of the base site repository, here:<br />
+<br />
+- [https://github.com/girobusan/mukha-basic-site/releases/](https://github.com/girobusan/mukha-basic-site/releases/)<br />
+<br />
+Click on the latest release and download the file named like `notepad_theme.&lt;version&gt;.dist.zip`.<br />
+<br />
+## Create a Directory<br />
+<br />
+In your site&#39;s folder, find the subfolder `config/themes`. Inside it, create a folder named `notepad` and extract the contents of the downloaded archive into it. You should end up with two folders: `templates` and `assets` there. The final folder structure should look like this:<br />
+<br />
+```yaml<br />
+site<br />
+   |<br />
+   config<br />
+        |<br />
+        themes<br />
+              |<br />
+              bland     ← default theme<br />
+              |<br />
+              notepad<br />
+                    |<br />
+                    templates<br />
+                    assets<br />
+```<br />
+<br />
+## Site Configuration<br />
+<br />
+Open the [configuration file](/+doc:config_file_en) `site/config/site.yaml`, find the line:<br />
+<br />
+```yaml<br />
+theme: bland<br />
+```<br />
+<br />
+And change it to:<br />
+<br />
+```yaml<br />
+theme: notepad<br />
+```<br />
+<br />
+Now you can run Mukha in preview mode or generate static files — the new theme should be applied.<br />
+<br />
+## If something went wrong<br />
+<br />
+- Check the directory names; they might be case-sensitive (on Mac and Linux).<br />
+- Read the error messages (it&#39;s better to run static generation for this, as some errors are not displayed in preview mode).<br />
+<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>
