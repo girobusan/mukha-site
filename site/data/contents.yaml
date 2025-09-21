@@ -38,7 +38,9 @@
     - data_basic.md
     - data_config_tasks.md
     - data_config.md
+    - data_in_template.md
     - data2js.md
+    - data_config_short_syntax.md
 
 - title:
     ru: "Java Script API"

@@ -3,34 +3,33 @@
     en: "Simplicity"
   text:
     ru:
-      - "Один файл, можно хранить вместе с исходниками сайта."
-      - "Требует только Node.js, без внешних зависимостей."
-      - "Минимальная конфигурация."
+      - "Один файл, можно хранить вместе с исходниками сайта, "
+      - "требует только Node.js, без внешних зависимостей."
+   
     en:
       - "A single file that can be stored with your site's source code."
       - "Requires only Node.js, no external dependencies."
-      - "Minimal configuration needed."
+
 - title:
     ru: "Автономность"
     en: "Self-contained"
   text:
     ru:
-      - "Относительные ссылки — сайт открывается даже без сервера."
-      - "Встроенный поиск (тоже работает локально)."
-      - "Сайт совместим с любым хостингом."
+      - "Сайт совместим с любым хостингом, а открывается даже без сервера. "
+      - "Встроенный поиск работает локально."
+  
     en:
       - "Relative links - the site works even without a server."
-      - "Built-in search (works locally too)."
+      - "Built-in search works locally too."
       - "Compatible with any hosting."
 - title:
     ru: "Работа с данными"
     en: "Works with data"
   text:
     ru:
-      - "Данные — полноправная часть контента."
-      - "Генерация страниц из данных без кода — с простым декларативным синтаксисом."
-      - "Базовые функции для обработки данных."
+      - "Данные — полноправная часть контента; работа с&nbsp;данными и генерация страниц без написания кода"
+    
     en:
-      - "Data is a first-class content."
+      - "Data is a first-class content — "
       - "Generate pages from data without code — using simple declarative syntax."
-      - "Built-in functions for basic data processing."
+  

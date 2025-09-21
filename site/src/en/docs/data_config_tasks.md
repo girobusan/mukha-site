@@ -43,6 +43,62 @@ Parameters:
 - `input_col` - column based on which the new column will be created
 - `output_col` - name of the new column
 
+
+### hash **(0.1.4)**
+
+Creates a new column based on the selected one, containing the hash of the selected column’s content.
+Useful when you need to use values that are too long in a URL. By default, a hash is generated 
+using the sha-256 algorithm with a length of 43 characters. When the `short` option is enabled, 
+a shortened 22-character hash is generated. 
+
+```yaml
+- task: hash
+  dataset: tables.movies
+  short: true
+  input_col: very_long_name
+  output_col: name_hash
+````
+
+#### Parameters:
+
+* `input_col` — the column from which the new column will be created
+* `output_col` — the name of the new column
+* `short` — use a shorter hash
+
+
+
+### combine **(0.1.4)**
+
+Creates a new column based on several selected ones. The contents of the selected columns are concatenated and hashed.
+
+This is necessary if you need to generate a more complex page structure. For example, for a list of movies,
+you might want to create a subsection for each director, and within it, pages for all the actors who worked with them.
+In this case, you need to combine the values of two columns and generate pages based on the contents of the new column —
+it will contain all unique director/actor combinations.
+
+By default, a 43-character hash is generated. When the `short` option is enabled,
+a shortened hash is generated.
+
+```yaml
+- task: combine
+  dataset: tables.movies
+  short: false
+  input_cols:
+    - actor_name
+    - director_name
+  output_col: director_actor
+```
+
+#### Parameters:
+
+* `input_cols` — the list of columns from which the new column will be created
+* `output_col` — the name of the new column
+* `short` — use a shorter hash
+
+```
+
+
+
 ### sort
 
 Sorts the dataset by the specified column.

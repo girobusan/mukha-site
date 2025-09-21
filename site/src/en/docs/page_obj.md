@@ -41,3 +41,4 @@ Here is a list of fields that are used (reserved) by Mukha:
 - `image` — image for the page, if not defined, Mukha will try to find the first image in the text
 - `excerpt` — excerpt, if not defined, it may be filled with the first paragraph of the text
 - `draft` — if true, the file is skipped during processing
+- `keywords` — additional keywords for embedded search, optional
