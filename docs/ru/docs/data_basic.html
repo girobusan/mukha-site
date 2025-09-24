@@ -11,8 +11,7 @@
   <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
-  <script data-location="/ru/docs/data_basic.html" src="../../_js/client.js">
-</script>
+  <script data-location="/ru/docs/data_basic.html" src="../../_js/client.js"></script>
   <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
   <script src="../../_theme/highlight/highlight.min.js"></script>
@@ -78,7 +77,7 @@
 <p>В диретории <code>data</code> можно создавать поддиректории.</p>
 <p>Во время генерации данные будут доступны в переменной шаблона <code>datasets</code>, имя датасета — имя исходного файла без расширения.</p>
 <p>Например, если мы положим в директорию <code>data</code>  файл <code>my_table.csv</code>,
-то в шаблоне на него можно сосолаться через  <code>datasets.my_table</code>. Если файл находится в поддиректории,
+то в шаблоне на него можно сослаться через  <code>datasets.my_table</code>. Если файл находится в поддиректории,
 например <code>example_data</code>, то его имя будет <code>datasets.example_data.my_table</code>. Вот так можно вывести данные
 в виде таблицы:</p>
 <pre><code class="language-jinja"> {{ datasets.examples.movies | to_table }}
@@ -121,7 +120,7 @@ excerpt: |-<br />
 Во время генерации данные будут доступны в переменной шаблона `datasets`, имя датасета — имя исходного файла без расширения.<br />
 <br />
 Например, если мы положим в директорию `data`  файл `my_table.csv`, <br />
-то в шаблоне на него можно сосолаться через  `datasets.my_table`. Если файл находится в поддиректории, <br />
+то в шаблоне на него можно сослаться через  `datasets.my_table`. Если файл находится в поддиректории, <br />
 например `example_data`, то его имя будет `datasets.example_data.my_table`. Вот так можно вывести данные<br />
 в виде таблицы:<br />
 <br />
@@ -130,6 +129,8 @@ excerpt: |-<br />
  {{ datasets.examples.movies | to_table }}<br />
 ```<br />
 {% endraw %}<br />
+<br />
+<br />
 </div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>

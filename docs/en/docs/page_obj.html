@@ -11,8 +11,7 @@
   <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
-  <script data-location="/en/docs/page_obj.html" src="../../_js/client.js">
-</script>
+  <script data-location="/en/docs/page_obj.html" src="../../_js/client.js"></script>
   <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
   <script src="../../_theme/highlight/highlight.min.js"></script>
@@ -109,6 +108,7 @@ for example, page or group identifiers.</p>
 <li><code>image</code> — image for the page, if not defined, Mukha will try to find the first image in the text</li>
 <li><code>excerpt</code> — excerpt, if not defined, it may be filled with the first paragraph of the text</li>
 <li><code>draft</code> — if true, the file is skipped during processing</li>
+<li><code>keywords</code> — additional keywords for embedded search, optional</li>
 </ul>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
@@ -168,6 +168,7 @@ Here is a list of fields that are used (reserved) by Mukha:<br />
 - `image` — image for the page, if not defined, Mukha will try to find the first image in the text<br />
 - `excerpt` — excerpt, if not defined, it may be filled with the first paragraph of the text<br />
 - `draft` — if true, the file is skipped during processing<br />
+- `keywords` — additional keywords for embedded search, optional<br />
 </div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>

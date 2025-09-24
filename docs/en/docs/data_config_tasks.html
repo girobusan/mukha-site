@@ -11,8 +11,7 @@
   <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
-  <script data-location="/en/docs/data_config_tasks.html" src="../../_js/client.js">
-</script>
+  <script data-location="/en/docs/data_config_tasks.html" src="../../_js/client.js"></script>
   <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
   <script src="../../_theme/highlight/highlight.min.js"></script>
@@ -97,23 +96,68 @@
 <li><code>input_col</code> - column based on which the new column will be created</li>
 <li><code>output_col</code> - name of the new column</li>
 </ul>
-<h3>sort</h3>
-<p>Sorts the dataset by the specified column.
-Parameters:</p>
+<h3>hash <strong>(0.1.4)</strong></h3>
+<p>Creates a new column based on the selected one, containing the hash of the selected column’s content.
+Useful when you need to use values that are too long in a URL. By default, a hash is generated
+using the sha-256 algorithm with a length of 43 characters. When the <code>short</code> option is enabled,
+a shortened 22-character hash is generated.</p>
+<pre><code class="language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">hash</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">tables.movies</span>
+  <span class="hljs-attr">short:</span> <span class="hljs-literal">true</span>
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">very_long_name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">name_hash</span>
+</code></pre>
+<h4>Parameters:</h4>
 <ul>
-<li><code>col</code> - column to sort by</li>
-<li><code>as_number</code> - boolean value - whether to interpret column content as a number. The result may be unexpected (for now) as locale is not taken into account.</li>
-<li><code>desc</code> - boolean value, sort in descending order.</li>
+<li><code>input_col</code> — the column from which the new column will be created</li>
+<li><code>output_col</code> — the name of the new column</li>
+<li><code>short</code> — use a shorter hash</li>
 </ul>
-<h3>del_cols</h3>
-<p>Deletes columns from the table. Useful when you want to save the table for JavaScript, to avoid saving and downloading unnecessary data.</p>
+<h3>combine <strong>(0.1.4)</strong></h3>
+<p>Creates a new column based on several selected ones. The contents of the selected columns are concatenated and hashed.</p>
+<p>This is necessary if you need to generate a more complex page structure. For example, for a list of movies,
+you might want to create a subsection for each director, and within it, pages for all the actors who worked with them.
+In this case, you need to combine the values of two columns and generate pages based on the contents of the new column —
+it will contain all unique director/actor combinations.</p>
+<p>By default, a 43-character hash is generated. When the <code>short</code> option is enabled,
+a shortened hash is generated.</p>
+<pre><code class="language-yaml"><span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">combine</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">tables.movies</span>
+  <span class="hljs-attr">short:</span> <span class="hljs-literal">false</span>
+  <span class="hljs-attr">input_cols:</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">actor_name</span>
+    <span class="hljs-bullet">-</span> <span class="hljs-string">director_name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">director_actor</span>
+</code></pre>
+<h4>Parameters:</h4>
 <ul>
-<li><code>cols</code> - list of column names to delete</li>
+<li><code>input_cols</code> — the list of columns from which the new column will be created</li>
+<li><code>output_col</code> — the name of the new column</li>
+<li><code>short</code> — use a shorter hash</li>
 </ul>
-<pre><code class="language-yaml">
-<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">del_cols</span>
-  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
-  <span class="hljs-attr">cols:</span> [<span class="hljs-string">&quot;minutes_long&quot;</span>, <span class="hljs-string">&quot;budget&quot;</span>, <span class="hljs-string">&quot;rating_metacritic&quot;</span>]
+<pre><code>
+
+
+### sort
+
+Sorts the dataset by the specified column.
+Parameters:
+
+- `col` - column to sort by
+- `as_number` - boolean value - whether to interpret column content as a number. The result may be unexpected (for now) as locale is not taken into account.
+- `desc` - boolean value, sort in descending order.
+
+### del_cols
+
+Deletes columns from the table. Useful when you want to save the table for JavaScript, to avoid saving and downloading unnecessary data.
+
+- `cols` - list of column names to delete
+
+```yaml
+
+- task: del_cols
+  dataset: examples.movies
+  cols: [&quot;minutes_long&quot;, &quot;budget&quot;, &quot;rating_metacritic&quot;]
 </code></pre>
 <h3>aggregate</h3>
 <p>Warning: it's better to prepare data in advance using more suitable tools! The aggregate action allows simple aggregations - sum, count, median. For example, this can be used to add to a table listing actors and movies they starred in, the number of movies each actor appeared in:</p>
@@ -215,6 +259,62 @@ Parameters:<br />
 <br />
 - `input_col` - column based on which the new column will be created<br />
 - `output_col` - name of the new column<br />
+<br />
+<br />
+### hash **(0.1.4)**<br />
+<br />
+Creates a new column based on the selected one, containing the hash of the selected column’s content.<br />
+Useful when you need to use values that are too long in a URL. By default, a hash is generated <br />
+using the sha-256 algorithm with a length of 43 characters. When the `short` option is enabled, <br />
+a shortened 22-character hash is generated. <br />
+<br />
+```yaml<br />
+- task: hash<br />
+  dataset: tables.movies<br />
+  short: true<br />
+  input_col: very_long_name<br />
+  output_col: name_hash<br />
+````<br />
+<br />
+#### Parameters:<br />
+<br />
+* `input_col` — the column from which the new column will be created<br />
+* `output_col` — the name of the new column<br />
+* `short` — use a shorter hash<br />
+<br />
+<br />
+<br />
+### combine **(0.1.4)**<br />
+<br />
+Creates a new column based on several selected ones. The contents of the selected columns are concatenated and hashed.<br />
+<br />
+This is necessary if you need to generate a more complex page structure. For example, for a list of movies,<br />
+you might want to create a subsection for each director, and within it, pages for all the actors who worked with them.<br />
+In this case, you need to combine the values of two columns and generate pages based on the contents of the new column —<br />
+it will contain all unique director/actor combinations.<br />
+<br />
+By default, a 43-character hash is generated. When the `short` option is enabled,<br />
+a shortened hash is generated.<br />
+<br />
+```yaml<br />
+- task: combine<br />
+  dataset: tables.movies<br />
+  short: false<br />
+  input_cols:<br />
+    - actor_name<br />
+    - director_name<br />
+  output_col: director_actor<br />
+```<br />
+<br />
+#### Parameters:<br />
+<br />
+* `input_cols` — the list of columns from which the new column will be created<br />
+* `output_col` — the name of the new column<br />
+* `short` — use a shorter hash<br />
+<br />
+```<br />
+<br />
+<br />
 <br />
 ### sort<br />
 <br />

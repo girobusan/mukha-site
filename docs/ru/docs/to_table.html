@@ -11,8 +11,7 @@
   <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
-  <script data-location="/ru/docs/to_table.html" src="../../_js/client.js">
-</script>
+  <script data-location="/ru/docs/to_table.html" src="../../_js/client.js"></script>
   <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
   <script src="../../_theme/highlight/highlight.min.js"></script>
@@ -76,170 +75,331 @@
 варианте используется так:</p>
 <pre><code>{{ data.dataset.myTable | to_table }}
 </code></pre>
-<p>Фильтр принимает дополнительный параметр — список колонок, которые
-надо вывести. Например, можно вывести из <a href="../examples/movie_table.html"> этой таблички </a> только часть столбцов,
+<p>Фильтр принимает дополнительные параметр — список колонок, которые
+надо вывести и список заголовков (заголовки — с версии 0.1.8b, см. внизу). Например, можно вывести из <a href="../examples/movie_table.html"> этой таблички </a> только часть столбцов,
 чтобы уместить на странице:</p>
-<pre><code>{{ data.datasets.examples.movies | to_table([&quot;name_en&quot;,&quot;director_en&quot;]) }}
+<pre><code>{{ data.datasets.examples.movies | to_table([&quot;name_ru&quot;,&quot;director_ru&quot;]) }}
 </code></pre>
 <p>Получится так:</p>
-<table>
-<thead><tr><th>name_en</th><th>director_en</th></tr></thead><tbody><tr>
-<td>Black Panther: Wakanda Forever</td>
-<td>Ryan Coogler</td></tr>
+<p><small><table></p>
+<thead><tr><th>name_ru</th><th>director_ru</th></tr></thead><tbody><tr>
+<td>Черная пантера: Ваканда навсегда</td>
+<td>Райан Куглер</td></tr>
 <tr>
-<td>Black Adam</td>
-<td>Jaume Collet-Serra</td></tr>
+<td>Черный Адам</td>
+<td>Жауме Кольет-Серра</td></tr>
 <tr>
-<td>Thor: Love and Thunder</td>
-<td>Taika Waititi</td></tr>
+<td>Тор: Любовь и гром</td>
+<td>Тайка Вайтити</td></tr>
 <tr>
-<td>Doctor Strange in the Multiverse of Madness</td>
-<td>Sam Raimi</td></tr>
+<td>Доктор Стрэндж в мультивселенной безумия</td>
+<td>Сэм Рэйми</td></tr>
 <tr>
-<td>The Batman</td>
-<td>Matt Reeves</td></tr>
+<td>Бэтмен</td>
+<td>Мэтт Ривз</td></tr>
 <tr>
-<td>Spider-Man: No Way Home</td>
-<td>John Watts</td></tr>
+<td>Человек-паук: Нет пути домой</td>
+<td>Джон Уоттс</td></tr>
 <tr>
-<td>Eternals</td>
-<td>Chloe Zhao</td></tr>
+<td>Вечные</td>
+<td>Хлоя Чжао</td></tr>
 <tr>
-<td>Shang-Chi and the Legend of the Ten Rings</td>
-<td>Destin Daniel Cretton</td></tr>
+<td>Шан-Чи и легенда о десяти кольцах</td>
+<td>Дестин Дэниел Креттон</td></tr>
 <tr>
-<td>The Suicide Squad</td>
-<td>James Gunn</td></tr>
+<td>Отряд Самоубийц</td>
+<td>Джеймс Ганн</td></tr>
 <tr>
-<td>Black Widow</td>
-<td>Cate Shortland</td></tr>
+<td>Черная Вдова</td>
+<td>Кейт Шортланд</td></tr>
 <tr>
-<td>Zack Snyder's Justice League</td>
-<td>Zack Snyder</td></tr>
+<td>Лига справедливости Зака ​​Снайдера</td>
+<td>Зак Снайдер</td></tr>
 <tr>
-<td>Wonder Woman 1984</td>
-<td>Patty Jenkins</td></tr>
+<td>Чудо-женщина 1984</td>
+<td>Пэтти Дженкинс</td></tr>
 <tr>
-<td>Birds of Prey and the Fantabulous Emancipation of One Harley Quinn</td>
-<td>Cathy Yan</td></tr>
+<td>Хищные птицы и Потрясающая история Харли Квинн</td>
+<td>Кэти Янь</td></tr>
 <tr>
-<td>Joker</td>
-<td>Todd Phillips</td></tr>
+<td>Джокер</td>
+<td>Тодд Филлипс</td></tr>
 <tr>
-<td>Spider-Man: Far from Home</td>
-<td>John Watts</td></tr>
+<td>Человек-паук: Вдали от дома</td>
+<td>Джон Уоттс</td></tr>
 <tr>
-<td>Avengers: Endgame</td>
-<td>Anthony Russo, Joe Russo</td></tr>
+<td>Мстители: Финал</td>
+<td>Энтони Руссо, Джо Руссо</td></tr>
 <tr>
-<td>Shazam!</td>
-<td>David F. Sandberg</td></tr>
+<td>Шазам!</td>
+<td>Дэвид Ф. Сандберг</td></tr>
 <tr>
-<td>Captain Marvel</td>
-<td>Anna Boden, Ryan Fleck</td></tr>
+<td>Капитан Марвел</td>
+<td>Анна Боден, Райан Флек</td></tr>
 <tr>
-<td>Aquaman</td>
-<td>James Wan</td></tr>
+<td>Аквамен</td>
+<td>Джеймс Ван</td></tr>
 <tr>
-<td>Ant-Man and the Wasp</td>
-<td>Peyton Reed</td></tr>
+<td>Человек-муравей и Оса</td>
+<td>Пейтон Рид</td></tr>
 <tr>
-<td>Avengers: Infinity War</td>
-<td>Anthony Russo, Joe Russo</td></tr>
+<td>Мстители: Война бесконечности</td>
+<td>Энтони Руссо, Джо Руссо</td></tr>
 <tr>
-<td>Black Panther</td>
-<td>Ryan Coogler</td></tr>
+<td>Черная пантера</td>
+<td>Райан Куглер</td></tr>
 <tr>
-<td>Justice League</td>
-<td>Zack Snyder</td></tr>
+<td>Лига Справедливости</td>
+<td>Зак Снайдер</td></tr>
 <tr>
-<td>Thor: Ragnarok</td>
-<td>Taika Waititi</td></tr>
+<td>Тор: Рагнарёк</td>
+<td>Тайка Вайтити</td></tr>
 <tr>
-<td>Wonder Woman</td>
-<td>Patty Jenkins</td></tr>
+<td>Чудо-женщина</td>
+<td>Пэтти Дженкинс</td></tr>
 <tr>
-<td>Spider-Man: Homecoming</td>
-<td>John Watts</td></tr>
+<td>Человек-паук: Возвращение домой</td>
+<td>Джон Уоттс</td></tr>
 <tr>
-<td>Guardians of the Galaxy Vol. 2</td>
-<td>James Gunn</td></tr>
+<td>Стражи Галактики Том 2</td>
+<td>Джеймс Ганн</td></tr>
 <tr>
-<td>Doctor Strange</td>
-<td>Scott Derrickson</td></tr>
+<td>Доктор Стрэндж</td>
+<td>Скотт Дерриксон</td></tr>
 <tr>
-<td>Suicide Squad</td>
-<td>David Ayer</td></tr>
+<td>Отряд Самоубийц</td>
+<td>Дэвид Эйр</td></tr>
 <tr>
-<td>Captain America: Civil War</td>
-<td>Anthony Russo, Joe Russo</td></tr>
+<td>Капитан Америка: Противостояние</td>
+<td>Энтони Руссо, Джо Руссо</td></tr>
 <tr>
-<td>Batman v Superman: Dawn of Justice</td>
-<td>Zack Snyder</td></tr>
+<td>Бэтмен против Супермена: На заре справедливости</td>
+<td>Зак Снайдер</td></tr>
 <tr>
-<td>Ant-Man</td>
-<td>Peyton Reed</td></tr>
+<td>Человек-муравей</td>
+<td>Пейтон Рид</td></tr>
 <tr>
-<td>Avengers: Age of Ultron</td>
-<td>Joss Whedon</td></tr>
+<td>Мстители: Эра Альтрона</td>
+<td>Джосс Уидон</td></tr>
 <tr>
-<td>Guardians of the Galaxy</td>
-<td>James Gunn</td></tr>
+<td>Стражи Галактики</td>
+<td>Джеймс Ганн</td></tr>
 <tr>
-<td>Captain America: The Winter Soldier</td>
-<td>Anthony Russo, Joe Russo</td></tr>
+<td>Капитан Америка: Зимний Солдат</td>
+<td>Энтони Руссо, Джо Руссо</td></tr>
 <tr>
-<td>Thor: The Dark World</td>
-<td>Alan Taylor</td></tr>
+<td>Тор: Царство тьмы</td>
+<td>Алан Тейлор</td></tr>
 <tr>
-<td>Man of Steel</td>
-<td>Zack Snyder</td></tr>
+<td>Еловек из стали</td>
+<td>Зак Снайдер</td></tr>
 <tr>
-<td>Iron Man Three</td>
-<td>Shane Black</td></tr>
+<td>Железный человек 3</td>
+<td>Шейн Блэк</td></tr>
 <tr>
-<td>The Dark Knight Rises</td>
-<td>Christopher Nolan</td></tr>
+<td>Возрождение Темного Рыцаря</td>
+<td>Кристофер Нолан</td></tr>
 <tr>
-<td>The Avengers</td>
-<td>Joss Whedon</td></tr>
+<td>Мстители</td>
+<td>Джосс Уидон</td></tr>
 <tr>
-<td>Captain America: The First Avenger</td>
-<td>Joe Johnston</td></tr>
+<td>Капитан Америка: Первый мститель</td>
+<td>Джо Джонстон</td></tr>
 <tr>
-<td>Green Lantern</td>
-<td>Martin Campbell</td></tr>
+<td>Зеленый Фонарь</td>
+<td>Мартин Кэмпбелл</td></tr>
 <tr>
-<td>Thor</td>
-<td>Kenneth Branagh</td></tr>
+<td>Тор</td>
+<td>Кеннет Брана</td></tr>
 <tr>
-<td>Jonah Hex</td>
-<td>Jimmy Hayward</td></tr>
+<td>Джона Хекс</td>
+<td>Джимми Хейуорд</td></tr>
 <tr>
-<td>Iron Man 2</td>
-<td>Jon Favreau</td></tr>
+<td>Железный человек 2</td>
+<td>Джон Фавро</td></tr>
 <tr>
-<td>Watchmen</td>
-<td>Zack Snyder</td></tr>
+<td>Стражи</td>
+<td>Зак Снайдер</td></tr>
 <tr>
-<td>The Dark Knight</td>
-<td>Christopher Nolan</td></tr>
+<td>Темный рыцарь</td>
+<td>Кристофер Нолан</td></tr>
 <tr>
-<td>The Incredible Hulk</td>
-<td>Louis Leterrier</td></tr>
+<td>Невероятный Халк</td>
+<td>Луи Летерье</td></tr>
 <tr>
-<td>Iron Man</td>
-<td>Jon Favreau</td></tr>
+<td>Железный Человек</td>
+<td>Джон Фавро</td></tr>
 <tr>
-<td>Superman Returns</td>
-<td>Bryan Singer</td></tr>
+<td>Возвращение Супермена</td>
+<td>Брайан Сингер</td></tr>
 <tr>
-<td>Batman Begins</td>
-<td>Christopher Nolan</td></tr>
+<td>Бэтмен начинается</td>
+<td>Кристофер Нолан</td></tr>
 <tr>
-<td>Catwoman</td>
-<td>Pitof</td></tr>
-</tbody></table>
+<td>Женщина-кошка</td>
+<td>Питоф</td></tr>
+</tbody></table></small>
+<p>А можно «переименовать» колонки:</p>
+<pre><code>{{ data.datasets.examples.movies | to_table([&quot;name_ru&quot;,&quot;director_ru&quot;] , [&quot;Название&quot; , &quot;Режиссер&quot;]) }}
+</code></pre>
+<p><small><table></p>
+<thead><tr><th>Название</th><th>Режиссер</th></tr></thead><tbody><tr>
+<td>Черная пантера: Ваканда навсегда</td>
+<td>Райан Куглер</td></tr>
+<tr>
+<td>Черный Адам</td>
+<td>Жауме Кольет-Серра</td></tr>
+<tr>
+<td>Тор: Любовь и гром</td>
+<td>Тайка Вайтити</td></tr>
+<tr>
+<td>Доктор Стрэндж в мультивселенной безумия</td>
+<td>Сэм Рэйми</td></tr>
+<tr>
+<td>Бэтмен</td>
+<td>Мэтт Ривз</td></tr>
+<tr>
+<td>Человек-паук: Нет пути домой</td>
+<td>Джон Уоттс</td></tr>
+<tr>
+<td>Вечные</td>
+<td>Хлоя Чжао</td></tr>
+<tr>
+<td>Шан-Чи и легенда о десяти кольцах</td>
+<td>Дестин Дэниел Креттон</td></tr>
+<tr>
+<td>Отряд Самоубийц</td>
+<td>Джеймс Ганн</td></tr>
+<tr>
+<td>Черная Вдова</td>
+<td>Кейт Шортланд</td></tr>
+<tr>
+<td>Лига справедливости Зака ​​Снайдера</td>
+<td>Зак Снайдер</td></tr>
+<tr>
+<td>Чудо-женщина 1984</td>
+<td>Пэтти Дженкинс</td></tr>
+<tr>
+<td>Хищные птицы и Потрясающая история Харли Квинн</td>
+<td>Кэти Янь</td></tr>
+<tr>
+<td>Джокер</td>
+<td>Тодд Филлипс</td></tr>
+<tr>
+<td>Человек-паук: Вдали от дома</td>
+<td>Джон Уоттс</td></tr>
+<tr>
+<td>Мстители: Финал</td>
+<td>Энтони Руссо, Джо Руссо</td></tr>
+<tr>
+<td>Шазам!</td>
+<td>Дэвид Ф. Сандберг</td></tr>
+<tr>
+<td>Капитан Марвел</td>
+<td>Анна Боден, Райан Флек</td></tr>
+<tr>
+<td>Аквамен</td>
+<td>Джеймс Ван</td></tr>
+<tr>
+<td>Человек-муравей и Оса</td>
+<td>Пейтон Рид</td></tr>
+<tr>
+<td>Мстители: Война бесконечности</td>
+<td>Энтони Руссо, Джо Руссо</td></tr>
+<tr>
+<td>Черная пантера</td>
+<td>Райан Куглер</td></tr>
+<tr>
+<td>Лига Справедливости</td>
+<td>Зак Снайдер</td></tr>
+<tr>
+<td>Тор: Рагнарёк</td>
+<td>Тайка Вайтити</td></tr>
+<tr>
+<td>Чудо-женщина</td>
+<td>Пэтти Дженкинс</td></tr>
+<tr>
+<td>Человек-паук: Возвращение домой</td>
+<td>Джон Уоттс</td></tr>
+<tr>
+<td>Стражи Галактики Том 2</td>
+<td>Джеймс Ганн</td></tr>
+<tr>
+<td>Доктор Стрэндж</td>
+<td>Скотт Дерриксон</td></tr>
+<tr>
+<td>Отряд Самоубийц</td>
+<td>Дэвид Эйр</td></tr>
+<tr>
+<td>Капитан Америка: Противостояние</td>
+<td>Энтони Руссо, Джо Руссо</td></tr>
+<tr>
+<td>Бэтмен против Супермена: На заре справедливости</td>
+<td>Зак Снайдер</td></tr>
+<tr>
+<td>Человек-муравей</td>
+<td>Пейтон Рид</td></tr>
+<tr>
+<td>Мстители: Эра Альтрона</td>
+<td>Джосс Уидон</td></tr>
+<tr>
+<td>Стражи Галактики</td>
+<td>Джеймс Ганн</td></tr>
+<tr>
+<td>Капитан Америка: Зимний Солдат</td>
+<td>Энтони Руссо, Джо Руссо</td></tr>
+<tr>
+<td>Тор: Царство тьмы</td>
+<td>Алан Тейлор</td></tr>
+<tr>
+<td>Еловек из стали</td>
+<td>Зак Снайдер</td></tr>
+<tr>
+<td>Железный человек 3</td>
+<td>Шейн Блэк</td></tr>
+<tr>
+<td>Возрождение Темного Рыцаря</td>
+<td>Кристофер Нолан</td></tr>
+<tr>
+<td>Мстители</td>
+<td>Джосс Уидон</td></tr>
+<tr>
+<td>Капитан Америка: Первый мститель</td>
+<td>Джо Джонстон</td></tr>
+<tr>
+<td>Зеленый Фонарь</td>
+<td>Мартин Кэмпбелл</td></tr>
+<tr>
+<td>Тор</td>
+<td>Кеннет Брана</td></tr>
+<tr>
+<td>Джона Хекс</td>
+<td>Джимми Хейуорд</td></tr>
+<tr>
+<td>Железный человек 2</td>
+<td>Джон Фавро</td></tr>
+<tr>
+<td>Стражи</td>
+<td>Зак Снайдер</td></tr>
+<tr>
+<td>Темный рыцарь</td>
+<td>Кристофер Нолан</td></tr>
+<tr>
+<td>Невероятный Халк</td>
+<td>Луи Летерье</td></tr>
+<tr>
+<td>Железный Человек</td>
+<td>Джон Фавро</td></tr>
+<tr>
+<td>Возвращение Супермена</td>
+<td>Брайан Сингер</td></tr>
+<tr>
+<td>Бэтмен начинается</td>
+<td>Кристофер Нолан</td></tr>
+<tr>
+<td>Женщина-кошка</td>
+<td>Питоф</td></tr>
+</tbody></table></small>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
       Исходный
@@ -273,20 +433,34 @@ doc: to_table_flt_ru<br />
 <br />
 {% endraw %}<br />
 <br />
- Фильтр принимает дополнительный параметр — список колонок, которые<br />
-надо вывести. Например, можно вывести из [ этой таблички ](/+name:movies_table_ru) только часть столбцов,<br />
+ Фильтр принимает дополнительные параметр — список колонок, которые<br />
+надо вывести и список заголовков (заголовки — с версии 0.1.8b, см. внизу). Например, можно вывести из [ этой таблички ](/+name:movies_table_ru) только часть столбцов,<br />
 чтобы уместить на странице:<br />
 {% raw %}<br />
 <br />
 ```<br />
-{{ data.datasets.examples.movies | to_table([&quot;name_en&quot;,&quot;director_en&quot;]) }}<br />
+{{ data.datasets.examples.movies | to_table([&quot;name_ru&quot;,&quot;director_ru&quot;]) }}<br />
 ```<br />
 <br />
 {% endraw %}<br />
 <br />
 Получится так:<br />
 <br />
-{{ data.datasets.examples.movies | to_table([&quot;name_en&quot;,&quot;director_en&quot;]) }}<br />
+&lt;small&gt;{{ data.datasets.examples.movies | to_table([&quot;name_ru&quot;,&quot;director_ru&quot;]) }}&lt;/small&gt;<br />
+<br />
+А можно «переименовать» колонки:<br />
+<br />
+{% raw %}<br />
+<br />
+```<br />
+{{ data.datasets.examples.movies | to_table([&quot;name_ru&quot;,&quot;director_ru&quot;] , [&quot;Название&quot; , &quot;Режиссер&quot;]) }}<br />
+```<br />
+<br />
+{% endraw %}<br />
+<br />
+&lt;small&gt;{{ data.datasets.examples.movies | to_table([&quot;name_ru&quot;,&quot;director_ru&quot;] , [&quot;Название&quot; , &quot;Режиссер&quot;]) }}&lt;/small&gt;<br />
+<br />
+<br />
 </div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>

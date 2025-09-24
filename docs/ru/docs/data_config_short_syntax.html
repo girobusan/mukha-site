@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Сокращенный синтаксис конфигурационного файла данных :: Mukha SSG</title>
+  <meta property="og:title" content="Сокращенный синтаксис конфигурационного файла данных" />
+  <meta property="og:description" content="Для удобства и краткости некоторые записи конфигурационного файла данных можно сокращать." />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/ru/docs/data_config_short_syntax.html" src="../../_js/client.js"></script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Примеры
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Поиск"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Муха</a></li>
+    <li><a href="index.html">Документация</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Сокращенный синтаксис конфигурационного файла данных</h1>
+<!--ru-->
+
+  <div class="content mb-6">
+    <p>Для удобства и краткости некоторые записи конфигурационного файла данных можно сокращать.</p>
+<hr>
+<h2>Сокращение частых терминов</h2>
+<p>Ключи <code>task</code> и <code>dataset</code> можно сокращать до <code>T</code> и <code>D</code> соответственно.</p>
+<pre><code class="language-yaml">
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">slugify</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">tables.movies</span>
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">slug</span>
+  
+<span class="hljs-comment"># можно так:</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">T:</span> <span class="hljs-string">slugify</span>
+  <span class="hljs-attr">D:</span> <span class="hljs-string">tables.movies</span>
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">slug</span> 
+
+</code></pre>
+<p>Если в нескольких операциях, описанных подряд, используется один датасет, ключ <code>dataset</code> можно полностью пропустить, в процессе обработки будет подставлен последний упомянутый датасет:</p>
+<pre><code class="language-yaml">
+<span class="hljs-bullet">-</span> <span class="hljs-attr">T:</span> <span class="hljs-string">slugify</span>
+  <span class="hljs-attr">D:</span> <span class="hljs-string">tables.movies</span>
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">slug</span> 
+  
+<span class="hljs-bullet">-</span> <span class="hljs-attr">T:</span> <span class="hljs-string">idfy</span>  <span class="hljs-comment"># будет использован датасет tables.movies</span>
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">description</span>
+
+</code></pre>
+<h2>Короткая запись для render и aggregate</h2>
+<p>Для операций <code>render</code> и  <code>aggregate</code> вместо двух ключей — <code>task</code> и <code>type</code> можно использовать сокращенную запись:</p>
+<pre><code class="language-yaml">
+<span class="hljs-comment"># вместо:</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">render</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">row</span>
+  <span class="hljs-attr">path:</span> <span class="hljs-string">/examples/movies/[movie_slug].html</span>
+  <span class="hljs-attr">meta:</span>
+    <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[name]&quot;</span>
+    
+<span class="hljs-comment"># можно:</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">render:</span> <span class="hljs-string">row</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">path:</span> <span class="hljs-string">/examples/movies/[movie_slug].html</span>
+  <span class="hljs-attr">meta:</span>
+    <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[name]&quot;</span>
+    
+<span class="hljs-comment"># или еще короче:  </span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">R:</span> <span class="hljs-string">row</span>
+  <span class="hljs-attr">D:</span> <span class="hljs-string">examples.movies</span>
+  <span class="hljs-attr">path:</span> <span class="hljs-string">/examples/movies/[movie_slug].html</span>
+  <span class="hljs-attr">meta:</span>
+    <span class="hljs-attr">title:</span> <span class="hljs-string">&quot;[name]&quot;</span>
+    
+</code></pre>
+<p>Для aggregate:</p>
+<pre><code class="language-yaml"><span class="hljs-comment"># вместо</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">task:</span> <span class="hljs-string">aggregate</span>
+  <span class="hljs-attr">type:</span> <span class="hljs-string">count_u</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">table.actors</span>
+  <span class="hljs-attr">col:</span> <span class="hljs-string">movie_name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">filmed_in</span>
+  
+<span class="hljs-comment"># можно </span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">aggregate:</span> <span class="hljs-string">count_u</span>
+  <span class="hljs-attr">dataset:</span> <span class="hljs-string">table.actors</span>
+  <span class="hljs-attr">col:</span> <span class="hljs-string">movie_name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">filmed_in</span>
+  
+<span class="hljs-comment"># или</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">A:</span> <span class="hljs-string">count_u</span>
+  <span class="hljs-attr">D:</span> <span class="hljs-string">table.actors</span>
+  <span class="hljs-attr">col:</span> <span class="hljs-string">movie_name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">filmed_in</span>
+  
+</code></pre>
+<h2>Смена «текущего» датасета</h2>
+<p>Для наглядности записи можно определять датасет для последующих операций отдельным пунктом:</p>
+<pre><code class="language-yaml">
+<span class="hljs-bullet">-</span> <span class="hljs-attr">D:</span> <span class="hljs-string">table.actors</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">A:</span> <span class="hljs-string">count_u</span>
+  <span class="hljs-attr">col:</span> <span class="hljs-string">movie_name</span>
+  <span class="hljs-attr">output_col:</span> <span class="hljs-string">filmed_in</span>
+
+<span class="hljs-bullet">-</span> <span class="hljs-attr">T:</span> <span class="hljs-string">idfy</span>  
+  <span class="hljs-attr">input_col:</span> <span class="hljs-string">description</span>
+
+
+
+</code></pre>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Исходный
+      текст
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: &quot;Сокращенный синтаксис конфигурационного файла данных&quot;<br />
+tags: <br />
+date: &quot;2025.09.21 10:45&quot;<br />
+id: 940ef186e4f41a0c5bd9ed872fe2bce2<br />
+doc: data_conf_short_ru<br />
+---<br />
+<br />
+Для удобства и краткости некоторые записи конфигурационного файла данных можно сокращать.<br />
+<br />
+---<br />
+<br />
+<br />
+<br />
+## Сокращение частых терминов<br />
+<br />
+Ключи `task` и `dataset` можно сокращать до `T` и `D` соответственно.<br />
+<br />
+```yaml<br />
+<br />
+- task: slugify<br />
+  dataset: tables.movies<br />
+  input_col: name<br />
+  output_col: slug<br />
+  <br />
+# можно так:<br />
+<br />
+- T: slugify<br />
+  D: tables.movies<br />
+  input_col: name<br />
+  output_col: slug <br />
+<br />
+```<br />
+<br />
+Если в нескольких операциях, описанных подряд, используется один датасет, ключ `dataset` можно полностью пропустить, в процессе обработки будет подставлен последний упомянутый датасет:<br />
+<br />
+```yaml<br />
+<br />
+- T: slugify<br />
+  D: tables.movies<br />
+  input_col: name<br />
+  output_col: slug <br />
+  <br />
+- T: idfy  # будет использован датасет tables.movies<br />
+  input_col: description<br />
+<br />
+```<br />
+<br />
+## Короткая запись для render и aggregate<br />
+<br />
+Для операций `render` и  `aggregate` вместо двух ключей — `task` и `type` можно использовать сокращенную запись:<br />
+<br />
+```yaml<br />
+<br />
+# вместо:<br />
+<br />
+- task: render<br />
+  dataset: examples.movies<br />
+  type: row<br />
+  path: /examples/movies/[movie_slug].html<br />
+  meta:<br />
+    title: &quot;[name]&quot;<br />
+    <br />
+# можно:<br />
+<br />
+- render: row<br />
+  dataset: examples.movies<br />
+  path: /examples/movies/[movie_slug].html<br />
+  meta:<br />
+    title: &quot;[name]&quot;<br />
+    <br />
+# или еще короче:  <br />
+<br />
+- R: row<br />
+  D: examples.movies<br />
+  path: /examples/movies/[movie_slug].html<br />
+  meta:<br />
+    title: &quot;[name]&quot;<br />
+    <br />
+```<br />
+Для aggregate:<br />
+<br />
+```yaml<br />
+# вместо<br />
+<br />
+- task: aggregate<br />
+  type: count_u<br />
+  dataset: table.actors<br />
+  col: movie_name<br />
+  output_col: filmed_in<br />
+  <br />
+# можно <br />
+<br />
+- aggregate: count_u<br />
+  dataset: table.actors<br />
+  col: movie_name<br />
+  output_col: filmed_in<br />
+  <br />
+# или<br />
+<br />
+- A: count_u<br />
+  D: table.actors<br />
+  col: movie_name<br />
+  output_col: filmed_in<br />
+  <br />
+```<br />
+<br />
+## Смена «текущего» датасета<br />
+<br />
+Для наглядности записи можно определять датасет для последующих операций отдельным пунктом:<br />
+<br />
+```yaml<br />
+<br />
+- D: table.actors<br />
+<br />
+- A: count_u<br />
+  col: movie_name<br />
+  output_col: filmed_in<br />
+<br />
+- T: idfy  <br />
+  input_col: description<br />
+<br />
+<br />
+<br />
+```<br />
+<br />
+<br />
+<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Сделано Мухой</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

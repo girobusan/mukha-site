@@ -2,10 +2,31 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://example.site</id>
     <title>Mukha SSG</title>
-    <updated>2025-09-01T18:32:39.880Z</updated>
+    <updated>2025-09-24T15:27:11.097Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://example.site"/>
     <subtitle>Быстрый и простой генератор статичных сайтов.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Pagination]]></title>
+        <id>https://example.site/en/examples/split_2_pages.html</id>
+        <link href="https://example.site/en/examples/split_2_pages.html"/>
+        <updated>2025-09-24T08:19:00.000Z</updated>
+        <summary type="html"><![CDATA[ ]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Разбиение списка на страницы]]></title>
+        <id>https://example.site/ru/examples/split_2_pages.html</id>
+        <link href="https://example.site/ru/examples/split_2_pages.html"/>
+        <updated>2025-09-24T08:19:00.000Z</updated>
+        <summary type="html"><![CDATA[ ]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Сокращенный синтаксис конфигурационного файла данных]]></title>
+        <id>https://example.site/ru/docs/data_config_short_syntax.html</id>
+        <link href="https://example.site/ru/docs/data_config_short_syntax.html"/>
+        <updated>2025-09-21T07:45:00.000Z</updated>
+        <summary type="html"><![CDATA[Для удобства и краткости некоторые записи конфигурационного файла данных можно сокращать.]]></summary>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Changing the Theme]]></title>
         <id>https://example.site/en/docs/change_theme.html</id>
@@ -56,6 +77,14 @@
         <link href="https://example.site/ru/docs/create_site.html"/>
         <updated>2025-08-13T16:05:00.000Z</updated>
         <summary type="html"><![CDATA[Чтобы быстро создать сайт, можно запустить генератор с ключом <code>-n</code> (<code>--new</code>)]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hooks]]></title>
+        <id>https://example.site/en/docs/hooks.html</id>
+        <link href="https://example.site/en/docs/hooks.html"/>
+        <updated>2025-08-12T15:54:00.000Z</updated>
+        <summary type="html"><![CDATA[Hooks allow running arbitrary scripts during site generation.
+They can be written in any language.]]></summary>
     </entry>
     <entry>
         <title type="html"><![CDATA[Хуки]]></title>
@@ -198,34 +227,5 @@ css and site template development into a single process.]]></summary>
         <link href="https://example.site/en/docs/index.html"/>
         <updated>1970-01-01T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[Docs]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Installation]]></title>
-        <id>https://example.site/en/docs/install.html</id>
-        <link href="https://example.site/en/docs/install.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Three installation methods]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Java Script API]]></title>
-        <id>https://example.site/en/docs/js_api.html</id>
-        <link href="https://example.site/en/docs/js_api.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[API for custom scripts]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Lister object]]></title>
-        <id>https://example.site/en/docs/lister.html</id>
-        <link href="https://example.site/en/docs/lister.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[The lister object is an <em>array-like</em> object designed
-for storing and processing lists of <a href="https://example.site/en/docs/page_obj.html">pages</a>.]]></summary>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Page object]]></title>
-        <id>https://example.site/en/docs/page_obj.html</id>
-        <link href="https://example.site/en/docs/page_obj.html"/>
-        <updated>1970-01-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[The page object represents a page on the site. The following fields are available in it:]]></summary>
     </entry>
 </feed>

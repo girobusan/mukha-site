@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hooks :: Mukha SSG</title>
+  <meta property="og:title" content="Hooks" />
+  <meta property="og:description" content="Hooks allow running arbitrary scripts during site generation. They can be written in any language." />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/en/docs/hooks.html" src="../../_js/client.js"></script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="index.html">
+        Documentation
+      </a>
+      <a class="navbar-item has-text-white" href="../examples/index.html">
+        Examples
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Search"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" data-pagefind-body>
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Mukha</a></li>
+    <li><a href="index.html">Documentation</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Hooks</h1>
+<!--en-->
+
+  <div class="content mb-6">
+    <p>Hooks are scripts that automatically run before and after site generation.
+They can be used, for example, to download external content, process images, and perform other resource-intensive tasks. Hooks can be written in any programming language.</p>
+<hr>
+<h2>Configuration</h2>
+<p>To use hooks, you need to create a <code>hooks</code> subdirectory in the <a href="site_dir.html">site directory</a> and place the corresponding scripts there.</p>
+<p>When a hook is triggered, files from the <code>hooks</code> directory with names matching the hook name (regardless of extension) will be executed first, followed by files from the <code>hooks/&lt;hook name&gt;.d</code> directory in alphabetical order. For hooks with <code>.js</code>, <code>.mjs</code>, and <code>.cjs</code> extensions, a separate Node.js process is started; other types are simply executed (i.e., they must be executable by OS).</p>
+<p>The script's working directory will be the site directory, and additional information (see below) will be passed to standard input. Hook output is buffered and printed after completion.</p>
+<h2>Available Hooks</h2>
+<h3>before</h3>
+<p>Runs before generation.</p>
+<h3>after</h3>
+<p>Runs after generation is complete; receives the output directory on standard input.
+In Node.js, it can be used like this:</p>
+<pre><code class="language-js"><span class="hljs-comment">// hooks/after.d/myhook.js</span>
+process.<span class="hljs-property">stdio</span>.<span class="hljs-title function_">on</span>(<span class="hljs-string">&quot;data&quot;</span> , 
+<span class="hljs-function">(<span class="hljs-params">d</span>)=&gt;</span>{
+  <span class="hljs-keyword">let</span> output_dir = d.<span class="hljs-title function_">toString</span>(); 
+  <span class="hljs-comment">// do stuff</span>
+})
+
+</code></pre>
+<p>Or in a shell script, publishing via surge.sh:</p>
+<pre><code class="language-bash"><span class="hljs-meta">#!/usr/bin/env sh</span>
+<span class="hljs-comment"># hooks/after.sh</span>
+<span class="hljs-built_in">read</span> PRJ_DIR  <span class="hljs-comment"># Read the input</span>
+surge --project <span class="hljs-variable">$PRJ_DIR</span>
+
+</code></pre>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Page source
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: &quot;Hooks&quot;<br />
+tags: <br />
+date: &quot;2025.08.12 18:54&quot;<br />
+id: b9cc5c7eee2ed604a95e22bedf621fed<br />
+doc: hooks_en<br />
+excerpt: |-<br />
+  Hooks allow running arbitrary scripts during site generation.<br />
+  They can be written in any language.<br />
+---<br />
+<br />
+Hooks are scripts that automatically run before and after site generation.<br />
+They can be used, for example, to download external content, process images, and perform other resource-intensive tasks. Hooks can be written in any programming language.<br />
+<br />
+---<br />
+<br />
+## Configuration<br />
+<br />
+To use hooks, you need to create a `hooks` subdirectory in the [site directory](/+doc:site_dir_en) and place the corresponding scripts there.<br />
+<br />
+When a hook is triggered, files from the `hooks` directory with names matching the hook name (regardless of extension) will be executed first, followed by files from the `hooks/&lt;hook name&gt;.d` directory in alphabetical order. For hooks with `.js`, `.mjs`, and `.cjs` extensions, a separate Node.js process is started; other types are simply executed (i.e., they must be executable by OS).<br />
+<br />
+The script&#39;s working directory will be the site directory, and additional information (see below) will be passed to standard input. Hook output is buffered and printed after completion.<br />
+<br />
+## Available Hooks<br />
+<br />
+### before<br />
+<br />
+Runs before generation.<br />
+<br />
+### after<br />
+<br />
+Runs after generation is complete; receives the output directory on standard input.<br />
+In Node.js, it can be used like this:<br />
+<br />
+```js<br />
+// hooks/after.d/myhook.js<br />
+process.stdio.on(&quot;data&quot; , <br />
+(d)=&gt;{<br />
+  let output_dir = d.toString(); <br />
+  // do stuff<br />
+})<br />
+<br />
+```<br />
+<br />
+Or in a shell script, publishing via surge.sh:<br />
+<br />
+```bash<br />
+#!/usr/bin/env sh<br />
+# hooks/after.sh<br />
+read PRJ_DIR  # Read the input<br />
+surge --project $PRJ_DIR<br />
+<br />
+```<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Made with Mukha</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

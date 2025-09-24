@@ -11,8 +11,7 @@
   <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
-  <script data-location="/ru/examples/template_tags.html" src="../../_js/client.js">
-</script>
+  <script data-location="/ru/examples/template_tags.html" src="../../_js/client.js"></script>
   <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
   <script src="../../_theme/highlight/highlight.min.js"></script>
@@ -73,12 +72,18 @@
   <div class="content mb-6">
     <p>В тексте можно использовать теги шаблонизатора. Например,
 чтобы вывести какую-то информацию:</p>
-<h4>Метаданные страницы:</h4>
+<h3>Метаданные страницы:</h3>
 <p>Код:</p>
 <pre><code> **{{ page.meta.title }}** 
 </code></pre>
 <p>Результат:</p>
 <p><strong>Теги шаблонизатора</strong></p>
+<h3>Данные</h3>
+<p>Код:</p>
+<pre><code>**Фильмов в таблице: {{ datasets.examples.movies.length }}**
+</code></pre>
+<p>Результат:</p>
+<p><strong>Фильмов в таблице: 52</strong></p>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
       Исходный
@@ -104,7 +109,7 @@ mymeta: test<br />
 В тексте можно использовать теги шаблонизатора. Например,<br />
 чтобы вывести какую-то информацию:<br />
 <br />
-#### Метаданные страницы:<br />
+### Метаданные страницы:<br />
 <br />
 Код:<br />
 <br />
@@ -115,6 +120,18 @@ mymeta: test<br />
 Результат:<br />
 <br />
 **{{ page.meta.title }}**<br />
+<br />
+### Данные<br />
+<br />
+Код:<br />
+<br />
+```<br />
+{% raw %}**Фильмов в таблице: {{ datasets.examples.movies.length }}**{% endraw %}<br />
+```<br />
+<br />
+Результат:<br />
+<br />
+**Фильмов в таблице: {{ datasets.examples.movies.length }}**<br />
 <br />
 <br />
 </div>

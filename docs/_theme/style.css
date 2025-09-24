@@ -19977,3 +19977,12 @@ figure.image.noresize img {
   display: block;
   margin: 0 auto;
 }
+
+h1 strong,
+h2 strong,
+h3 strong,
+h4 strong,
+h5 strong,
+h6 strong {
+  font-weight: normal;
+}

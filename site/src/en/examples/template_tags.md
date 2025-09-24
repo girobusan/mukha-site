@@ -11,11 +11,22 @@ to display some information:
 
 Code:
 
+```
 {% raw %} {{ page.meta.title }} {% endraw %}
-
+```
 
 Result:
 
 **{{ page.meta.title }}**
 
+### Data
 
+Code:
+
+```
+{% raw %}**Movies in the table: {{ datasets.examples.movies.length }}**{% endraw %}
+```
+
+Result:
+
+**Movies in the table: {{ datasets.examples.movies.length }}**

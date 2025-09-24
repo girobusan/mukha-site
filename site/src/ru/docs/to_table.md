@@ -15,17 +15,31 @@ doc: to_table_flt_ru
 
 {% endraw %}
 
- Фильтр принимает дополнительный параметр — список колонок, которые
-надо вывести. Например, можно вывести из [ этой таблички ](/+name:movies_table_ru) только часть столбцов,
+ Фильтр принимает дополнительные параметр — список колонок, которые
+надо вывести и список заголовков (заголовки — с версии 0.1.8b, см. внизу). Например, можно вывести из [ этой таблички ](/+name:movies_table_ru) только часть столбцов,
 чтобы уместить на странице:
 {% raw %}
 
 ```
-{{ data.datasets.examples.movies | to_table(["name_en","director_en"]) }}
+{{ data.datasets.examples.movies | to_table(["name_ru","director_ru"]) }}
 ```
 
 {% endraw %}
 
 Получится так:
 
-{{ data.datasets.examples.movies | to_table(["name_en","director_en"]) }}
+<small>{{ data.datasets.examples.movies | to_table(["name_ru","director_ru"]) }}</small>
+
+А можно «переименовать» колонки:
+
+{% raw %}
+
+```
+{{ data.datasets.examples.movies | to_table(["name_ru","director_ru"] , ["Название" , "Режиссер"]) }}
+```
+
+{% endraw %}
+
+<small>{{ data.datasets.examples.movies | to_table(["name_ru","director_ru"] , ["Название" , "Режиссер"]) }}</small>
+
+

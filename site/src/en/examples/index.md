@@ -8,6 +8,7 @@ name: examples_intro_en
 #### Using template tags in text
 
 - [ Basic examples ](/+name:template_tags_en)
+- [ Split to pages ](/+name:split_en)
 
 ####   Generating pages from data
 

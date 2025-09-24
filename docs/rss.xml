@@ -4,9 +4,30 @@
         <title>Mukha SSG</title>
         <link>https://example.site</link>
         <description>Быстрый и простой генератор статичных сайтов.</description>
-        <lastBuildDate>Mon, 01 Sep 2025 18:32:39 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 24 Sep 2025 15:27:11 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Pagination]]></title>
+            <link>https://example.site/en/examples/split_2_pages.html</link>
+            <guid isPermaLink="false">https://example.site/en/examples/split_2_pages.html</guid>
+            <pubDate>Wed, 24 Sep 2025 08:19:00 GMT</pubDate>
+            <description><![CDATA[ ]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Разбиение списка на страницы]]></title>
+            <link>https://example.site/ru/examples/split_2_pages.html</link>
+            <guid isPermaLink="false">https://example.site/ru/examples/split_2_pages.html</guid>
+            <pubDate>Wed, 24 Sep 2025 08:19:00 GMT</pubDate>
+            <description><![CDATA[ ]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Сокращенный синтаксис конфигурационного файла данных]]></title>
+            <link>https://example.site/ru/docs/data_config_short_syntax.html</link>
+            <guid isPermaLink="false">https://example.site/ru/docs/data_config_short_syntax.html</guid>
+            <pubDate>Sun, 21 Sep 2025 07:45:00 GMT</pubDate>
+            <description><![CDATA[Для удобства и краткости некоторые записи конфигурационного файла данных можно сокращать.]]></description>
+        </item>
         <item>
             <title><![CDATA[Changing the Theme]]></title>
             <link>https://example.site/en/docs/change_theme.html</link>
@@ -57,6 +78,14 @@
             <guid isPermaLink="false">https://example.site/ru/docs/create_site.html</guid>
             <pubDate>Wed, 13 Aug 2025 16:05:00 GMT</pubDate>
             <description><![CDATA[Чтобы быстро создать сайт, можно запустить генератор с ключом <code>-n</code> (<code>--new</code>)]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Hooks]]></title>
+            <link>https://example.site/en/docs/hooks.html</link>
+            <guid isPermaLink="false">https://example.site/en/docs/hooks.html</guid>
+            <pubDate>Tue, 12 Aug 2025 15:54:00 GMT</pubDate>
+            <description><![CDATA[Hooks allow running arbitrary scripts during site generation.
+They can be written in any language.]]></description>
         </item>
         <item>
             <title><![CDATA[Хуки]]></title>
@@ -199,35 +228,6 @@ css and site template development into a single process.]]></description>
             <guid isPermaLink="false">https://example.site/en/docs/index.html</guid>
             <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
             <description><![CDATA[Docs]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Installation]]></title>
-            <link>https://example.site/en/docs/install.html</link>
-            <guid isPermaLink="false">https://example.site/en/docs/install.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[Three installation methods]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Java Script API]]></title>
-            <link>https://example.site/en/docs/js_api.html</link>
-            <guid isPermaLink="false">https://example.site/en/docs/js_api.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[API for custom scripts]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Lister object]]></title>
-            <link>https://example.site/en/docs/lister.html</link>
-            <guid isPermaLink="false">https://example.site/en/docs/lister.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[The lister object is an <em>array-like</em> object designed
-for storing and processing lists of <a href="https://example.site/en/docs/page_obj.html">pages</a>.]]></description>
-        </item>
-        <item>
-            <title><![CDATA[Page object]]></title>
-            <link>https://example.site/en/docs/page_obj.html</link>
-            <guid isPermaLink="false">https://example.site/en/docs/page_obj.html</guid>
-            <pubDate>Thu, 01 Jan 1970 00:00:00 GMT</pubDate>
-            <description><![CDATA[The page object represents a page on the site. The following fields are available in it:]]></description>
         </item>
     </channel>
 </rss>

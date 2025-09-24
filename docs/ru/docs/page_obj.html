@@ -11,8 +11,7 @@
   <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
-  <script data-location="/ru/docs/page_obj.html" src="../../_js/client.js">
-</script>
+  <script data-location="/ru/docs/page_obj.html" src="../../_js/client.js"></script>
   <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
   <script src="../../_theme/highlight/highlight.min.js"></script>
@@ -82,7 +81,7 @@
 <li><code>html</code> — после обработки, отрендеренный в html текст (доступен только в шаблонах).</li>
 <li><code>meta</code> —  метаданные страницы (см. ниже)</li>
 <li><code>file</code> —  <a href="file_obj.html"> объект, представляющий файл </a>. Из важного —  <code>file.path</code> содержит путь до файла <strong>на сайте.</strong></li>
-<li><code>permalink</code> — ссылка на страницу на сайте, то же, что и <code>file.path</code></li>
+<li><code>permalink</code> — ссылка на страницу на сайте, то же, что и <code>file.path</code>, но у виртуальных страниц указывает на соответствующую реальную (у многостраничных — на первую страницу)</li>
 <li><code>virtual</code> —  true у виртуальных страниц</li>
 <li><code>index</code> — true, если страница является файлом <code>index.md</code> или любой из его подстраниц</li>
 <li><code>list</code> — поле определено, если основным контентом страницы является список. У страниц тегов в этом поле находится список страниц, помеченных тегом.</li>
@@ -109,6 +108,7 @@
 <li><code>image</code> — картинка для страницы, если не определена, Муха попытается найти первую картинку в тексте</li>
 <li><code>excerpt</code> — выдержка, если не определена, может быть заполнена первым абзацем текста</li>
 <li><code>draft</code> — если истинно, файл пропускается при обработке</li>
+<li><code>keywords</code>— списко ключевых слов для встроенного поиска (необязательно)</li>
 </ul>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
@@ -140,7 +140,7 @@ doc: page_obj_ru<br />
 - `html` — после обработки, отрендеренный в html текст (доступен только в шаблонах).<br />
 - `meta` —  метаданные страницы (см. ниже)<br />
 - `file` —  [ объект, представляющий файл ](/+doc:file_obj_ru). Из важного —  `file.path` содержит путь до файла **на сайте.**<br />
-- `permalink` — ссылка на страницу на сайте, то же, что и `file.path`<br />
+- `permalink` — ссылка на страницу на сайте, то же, что и `file.path`, но у виртуальных страниц указывает на соответствующую реальную (у многостраничных — на первую страницу)<br />
 - `virtual` —  true у виртуальных страниц<br />
 - `index` — true, если страница является файлом `index.md` или любой из его подстраниц<br />
 - `list` — поле определено, если основным контентом страницы является список. У страниц тегов в этом поле находится список страниц, помеченных тегом.<br />
@@ -168,6 +168,7 @@ doc: page_obj_ru<br />
 - `image` — картинка для страницы, если не определена, Муха попытается найти первую картинку в тексте<br />
 - `excerpt` — выдержка, если не определена, может быть заполнена первым абзацем текста<br />
 - `draft` — если истинно, файл пропускается при обработке<br />
+- `keywords`— списко ключевых слов для встроенного поиска (необязательно)<br />
 </div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>

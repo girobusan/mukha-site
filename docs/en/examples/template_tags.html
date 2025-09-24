@@ -11,8 +11,7 @@
   <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
-  <script data-location="/en/examples/template_tags.html" src="../../_js/client.js">
-</script>
+  <script data-location="/en/examples/template_tags.html" src="../../_js/client.js"></script>
   <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
   <script src="../../_theme/highlight/highlight.min.js"></script>
@@ -75,9 +74,16 @@
 to display some information:</p>
 <h4>Page metadata:</h4>
 <p>Code:</p>
-<p>{{ page.meta.title }}</p>
+<pre><code> {{ page.meta.title }} 
+</code></pre>
 <p>Result:</p>
 <p><strong>Template Tags</strong></p>
+<h3>Data</h3>
+<p>Code:</p>
+<pre><code>**Movies in the table: {{ datasets.examples.movies.length }}**
+</code></pre>
+<p>Result:</p>
+<p><strong>Movies in the table: 52</strong></p>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
       Page source
@@ -106,14 +112,25 @@ to display some information:<br />
 <br />
 Code:<br />
 <br />
+```<br />
 {% raw %} {{ page.meta.title }} {% endraw %}<br />
-<br />
+```<br />
 <br />
 Result:<br />
 <br />
 **{{ page.meta.title }}**<br />
 <br />
+### Data<br />
 <br />
+Code:<br />
+<br />
+```<br />
+{% raw %}**Movies in the table: {{ datasets.examples.movies.length }}**{% endraw %}<br />
+```<br />
+<br />
+Result:<br />
+<br />
+**Movies in the table: {{ datasets.examples.movies.length }}**<br />
 </div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>

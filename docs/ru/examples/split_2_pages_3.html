@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Разбиение списка на страницы :: Mukha SSG</title>
+  <meta property="og:title" content="Разбиение списка на страницы" />
+  <meta property="og:description" content="" />
+  <link href="../../_theme/style.css" rel="stylesheet">
+  <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
+  <script src="../../_theme/navbar.js">
+  </script>
+  <script data-location="/ru/examples/split_2_pages_3.html" src="../../_js/client.js"></script>
+  <script src="../../search_client.js"></script>
+  <script src="../../_theme/masonry.js"></script>
+  <script src="../../_theme/highlight/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({startOnLoad: true});
+  </script>
+</head>
+
+<body>
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <span class="navbar-item has-text-weight-bold has-text-white">
+      <a href="../index.html" class="has-text-white">
+        Mukha SSG
+      </a>
+    </span>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div id="navbarMenu" class="navbar-menu has-text-white">
+    <div class="navbar-start"></div>
+
+    <div class="navbar-end">
+      <a class="navbar-item has-text-white" href="../docs/index.html">
+        Документация
+      </a>
+      <a class="navbar-item has-text-white" href="index.html">
+        Примеры
+      </a>
+      <div class="navbar-item">
+        <input type="text" data-role="lunr-search" class="input is-small is-rounded"
+          placeholder="Поиск"></input>
+      </div></div>
+  </div>
+</nav>
+
+
+<div class="container my-6 px-3 is-max-tablet" >
+
+  <nav class="breadcrumb has-arrow-separator is-small" aria-label="breadcrumbs">
+  <ul>
+    <!-- <li><a href="../../index.html">🏠</a></li> -->
+    <li><a href="../index.html">Муха</a></li>
+    <li><a href="index.html">Примеры</a></li>
+  </ul>
+</nav>
+
+<h1 class="title is-1">Разбиение списка на страницы</h1>
+<!--ru-->
+
+  <div class="content mb-6">
+    <p>Разбиение на страницы можно использовать прямо в контенте, разделить на страницы можно любой список, не только список страниц.</p>
+<p>Важно убедиться,
+что в пределах одной физической страницы разбиение не будет вызываться дважды (т. е., чтобы
+в шаблоне этой страницы не вызывалась функция разбиения, и чтобы ни в контенте, ни в шаблоне эта функция не вызывалась более одного раза).</p>
+<p>Возможность <strong>доступна с версии 0.1.8b</strong>,
+в предыдущих версиях разбиение на страницы работало только в шаблонах.</p>
+<pre><code class="language-jinja">{# Второй параметр — количество элементов списка на одной странице #}
+{# Можно пропустить — тогда будет использовано значение #}
+{# из конфигурационного файла #}
+{{ splitToPages(datasets.examples.movies , 10) }}
+
+{# Со списком можно делать примерно что угодно #}
+{{ page.list_page| to_table([&quot;name_ru&quot; , &quot;director_ru&quot;]) }}
+
+{# В шаблоне должен быть предусмотрен вывод пагинации #}
+
+</code></pre>
+<table>
+<thead><tr><th>name_ru</th><th>director_ru</th></tr></thead><tbody><tr>
+<td>Мстители: Война бесконечности</td>
+<td>Энтони Руссо, Джо Руссо</td></tr>
+<tr>
+<td>Черная пантера</td>
+<td>Райан Куглер</td></tr>
+<tr>
+<td>Лига Справедливости</td>
+<td>Зак Снайдер</td></tr>
+<tr>
+<td>Тор: Рагнарёк</td>
+<td>Тайка Вайтити</td></tr>
+<tr>
+<td>Чудо-женщина</td>
+<td>Пэтти Дженкинс</td></tr>
+<tr>
+<td>Человек-паук: Возвращение домой</td>
+<td>Джон Уоттс</td></tr>
+<tr>
+<td>Стражи Галактики Том 2</td>
+<td>Джеймс Ганн</td></tr>
+<tr>
+<td>Доктор Стрэндж</td>
+<td>Скотт Дерриксон</td></tr>
+<tr>
+<td>Отряд Самоубийц</td>
+<td>Дэвид Эйр</td></tr>
+<tr>
+<td>Капитан Америка: Противостояние</td>
+<td>Энтони Руссо, Джо Руссо</td></tr>
+</tbody></table>
+
+    <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
+      Исходный
+      текст
+    </button>
+    
+  </div>
+
+
+
+
+
+</div>
+<nav class="pagination" role="navigation" aria-label="pagination">
+  <ul class="pagination-list is-justify-content-center">
+    <li>
+      <a href="split_2_pages.html" class="pagination-link">1</a>
+    </li>
+    <li>
+      <a href="split_2_pages_2.html" class="pagination-link">2</a>
+    </li>
+    <li>
+      <a href="" class="pagination-link is-current">3</a>
+    </li>
+    <li>
+      <a href="split_2_pages_4.html" class="pagination-link">4</a>
+    </li>
+    <li>
+      <a href="split_2_pages_5.html" class="pagination-link">5</a>
+    </li>
+    <li>
+      <a href="split_2_pages_6.html" class="pagination-link">6</a>
+    </li>
+  </ul>
+</nav>
+<div class="modal has-background-white" id="viewSource">
+  <div class="modal-background"></div>
+  <div class="modal-content px-2 py-2 has-background-white">
+    <div style="font-family: Menlo, monospace;font-size:0.8rem">---<br />
+title: &quot;Разбиение списка на страницы&quot;<br />
+tags: <br />
+date: &quot;2025.09.24 11:19&quot;<br />
+id: 0e9d04c38b03b1285f610f7f89dfee9a<br />
+excerpt: &quot; &quot;<br />
+name: split_ru<br />
+---<br />
+<br />
+Разбиение на страницы можно использовать прямо в контенте, разделить на страницы можно любой список, не только список страниц. <br />
+<br />
+Важно убедиться,<br />
+что в пределах одной физической страницы разбиение не будет вызываться дважды (т. е., чтобы<br />
+в шаблоне этой страницы не вызывалась функция разбиения, и чтобы ни в контенте, ни в шаблоне эта функция не вызывалась более одного раза). <br />
+<br />
+Возможность **доступна с версии 0.1.8b**,<br />
+в предыдущих версиях разбиение на страницы работало только в шаблонах.<br />
+<br />
+```jinja<br />
+{% raw %}<br />
+{# Второй параметр — количество элементов списка на одной странице #}<br />
+{# Можно пропустить — тогда будет использовано значение #}<br />
+{# из конфигурационного файла #}<br />
+{{ splitToPages(datasets.examples.movies , 10) }}<br />
+<br />
+{# Со списком можно делать примерно что угодно #}<br />
+{{ page.list_page| to_table([&quot;name_ru&quot; , &quot;director_ru&quot;]) }}<br />
+<br />
+{# В шаблоне должен быть предусмотрен вывод пагинации #}<br />
+{% endraw %}<br />
+```<br />
+<br />
+{{ splitToPages(datasets.examples.movies , 10) }}<br />
+{{ page.list_page| to_table([&quot;name_ru&quot; , &quot;director_ru&quot;]) }}<br />
+</div>
+  </div>
+  <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
+</div>
+<script>
+  const B = document.getElementById("viewSourceBtn");
+  const M = document.getElementById("viewSource");
+  const C = document.getElementById("unViewSource");
+  B && B.addEventListener("click", () => M.classList.add("is-active"))
+  C && C.addEventListener("click", () => M.classList.remove("is-active"))
+
+</script>
+<footer class="footer has-background-dark mt-auto" style="color: silver">
+  <div class="content">
+    <div class="container is-max-desktop px-3 is-size-7">
+      <div class="columns">
+        <div class="column m-footer-column py-0 has-text-white content">
+          Сделано Мухой</div>
+        <div class="column m-footer-column py-0 has-text-white content">
+          &copy; 2025...</div>
+        <div class="column m-footer-column py-0 has-text-white content"><p>
+</p></div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

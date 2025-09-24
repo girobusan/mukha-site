@@ -11,8 +11,7 @@
   <link href="../../_theme/highlight/styles/isbl-editor-dark.css" rel="stylesheet">
   <script src="../../_theme/navbar.js">
   </script>
-  <script data-location="/ru/docs/markdown.html" src="../../_js/client.js">
-</script>
+  <script data-location="/ru/docs/markdown.html" src="../../_js/client.js"></script>
   <script src="../../search_client.js"></script>
   <script src="../../_theme/masonry.js"></script>
   <script src="../../_theme/highlight/highlight.min.js"></script>
@@ -74,7 +73,7 @@
     <p>Страницы создаются в формате markdown с блоком метаинформации (frontmatter).
 Для примера можно посмотреть исходный код почти любой страницы на этом сайте.</p>
 <p>Для того, чтобы Муха сгенерировала html из маркдауна, в метаинформации должен быть
-определен заголовок страницы — поле title. Минимальный исходный код выглядит примерно так:</p>
+определен заголовок страницы — поле <code>title</code>. Минимальный исходный код выглядит примерно так:</p>
 <pre><code class="language-markdown">---
 <span class="hljs-section">title: &quot;Моя любимая кошка&quot;
 ---</span>
@@ -85,12 +84,13 @@
 <pre><code class="language-markdown">---
 title: &quot;Моя любимая кошка&quot;
 date: &quot;2025.12.22 13:50&quot;
-<span class="hljs-section">tags: &quot;фотки, котики, для чего еще нужен интернет&quot;
+tags: &quot;фотки, котики, для чего еще нужен интернет&quot;
+<span class="hljs-section">keywords: &quot;котик, зима&quot;
 ---</span>
 
 Итак, ....
 </code></pre>
-<p>Указывать дату крайне желательно, т. к. сортировка страниц по-умолчанию происходит по дате.</p>
+<p>Указывать дату крайне желательно, т. к. сортировка страниц по-умолчанию происходит по дате. Более подробную информацию о метаданных, используемые Мухой, можно посмотреть <a href="page_obj.html">тут, раздел «Метаданные»</a>.</p>
 
     <button class="button is-small mt-4 has-text-weight-normal" id="viewSourceBtn">
       Исходный
@@ -115,7 +115,7 @@ title: Формат страницы<br />
 Для примера можно посмотреть исходный код почти любой страницы на этом сайте.<br />
 <br />
 Для того, чтобы Муха сгенерировала html из маркдауна, в метаинформации должен быть<br />
-определен заголовок страницы — поле title. Минимальный исходный код выглядит примерно так:<br />
+определен заголовок страницы — поле `title`. Минимальный исходный код выглядит примерно так:<br />
 <br />
 ```markdown<br />
 ---<br />
@@ -132,12 +132,13 @@ title: &quot;Моя любимая кошка&quot;<br />
 title: &quot;Моя любимая кошка&quot;<br />
 date: &quot;2025.12.22 13:50&quot;<br />
 tags: &quot;фотки, котики, для чего еще нужен интернет&quot;<br />
+keywords: &quot;котик, зима&quot;<br />
 ---<br />
 <br />
 Итак, ....<br />
 ```<br />
 <br />
-Указывать дату крайне желательно, т. к. сортировка страниц по-умолчанию происходит по дате.<br />
+Указывать дату крайне желательно, т. к. сортировка страниц по-умолчанию происходит по дате. Более подробную информацию о метаданных, используемые Мухой, можно посмотреть [тут, раздел «Метаданные»](/+doc:page_obj_ru).<br />
 </div>
   </div>
   <button class="modal-close is-large" id="unViewSource" aria-label="close"></button>
